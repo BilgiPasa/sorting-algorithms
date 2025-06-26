@@ -5,6 +5,6 @@ We're only doing integer/long sorting algorithms to keep it simple.
 
 Müsait vaktinizde isterseniz siz de katkıda bulunabilirsiniz beyler.
 C öğrendiğimizde C olanları da yaparız.
-BubbleSort, BogoSort ve MergeSort'ları yapmayı düşünüyorum müsait vakitte istediğimde.
+BubbleSort ve BogoSort'u yapmayı düşünüyorum müsait vakitte istediğimde.
 Hepsinin (kendi dillerine göre) main'leri aynı kalsın, sadece sort methodlarını değiştirelim.
 Olur mu?
