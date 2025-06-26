@@ -6,9 +6,9 @@ for i in range(0, len(list_in_string_list)):
     the_list[i] = int(list_in_string_list[i].strip())
 
 def sort(int_list):
-    what_it_looked : int = 0
-    smallest : int
-    temp : int
+    what_it_looked: int = 0
+    smallest: int
+    temp: int
 
     for a in range(0, len(int_list)):
         smallest = int_list[a]
