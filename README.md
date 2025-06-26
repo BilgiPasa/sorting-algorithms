@@ -7,3 +7,4 @@ Müsait vaktinizde isterseniz siz de katkıda bulunabilirsiniz beyler.
 C öğrendiğimizde C olanları da yaparız.
 BubbleSort, BogoSort ve BogoBogoSort'ları yapmayı düşünüyorum müsait vakitte istediğimde.
 Hepsinin (kendi dillerine göre) main'leri aynı kalsın, sadece sort methodlarını değiştirelim bence.
+Olur mu?
