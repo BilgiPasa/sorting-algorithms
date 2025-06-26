@@ -6,7 +6,7 @@ for i in range(0, len(list_in_string_list)):
     the_list[i] = int(list_in_string_list[i].strip())
 
 def sort(int_list):
-    what_it_looked = 0
+    what_it_looked : int = 0
     smallest : int
     temp : int
 
@@ -25,5 +25,4 @@ def sort(int_list):
     return int_list
 
 the_list = sort(the_list)
-#print(*the_list) # Boşluklu halde print edeceksen bunu da kullanabilirsin.
 print("[" + ", ".join(str(x) for x in the_list) + "]")
