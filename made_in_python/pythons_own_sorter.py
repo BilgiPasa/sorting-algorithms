@@ -4,7 +4,7 @@ from time import time
 
 the_list: int = [0] * 5000
 
-for i in range(0, 5000):
+for i in range(0, len(the_list)):
     the_list[i] = randint(-maxsize, maxsize)
 
 start: float = time()
