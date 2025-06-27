@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/bilgipasa/Documents/Github/sorting-algorithms/MadeInC#/MadeInC#/MadeInC#.csproj",
+      "projectUniqueName": "/home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/MadeInC#/MadeInC#.csproj",
       "projectName": "MadeInC#",
-      "projectPath": "/home/bilgipasa/Documents/Github/sorting-algorithms/MadeInC#/MadeInC#/MadeInC#.csproj",
+      "projectPath": "/home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/MadeInC#/MadeInC#.csproj",
       "packagesPath": "/home/bilgipasa/.nuget/packages/",
-      "outputPath": "/home/bilgipasa/Documents/Github/sorting-algorithms/MadeInC#/MadeInC#/obj/",
+      "outputPath": "/home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/MadeInC#/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/bilgipasa/.nuget/NuGet/NuGet.Config"

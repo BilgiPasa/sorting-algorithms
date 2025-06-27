@@ -11,4 +11,4 @@ start: float = time()
 the_list = sorted(the_list)
 end: float = time()
 #print("[" + ", ".join(str(x) for x in the_list) + "]") # To see the array
-print((str)(end - start) + " seconds elapsed to sort")
+print((str)(len(the_list)) + " integers sorted in " + (str)(end - start) + " seconds.")

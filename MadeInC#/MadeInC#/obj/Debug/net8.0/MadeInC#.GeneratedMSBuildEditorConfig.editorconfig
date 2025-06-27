@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MadeInC_
-build_property.ProjectDir = /home/bilgipasa/Documents/Github/sorting-algorithms/MadeInC#/MadeInC#/
+build_property.ProjectDir = /home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/MadeInC#/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

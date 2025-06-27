@@ -1,53 +1,49 @@
-﻿namespace MadeInC_;
+﻿using System.Diagnostics;
+
+namespace MadeInC_;
 
 class SelectionSort
 {
     static void Main(string[] args)
     {
-        Console.Write("Write me an integer array (split the numbers with comma) : ");
-        string? arrayInText = Console.ReadLine();
+        Random r = new Random();
+        Stopwatch s = new Stopwatch();
+        int[] theArray = new int[5000];
 
-        if (arrayInText == null)
+        for (int i = 0; i < theArray.Length; i++)
         {
-            Console.WriteLine("Bruh.");
-            return;
+            theArray[i] = r.Next(int.MinValue, int.MaxValue);
         }
 
-        string[] arrayInStringArray = arrayInText.Split(",");
-        long[] theArray = new long[arrayInStringArray.Length];
-
-        for (int i = 0; i < arrayInStringArray.Length; i++)
-        {
-            theArray[i] = Convert.ToInt64(arrayInStringArray[i].Trim());
-        }
-
+        s.Start();
         theArray = Sort(theArray);
-        Console.WriteLine("[{0}]", string.Join(", ", theArray));
+        s.Stop();
+        //Console.WriteLine("[{0}]", string.Join(", ", theArray)); // To see the array
+        Console.WriteLine($"{theArray.Length} integers sorted in {s.Elapsed.TotalSeconds} seconds");
     }
 
-    static long[] Sort(long[] longArray)
+    static int[] Sort(int[] intArray)
     {
-        int whatItLooked = 0;
-        long smallest, temp;
+        int whatItLooked = 0, smallest, temp;
 
-        for (int a = 0; a < longArray.Length; a++)
+        for (int a = 0; a < intArray.Length; a++)
         {
-            smallest = longArray[a];
+            smallest = intArray[a];
 
-            for (int i = 0; i + a < longArray.Length; i++)
+            for (int i = 0; i + a < intArray.Length; i++)
             {
-                if (smallest >= longArray[i + a])
+                if (smallest >= intArray[i + a])
                 {
-                    smallest = longArray[i + a];
+                    smallest = intArray[i + a];
                     whatItLooked = i + a;
                 }
             }
 
-            temp = longArray[a];
-            longArray[a] = longArray[whatItLooked];
-            longArray[whatItLooked] = temp;
+            temp = intArray[a];
+            intArray[a] = intArray[whatItLooked];
+            intArray[whatItLooked] = temp;
         }
 
-        return longArray;
+        return intArray;
     }
 }
