@@ -1,9 +1,14 @@
-list_in_text = input("Write me an integer list (split the numbers with comma): ")
-list_in_string_list = list_in_text.split(",")
-the_list = [0] * len(list_in_string_list)
+from random import randint
+from sys import maxsize
+from time import time
 
-for i in range(0, len(list_in_string_list)):
-    the_list[i] = int(list_in_string_list[i].strip())
+the_list: int = [0] * 5000
 
+for i in range(0, 5000):
+    the_list[i] = randint(-maxsize, maxsize)
+
+start: float = time()
 the_list = sorted(the_list)
-print("[" + ", ".join(str(x) for x in the_list) + "]")
+end: float = time()
+#print("[" + ", ".join(str(x) for x in the_list) + "]") # To see the array
+print((str)(end - start) + " seconds elapsed to sort")
