@@ -22,7 +22,7 @@ public class SelectionSort {
     {
         int whatItLooked = 0, smallest, temp;
 
-        for (int a = 0; a < intArray.length; a++)
+        for (int a = 0; a < intArray.length - 1; a++)
         {
             smallest = intArray[a];
 

@@ -26,7 +26,7 @@ class Program
     {
         int whatItLooked = 0, smallest, temp;
 
-        for (int a = 0; a < intArray.Length; a++)
+        for (int a = 0; a < intArray.Length - 1; a++)
         {
             smallest = intArray[a];
 

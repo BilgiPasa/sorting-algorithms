@@ -12,7 +12,7 @@ def sort(int_list):
     smallest: int
     temp: int
 
-    for a in range(0, len(int_list)):
+    for a in range(0, len(int_list) - 1):
         smallest = int_list[a]
 
         for i in range(a, len(int_list)):
