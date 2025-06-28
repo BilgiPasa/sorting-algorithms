@@ -4,11 +4,11 @@ import java.util.Random;
 public class SelectionSort {
     public static void main(String[] args) {
         Random r = new Random();
-        int[] theArray = new int[5000];
+        int[] theArray = new int[10000];
 
         for (int i = 0; i < theArray.length; i++)
         {
-            theArray[i] = r.nextInt();
+            theArray[i] = r.nextInt(Integer.MIN_VALUE, Integer.MAX_VALUE);
         }
 
         long start = System.currentTimeMillis();

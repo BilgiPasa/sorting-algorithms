@@ -1,7 +1,7 @@
 # sorting-algorithms
 
 These are sorting algorithms in different programming languages.
-We're only doing integer sorting algorithms to keep it simple.
+We're only doing integer (32 bit) sorting algorithms to keep it simple.
 
 Müsait vaktinizde isterseniz siz de katkıda bulunabilirsiniz Universe ve Noxty.
 C öğrendiğimizde C olanları da yaparız.

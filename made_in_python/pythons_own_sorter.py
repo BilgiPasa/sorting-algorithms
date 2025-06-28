@@ -4,8 +4,8 @@ from time import time
 
 the_list: int = [0] * 5000
 
-for i in range(0, len(the_list)):
-    the_list[i] = randint(-maxsize, maxsize)
+for i in range(0, len(the_list)): # Python's integer is 64 bit. Becuz of that I made the randomizer like this.
+    the_list[i] = randint(-2147483648, 2147483647)
 
 start: float = time()
 the_list = sorted(the_list)
