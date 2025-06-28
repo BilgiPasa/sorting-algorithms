@@ -1,10 +1,9 @@
 # sorting-algorithms
 
 These are sorting algorithms in different programming languages.
-We're only doing integer (32 bit) sorting algorithms to keep it simple.
+This project is focused on integer (32 bit) sorting algorithms to keep it simple.
 
-Müsait vaktinizde isterseniz siz de katkıda bulunabilirsiniz Universe ve Noxty.
-C öğrendiğimizde C olanları da yaparız.
-BubbleSort'u yapmayı düşünüyorum müsait vakitte istediğimde.
-Hepsinin (kendi dillerine göre) main'leri aynı kalsın, sadece sort methodlarını değiştirelim.
-Olur mu?
+TODO:
+BubbleSort
+MergeSort
+When I learn C, the C implementation
