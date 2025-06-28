@@ -1,32 +1,28 @@
-﻿using System.Diagnostics;
+import java.util.Random;
+//import java.util.Arrays; // Use this too if you want to see the array
 
-namespace BogoSort;
-
-class Program
-{
-    static void Main(string[] args)
-    {
+public class BogoSort {
+    public static void main(String[] args) {
         Random r = new Random();
-        Stopwatch s = new Stopwatch();
         int[] theArray = new int[12]; // 12 is more than enough to show how much BogoSort is bad at sorting.
 
-        for (int i = 0; i < theArray.Length; i++)
-        {
-            theArray[i] = r.Next(int.MinValue, int.MaxValue);
+        for (int i = 0; i < theArray.length; i++)
+        {// I know that just using r.nextInt includes Integer.MAX_VALUE. Becuz of that I made it like this.
+            theArray[i] = r.nextInt(Integer.MIN_VALUE, Integer.MAX_VALUE);
         }
 
-        s.Start();
+        long start = System.currentTimeMillis();
         theArray = Sort(theArray);
-        s.Stop();
-        //Console.WriteLine("[{0}]", string.Join(", ", theArray)); // To see the array
-        Console.WriteLine($"{theArray.Length} integers sorted in {s.Elapsed.TotalSeconds} seconds");
+        long end = System.currentTimeMillis();
+        //System.out.println(Arrays.toString(theArray)); // To see the array
+        System.out.println(theArray.length + " integers sorted in " + ((end - start) / 1000.0) + " seconds");
     }
 
-    static int[] Sort(int[] intArray)
+    public static int[] Sort(int[] intArray)
     {
-        bool b = true;
+        boolean b = true;
 
-        for (int i = 0; i < intArray.Length - 1; i++)
+        for (int i = 0; i < intArray.length - 1; i++)
         {
             if (intArray[i] > intArray[i + 1])
             {
@@ -38,17 +34,17 @@ class Program
         if (!b)
         {
             Random r = new Random();
-            int[] bogoSortedArray = new int[intArray.Length];
+            int[] bogoSortedArray = new int[intArray.length];
 
             while (!b)
             {
                 b = true;
                 int a = 0, temp;
-                bool[] didIUseThisElementForSelectingRandomlyArray = new bool[intArray.Length];
+                boolean[] didIUseThisElementForSelectingRandomlyArray = new boolean[intArray.length];
 
-                while (a < intArray.Length)
+                while (a < intArray.length)
                 {
-                    temp = r.Next(intArray.Length);
+                    temp = r.nextInt(intArray.length);
 
                     if (!didIUseThisElementForSelectingRandomlyArray[temp])
                     {
@@ -58,7 +54,7 @@ class Program
                     }
                 }
 
-                for (int i = 0; i < intArray.Length - 1; i++)
+                for (int i = 0; i < intArray.length - 1; i++)
                 {
                     if (bogoSortedArray[i] > bogoSortedArray[i + 1])
                     {

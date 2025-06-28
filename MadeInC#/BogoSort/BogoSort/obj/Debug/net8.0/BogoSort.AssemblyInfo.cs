@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BogoSort")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2bc4c6bc5e82b1547542ac9c5b527b7e4d2f82c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e30ee5c0d099480a2cae3ec2455cc38c17c80b6")]
 [assembly: System.Reflection.AssemblyProductAttribute("BogoSort")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BogoSort")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

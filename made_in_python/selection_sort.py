@@ -1,11 +1,10 @@
 from random import randint
-from sys import maxsize
 from time import time
 
-the_list: int = [0] * 5000
+the_list: int = [0] * 12000
 
 for i in range(0, len(the_list)): # Python's integer is 64 bit. Becuz of that I made the randomizer like this.
-    the_list[i] = randint(-2147483648, 2147483647)
+    the_list[i] = randint(-2147483648, 2147483647 - 1) # -1 becuz the endpoint is included
 
 def sort(int_list):
     what_it_looked: int = 0
