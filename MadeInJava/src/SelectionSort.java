@@ -7,7 +7,7 @@ public class SelectionSort {
         int[] theArray = new int[12000];
 
         for (int i = 0; i < theArray.length; i++)
-        {// I know that just using r.nextInt includes Integer.MAX_VALUE. Becuz of that I made it like this.
+        {// I know that just using r.nextInt() includes Integer.MAX_VALUE. Becuz of that I made it like this.
             theArray[i] = r.nextInt(Integer.MIN_VALUE, Integer.MAX_VALUE);
         }
 

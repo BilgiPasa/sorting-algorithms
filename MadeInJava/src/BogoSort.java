@@ -7,7 +7,7 @@ public class BogoSort {
         int[] theArray = new int[12]; // 12 is more than enough to show how much BogoSort is bad at sorting.
 
         for (int i = 0; i < theArray.length; i++)
-        {// I know that just using r.nextInt includes Integer.MAX_VALUE. Becuz of that I made it like this.
+        {// I know that just using r.nextInt() includes Integer.MAX_VALUE. Becuz of that I made it like this.
             theArray[i] = r.nextInt(Integer.MIN_VALUE, Integer.MAX_VALUE);
         }
 
