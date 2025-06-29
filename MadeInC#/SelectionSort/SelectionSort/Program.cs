@@ -8,7 +8,7 @@ class Program
     {
         Random r = new Random();
         Stopwatch s = new Stopwatch();
-        int[] theArray = new int[12000];
+        int[] theArray = new int[120000];
 
         for (int i = 0; i < theArray.Length; i++)
         {

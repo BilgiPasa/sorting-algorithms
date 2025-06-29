@@ -4,18 +4,18 @@ import java.util.Random;
 public class SelectionSort {
     public static void main(String[] args) {
         Random r = new Random();
-        int[] theArray = new int[12000];
+        int[] theArray = new int[120000];
 
         for (int i = 0; i < theArray.length; i++)
         {// I know that just using r.nextInt() includes Integer.MAX_VALUE. Becuz of that I made it like this.
             theArray[i] = r.nextInt(Integer.MIN_VALUE, Integer.MAX_VALUE);
         }
 
-        long start = System.currentTimeMillis();
+        long startTime = System.currentTimeMillis();
         theArray = Sort(theArray);
-        long end = System.currentTimeMillis();
+        long endTime = System.currentTimeMillis();
         //System.out.println(Arrays.toString(theArray)); // To see the array
-        System.out.println(theArray.length + " integers sorted in " + ((end - start) / 1000.0) + " seconds");
+        System.out.println(theArray.length + " integers sorted in " + ((endTime - startTime) / 1000.0) + " seconds");
     }
 
     public static int[] Sort(int[] intArray)

@@ -11,11 +11,11 @@ public class BogoSort {
             theArray[i] = r.nextInt(Integer.MIN_VALUE, Integer.MAX_VALUE);
         }
 
-        long start = System.currentTimeMillis();
+        long startTime = System.currentTimeMillis();
         theArray = Sort(theArray);
-        long end = System.currentTimeMillis();
+        long endTime = System.currentTimeMillis();
         //System.out.println(Arrays.toString(theArray)); // To see the array
-        System.out.println(theArray.length + " integers sorted in " + ((end - start) / 1000.0) + " seconds");
+        System.out.println(theArray.length + " integers sorted in " + ((endTime - startTime) / 1000.0) + " seconds");
     }
 
     public static int[] Sort(int[] intArray)

@@ -40,8 +40,8 @@ def sort(int_list):
     else:
         return int_list
 
-start: float = time()
+start_time: float = time()
 the_list = sort(the_list)
-end: float = time()
+end_time: float = time()
 #print("[" + ", ".join(str(x) for x in the_list) + "]") # To see the array
-print((str)(len(the_list)) + " integers sorted in " + (str)(end - start) + " seconds.")
+print((str)(len(the_list)) + " integers sorted in " + (str)(end_time - start_time) + " seconds.")

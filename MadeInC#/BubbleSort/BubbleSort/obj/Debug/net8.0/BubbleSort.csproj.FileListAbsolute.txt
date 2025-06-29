@@ -1,0 +1,15 @@
+/home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/BubbleSort/BubbleSort/bin/Debug/net8.0/BubbleSort
+/home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/BubbleSort/BubbleSort/bin/Debug/net8.0/BubbleSort.deps.json
+/home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/BubbleSort/BubbleSort/bin/Debug/net8.0/BubbleSort.runtimeconfig.json
+/home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/BubbleSort/BubbleSort/bin/Debug/net8.0/BubbleSort.dll
+/home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/BubbleSort/BubbleSort/bin/Debug/net8.0/BubbleSort.pdb
+/home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/BubbleSort/BubbleSort/obj/Debug/net8.0/BubbleSort.GeneratedMSBuildEditorConfig.editorconfig
+/home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/BubbleSort/BubbleSort/obj/Debug/net8.0/BubbleSort.AssemblyInfoInputs.cache
+/home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/BubbleSort/BubbleSort/obj/Debug/net8.0/BubbleSort.AssemblyInfo.cs
+/home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/BubbleSort/BubbleSort/obj/Debug/net8.0/BubbleSort.csproj.CoreCompileInputs.cache
+/home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/BubbleSort/BubbleSort/obj/Debug/net8.0/BubbleSort.sourcelink.json
+/home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/BubbleSort/BubbleSort/obj/Debug/net8.0/BubbleSort.dll
+/home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/BubbleSort/BubbleSort/obj/Debug/net8.0/refint/BubbleSort.dll
+/home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/BubbleSort/BubbleSort/obj/Debug/net8.0/BubbleSort.pdb
+/home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/BubbleSort/BubbleSort/obj/Debug/net8.0/BubbleSort.genruntimeconfig.cache
+/home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/BubbleSort/BubbleSort/obj/Debug/net8.0/ref/BubbleSort.dll
