@@ -38,7 +38,7 @@ class Program
                 }
             }
 
-            (intArray[a], intArray[smallest]) = (intArray[smallest], intArray[a]); // Swapping elements
+            (intArray[a], intArray[smallest]) = (intArray[smallest], intArray[a]); // Swapping
         }
 
         return intArray;

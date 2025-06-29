@@ -16,7 +16,7 @@ def sort(int_list):
             if int_list[smallest] > int_list[i]:
                 smallest = i
 
-        int_list[a], int_list[smallest] = int_list[smallest], int_list[a] # Swapping elements
+        int_list[a], int_list[smallest] = int_list[smallest], int_list[a] # Swapping
 
     return int_list
 

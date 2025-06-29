@@ -34,7 +34,7 @@ class Program
             {
                 if (intArray[i] > intArray[i + 1])
                 {
-                    (intArray[i], intArray[i + 1]) = (intArray[i + 1], intArray[i]); // Swapping elements
+                    (intArray[i], intArray[i + 1]) = (intArray[i + 1], intArray[i]); // Swapping
                 }
             }
 
