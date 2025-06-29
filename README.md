@@ -10,6 +10,6 @@ Implemented languages (from fastest to slowest**): C#, Java, Python.
 
 *According to my tests
 
-**According to my tests when use the fastest algorithm from my tests. The fastest language may change for other algorithms. (For your information, Python's sorted() is not the fastest.)
+**According to my tests when use the fastest algorithm from my tests. The fastest language may change for other algorithms. (For your information, according to my tests, Python's sorted() is slower than the bubble sort that I made in Python.)
 
 TODO: Merge Sort, the C implementation (when I learn C)
