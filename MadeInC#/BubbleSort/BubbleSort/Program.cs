@@ -8,7 +8,7 @@ class Program
     {
         Random r = new Random();
         Stopwatch s = new Stopwatch();
-        int[] theArray = new int[12000000];
+        int[] theArray = new int[10000000];
 
         for (int i = 0; i < theArray.Length; i++)
         {
@@ -24,7 +24,6 @@ class Program
 
     static int[] Sort(int[] intArray)
     {
-        int temp;
         bool b = true;
 
         while (!b)
@@ -35,9 +34,7 @@ class Program
             {
                 if (intArray[i] > intArray[i + 1])
                 {
-                    temp = intArray[i];
-                    intArray[i] = intArray[i + 1];
-                    intArray[i + 1] = temp;
+                    (intArray[i], intArray[i + 1]) = (intArray[i + 1], intArray[i]); // Swapping elements
                 }
             }
 

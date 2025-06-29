@@ -8,7 +8,7 @@ class Program
     {
         Random r = new Random();
         Stopwatch s = new Stopwatch();
-        int[] theArray = new int[12]; // 12 is more than enough to show how much BogoSort is bad at sorting.
+        int[] theArray = new int[10]; // 10 is enough to show how much BogoSort is bad at sorting.
 
         for (int i = 0; i < theArray.Length; i++)
         {
@@ -19,7 +19,7 @@ class Program
         theArray = Sort(theArray);
         s.Stop();
         //Console.WriteLine("[{0}]", string.Join(", ", theArray)); // To see the array
-        Console.WriteLine($"{theArray.Length} integers sorted in {s.Elapsed.Seconds} seconds");
+        Console.WriteLine($"{theArray.Length} integers sorted in {s.Elapsed.Milliseconds / 1000f} seconds");
     }
 
     static int[] Sort(int[] intArray)
@@ -38,41 +38,23 @@ class Program
         if (!b)
         {
             Random r = new Random();
-            int[] bogoSortedArray = new int[intArray.Length];
 
             while (!b)
             {
                 b = true;
-                int a = 0, temp;
-                bool[] didIUseThisElementForSelectingRandomlyArray = new bool[intArray.Length];
-
-                while (a < intArray.Length)
-                {
-                    temp = r.Next(intArray.Length);
-
-                    if (!didIUseThisElementForSelectingRandomlyArray[temp])
-                    {
-                        bogoSortedArray[a] = intArray[temp];
-                        didIUseThisElementForSelectingRandomlyArray[temp] = true;
-                        a++;
-                    }
-                }
+                r.Shuffle(intArray);
 
                 for (int i = 0; i < intArray.Length - 1; i++)
                 {
-                    if (bogoSortedArray[i] > bogoSortedArray[i + 1])
+                    if (intArray[i] > intArray[i + 1])
                     {
                         b = false;
                         break;
                     }
                 }
             }
+        }
 
-            return bogoSortedArray;
-        }
-        else
-        {
-            return intArray;
-        }
+        return intArray;
     }
 }

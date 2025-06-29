@@ -4,7 +4,7 @@ import java.util.Random;
 public class SelectionSort {
     public static void main(String[] args) {
         Random r = new Random();
-        int[] theArray = new int[120000];
+        int[] theArray = new int[10000];
 
         for (int i = 0; i < theArray.length; i++)
         {// I know that just using r.nextInt() includes Integer.MAX_VALUE. Becuz of that I made it like this.
@@ -15,29 +15,28 @@ public class SelectionSort {
         theArray = Sort(theArray);
         long endTime = System.currentTimeMillis();
         //System.out.println(Arrays.toString(theArray)); // To see the array
-        System.out.println(theArray.length + " integers sorted in " + ((endTime - startTime) / 1000.0) + " seconds");
+        System.out.println(theArray.length + " integers sorted in " + (endTime - startTime) + " milliseconds");
     }
 
     public static int[] Sort(int[] intArray)
     {
-        int whatItLooked = 0, smallest, temp;
+        int smallest, temp;
 
         for (int a = 0; a < intArray.length - 1; a++)
         {
-            smallest = intArray[a];
+            smallest = a;
 
-            for (int i = 0; i + a < intArray.length; i++)
+            for (int i = a; i < intArray.length; i++)
             {
-                if (smallest >= intArray[i + a])
+                if (intArray[smallest] > intArray[i])
                 {
-                    smallest = intArray[i + a];
-                    whatItLooked = i + a;
+                    smallest = i;
                 }
             }
 
             temp = intArray[a];
-            intArray[a] = intArray[whatItLooked];
-            intArray[whatItLooked] = temp;
+            intArray[a] = intArray[smallest];
+            intArray[smallest] = temp;
         }
 
         return intArray;

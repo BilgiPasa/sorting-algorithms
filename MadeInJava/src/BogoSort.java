@@ -4,7 +4,7 @@ import java.util.Random;
 public class BogoSort {
     public static void main(String[] args) {
         Random r = new Random();
-        int[] theArray = new int[12]; // 12 is more than enough to show how much BogoSort is bad at sorting.
+        int[] theArray = new int[10]; // 10 is enough to show how much BogoSort is bad at sorting.
 
         for (int i = 0; i < theArray.length; i++)
         {// I know that just using r.nextInt() includes Integer.MAX_VALUE. Becuz of that I made it like this.
@@ -43,7 +43,7 @@ public class BogoSort {
                 boolean[] didIUseThisElementForSelectingRandomlyArray = new boolean[intArray.length];
 
                 while (a < intArray.length)
-                {
+                {// Becuz Java doesn't have an primitive integer array shuffler, I made it myself.
                     temp = r.nextInt(intArray.length);
 
                     if (!didIUseThisElementForSelectingRandomlyArray[temp])
