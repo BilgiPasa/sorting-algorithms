@@ -16,4 +16,4 @@ Implemented languages (from fastest to slowest**): C#, Java, Python.
 
 TODO: Implementing more sorting algorithms and the C implementation (when I learn C)
 
--- Bilgi Paşa
+- Bilgi Paşa
