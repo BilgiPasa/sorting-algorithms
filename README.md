@@ -6,7 +6,9 @@ This repository is focused on integer (32 bit) sorting algorithms to keep it sim
 
 I didn't copy-pasted any code from AI or websites. I wrote them myself. (Also I don't like using AI.)
 
-Implemented sorting algorithms (from fastest to slowest*): Bubble Sort, Selection Sort, Bogo Sort.
+I think bubble sort is broken. So, I will ad it to the implemented list when I fix it.
+
+Implemented sorting algorithms (from fastest to slowest*): Selection Sort, Bogo Sort.
 
 Implemented languages (from fastest to slowest**): C#, Java, Python.
 
