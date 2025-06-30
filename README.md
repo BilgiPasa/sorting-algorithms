@@ -6,7 +6,7 @@ This repository is focused on integer (32 bit) sorting algorithms to keep it sim
 
 I didn't copy-pasted any code from AI or websites. I wrote them myself. (Also I don't like using AI.)
 
-Implemented languages (from fastest to slowest*): Java, C#, Python.
+Implemented languages (from fastest to slowest*): Java (24), C# (.Net 8), Python (3.13.5).
 
 Implemented sorting algorithms (from fastest to slowest**): Selection Sort, Bubble Sort, Bogo Sort.
 
