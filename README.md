@@ -2,7 +2,9 @@
 
 These are sorting algorithms in different programming languages.
 
-This project is focused on integer (32 bit) sorting algorithms to keep it simple.
+This repository is focused on integer (32 bit) sorting algorithms to keep it simple.
+
+I didn't copy-pasted any code from AI or websites. I wrote them myself. (Also I don't like using AI.)
 
 Implemented sorting algorithms (from fastest to slowest*): Bubble Sort, Selection Sort, Bogo Sort.
 
@@ -10,6 +12,8 @@ Implemented languages (from fastest to slowest**): C#, Java, Python.
 
 *According to my tests
 
-**According to my tests when use the fastest algorithm from my tests. The fastest language may change for other algorithms. (For your information, according to my tests, Python's sorted() is slower than the bubble sort that I made in Python.)
+**According to my tests when I use the fastest algorithm from my tests. The fastest language may change for other algorithms. (For your information, according to my tests, Python's sorted() is slower than the bubble sort that I made in Python.)
 
-TODO: Merge Sort, the C implementation (when I learn C)
+TODO: Implementing more sorting algorithms and the C implementation (when I learn C)
+
+- Bilgi Paşa

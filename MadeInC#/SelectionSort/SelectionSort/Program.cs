@@ -8,7 +8,7 @@ class Program
     {
         Random r = new Random();
         Stopwatch s = new Stopwatch();
-        int[] theArray = new int[10000];
+        int[] theArray = new int[100000];
 
         for (int i = 0; i < theArray.Length; i++)
         {
@@ -19,7 +19,7 @@ class Program
         theArray = Sort(theArray);
         s.Stop();
         //Console.WriteLine("[{0}]", string.Join(", ", theArray)); // To see the array
-        Console.WriteLine($"{theArray.Length} integers sorted in {s.Elapsed.Milliseconds} milliseconds");
+        Console.WriteLine($"{theArray.Length} integers sorted in {s.Elapsed.Nanoseconds} nanoseconds");
     }
 
     static int[] Sort(int[] intArray)
@@ -38,7 +38,7 @@ class Program
                 }
             }
 
-            (intArray[a], intArray[smallest]) = (intArray[smallest], intArray[a]); // Swapping
+            (intArray[a], intArray[smallest]) = (intArray[smallest], intArray[a]);
         }
 
         return intArray;

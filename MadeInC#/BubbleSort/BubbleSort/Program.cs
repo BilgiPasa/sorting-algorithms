@@ -8,7 +8,7 @@ class Program
     {
         Random r = new Random();
         Stopwatch s = new Stopwatch();
-        int[] theArray = new int[10000000];
+        int[] theArray = new int[100000];
 
         for (int i = 0; i < theArray.Length; i++)
         {
@@ -34,7 +34,7 @@ class Program
             {
                 if (intArray[i] > intArray[i + 1])
                 {
-                    (intArray[i], intArray[i + 1]) = (intArray[i + 1], intArray[i]); // Swapping
+                    (intArray[i], intArray[i + 1]) = (intArray[i + 1], intArray[i]);
                 }
             }
 
