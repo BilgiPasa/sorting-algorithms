@@ -19,7 +19,7 @@ class Program
         theArray = Sort(theArray);
         s.Stop();
         //Console.WriteLine("[{0}]", string.Join(", ", theArray)); // To see the array
-        Console.WriteLine($"{theArray.Length} integers sorted in {s.Elapsed.Milliseconds / 1000f} seconds");
+        Console.WriteLine($"{theArray.Length} integers sorted in {s.ElapsedMilliseconds} milliseconds");
     }
 
     static int[] Sort(int[] intArray)

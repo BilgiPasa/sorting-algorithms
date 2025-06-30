@@ -15,7 +15,7 @@ public class BogoSort {
         theArray = Sort(theArray);
         long endTime = System.currentTimeMillis();
         //System.out.println(Arrays.toString(theArray)); // To see the array
-        System.out.println(theArray.length + " integers sorted in " + ((endTime - startTime) / 1000.0) + " seconds");
+        System.out.println(theArray.length + " integers sorted in " + (endTime - startTime) + " milliseconds");
     }
 
     public static int[] Sort(int[] intArray)
