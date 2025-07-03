@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/BubbleSort/BubbleSort/BubbleSort.csproj",
+      "projectUniqueName": "/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/BubbleSort/BubbleSort/BubbleSort.csproj",
       "projectName": "BubbleSort",
-      "projectPath": "/home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/BubbleSort/BubbleSort/BubbleSort.csproj",
+      "projectPath": "/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/BubbleSort/BubbleSort/BubbleSort.csproj",
       "packagesPath": "/home/bilgipasa/.nuget/packages/",
-      "outputPath": "/home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/BubbleSort/BubbleSort/obj/",
+      "outputPath": "/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/BubbleSort/BubbleSort/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/bilgipasa/.nuget/NuGet/NuGet.Config"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

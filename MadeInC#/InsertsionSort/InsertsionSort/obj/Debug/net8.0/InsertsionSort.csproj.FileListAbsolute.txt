@@ -1,0 +1,15 @@
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/InsertsionSort/InsertsionSort/bin/Debug/net8.0/InsertsionSort
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/InsertsionSort/InsertsionSort/bin/Debug/net8.0/InsertsionSort.deps.json
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/InsertsionSort/InsertsionSort/bin/Debug/net8.0/InsertsionSort.runtimeconfig.json
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/InsertsionSort/InsertsionSort/bin/Debug/net8.0/InsertsionSort.dll
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/InsertsionSort/InsertsionSort/bin/Debug/net8.0/InsertsionSort.pdb
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/InsertsionSort/InsertsionSort/obj/Debug/net8.0/InsertsionSort.GeneratedMSBuildEditorConfig.editorconfig
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/InsertsionSort/InsertsionSort/obj/Debug/net8.0/InsertsionSort.AssemblyInfoInputs.cache
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/InsertsionSort/InsertsionSort/obj/Debug/net8.0/InsertsionSort.AssemblyInfo.cs
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/InsertsionSort/InsertsionSort/obj/Debug/net8.0/InsertsionSort.csproj.CoreCompileInputs.cache
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/InsertsionSort/InsertsionSort/obj/Debug/net8.0/InsertsionSort.sourcelink.json
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/InsertsionSort/InsertsionSort/obj/Debug/net8.0/InsertsionSort.dll
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/InsertsionSort/InsertsionSort/obj/Debug/net8.0/refint/InsertsionSort.dll
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/InsertsionSort/InsertsionSort/obj/Debug/net8.0/InsertsionSort.pdb
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/InsertsionSort/InsertsionSort/obj/Debug/net8.0/InsertsionSort.genruntimeconfig.cache
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/InsertsionSort/InsertsionSort/obj/Debug/net8.0/ref/InsertsionSort.dll
