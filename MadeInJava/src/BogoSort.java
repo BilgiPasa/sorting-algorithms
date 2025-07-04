@@ -43,7 +43,7 @@ public class BogoSort {
                 boolean[] didIUseThisElementForSelectingRandomlyArray = new boolean[intArray.length];
 
                 while (a < intArray.length)
-                {// Becuz Java doesn't have an primitive integer array shuffler, I made it myself.
+                {// I couldn't find a built in primitive integer array shuffler. So, here is my shuffler.
                     temp = r.nextInt(intArray.length);
 
                     if (!didIUseThisElementForSelectingRandomlyArray[temp])
