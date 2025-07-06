@@ -16,6 +16,7 @@ Implemented languages (from fastest to slowest**): Java, C#, Python.
 
 **According to my tests when I use the fastest algorithm from my tests.
 
+-------------------------------------------------------------------------------------------------
 
 If we give an example of Selection Sort, (use backward slashes if you use Windows file manager):
 
@@ -25,6 +26,7 @@ The Java code is in the MadeInJava/src/SelectionSort.java file
 
 The Python code is in the made_in_python/selection_sort.py file
 
+-------------------------------------------------------------------------------------------------
 
 TODO: Implementing more sorting algorithms and the C implementation (when I learn C)
 
