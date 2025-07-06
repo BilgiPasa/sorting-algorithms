@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("SelectionSort")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("MergeSort")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc722486902b5db06322ec7750c0bbcdb2f96058")]
-[assembly: System.Reflection.AssemblyProductAttribute("SelectionSort")]
-[assembly: System.Reflection.AssemblyTitleAttribute("SelectionSort")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa84ce44702bcddf0bc7e76d27f27264944a1a97")]
+[assembly: System.Reflection.AssemblyProductAttribute("MergeSort")]
+[assembly: System.Reflection.AssemblyTitleAttribute("MergeSort")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // MSBuild WriteCodeFragment sınıfı tarafından oluşturuldu.
