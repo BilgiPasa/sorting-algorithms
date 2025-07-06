@@ -30,4 +30,6 @@ The Python code is in the made_in_python/selection_sort.py file
 
 TODO: Implementing more sorting algorithms and the C implementation (when I learn C)
 
--- Bilgi Paşa
+-------------------------------------------------------------------------------------------------
+
+README written by Bilgi Paşa.
