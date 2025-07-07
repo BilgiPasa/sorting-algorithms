@@ -19,7 +19,7 @@ class Program
         Sort(theArray);
         s.Stop();
         //Console.WriteLine("[{0}]", string.Join(", ", theArray)); // To see the array
-        Console.WriteLine($"{theArray.Length} integers sorted in {s.Elapsed.TotalNanoseconds} nanoseconds (1 millisecond = 1000000 nanoseconds)");
+        Console.WriteLine($"{theArray.Length} integers sorted in {s.Elapsed.TotalNanoseconds / 1000000} milliseconds");
     }
 
     static void Sort(int[] intArray)
@@ -55,22 +55,22 @@ class Program
         {
             if (leftArray[i] > rightArray[j])
             {
-                intArray[k++] = rightArray[j++]; // This means intArray[k] = rightArray[j]; k++; j++;
+                intArray[k++] = rightArray[j++]; // This means intArray[k] = rightArray[j]; k += 1; j += 1;
             }
             else
             {
-                intArray[k++] = leftArray[i++]; // This means intArray[k] = leftArray[i]; k++; i++;
+                intArray[k++] = leftArray[i++]; // This means intArray[k] = leftArray[i]; k += 1; i += 1;
             }
         }
 
         while (i < leftArray.Length)
         {
-            intArray[k++] = leftArray[i++]; // This means intArray[k] = leftArray[i]; k++; i++;
+            intArray[k++] = leftArray[i++]; // This means intArray[k] = leftArray[i]; k += 1; i += 1;
         }
 
         while (j < rightArray.Length)
         {
-            intArray[k++] = rightArray[j++]; // This means intArray[k] = rightArray[j]; k++; j++;
+            intArray[k++] = rightArray[j++]; // This means intArray[k] = rightArray[j]; k += 1; j += 1;
         }
     }
 }
