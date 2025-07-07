@@ -12,34 +12,32 @@ public class InsertsionSort {
         }
 
         long startTime = System.nanoTime();
-        theArray = Sort(theArray);
+        Sort(theArray);
         long endTime = System.nanoTime();
         //System.out.println(Arrays.toString(theArray)); // To see the array
         System.out.println(theArray.length + " integers sorted in " + ((endTime - startTime) / 1000000.0) + " milliseconds");
     }
 
-    static int[] Sort(int[] intArray)
+    static void Sort(int[] numberArray)
     {
         int temp;
 
-        for (int a = 1; a < intArray.length; a++)
+        for (int a = 1; a < numberArray.length; a++)
         {
             for (int i = 0; i < a; i++)
             {
-                if (intArray[a] < intArray[i])
+                if (numberArray[a] < numberArray[i])
                 {
-                    temp = intArray[a];
+                    temp = numberArray[a];
 
                     for (int j = a; j > i; j--)
                     {
-                        intArray[j] = intArray[j - 1];
+                        numberArray[j] = numberArray[j - 1];
                     }
 
-                    intArray[i] = temp;
+                    numberArray[i] = temp;
                 }
             }
         }
-
-        return intArray;
     }
 }

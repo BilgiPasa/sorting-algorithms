@@ -22,32 +22,32 @@ class Program
         Console.WriteLine($"{theArray.Length} integers sorted in {s.Elapsed.TotalNanoseconds / 1000000} milliseconds");
     }
 
-    static void Sort(int[] intArray)
+    static void Sort(int[] numberArray)
     {
-        if (intArray.Length < 2)
+        if (numberArray.Length < 2)
         {
             return;
         }
 
-        int middle = intArray.Length / 2;
-        int[] leftArray = new int[middle], rightArray = new int[intArray.Length - middle];
+        int middle = numberArray.Length / 2;
+        int[] leftArray = new int[middle], rightArray = new int[numberArray.Length - middle];
 
         for (int i = 0; i < middle; i++)
         {
-            leftArray[i] = intArray[i];
+            leftArray[i] = numberArray[i];
         }
 
-        for (int i = middle; i < intArray.Length; i++)
+        for (int i = middle; i < numberArray.Length; i++)
         {
-            rightArray[i - middle] = intArray[i];
+            rightArray[i - middle] = numberArray[i];
         }
 
         Sort(leftArray);
         Sort(rightArray);
-        Merge(intArray, leftArray, rightArray);
+        Merge(numberArray, leftArray, rightArray);
     }
 
-    static void Merge(int[] intArray, int[] leftArray, int[] rightArray)
+    static void Merge(int[] numberArray, int[] leftArray, int[] rightArray)
     {
         int i = 0, j = 0, k = 0;
 
@@ -55,22 +55,22 @@ class Program
         {
             if (leftArray[i] > rightArray[j])
             {
-                intArray[k++] = rightArray[j++]; // This means intArray[k] = rightArray[j]; k += 1; j += 1;
+                numberArray[k++] = rightArray[j++]; // This means numberArray[k] = rightArray[j]; k += 1; j += 1;
             }
             else
             {
-                intArray[k++] = leftArray[i++]; // This means intArray[k] = leftArray[i]; k += 1; i += 1;
+                numberArray[k++] = leftArray[i++]; // This means numberArray[k] = leftArray[i]; k += 1; i += 1;
             }
         }
 
         while (i < leftArray.Length)
         {
-            intArray[k++] = leftArray[i++]; // This means intArray[k] = leftArray[i]; k += 1; i += 1;
+            numberArray[k++] = leftArray[i++]; // This means numberArray[k] = leftArray[i]; k += 1; i += 1;
         }
 
         while (j < rightArray.Length)
         {
-            intArray[k++] = rightArray[j++]; // This means intArray[k] = rightArray[j]; k += 1; j += 1;
+            numberArray[k++] = rightArray[j++]; // This means numberArray[k] = rightArray[j]; k += 1; j += 1;
         }
     }
 }

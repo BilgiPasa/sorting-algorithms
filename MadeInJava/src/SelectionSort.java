@@ -12,33 +12,31 @@ public class SelectionSort {
         }
 
         long startTime = System.nanoTime();
-        theArray = Sort(theArray);
+        Sort(theArray);
         long endTime = System.nanoTime();
         //System.out.println(Arrays.toString(theArray)); // To see the array
         System.out.println(theArray.length + " integers sorted in " + ((endTime - startTime) / 1000000.0) + " milliseconds");
     }
 
-    static int[] Sort(int[] intArray)
+    static void Sort(int[] numberArray)
     {
         int smallest, temp;
 
-        for (int a = 0; a < intArray.length - 1; a++)
+        for (int a = 0; a < numberArray.length - 1; a++)
         {
             smallest = a;
 
-            for (int i = a; i < intArray.length; i++)
+            for (int i = a; i < numberArray.length; i++)
             {
-                if (intArray[smallest] > intArray[i])
+                if (numberArray[smallest] > numberArray[i])
                 {
                     smallest = i;
                 }
             }
 
-            temp = intArray[a];
-            intArray[a] = intArray[smallest];
-            intArray[smallest] = temp;
+            temp = numberArray[a];
+            numberArray[a] = numberArray[smallest];
+            numberArray[smallest] = temp;
         }
-
-        return intArray;
     }
 }

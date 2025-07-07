@@ -12,19 +12,19 @@ public class BogoSort {
         }
 
         long startTime = System.nanoTime();
-        theArray = Sort(theArray);
+        Sort(theArray);
         long endTime = System.nanoTime();
         //System.out.println(Arrays.toString(theArray)); // To see the array
         System.out.println(theArray.length + " integers sorted in " + ((endTime - startTime) / 1000000.0) + " milliseconds");
     }
 
-    static int[] Sort(int[] intArray)
+    static void Sort(int[] numberArray)
     {
         boolean b = true;
 
-        for (int i = 0; i < intArray.length - 1; i++)
+        for (int i = 0; i < numberArray.length - 1; i++)
         {
-            if (intArray[i] > intArray[i + 1])
+            if (numberArray[i] > numberArray[i + 1])
             {
                 b = false;
                 break;
@@ -34,27 +34,27 @@ public class BogoSort {
         if (!b)
         {
             Random r = new Random();
-            int[] bogoSortedArray = new int[intArray.length];
+            int[] bogoSortedArray = new int[numberArray.length];
 
             while (!b)
             {
                 b = true;
                 int a = 0, temp;
-                boolean[] didIUseThisElementForSelectingRandomlyArray = new boolean[intArray.length];
+                boolean[] didIUseThisElementForSelectingRandomlyArray = new boolean[numberArray.length];
 
-                while (a < intArray.length)
+                while (a < numberArray.length)
                 {// I couldn't find a built in primitive integer array shuffler. So, here is my shuffler.
-                    temp = r.nextInt(intArray.length);
+                    temp = r.nextInt(numberArray.length);
 
                     if (!didIUseThisElementForSelectingRandomlyArray[temp])
                     {
-                        bogoSortedArray[a] = intArray[temp];
+                        bogoSortedArray[a] = numberArray[temp];
                         didIUseThisElementForSelectingRandomlyArray[temp] = true;
                         a++;
                     }
                 }
 
-                for (int i = 0; i < intArray.length - 1; i++)
+                for (int i = 0; i < numberArray.length - 1; i++)
                 {
                     if (bogoSortedArray[i] > bogoSortedArray[i + 1])
                     {
@@ -64,11 +64,10 @@ public class BogoSort {
                 }
             }
 
-            return bogoSortedArray;
-        }
-        else
-        {
-            return intArray;
+            for (int i = 0; i < numberArray.length; i++)
+            {
+                numberArray[i] = bogoSortedArray[i];
+            }
         }
     }
 }

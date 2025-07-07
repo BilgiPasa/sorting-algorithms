@@ -12,13 +12,13 @@ public class BubbleSort {
         }
 
         long startTime = System.nanoTime();
-        theArray = Sort(theArray);
+        Sort(theArray);
         long endTime = System.nanoTime();
         //System.out.println(Arrays.toString(theArray)); // To see the array
         System.out.println(theArray.length + " integers sorted in " + ((endTime - startTime) / 1000000.0) + " milliseconds");
     }
 
-    static int[] Sort(int[] intArray)
+    static void Sort(int[] numberArray)
     {
         int temp;
         boolean b = false;
@@ -27,26 +27,24 @@ public class BubbleSort {
         {
             b = true;
 
-            for (int i = 0; i < intArray.length - 1; i++)
+            for (int i = 0; i < numberArray.length - 1; i++)
             {
-                if (intArray[i] > intArray[i + 1])
+                if (numberArray[i] > numberArray[i + 1])
                 {
-                    temp = intArray[i];
-                    intArray[i] = intArray[i + 1];
-                    intArray[i + 1] = temp;
+                    temp = numberArray[i];
+                    numberArray[i] = numberArray[i + 1];
+                    numberArray[i + 1] = temp;
                 }
             }
 
-            for (int i = 0; i < intArray.length - 1; i++)
+            for (int i = 0; i < numberArray.length - 1; i++)
             {
-                if (intArray[i] > intArray[i + 1])
+                if (numberArray[i] > numberArray[i + 1])
                 {
                     b = false;
                     break;
                 }
             }
         }
-
-        return intArray;
     }
 }

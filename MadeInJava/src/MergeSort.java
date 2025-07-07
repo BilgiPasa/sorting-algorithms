@@ -18,32 +18,32 @@ public class MergeSort {
         System.out.println(theArray.length + " integers sorted in " + ((endTime - startTime) / 1000000.0) + " milliseconds");
     }
 
-    static void Sort(int[] intArray)
+    static void Sort(int[] numberArray)
     {
-        if (intArray.length < 2)
+        if (numberArray.length < 2)
         {
             return;
         }
 
-        int middle = intArray.length / 2;
-        int[] leftArray = new int[middle], rightArray = new int[intArray.length - middle];
+        int middle = numberArray.length / 2;
+        int[] leftArray = new int[middle], rightArray = new int[numberArray.length - middle];
 
         for (int i = 0; i < middle; i++)
         {
-            leftArray[i] = intArray[i];
+            leftArray[i] = numberArray[i];
         }
 
-        for (int i = middle; i < intArray.length; i++)
+        for (int i = middle; i < numberArray.length; i++)
         {
-            rightArray[i - middle] = intArray[i];
+            rightArray[i - middle] = numberArray[i];
         }
 
         Sort(leftArray);
         Sort(rightArray);
-        Merge(intArray, leftArray, rightArray);
+        Merge(numberArray, leftArray, rightArray);
     }
 
-    public static void Merge(int[] intArray, int[] leftArray, int[] rightArray)
+    public static void Merge(int[] numberArray, int[] leftArray, int[] rightArray)
     {
         int i = 0, j = 0, k = 0;
 
@@ -51,22 +51,22 @@ public class MergeSort {
         {
             if (leftArray[i] > rightArray[j])
             {
-                intArray[k++] = rightArray[j++]; // This means intArray[k] = rightArray[j]; k += 1; j += 1;
+                numberArray[k++] = rightArray[j++]; // This means numberArray[k] = rightArray[j]; k += 1; j += 1;
             }
             else
             {
-                intArray[k++] = leftArray[i++]; // This means intArray[k] = leftArray[i]; k += 1; i += 1;
+                numberArray[k++] = leftArray[i++]; // This means numberArray[k] = leftArray[i]; k += 1; i += 1;
             }
         }
 
         while (i < leftArray.length)
         {
-            intArray[k++] = leftArray[i++]; // This means intArray[k] = leftArray[i]; k += 1; i += 1;
+            numberArray[k++] = leftArray[i++]; // This means numberArray[k] = leftArray[i]; k += 1; i += 1;
         }
 
         while (j < rightArray.length)
         {
-            intArray[k++] = rightArray[j++]; // This means intArray[k] = rightArray[j]; k += 1; j += 1;
+            numberArray[k++] = rightArray[j++]; // This means numberArray[k] = rightArray[j]; k += 1; j += 1;
         }
     }
 }

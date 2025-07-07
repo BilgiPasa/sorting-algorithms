@@ -16,19 +16,19 @@ class Program
         }
 
         s.Start();
-        theArray = Sort(theArray);
+        Sort(theArray);
         s.Stop();
         //Console.WriteLine("[{0}]", string.Join(", ", theArray)); // To see the array
         Console.WriteLine($"{theArray.Length} integers sorted in {s.Elapsed.TotalNanoseconds / 1000000} milliseconds");
     }
 
-    static int[] Sort(int[] intArray)
+    static void Sort(int[] numberArray)
     {
         bool b = true;
 
-        for (int i = 0; i < intArray.Length - 1; i++)
+        for (int i = 0; i < numberArray.Length - 1; i++)
         {
-            if (intArray[i] > intArray[i + 1])
+            if (numberArray[i] > numberArray[i + 1])
             {
                 b = false;
                 break;
@@ -42,11 +42,11 @@ class Program
             while (!b)
             {
                 b = true;
-                r.Shuffle(intArray);
+                r.Shuffle(numberArray);
 
-                for (int i = 0; i < intArray.Length - 1; i++)
+                for (int i = 0; i < numberArray.Length - 1; i++)
                 {
-                    if (intArray[i] > intArray[i + 1])
+                    if (numberArray[i] > numberArray[i + 1])
                     {
                         b = false;
                         break;
@@ -54,7 +54,5 @@ class Program
                 }
             }
         }
-
-        return intArray;
     }
 }
