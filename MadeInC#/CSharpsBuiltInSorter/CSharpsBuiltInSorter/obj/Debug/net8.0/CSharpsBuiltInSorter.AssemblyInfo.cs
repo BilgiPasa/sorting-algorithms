@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CSharpsBuiltInSorter")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0dd907d543c1792e17cb97292fb44d2733789479")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d325ea900c5c95c959fe3bdc6d94700a145c6f1")]
 [assembly: System.Reflection.AssemblyProductAttribute("CSharpsBuiltInSorter")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CSharpsBuiltInSorter")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

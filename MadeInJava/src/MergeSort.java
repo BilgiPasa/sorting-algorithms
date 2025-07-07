@@ -43,7 +43,7 @@ public class MergeSort {
         Merge(numberArray, leftArray, rightArray);
     }
 
-    public static void Merge(int[] numberArray, int[] leftArray, int[] rightArray)
+    static void Merge(int[] numberArray, int[] leftArray, int[] rightArray)
     {
         int i = 0, j = 0, k = 0;
 
