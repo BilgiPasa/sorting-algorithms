@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BogoSort
-build_property.ProjectDir = /home/bilgipasa/Desktop/Github/sorting-algorithms/MadeInC#/BogoSort/BogoSort/
+build_property.ProjectDir = /home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/BogoSort/BogoSort/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -11,10 +11,10 @@ public class JavasBuiltInSorter {
             theArray[i] = r.nextInt(Integer.MIN_VALUE, Integer.MAX_VALUE);
         }
 
-        long startTime = System.currentTimeMillis();
+        long startTime = System.nanoTime();
         Arrays.sort(theArray);
-        long endTime = System.currentTimeMillis();
+        long endTime = System.nanoTime();
         //System.out.println(Arrays.toString(theArray)); // To see the array
-        System.out.println(theArray.length + " integers sorted in " + (endTime - startTime) + " milliseconds");
+        System.out.println(theArray.length + " integers sorted in " + ((endTime - startTime) / 1000000.0) + " milliseconds");
     }
 }
