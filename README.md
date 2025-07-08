@@ -12,19 +12,21 @@ Implemented sorting algorithms (from fastest to slowest*): Quick Sort, Merge Sor
 
 Implemented languages (from fastest to slowest**): Java, C#, Python.
 
-*According to my tests. (I didn't include any built in sorter to the list.)
+*According to my tests. (I didn't include any language's built in sorter to the list.)
 
 **According to my tests when I use Selection Sort.
 
 -------------------------------------------------------------------------------------------------
 
-If we give an example of Selection Sort, (use backward slashes if you use Windows file manager):
+The codes' file locations:
 
-The C# code is in the MadeInC#/SelectionSort/SelectionSort/Program.cs file
+If we give an example from Selection Sort, (use backward slashes if you use Windows file manager)
 
-The Java code is in the MadeInJava/src/SelectionSort.java file
+the Java code is in the MadeInJava/src/SelectionSort.java file,
 
-The Python code is in the made_in_python/selection_sort.py file
+the C# code is in the MadeInC#/SelectionSort/SelectionSort/Program.cs file and
+
+the Python code is in the made_in_python/selection_sort.py file.
 
 -------------------------------------------------------------------------------------------------
 
