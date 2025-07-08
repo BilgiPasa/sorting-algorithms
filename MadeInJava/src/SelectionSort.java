@@ -22,20 +22,20 @@ public class SelectionSort {
     {
         int smallest, temp;
 
-        for (int a = 0; a < numberArray.length - 1; a++)
+        for (int i = 0; i < numberArray.length - 1; i++)
         {
-            smallest = a;
+            smallest = i;
 
-            for (int i = a; i < numberArray.length; i++)
+            for (int j = i; j < numberArray.length; j++)
             {
-                if (numberArray[smallest] > numberArray[i])
+                if (numberArray[smallest] > numberArray[j])
                 {
-                    smallest = i;
+                    smallest = j;
                 }
             }
 
-            temp = numberArray[a];
-            numberArray[a] = numberArray[smallest];
+            temp = numberArray[i];
+            numberArray[i] = numberArray[smallest];
             numberArray[smallest] = temp;
         }
     }

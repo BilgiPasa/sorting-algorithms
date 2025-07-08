@@ -9,15 +9,15 @@ for i in range(0, len(the_list)): # Python's integer is 64 bit. Becuz of that I 
 def sort(number_list):
     temp: int
 
-    for a in range(1, len(number_list)):
-        for i in range(0, a):
-            if number_list[a] < number_list[i]:
-                temp = number_list[a]
+    for i in range(1, len(number_list)):
+        for j in range(0, i):
+            if number_list[i] < number_list[j]:
+                temp = number_list[i]
 
-                for j in range(a, i, -1):
-                    number_list[j] = number_list[j - 1]
+                for k in range(i, j, -1):
+                    number_list[k] = number_list[k - 1]
 
-                number_list[i] = temp
+                number_list[j] = temp
 
 start_time: float = time()
 sort(the_list)

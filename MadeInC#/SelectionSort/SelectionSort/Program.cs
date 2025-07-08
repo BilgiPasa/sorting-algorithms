@@ -26,19 +26,19 @@ class Program
     {
         int smallest;
 
-        for (int a = 0; a < numberArray.Length - 1; a++)
+        for (int i = 0; i < numberArray.Length - 1; i++)
         {
-            smallest = a;
+            smallest = i;
 
-            for (int i = a; i < numberArray.Length; i++)
+            for (int j = i; j < numberArray.Length; j++)
             {
-                if (numberArray[smallest] > numberArray[i])
+                if (numberArray[smallest] > numberArray[j])
                 {
-                    smallest = i;
+                    smallest = j;
                 }
             }
 
-            (numberArray[a], numberArray[smallest]) = (numberArray[smallest], numberArray[a]);
+            (numberArray[i], numberArray[smallest]) = (numberArray[smallest], numberArray[i]); // Swapping elements
         }
     }
 }

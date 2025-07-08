@@ -8,7 +8,7 @@ This repository is focused on integer (32 bit) sorting algorithms to keep it sim
 
 I didn't copy-pasted any code from AI or websites. I wrote them myself. (But of course I get insprations from websites and videos. Also, I don't like using AI.)
 
-Implemented sorting algorithms (from fastest to slowest*): Merge Sort, Selection Sort, Insertsion Sort, Bubble Sort, Bogo Sort.
+Implemented sorting algorithms (from fastest to slowest*): Quick Sort, Merge Sort, Selection Sort, Insertsion Sort, Bubble Sort, Bogo Sort.
 
 Implemented languages (from fastest to slowest**): Java, C#, Python.
 
@@ -28,7 +28,7 @@ The Python code is in the made_in_python/selection_sort.py file
 
 -------------------------------------------------------------------------------------------------
 
-TODO: Implementing more sorting algorithms and the C implementation (when I learn C)
+TODO: Ask a friend if he can do C++ implementation in his free time, Implement more sorting algorithms, Do the C implementation (when I learn C)
 
 -------------------------------------------------------------------------------------------------
 

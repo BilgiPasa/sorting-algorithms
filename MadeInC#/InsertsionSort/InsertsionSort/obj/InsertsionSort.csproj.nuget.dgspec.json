@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/InsertsionSort/InsertsionSort/InsertsionSort.csproj": {}
+    "C:\\Users\\bilgi\\Desktop\\GitHub\\sorting-algorithms\\MadeInC#\\InsertsionSort\\InsertsionSort\\InsertsionSort.csproj": {}
   },
   "projects": {
-    "/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/InsertsionSort/InsertsionSort/InsertsionSort.csproj": {
+    "C:\\Users\\bilgi\\Desktop\\GitHub\\sorting-algorithms\\MadeInC#\\InsertsionSort\\InsertsionSort\\InsertsionSort.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/InsertsionSort/InsertsionSort/InsertsionSort.csproj",
+        "projectUniqueName": "C:\\Users\\bilgi\\Desktop\\GitHub\\sorting-algorithms\\MadeInC#\\InsertsionSort\\InsertsionSort\\InsertsionSort.csproj",
         "projectName": "InsertsionSort",
-        "projectPath": "/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/InsertsionSort/InsertsionSort/InsertsionSort.csproj",
-        "packagesPath": "/home/bilgipasa/.nuget/packages/",
-        "outputPath": "/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/InsertsionSort/InsertsionSort/obj/",
+        "projectPath": "C:\\Users\\bilgi\\Desktop\\GitHub\\sorting-algorithms\\MadeInC#\\InsertsionSort\\InsertsionSort\\InsertsionSort.csproj",
+        "packagesPath": "C:\\Users\\bilgi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bilgi\\Desktop\\GitHub\\sorting-algorithms\\MadeInC#\\InsertsionSort\\InsertsionSort\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/bilgipasa/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\bilgi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -53,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

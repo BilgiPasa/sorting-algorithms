@@ -39,18 +39,17 @@ public class BogoSort {
             while (!b)
             {
                 b = true;
-                int a = 0, temp;
+                int j = 0, temp;
                 boolean[] didIUseThisElementForSelectingRandomlyArray = new boolean[numberArray.length];
 
-                while (a < numberArray.length)
+                while (j < numberArray.length)
                 {// I couldn't find a built in primitive integer array shuffler. So, here is my shuffler.
                     temp = r.nextInt(numberArray.length);
 
                     if (!didIUseThisElementForSelectingRandomlyArray[temp])
                     {
-                        bogoSortedArray[a] = numberArray[temp];
+                        bogoSortedArray[j++] = numberArray[temp]; // This means j += 1; bogoSortedArray[j] = numberArray[temp];
                         didIUseThisElementForSelectingRandomlyArray[temp] = true;
-                        a++;
                     }
                 }
 

@@ -9,14 +9,14 @@ for i in range(0, len(the_list)): # Python's integer is 64 bit. Becuz of that I 
 def sort(number_list):
     smallest: int
 
-    for a in range(0, len(number_list) - 1):
-        smallest = a
+    for i in range(0, len(number_list) - 1):
+        smallest = i
 
-        for i in range(a, len(number_list)):
-            if number_list[smallest] > number_list[i]:
-                smallest = i
+        for j in range(i, len(number_list)):
+            if number_list[smallest] > number_list[j]:
+                smallest = j
 
-        number_list[a], number_list[smallest] = number_list[smallest], number_list[a]
+        number_list[i], number_list[smallest] = number_list[smallest], number_list[i] # Swapping elements
 
 start_time: float = time()
 sort(the_list)

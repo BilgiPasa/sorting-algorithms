@@ -22,20 +22,20 @@ public class InsertsionSort {
     {
         int temp;
 
-        for (int a = 1; a < numberArray.length; a++)
+        for (int i = 1; i < numberArray.length; i++)
         {
-            for (int i = 0; i < a; i++)
+            for (int j = 0; j < i; j++)
             {
-                if (numberArray[a] < numberArray[i])
+                if (numberArray[i] < numberArray[j])
                 {
-                    temp = numberArray[a];
+                    temp = numberArray[i];
 
-                    for (int j = a; j > i; j--)
+                    for (int k = i; k > j; k--)
                     {
-                        numberArray[j] = numberArray[j - 1];
+                        numberArray[k] = numberArray[k - 1];
                     }
 
-                    numberArray[i] = temp;
+                    numberArray[j] = temp;
                 }
             }
         }
