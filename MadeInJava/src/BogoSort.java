@@ -22,51 +22,53 @@ public class BogoSort {
     {
         boolean b = true;
 
-        for (int i = 0; i < numberArray.length - 1; i++)
+        for (int i = 1; i < numberArray.length; i++)
         {
-            if (numberArray[i] > numberArray[i + 1])
+            if (numberArray[i - 1] > numberArray[i])
             {
                 b = false;
                 break;
             }
         }
 
-        if (!b)
+        if (b)
         {
-            Random r = new Random();
-            int[] bogoSortedArray = new int[numberArray.length];
+            return;
+        }
 
-            while (!b)
-            {
-                b = true;
-                int j = 0, temp;
-                boolean[] didIUseThisElementForSelectingRandomlyArray = new boolean[numberArray.length];
+        Random r = new Random();
+        int[] bogoSortedArray = new int[numberArray.length];
 
-                while (j < numberArray.length)
-                {// I couldn't find a built in primitive integer array shuffler. So, here is my shuffler.
-                    temp = r.nextInt(numberArray.length);
+        while (!b)
+        {
+            b = true;
+            int j = 0, temp;
+            boolean[] didIUseThisElementForSelectingRandomlyArray = new boolean[numberArray.length];
 
-                    if (!didIUseThisElementForSelectingRandomlyArray[temp])
-                    {
-                        bogoSortedArray[j++] = numberArray[temp]; // This means j += 1; bogoSortedArray[j] = numberArray[temp];
-                        didIUseThisElementForSelectingRandomlyArray[temp] = true;
-                    }
-                }
+            while (j < numberArray.length)
+            {// I couldn't find a built in primitive integer array shuffler. So, here is my shuffler.
+                temp = r.nextInt(numberArray.length);
 
-                for (int i = 0; i < numberArray.length - 1; i++)
+                if (!didIUseThisElementForSelectingRandomlyArray[temp])
                 {
-                    if (bogoSortedArray[i] > bogoSortedArray[i + 1])
-                    {
-                        b = false;
-                        break;
-                    }
+                    bogoSortedArray[j++] = numberArray[temp]; // This means j += 1; bogoSortedArray[j] = numberArray[temp];
+                    didIUseThisElementForSelectingRandomlyArray[temp] = true;
                 }
             }
 
-            for (int i = 0; i < numberArray.length; i++)
+            for (int i = 1; i < numberArray.length; i++)
             {
-                numberArray[i] = bogoSortedArray[i];
+                if (bogoSortedArray[i - 1] > bogoSortedArray[i])
+                {
+                    b = false;
+                    break;
+                }
             }
+        }
+
+        for (int i = 0; i < numberArray.length; i++)
+        {
+            numberArray[i] = bogoSortedArray[i];
         }
     }
 }

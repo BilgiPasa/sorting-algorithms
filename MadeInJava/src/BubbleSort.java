@@ -27,19 +27,19 @@ public class BubbleSort {
         {
             b = true;
 
-            for (int i = 0; i < numberArray.length - 1; i++)
+            for (int i = 1; i < numberArray.length; i++)
             {
-                if (numberArray[i] > numberArray[i + 1])
+                if (numberArray[i - 1] > numberArray[i])
                 {
-                    temp = numberArray[i];
-                    numberArray[i] = numberArray[i + 1];
-                    numberArray[i + 1] = temp;
+                    temp = numberArray[i - 1];
+                    numberArray[i - 1] = numberArray[i];
+                    numberArray[i] = temp;
                 }
             }
 
-            for (int i = 0; i < numberArray.length - 1; i++)
+            for (int i = 1; i < numberArray.length; i++)
             {
-                if (numberArray[i] > numberArray[i + 1])
+                if (numberArray[i - 1] > numberArray[i])
                 {
                     b = false;
                     break;

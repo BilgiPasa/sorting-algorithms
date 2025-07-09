@@ -26,31 +26,33 @@ class Program
     {
         bool b = true;
 
-        for (int i = 0; i < numberArray.Length - 1; i++)
+        for (int i = 1; i < numberArray.Length; i++)
         {
-            if (numberArray[i] > numberArray[i + 1])
+            if (numberArray[i - 1] > numberArray[i])
             {
                 b = false;
                 break;
             }
         }
 
-        if (!b)
+        if (b)
         {
-            Random r = new Random();
+            return;
+        }
 
-            while (!b)
+        Random r = new Random();
+
+        while (!b)
+        {
+            b = true;
+            r.Shuffle(numberArray);
+
+            for (int i = 1; i < numberArray.Length; i++)
             {
-                b = true;
-                r.Shuffle(numberArray);
-
-                for (int i = 0; i < numberArray.Length - 1; i++)
+                if (numberArray[i - 1] > numberArray[i])
                 {
-                    if (numberArray[i] > numberArray[i + 1])
-                    {
-                        b = false;
-                        break;
-                    }
+                    b = false;
+                    break;
                 }
             }
         }

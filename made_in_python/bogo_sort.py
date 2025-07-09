@@ -10,8 +10,8 @@ for i in range(0, len(the_list)): # Python's integer is 64 bit. Becuz of that I 
 def sort(number_list):
     b: bool = True
 
-    for i in range(0, len(number_list) - 1):
-        if number_list[i] > number_list[i + 1]:
+    for i in range(1, len(number_list)):
+        if number_list[i - 1] > number_list[i]:
             b = False
             break
 
@@ -19,8 +19,8 @@ def sort(number_list):
         b = True
         shuffle(number_list)
 
-        for i in range(0, len(number_list) - 1):
-            if number_list[i] > number_list[i + 1]:
+        for i in range(1, len(number_list)):
+            if number_list[i - 1] > number_list[i]:
                 b = False
                 break
 

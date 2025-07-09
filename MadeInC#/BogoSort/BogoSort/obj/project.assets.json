@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\bilgi\\.nuget\\packages\\": {}
+    "/home/bilgipasa/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bilgi\\Desktop\\GitHub\\sorting-algorithms\\MadeInC#\\BogoSort\\BogoSort\\BogoSort.csproj",
+      "projectUniqueName": "/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/BogoSort/BogoSort/BogoSort.csproj",
       "projectName": "BogoSort",
-      "projectPath": "C:\\Users\\bilgi\\Desktop\\GitHub\\sorting-algorithms\\MadeInC#\\BogoSort\\BogoSort\\BogoSort.csproj",
-      "packagesPath": "C:\\Users\\bilgi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bilgi\\Desktop\\GitHub\\sorting-algorithms\\MadeInC#\\BogoSort\\BogoSort\\obj\\",
+      "projectPath": "/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/BogoSort/BogoSort/BogoSort.csproj",
+      "packagesPath": "/home/bilgipasa/.nuget/packages/",
+      "outputPath": "/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/BogoSort/BogoSort/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\bilgi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/bilgipasa/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -38,11 +38,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -64,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

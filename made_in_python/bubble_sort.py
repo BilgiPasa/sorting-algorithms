@@ -12,12 +12,12 @@ def sort(number_list):
     while not b:
         b = True
 
-        for i in range(0, len(number_list) - 1):
-            if number_list[i] > number_list[i + 1]:
-                number_list[i], number_list[i + 1] = number_list[i + 1], number_list[i] # Swapping elements
+        for i in range(1, len(number_list)):
+            if number_list[i - 1] > number_list[i]:
+                number_list[i - 1], number_list[i] = number_list[i], number_list[i - 1] # Swapping elements
 
-        for i in range(0, len(number_list) - 1):
-            if number_list[i] > number_list[i + 1]:
+        for i in range(1, len(number_list)):
+            if number_list[i - 1] > number_list[i]:
                 b = False
                 break
 

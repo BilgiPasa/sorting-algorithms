@@ -30,17 +30,17 @@ class Program
         {
             b = true;
 
-            for (int i = 0; i < numberArray.Length - 1; i++)
+            for (int i = 1; i < numberArray.Length; i++)
             {
-                if (numberArray[i] > numberArray[i + 1])
+                if (numberArray[i - 1] > numberArray[i])
                 {
-                    (numberArray[i], numberArray[i + 1]) = (numberArray[i + 1], numberArray[i]); // Swapping elements
+                    (numberArray[i - 1], numberArray[i]) = (numberArray[i], numberArray[i - 1]); // Swapping elements
                 }
             }
 
-            for (int i = 0; i < numberArray.Length - 1; i++)
+            for (int i = 1; i < numberArray.Length; i++)
             {
-                if (numberArray[i] > numberArray[i + 1])
+                if (numberArray[i - 1] > numberArray[i])
                 {
                     b = false;
                     break;
