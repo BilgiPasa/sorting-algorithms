@@ -2,11 +2,7 @@
 
 These are sorting algorithms in different programming languages.
 
-You can analyze the code but please don't use this repository for cheating.
-
 This repository is focused on integer (32 bit) sorting algorithms to keep it simple.
-
-I didn't copy-pasted any code from AI or websites. I wrote them myself. (But of course I get insprations from websites and videos. Also, I don't like using AI.)
 
 Implemented sorting algorithms (from fastest to slowest*): Quick Sort, Merge Sort, Selection Sort, Insertsion Sort, Bubble Sort, Bogo Sort.
 
@@ -15,6 +11,10 @@ Implemented languages (from fastest to slowest**): Java, C#, Python.
 *According to my tests. (I didn't include any language's built in sorter to the list.)
 
 **According to my tests when I use Selection Sort.
+
+You can analyze the code but please don't use this repository for cheating.
+
+I didn't copy-pasted any code from AI or websites. I wrote them myself. (But of course I get insprations from websites and videos. Also, I don't like using AI.)
 
 -------------------------------------------------------------------------------------------------
 
