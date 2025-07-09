@@ -4,7 +4,7 @@ import java.util.Arrays;
 public class JavasBuiltInSorter {
     public static void main(String[] args) {
         Random r = new Random();
-        int[] theArray = new int[10000];
+        int[] theArray = new int[120000];
 
         for (int i = 0; i < theArray.length; i++)
         {// I know that just using r.nextInt() includes Integer.MAX_VALUE. Becuz of that I made it like this.

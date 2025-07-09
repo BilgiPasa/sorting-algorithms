@@ -8,7 +8,7 @@ Implemented sorting algorithms (from fastest to slowest*): Quick Sort, Merge Sor
 
 Implemented languages (from fastest to slowest**): Java, C#, Python.
 
-*According to my tests. (I didn't include any language's built in sorter to the list.)
+*According to my tests. (I use VS Code and I didn't compare and language's built in sorter in this list.)
 
 **According to my tests when I use Selection Sort.
 
@@ -30,7 +30,7 @@ the Python code is in the made_in_python/selection_sort.py file.
 
 -------------------------------------------------------------------------------------------------
 
-TODO: Ask a friend if he can do C++ implementation in his free time, Implement more sorting algorithms, Do the C implementation (when I learn C)
+TODO: Implement more sorting algorithms, Do the C implementation (when I learn C)
 
 -------------------------------------------------------------------------------------------------
 

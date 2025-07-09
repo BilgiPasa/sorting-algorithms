@@ -4,7 +4,7 @@ import java.util.Random;
 public class QuickSort {
     public static void main(String[] args) {
         Random r = new Random();
-        int[] theArray = new int[10000];
+        int[] theArray = new int[120000];
 
         for (int i = 0; i < theArray.length; i++)
         {// I know that just using r.nextInt() includes Integer.MAX_VALUE. Becuz of that I made it like this.
@@ -38,13 +38,13 @@ public class QuickSort {
         {
             if (numberArray[j] < numberArray[end])
             {
-                temp = numberArray[++i];
+                temp = numberArray[++i]; // This means i += 1; temp = numberArray[i];
                 numberArray[i] = numberArray[j];
                 numberArray[j] = temp;
             }
         }
 
-        temp = numberArray[++i];
+        temp = numberArray[++i]; // This means i += 1; temp = numberArray[i];
         numberArray[i] = numberArray[end];
         numberArray[end] = temp;
         return i;
