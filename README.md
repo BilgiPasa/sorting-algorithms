@@ -2,7 +2,7 @@
 
 These are sorting algorithms in different programming languages.
 
-You can analyze the code and try to understand how these sorting algorithms work (or search up "how x sorting algorithm work" in Google). But you are prohibited to use this repository as a cheating device.
+You can analyze the code but please don't use this repository for cheating.
 
 This repository is focused on integer (32 bit) sorting algorithms to keep it simple.
 
