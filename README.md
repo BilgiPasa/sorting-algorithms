@@ -8,9 +8,9 @@ Implemented sorting algorithms (from fastest to slowest*): Quick Sort, Merge Sor
 
 Implemented languages (from fastest to slowest**): Java, C#, Python.
 
-*According to my tests. (I use VS Code and I didn't compare any language's built in sorter in this list.)
+*According to my tests. (I didn't compare any language's built in sorter in this list.)
 
-**According to my tests when I use Selection Sort.
+**According to my tests when I use Selection Sort. (I used VS Code for testing.)
 
 You can analyze the code but please don't use this repository for cheating.
 
