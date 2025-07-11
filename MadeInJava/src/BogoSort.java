@@ -51,7 +51,7 @@ public class BogoSort {
 
                 if (!didIUseThisElementForSelectingRandomlyArray[temp])
                 {
-                    bogoSortedArray[j++] = numberArray[temp]; // This means j += 1; bogoSortedArray[j] = numberArray[temp];
+                    bogoSortedArray[j++] = numberArray[temp]; // This means bogoSortedArray[j] = numberArray[temp]; j += 1;
                     didIUseThisElementForSelectingRandomlyArray[temp] = true;
                 }
             }
