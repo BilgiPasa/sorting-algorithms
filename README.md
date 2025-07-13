@@ -30,8 +30,6 @@ the Python code is in the made_in_python/selection_sort.py file.
 
 -------------------------------------------------------------------------------------------------
 
-TODO: Implement more sorting algorithms, Do the C implementation (when I learn C)
-
 I didn't implemented the Pigeonhole Sort algorithm because the maximum array size is limiting the algorithm when I use random values from -2^31 to 2^31 - 1 (both ends included).
 
 I didn't implemented the Bucket Sort algorithm because I wanted to use just arrays and not arraylists or linked lists.
