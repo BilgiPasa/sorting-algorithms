@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("SelectionSort")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("RadixSort")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c0e319f7883e925b020d43d15212da803453da1b")]
-[assembly: System.Reflection.AssemblyProductAttribute("SelectionSort")]
-[assembly: System.Reflection.AssemblyTitleAttribute("SelectionSort")]
+[assembly: System.Reflection.AssemblyProductAttribute("RadixSort")]
+[assembly: System.Reflection.AssemblyTitleAttribute("RadixSort")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // MSBuild WriteCodeFragment sınıfı tarafından oluşturuldu.
