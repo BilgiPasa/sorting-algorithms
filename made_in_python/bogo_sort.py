@@ -8,6 +8,7 @@ for i in range(0, len(the_list)): # Python's integer is 64 bit. Becuz of that I 
     the_list[i] = randint(-2147483648, 2147483647 - 1) # -1 becuz the endpoint is included
 
 def sort(number_list):
+    i: int
     b: bool = True
 
     for i in range(1, len(number_list)):

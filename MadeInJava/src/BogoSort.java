@@ -20,9 +20,10 @@ public class BogoSort {
 
     static void Sort(int[] numberArray)
     {
+        int i;
         boolean b = true;
 
-        for (int i = 1; i < numberArray.length; i++)
+        for (i = 1; i < numberArray.length; i++)
         {
             if (numberArray[i - 1] > numberArray[i])
             {
@@ -56,7 +57,7 @@ public class BogoSort {
                 }
             }
 
-            for (int i = 1; i < numberArray.length; i++)
+            for (i = 1; i < numberArray.length; i++)
             {
                 if (bogoSortedArray[i - 1] > bogoSortedArray[i])
                 {
@@ -66,7 +67,7 @@ public class BogoSort {
             }
         }
 
-        for (int i = 0; i < numberArray.length; i++)
+        for (i = 0; i < numberArray.length; i++)
         {
             numberArray[i] = bogoSortedArray[i];
         }

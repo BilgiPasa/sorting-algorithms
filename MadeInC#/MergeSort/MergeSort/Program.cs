@@ -29,15 +29,15 @@ class Program
             return;
         }
 
-        int middle = numberArray.Length / 2;
+        int middle = numberArray.Length / 2, i;
         int[] leftArray = new int[middle], rightArray = new int[numberArray.Length - middle];
 
-        for (int i = 0; i < middle; i++)
+        for (i = 0; i < middle; i++)
         {
             leftArray[i] = numberArray[i];
         }
 
-        for (int i = middle; i < numberArray.Length; i++)
+        for (i = middle; i < numberArray.Length; i++)
         {
             rightArray[i - middle] = numberArray[i];
         }

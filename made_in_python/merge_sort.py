@@ -36,14 +36,15 @@ def sort(number_list):
         return
 
     middle: int = len(number_list) // 2
+    i: int
     left_list = [0] * middle
     right_list = [0] * (len(number_list) - middle)
 
     for i in range(0, middle):
         left_list[i] = number_list[i]
 
-    for a in range(middle, len(number_list)):
-        right_list[a - middle] = number_list[a]
+    for i in range(middle, len(number_list)):
+        right_list[i - middle] = number_list[i]
 
     sort(left_list)
     sort(right_list)

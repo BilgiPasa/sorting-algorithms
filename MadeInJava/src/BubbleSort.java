@@ -20,14 +20,14 @@ public class BubbleSort {
 
     static void Sort(int[] numberArray)
     {
-        int temp;
+        int i, temp;
         boolean b = false;
 
         while (!b)
         {
             b = true;
 
-            for (int i = 1; i < numberArray.length; i++)
+            for (i = 1; i < numberArray.length; i++)
             {
                 if (numberArray[i - 1] > numberArray[i])
                 {
@@ -37,7 +37,7 @@ public class BubbleSort {
                 }
             }
 
-            for (int i = 1; i < numberArray.length; i++)
+            for (i = 1; i < numberArray.length; i++)
             {
                 if (numberArray[i - 1] > numberArray[i])
                 {

@@ -25,15 +25,15 @@ public class MergeSort {
             return;
         }
 
-        int middle = numberArray.length / 2;
+        int middle = numberArray.length / 2, i;
         int[] leftArray = new int[middle], rightArray = new int[numberArray.length - middle];
 
-        for (int i = 0; i < middle; i++)
+        for (i = 0; i < middle; i++)
         {
             leftArray[i] = numberArray[i];
         }
 
-        for (int i = middle; i < numberArray.length; i++)
+        for (i = middle; i < numberArray.length; i++)
         {
             rightArray[i - middle] = numberArray[i];
         }

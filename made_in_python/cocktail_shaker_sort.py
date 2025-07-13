@@ -9,6 +9,7 @@ for i in range(0, len(the_list)): # Python's integer is 64 bit. Becuz of that I 
 def sort(number_list):
     left: int = 0
     right: int = len(number_list) - 1
+    i: int
 
     while right - left > 1:
         for i in range(left, right):
