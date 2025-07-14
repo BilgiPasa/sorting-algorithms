@@ -3,7 +3,7 @@ from time import time
 
 the_list = [0] * 120000
 
-for i in range(0, len(the_list)): # Python's integer is 64 bit. Becuz of that I made the randomizer like this.
+for i in range(len(the_list)): # Python's integer is 64 bit. Becuz of that I made the randomizer like this.
     the_list[i] = randint(-2147483648, 2147483647 - 1) # -1 becuz the endpoint is included
 
 def merge(number_list, left_list, right_list):
@@ -40,7 +40,7 @@ def sort(number_list):
     left_list = [0] * middle
     right_list = [0] * (len(number_list) - middle)
 
-    for i in range(0, middle):
+    for i in range(middle):
         left_list[i] = number_list[i]
 
     for i in range(middle, len(number_list)):

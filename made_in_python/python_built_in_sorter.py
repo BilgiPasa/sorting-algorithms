@@ -3,7 +3,7 @@ from time import time
 
 the_list = [0] * 120000
 
-for i in range(0, len(the_list)): # Python's integer is 64 bit. Becuz of that I made the randomizer like this.
+for i in range(len(the_list)): # Python's integer is 64 bit. Becuz of that I made the randomizer like this.
     the_list[i] = randint(-2147483648, 2147483647 - 1) # -1 becuz the endpoint is included
 
 start_time: float = time()
