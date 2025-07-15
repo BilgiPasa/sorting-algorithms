@@ -29,12 +29,12 @@ class Program
             return;
         }
 
-        int pivot = PivotAssignerAndElementShifter(numberArray, start, end);
+        int pivot = MoveElementsAndReturnPivot(numberArray, start, end);
         Sort(numberArray, start, pivot - 1);
         Sort(numberArray, pivot + 1, end);
     }
 
-    static int PivotAssignerAndElementShifter(int[] numberArray, int start, int end)
+    static int MoveElementsAndReturnPivot(int[] numberArray, int start, int end)
     {
         int i = start - 1;
 

@@ -6,7 +6,7 @@ the_list = [0] * 120000
 for i in range(len(the_list)): # Python's integer is 64 bit. Becuz of that I made the randomizer like this.
     the_list[i] = randint(-2147483648, 2147483647 - 1) # -1 becuz the endpoint is included
 
-def pivot_assigner_and_element_shifter(number_list, start: int, end: int):
+def move_elements_and_return_pivot(number_list, start: int, end: int):
     i: int = start - 1
 
     for j in range(start, end): # Initial pivot is the last element of the array
@@ -23,7 +23,7 @@ def sort(number_list, start: int, end: int):
     if start >= end:
         return
 
-    pivot: int = pivot_assigner_and_element_shifter(number_list, start, end)
+    pivot: int = move_elements_and_return_pivot(number_list, start, end)
     sort(number_list, start, pivot - 1)
     sort(number_list, pivot + 1, end)
 
