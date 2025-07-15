@@ -24,11 +24,11 @@ class Program
 
     static void Sort(int[] numberArray)
     {
-        int left = 0, right = numberArray.Length - 1, i;
+        int start = 0, end = numberArray.Length - 1, i;
 
-        while (right - left > 1)
+        while (end - start > 1)
         {
-            for (i = left; i < right; i++)
+            for (i = start; i < end; i++)
             {
                 if (numberArray[i] > numberArray[i + 1])
                 {
@@ -36,9 +36,9 @@ class Program
                 }
             }
 
-            right--;
+            end--;
 
-            for (i = right; i > left; i--)
+            for (i = end; i > start; i--)
             {
                 if (numberArray[i - 1] > numberArray[i])
                 {
@@ -46,7 +46,7 @@ class Program
                 }
             }
 
-            left++;
+            start++;
         }
     }
 }

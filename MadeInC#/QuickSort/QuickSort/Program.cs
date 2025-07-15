@@ -24,22 +24,23 @@ class Program
 
     static void Sort(int[] numberArray, int start, int end)
     {
-        if (end <= start)
+        if (start >= end)
         {
             return;
         }
 
-        int pivot = Partition(numberArray, start, end);
+        int pivot = PivotAssignerAndElementShifter(numberArray, start, end);
         Sort(numberArray, start, pivot - 1);
         Sort(numberArray, pivot + 1, end);
     }
 
-    static int Partition(int[] numberArray, int start, int end)
+    static int PivotAssignerAndElementShifter(int[] numberArray, int start, int end)
     {
         int i = start - 1;
 
         for (int j = start; j < end; j++)
-        {
+        {// Initial pivot is the last element of the array
+            // Moving elements that is smaller than our pivot to the left.
             if (numberArray[j] < numberArray[end])
             {
                 (numberArray[++i], numberArray[j]) = (numberArray[j], numberArray[i]); // This means i += 1; int temp = numberArray[i]; numberArray[i] = numberArray[j]; numberArray[j] = temp;
@@ -47,6 +48,6 @@ class Program
         }
 
         (numberArray[++i], numberArray[end]) = (numberArray[end], numberArray[i]); // This means i += 1; int temp = numberArray[i]; numberArray[i] = numberArray[end]; numberArray[end] = temp;
-        return i;
+        return i; // Swapped the initial pivot with our new pivot and returned the new pivot
     }
 }

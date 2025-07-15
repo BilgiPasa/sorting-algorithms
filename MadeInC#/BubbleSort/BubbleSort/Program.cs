@@ -39,7 +39,7 @@ class Program
                 }
             }
 
-            for (i = 1; i < numberArray.Length; i++)
+            for (i = 1; i < numberArray.Length; i++) // Cheking if the array is sorted
             {
                 if (numberArray[i - 1] > numberArray[i])
                 {

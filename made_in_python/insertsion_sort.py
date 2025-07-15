@@ -10,7 +10,7 @@ def sort(number_list):
     temp: int
 
     for i in range(1, len(number_list)):
-        for j in range(i):
+        for j in range(i - 1, -1, -1): # j starts with i - 1 and ends with 0 (included) while going back 1 step
             if number_list[i] < number_list[j]:
                 temp = number_list[i]
 

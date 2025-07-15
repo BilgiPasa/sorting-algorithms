@@ -20,11 +20,11 @@ public class CocktailShakerSort {
 
     static void Sort(int[] numberArray)
     {
-        int left = 0, right = numberArray.length - 1, i, temp;
+        int start = 0, end = numberArray.length - 1, i, temp;
 
-        while (right - left > 1)
+        while (end - start > 1)
         {
-            for (i = left; i < right; i++)
+            for (i = start; i < end; i++)
             {
                 if (numberArray[i] > numberArray[i + 1])
                 {
@@ -34,9 +34,9 @@ public class CocktailShakerSort {
                 }
             }
 
-            right--;
+            end--;
 
-            for (i = right; i > left; i--)
+            for (i = end; i > start; i--)
             {
                 if (numberArray[i - 1] > numberArray[i])
                 {
@@ -46,7 +46,7 @@ public class CocktailShakerSort {
                 }
             }
 
-            left++;
+            start++;
         }
     }
 }

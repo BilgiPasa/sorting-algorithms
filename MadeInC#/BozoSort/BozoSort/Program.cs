@@ -27,7 +27,7 @@ class Program
         int i;
         bool b = true;
 
-        for (i = 1; i < numberArray.Length; i++)
+        for (i = 1; i < numberArray.Length; i++) // Cheking if the array is sorted
         {
             if (numberArray[i - 1] > numberArray[i])
             {
@@ -57,7 +57,7 @@ class Program
 
             (numberArray[index1], numberArray[index2]) = (numberArray[index2], numberArray[index1]); // Swapping elements
 
-            for (i = 1; i < numberArray.Length; i++)
+            for (i = 1; i < numberArray.Length; i++) // Cheking if the array is sorted
             {
                 if (numberArray[i - 1] > numberArray[i])
                 {

@@ -17,7 +17,7 @@ def sort(number_list):
             if number_list[i - 1] > number_list[i]:
                 number_list[i - 1], number_list[i] = number_list[i], number_list[i - 1] # Swapping elements
 
-        for i in range(1, len(number_list)):
+        for i in range(1, len(number_list)): # Cheking if the array is sorted
             if number_list[i - 1] > number_list[i]:
                 b = False
                 break

@@ -27,7 +27,7 @@ class Program
         int i;
         bool b = true;
 
-        for (i = 1; i < numberArray.Length; i++)
+        for (i = 1; i < numberArray.Length; i++) // Cheking if the array is sorted
         {
             if (numberArray[i - 1] > numberArray[i])
             {
@@ -48,7 +48,7 @@ class Program
             b = true;
             r.Shuffle(numberArray);
 
-            for (i = 1; i < numberArray.Length; i++)
+            for (i = 1; i < numberArray.Length; i++) // Cheking if the array is sorted
             {
                 if (numberArray[i - 1] > numberArray[i])
                 {

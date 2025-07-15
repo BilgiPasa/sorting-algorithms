@@ -37,7 +37,7 @@ public class BubbleSort {
                 }
             }
 
-            for (i = 1; i < numberArray.length; i++)
+            for (i = 1; i < numberArray.length; i++) // Cheking if the array is sorted
             {
                 if (numberArray[i - 1] > numberArray[i])
                 {

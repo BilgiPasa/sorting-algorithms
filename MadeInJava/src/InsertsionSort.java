@@ -24,13 +24,13 @@ public class InsertsionSort {
 
         for (int i = 1; i < numberArray.length; i++)
         {
-            for (int j = 0; j < i; j++)
+            for (int j = i - 1; j >= 0; j--)
             {
                 if (numberArray[i] < numberArray[j])
                 {
                     temp = numberArray[i];
 
-                    for (int k = i; k > j; k--)
+                    for (int k = i; k > j; k--) // Shifting the elements 1 to the left
                     {
                         numberArray[k] = numberArray[k - 1];
                     }

@@ -23,7 +23,7 @@ public class BozoSort {
         int i;
         boolean b = true;
 
-        for (i = 1; i < numberArray.length; i++)
+        for (i = 1; i < numberArray.length; i++) // Cheking if the array is sorted
         {
             if (numberArray[i - 1] > numberArray[i])
             {
@@ -55,7 +55,7 @@ public class BozoSort {
             numberArray[index1] = numberArray[index2];
             numberArray[index2] = temp;
 
-            for (i = 1; i < numberArray.length; i++)
+            for (i = 1; i < numberArray.length; i++) // Cheking if the array is sorted
             {
                 if (numberArray[i - 1] > numberArray[i])
                 {

@@ -22,15 +22,15 @@ public class ShellSort {
     {
         int temp, j;
 
-        for (int gap = numberArray.length / 2; gap > 0; gap /= 2)
+        for (int interval = numberArray.length / 2; interval > 0; interval /= 2)
         {
-            for (int i = gap; i < numberArray.length; i++)
+            for (int i = interval; i < numberArray.length; i++)
             {
                 temp = numberArray[i];
 
-                for (j = i; j >= gap && numberArray[j - gap] > temp; j -= gap)
+                for (j = i; j >= interval && numberArray[j - interval] > temp; j -= interval)
                 {
-                    numberArray[j] = numberArray[j - gap];
+                    numberArray[j] = numberArray[j - interval];
                 }
 
                 numberArray[j] = temp;

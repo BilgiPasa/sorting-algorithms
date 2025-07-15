@@ -7,22 +7,22 @@ for i in range(len(the_list)): # Python's integer is 64 bit. Becuz of that I mad
     the_list[i] = randint(-2147483648, 2147483647 - 1) # -1 becuz the endpoint is included
 
 def sort(number_list):
-    left: int = 0
-    right: int = len(number_list) - 1
+    start: int = 0
+    end: int = len(number_list) - 1
     i: int
 
-    while right - left > 1:
-        for i in range(left, right):
+    while end - start > 1:
+        for i in range(start, end):
             if number_list[i] > number_list[i + 1]:
                 number_list[i], number_list[i + 1] = number_list[i + 1], number_list[i]
 
-        right -= 1
+        end -= 1
 
-        for i in range(right, left, -1):
+        for i in range(end, start, -1):
             if number_list[i - 1] > number_list[i]:
                 number_list[i - 1], number_list[i] = number_list[i], number_list[i - 1]
 
-        left += 1
+        start += 1
 
 start_time: float = time()
 sort(the_list)
