@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("MergeSort")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("SootageSort")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d4707ce5a6eda027ed3f783ce7c21a1fec1b2911")]
-[assembly: System.Reflection.AssemblyProductAttribute("MergeSort")]
-[assembly: System.Reflection.AssemblyTitleAttribute("MergeSort")]
+[assembly: System.Reflection.AssemblyProductAttribute("SootageSort")]
+[assembly: System.Reflection.AssemblyTitleAttribute("SootageSort")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // MSBuild WriteCodeFragment sınıfı tarafından oluşturuldu.
