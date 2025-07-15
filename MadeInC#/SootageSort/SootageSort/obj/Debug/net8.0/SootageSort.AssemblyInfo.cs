@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SootageSort")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32c1925201e5422e9dd4d63d3e3d4d143d0ce70a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+907bb0355734a20622d9515bfd9ee2ca39369536")]
 [assembly: System.Reflection.AssemblyProductAttribute("SootageSort")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SootageSort")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

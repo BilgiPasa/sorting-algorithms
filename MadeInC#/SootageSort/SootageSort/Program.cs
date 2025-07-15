@@ -10,10 +10,10 @@ class Program
         Random r = new Random();
         Stopwatch s = new Stopwatch();
 
-        /*for (int i = 0; i < theArray.Length; i++)
+        for (int i = 0; i < theArray.Length; i++)
         {
             theArray[i] = r.Next(int.MinValue, int.MaxValue);
-        }*/
+        }
 
         s.Start();
         Sort(theArray, 0, theArray.Length - 1);
@@ -34,12 +34,12 @@ class Program
             (numberArray[start], numberArray[end]) = (numberArray[end], numberArray[start]); // Swapping elements
         }
 
-        if (end - start > 1)
+        if (end - start > 1) // This means if (array size > 2)
         {
-            int temp = (end - start + 1) / 3;
-            Sort(numberArray, start, end - temp);
-            Sort(numberArray, start + temp, end);
-            Sort(numberArray, start, end - temp);
+            int oneThird = (end - start + 1) / 3;
+            Sort(numberArray, start, end - oneThird);
+            Sort(numberArray, start + oneThird, end);
+            Sort(numberArray, start, end - oneThird);
         }
     }
 }
