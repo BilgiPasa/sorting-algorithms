@@ -6,9 +6,9 @@ class Program
 {
     static void Main(string[] args)
     {
+        int[] theArray = new int[12]; // 12 is enough to show how much Bogo Sort is bad at sorting.
         Random r = new Random();
         Stopwatch s = new Stopwatch();
-        int[] theArray = new int[12]; // 12 is enough to show how much BogoSort is bad at sorting.
 
         for (int i = 0; i < theArray.Length; i++)
         {

@@ -3,12 +3,12 @@ import java.util.Random;
 
 public class BogoSort {
     public static void main(String[] args) {
+        int[] theArray = new int[12]; // 12 is enough to show how much Bogo Sort is bad at sorting.
         Random r = new Random();
-        int[] theArray = new int[12]; // 12 is enough to show how much BogoSort is bad at sorting.
 
         for (int i = 0; i < theArray.length; i++)
-        {// I know that just using r.nextInt() includes Integer.MAX_VALUE. Becuz of that I made it like this.
-            theArray[i] = r.nextInt(Integer.MIN_VALUE, Integer.MAX_VALUE);
+        {
+            theArray[i] = r.nextInt();
         }
 
         long startTime = System.nanoTime();
@@ -37,13 +37,14 @@ public class BogoSort {
             return;
         }
 
-        Random r = new Random();
         int[] bogoSortedArray = new int[numberArray.length];
+        int j, temp;
+        Random r = new Random();
 
         while (!b)
         {
+            j = 0;
             b = true;
-            int j = 0, temp;
             boolean[] didIUseThisElementForSelectingRandomlyArray = new boolean[numberArray.length];
 
             while (j < numberArray.length)

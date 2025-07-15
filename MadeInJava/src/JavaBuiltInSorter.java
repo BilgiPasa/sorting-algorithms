@@ -3,12 +3,12 @@ import java.util.Arrays;
 
 public class JavaBuiltInSorter {
     public static void main(String[] args) {
-        Random r = new Random();
         int[] theArray = new int[120000];
+        Random r = new Random();
 
         for (int i = 0; i < theArray.length; i++)
-        {// I know that just using r.nextInt() includes Integer.MAX_VALUE. Becuz of that I made it like this.
-            theArray[i] = r.nextInt(Integer.MIN_VALUE, Integer.MAX_VALUE);
+        {
+            theArray[i] = r.nextInt();
         }
 
         long startTime = System.nanoTime();

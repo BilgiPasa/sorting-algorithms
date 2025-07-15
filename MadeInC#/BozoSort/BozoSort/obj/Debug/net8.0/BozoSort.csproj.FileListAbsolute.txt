@@ -1,0 +1,15 @@
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/BozoSort/BozoSort/bin/Debug/net8.0/BozoSort
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/BozoSort/BozoSort/bin/Debug/net8.0/BozoSort.deps.json
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/BozoSort/BozoSort/bin/Debug/net8.0/BozoSort.runtimeconfig.json
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/BozoSort/BozoSort/bin/Debug/net8.0/BozoSort.dll
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/BozoSort/BozoSort/bin/Debug/net8.0/BozoSort.pdb
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/BozoSort/BozoSort/obj/Debug/net8.0/BozoSort.GeneratedMSBuildEditorConfig.editorconfig
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/BozoSort/BozoSort/obj/Debug/net8.0/BozoSort.AssemblyInfoInputs.cache
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/BozoSort/BozoSort/obj/Debug/net8.0/BozoSort.AssemblyInfo.cs
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/BozoSort/BozoSort/obj/Debug/net8.0/BozoSort.csproj.CoreCompileInputs.cache
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/BozoSort/BozoSort/obj/Debug/net8.0/BozoSort.sourcelink.json
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/BozoSort/BozoSort/obj/Debug/net8.0/BozoSort.dll
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/BozoSort/BozoSort/obj/Debug/net8.0/refint/BozoSort.dll
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/BozoSort/BozoSort/obj/Debug/net8.0/BozoSort.pdb
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/BozoSort/BozoSort/obj/Debug/net8.0/BozoSort.genruntimeconfig.cache
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/BozoSort/BozoSort/obj/Debug/net8.0/ref/BozoSort.dll

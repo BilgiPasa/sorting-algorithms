@@ -2,7 +2,7 @@ from random import randint
 from time import time
 from random import shuffle
 
-the_list = [0] * 12 # 12 is enough to show how much BogoSort is bad at sorting.
+the_list = [0] * 12 # 12 is enough to show how much Bogo Sort is bad at sorting.
 
 for i in range(len(the_list)): # Python's integer is 64 bit. Becuz of that I made the randomizer like this.
     the_list[i] = randint(-2147483648, 2147483647 - 1) # -1 becuz the endpoint is included
