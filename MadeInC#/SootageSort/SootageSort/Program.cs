@@ -29,17 +29,17 @@ class Program
             return;
         }
 
-        if (numberArray[start] > numberArray[end]) // If first element is bigger than the last
+        if (numberArray[start] > numberArray[end])
         {
-            (numberArray[start], numberArray[end]) = (numberArray[end], numberArray[start]); // Swap them
+            (numberArray[start], numberArray[end]) = (numberArray[end], numberArray[start]); // Swapping elements
         }
 
-        if (end - start > 1) // If the array size is bigger than 2
+        if (end - start > 1)
         {
             int temp = (end - start + 1) / 3;
-            Sort(numberArray, start, end - temp); // Recursively sort first 2/3 of the array
-            Sort(numberArray, start + temp, end); // Recursively sort last 2/3 of the array
-            Sort(numberArray, start, end - temp); // Recursively sort first 2/3 of the array again
+            Sort(numberArray, start, end - temp);
+            Sort(numberArray, start + temp, end);
+            Sort(numberArray, start, end - temp);
         }
     }
 }
