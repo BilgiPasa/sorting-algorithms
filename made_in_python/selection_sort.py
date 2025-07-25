@@ -7,6 +7,11 @@ for i in range(len(the_list)): # Python's integer is 64 bit. Becuz of that I mad
     the_list[i] = randint(-2147483648, 2147483647 - 1) # -1 becuz the endpoint is included
 
 def sort(number_list):
+    """ In Selection Sort, the program goes through the array and looks for the smallest element. When the
+    array ends, it swaps the smallest element with the first element. Then it goes through the array again and
+    looks for the second smallest element. When the array ends, it swaps the second smallest element with the
+    second element and it goes on like that until the array is sorted. """
+
     smallest: int
 
     for i in range(len(number_list) - 1):

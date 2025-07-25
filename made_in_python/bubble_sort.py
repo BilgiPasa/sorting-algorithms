@@ -7,20 +7,24 @@ for i in range(len(the_list)): # Python's integer is 64 bit. Becuz of that I mad
     the_list[i] = randint(-2147483648, 2147483647 - 1) # -1 becuz the endpoint is included
 
 def sort(number_list):
+    """ In Bubble Sort, the program goes through the array and checks the elements and the elements next to
+    it. If the left element that program is checking is bigger than the right next element, the program
+    swaps the elements. When the array ends, if the array is not sorted, the program repeats this process
+    until the array is sorted. """
+
     i: int
-    b: bool = False
+    j: int
 
-    while not b:
-        b = True
+    while True:
+        i = 0
 
-        for i in range(1, len(number_list)):
-            if number_list[i - 1] > number_list[i]:
-                number_list[i - 1], number_list[i] = number_list[i], number_list[i - 1] # Swapping elements
+        for j in range(1, len(number_list)):
+            if number_list[j - 1] > number_list[j]:
+                number_list[j - 1], number_list[j] = number_list[j], number_list[j - 1] # Swapping elements
+                i += 1
 
-        for i in range(1, len(number_list)): # Cheking if the array is sorted
-            if number_list[i - 1] > number_list[i]:
-                b = False
-                break
+        if i == 0:
+            break
 
 start_time: float = time()
 sort(the_list)

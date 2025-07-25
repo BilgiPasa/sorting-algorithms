@@ -20,6 +20,11 @@ public class SelectionSort {
 
     static void Sort(int[] numberArray)
     {
+        /* In Selection Sort, the program goes through the array and looks for the smallest element. When the
+        array ends, it swaps the smallest element with the first element. Then it goes through the array again
+        and looks for the second smallest element. When the array ends, it swaps the second smallest element
+        with the second element and it goes on like that until the array is sorted. */
+
         int smallest, temp;
 
         for (int i = 0; i < numberArray.length - 1; i++)

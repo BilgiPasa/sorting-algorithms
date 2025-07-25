@@ -20,31 +20,28 @@ public class BubbleSort {
 
     static void Sort(int[] numberArray)
     {
-        int i, temp;
-        boolean b = false;
+        /* In Bubble Sort, the program goes through the array and checks the elements and the elements next to
+        it. If the left element that program is checking is bigger than the right next element, the program
+        swaps the elements. When the array ends, if the array is not sorted, the program repeats this process
+        until the array is sorted. */
 
-        while (!b)
+        int i, j, temp;
+
+        do
         {
-            b = true;
+            i = 0;
 
-            for (i = 1; i < numberArray.length; i++)
+            for (j = 1; j < numberArray.length; j++)
             {
-                if (numberArray[i - 1] > numberArray[i])
+                if (numberArray[j - 1] > numberArray[j])
                 {
-                    temp = numberArray[i - 1];
-                    numberArray[i - 1] = numberArray[i];
-                    numberArray[i] = temp;
-                }
-            }
-
-            for (i = 1; i < numberArray.length; i++) // Cheking if the array is sorted
-            {
-                if (numberArray[i - 1] > numberArray[i])
-                {
-                    b = false;
-                    break;
+                    temp = numberArray[j - 1];
+                    numberArray[j - 1] = numberArray[j];
+                    numberArray[j] = temp;
+                    i++;
                 }
             }
         }
+        while (i > 0);
     }
 }

@@ -7,6 +7,10 @@ for i in range(len(the_list)): # Python's integer is 64 bit. Becuz of that I mad
     the_list[i] = randint(-2147483648, 2147483647 - 1) # -1 becuz the endpoint is included
 
 def sort(number_list):
+    """ In Bozo Sort; firstly, the program checks if the array is sorted. If not, it selects two random items
+    and swaps them. Then, it checks again if the array is sorted. It continues this pattern until the array is
+    sorted. """
+
     i: int
     b: bool = True
 
@@ -28,7 +32,7 @@ def sort(number_list):
             index1 = randint(0, len(number_list) - 1)
             index2 = randint(0, len(number_list) - 1)
 
-            if not index1 == index2:
+            if index1 != index2:
                 break
 
         number_list[index1], number_list[index2] = number_list[index2], number_list[index1] # Swapping elements

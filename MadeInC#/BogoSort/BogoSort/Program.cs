@@ -24,6 +24,9 @@ class Program
 
     static void Sort(int[] numberArray)
     {
+        /* In Bogo Sort; firstly, the program checks if the array is sorted. If not, it shuffels the array and
+        checks again if the array is sorted. It continues this pattern until the array is sorted. */
+
         int i;
         bool b = true;
 
