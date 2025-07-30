@@ -7,6 +7,13 @@ for i in range(len(the_list)): # Python's integer is 64 bit. Becuz of that I mad
     the_list[i] = randint(-2147483648, 2147483647 - 1) # -1 becuz the endpoint is included
 
 def sort(number_list):
+    """ In Insertsion Sort; the program checks at the array multiple times part by part as first 2 elements,
+    first 3 elements, first 4 ... and all of the elements. In each checking, the program goes through each part
+    starting from the second to last element of the part and goes to the first element. If the element that the
+    program is checking is bigger than the last element of the part, it moves the last element of the part in
+    front of the element that program is checking. This goes on like that until all of the elements are checked.
+    """
+
     temp: int
 
     for i in range(1, len(number_list)):
