@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GnomeSort")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40816967cd969e8e30b2d125b6e2aa2301908b66")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1066b1a66974dfb5d56d853b888befd1d4b32428")]
 [assembly: System.Reflection.AssemblyProductAttribute("GnomeSort")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GnomeSort")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

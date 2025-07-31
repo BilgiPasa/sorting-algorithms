@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class BozoSort {
     public static void main(String[] args) {
-        int[] theArray = new int[12]; // 12 is enough to show how much Bozo Sort is bad at sorting.
+        int[] theArray = new int[12]; // Array size that bigger than 12 takes a looong time to sort.
         Random r = new Random();
 
         for (int i = 0; i < theArray.length; i++)

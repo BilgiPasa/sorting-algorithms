@@ -1,7 +1,7 @@
 from random import randint
 from time import time
 
-the_list = [0] * 12 # 12 is enough to show how much Bozo Sort is bad at sorting.
+the_list = [0] * 12 # Array size that bigger than 12 takes a looong time to sort.
 
 for i in range(len(the_list)): # Python's integer is 64 bit. Becuz of that I made the randomizer like this.
     the_list[i] = randint(-2147483648, 2147483647 - 1) # -1 becuz the endpoint is included

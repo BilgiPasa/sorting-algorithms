@@ -6,7 +6,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        int[] theArray = new int[120000];
+        int[] theArray = new int[4444]; // Yes, Sootage Sort is very inefficent too.
         Random r = new Random();
         Stopwatch s = new Stopwatch();
 

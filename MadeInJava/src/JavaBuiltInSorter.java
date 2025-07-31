@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class JavaBuiltInSorter {
     public static void main(String[] args) {
-        int[] theArray = new int[120000];
+        int[] theArray = new int[12345678];
         Random r = new Random();
 
         for (int i = 0; i < theArray.length; i++)
