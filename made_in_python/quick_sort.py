@@ -10,14 +10,14 @@ def move_elements_and_return_pivot(number_list, start: int, end: int):
     i: int = start - 1
 
     for j in range(start, end): # Initial pivot is the last element of the array
-        # Moving elements that is smaller than our pivot to the left.
+        # MThe program moves the elements that are smaller than the pivot to the left
         if number_list[j] < number_list[end]:
             i += 1
             number_list[i], number_list[j] = number_list[j], number_list[i] # Swapping elements
 
     i += 1
     number_list[i], number_list[end] = number_list[end], number_list[i] # Swapping elements
-    return i # Swapped the initial pivot with our new pivot and returned the new pivot
+    return i # Swapped the initial pivot with the new pivot and returning the new pivot
 
 def sort(number_list, start: int, end: int):
     if start >= end:

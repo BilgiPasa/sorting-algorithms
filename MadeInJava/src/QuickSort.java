@@ -36,7 +36,7 @@ public class QuickSort {
 
         for (int j = start; j < end; j++)
         {// Initial pivot is the last element of the array
-            // Moving elements that is smaller than our pivot to the left.
+            // The program moves the elements that are smaller than the pivot to the left
             if (numberArray[j] < numberArray[end])
             {
                 temp = numberArray[++i]; // This means i += 1; temp = numberArray[i];
@@ -48,6 +48,6 @@ public class QuickSort {
         temp = numberArray[++i]; // This means i += 1; temp = numberArray[i];
         numberArray[i] = numberArray[end];
         numberArray[end] = temp;
-        return i; // Swapped the initial pivot with our new pivot and returned the new pivot
+        return i; // Swapped the initial pivot with the new pivot and returning the new pivot
     }
 }
