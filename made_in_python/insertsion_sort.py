@@ -11,8 +11,8 @@ def sort(number_list):
     first 3 elements, first 4 ... and all of the elements. In each checking, the program goes through each part
     starting from the second to last element of the part and goes to the first element. If the element that the
     program is checking is bigger than the last element of the part, it moves the last element of the part in
-    front of the element that program is checking. This goes on like that until all of the elements are checked.
-    """
+    front of the element that the program is checking. The sorting process ends when all of the elements are
+    checked. """
 
     temp: int
 

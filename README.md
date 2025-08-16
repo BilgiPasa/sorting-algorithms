@@ -14,7 +14,7 @@ Implemented languages (from fastest to slowest**): Java, C#, Python.
 
 You can analyze the code but please don't use this repository for cheating.
 
-I DID NOT copy-pasted any code from any Generitive AI (like ChatGPT, Deepseek, Claude) or any website. I wrote them myself. (But of course I get insprations from websites (for example geeksforgeeks) and videos (for example Bro Code and udiprod channels' videos). Also, I don't like using Generitive AI.)
+I DID NOT copy-pasted any code from any Generitive AI (like ChatGPT, Deepseek, Claude) or any website. I wrote them myself. (But of course I get insprations from websites (for example geeksforgeeks) and videos (for example Bro Code and udiprod channels' videos). Also, I don't like using Generitive AI and I don't recommend using it.)
 
 -------------------------------------------------------------------------------------------------
 

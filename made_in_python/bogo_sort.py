@@ -9,7 +9,7 @@ for i in range(len(the_list)): # Python's integer is 64 bit. Becuz of that I mad
 
 def sort(number_list):
     """ In Bogo Sort; firstly, the program checks if the array is sorted. If not, it shuffels the array and
-    checks again if the array is sorted. It continues this pattern until the array is sorted. """
+    checks again if the array is sorted. The program repeates this process until the array is sorted. """
 
     i: int
     b: bool = True

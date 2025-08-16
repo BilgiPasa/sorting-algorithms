@@ -7,7 +7,7 @@ for i in range(len(the_list)): # Python's integer is 64 bit. Becuz of that I mad
     the_list[i] = randint(-2147483648, 2147483647 - 1) # -1 becuz the endpoint is included
 
 def sort(number_list):
-    """ You can think Cocktail Shaker Sort as double sided Bubble Sort. Cocktail Shaker Sort starts from the
+    """ You can think Cocktail Shaker Sort as a double sided Bubble Sort. Cocktail Shaker Sort starts from the
     left side and moves to right like Bubble Sort but when it reaches the end, it moves to left. So the
     Cocktail Shaker Sort moves back and forth and swaps the elements if the left element is bigger than the
     right element. While swapping the elements, the smaller elements move to the left side and the bigger

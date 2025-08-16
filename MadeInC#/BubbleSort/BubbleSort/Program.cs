@@ -25,9 +25,8 @@ class Program
     static void Sort(int[] numberArray)
     {
         /* In Bubble Sort, the program goes through the array and checks the elements and the elements next to
-        it. If the left element that program is checking is bigger than the right next element, the program
-        swaps the elements. When the array ends, if the array is not sorted, the program repeats this process
-        until the array is sorted. */
+        it. If the left element is bigger than the right element, the program swaps the elements. When the
+        array ends, if the array is not sorted, the program repeats this process until the array is sorted. */
 
         int i, j;
 

@@ -20,8 +20,8 @@ public class CocktailShakerSort {
 
     static void Sort(int[] numberArray)
     {
-        /* You can think Cocktail Shaker Sort as double sided Bubble Sort. Cocktail Shaker Sort starts from the
-        left side and moves to right like Bubble Sort but when it reaches the end, it moves to left. So the
+        /* You can think Cocktail Shaker Sort as a double sided Bubble Sort. Cocktail Shaker Sort starts from
+        the left side and moves to right like Bubble Sort but when it reaches the end, it moves to left. So the
         Cocktail Shaker Sort moves back and forth and swaps the elements if the left element is bigger than the
         right element. While swapping the elements, the smaller elements move to the left side and the bigger
         elements move to the right side. */

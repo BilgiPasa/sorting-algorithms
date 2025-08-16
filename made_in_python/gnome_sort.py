@@ -7,6 +7,12 @@ for i in range(len(the_list)): # Python's integer is 64 bit. Becuz of that I mad
     the_list[i] = randint(-2147483648, 2147483647 - 1) # -1 becuz the endpoint is included
 
 def sort(number_list):
+    """ In Gnome Sort, the program goes through the array from the start and checks the elements and the
+    elements next to it. If the left element is bigger than the right element, the program swaps the
+    elements and starts to go backwards. While going backwards, if the left element is bigger than the right
+    next element, the program swaps the elements. When the program is at the start again, it starts to go
+    forward and this process repeates until the program is at the end of the array. """
+
     i: int = 1
     forward: bool = True
 

@@ -8,9 +8,8 @@ for i in range(len(the_list)): # Python's integer is 64 bit. Becuz of that I mad
 
 def sort(number_list):
     """ In Bubble Sort, the program goes through the array and checks the elements and the elements next to
-    it. If the left element that program is checking is bigger than the right next element, the program
-    swaps the elements. When the array ends, if the array is not sorted, the program repeats this process
-    until the array is sorted. """
+    it. If the left element is bigger than the right element, the program swaps the elements. When the array
+    ends, if the array is not sorted, the program repeats this process until the array is sorted. """
 
     i: int
     j: int
