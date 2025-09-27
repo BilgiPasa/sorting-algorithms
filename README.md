@@ -40,4 +40,8 @@ I didn't implemented the Pigeonhole Sort algorithm because the maximum array siz
 
 -------------------------------------------------------------------------------------------------
 
+TODO: Learn C in free time and implement the sorting algorithms in C.
+
+-------------------------------------------------------------------------------------------------
+
 README written by Bilgi Paşa.
