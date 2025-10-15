@@ -12,13 +12,13 @@ public class InsertsionSort {
         }
 
         long startTime = System.nanoTime();
-        Sort(theArray);
+        sort(theArray);
         long endTime = System.nanoTime();
         //System.out.println(Arrays.toString(theArray)); // To see the array
         System.out.println(theArray.length + " integers sorted in " + ((endTime - startTime) / 1000000.0) + " milliseconds");
     }
 
-    static void Sort(int[] numberArray)
+    static void sort(int[] numberArray)
     {
         /* In Insertsion Sort; the program checks at the array multiple times part by part as first 2 elements,
         first 3 elements, first 4 ... and all of the elements. In each checking, the program goes through each

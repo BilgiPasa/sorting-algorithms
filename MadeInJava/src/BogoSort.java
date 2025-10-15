@@ -12,13 +12,13 @@ public class BogoSort {
         }
 
         long startTime = System.nanoTime();
-        Sort(theArray);
+        sort(theArray);
         long endTime = System.nanoTime();
         //System.out.println(Arrays.toString(theArray)); // To see the array
         System.out.println(theArray.length + " integers sorted in " + ((endTime - startTime) / 1000000.0) + " milliseconds");
     }
 
-    static void Sort(int[] numberArray)
+    static void sort(int[] numberArray)
     {
         /* In Bogo Sort; firstly, the program checks if the array is sorted. If not, it shuffels the array and
         checks again if the array is sorted. The program repeates this process until the array is sorted. */

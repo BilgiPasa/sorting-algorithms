@@ -12,13 +12,13 @@ public class SootageSort {
         }
 
         long startTime = System.nanoTime();
-        Sort(theArray, 0, theArray.length - 1);
+        sort(theArray, 0, theArray.length - 1);
         long endTime = System.nanoTime();
         //System.out.println(Arrays.toString(theArray)); // To see the array
         System.out.println(theArray.length + " integers sorted in " + ((endTime - startTime) / 1000000.0) + " milliseconds");
     }
 
-    static void Sort(int[] numberArray, int start, int end)
+    static void sort(int[] numberArray, int start, int end)
     {
         if (start == end)
         {
@@ -35,9 +35,9 @@ public class SootageSort {
         if (end - start > 1) // This means if (array size > 2)
         {
             int oneThird = (end - start + 1) / 3;
-            Sort(numberArray, start, end - oneThird);
-            Sort(numberArray, start + oneThird, end);
-            Sort(numberArray, start, end - oneThird);
+            sort(numberArray, start, end - oneThird);
+            sort(numberArray, start + oneThird, end);
+            sort(numberArray, start, end - oneThird);
         }
     }
 }

@@ -12,25 +12,25 @@ public class QuickSort {
         }
 
         long startTime = System.nanoTime();
-        Sort(theArray, 0, theArray.length - 1);
+        sort(theArray, 0, theArray.length - 1);
         long endTime = System.nanoTime();
         //System.out.println(Arrays.toString(theArray)); // To see the array
         System.out.println(theArray.length + " integers sorted in " + ((endTime - startTime) / 1000000.0) + " milliseconds");
     }
 
-    static void Sort(int[] numberArray, int start, int end)
+    static void sort(int[] numberArray, int start, int end)
     {
         if (start >= end)
         {
             return;
         }
 
-        int pivot = MoveElementsAndReturnPivot(numberArray, start, end);
-        Sort(numberArray, start, pivot - 1);
-        Sort(numberArray, pivot + 1, end);
+        int pivot = moveElementsAndReturnPivot(numberArray, start, end);
+        sort(numberArray, start, pivot - 1);
+        sort(numberArray, pivot + 1, end);
     }
 
-    static int MoveElementsAndReturnPivot(int[] numberArray, int start, int end)
+    static int moveElementsAndReturnPivot(int[] numberArray, int start, int end)
     {
         int i = start - 1, temp;
 

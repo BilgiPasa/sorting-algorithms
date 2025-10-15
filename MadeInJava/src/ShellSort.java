@@ -12,13 +12,13 @@ public class ShellSort {
         }
 
         long startTime = System.nanoTime();
-        Sort(theArray);
+        sort(theArray);
         long endTime = System.nanoTime();
         //System.out.println(Arrays.toString(theArray)); // To see the array
         System.out.println(theArray.length + " integers sorted in " + ((endTime - startTime) / 1000000.0) + " milliseconds");
     }
 
-    static void Sort(int[] numberArray)
+    static void sort(int[] numberArray)
     {
         int temp, j;
 

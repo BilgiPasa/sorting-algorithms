@@ -12,13 +12,13 @@ public class MergeSort {
         }
 
         long startTime = System.nanoTime();
-        Sort(theArray);
+        sort(theArray);
         long endTime = System.nanoTime();
         //System.out.println(Arrays.toString(theArray)); // To see the array
         System.out.println(theArray.length + " integers sorted in " + ((endTime - startTime) / 1000000.0) + " milliseconds");
     }
 
-    static void Sort(int[] numberArray)
+    static void sort(int[] numberArray)
     {
         if (numberArray.length < 2)
         {
@@ -38,12 +38,12 @@ public class MergeSort {
             rightArray[i - middle] = numberArray[i];
         }
 
-        Sort(leftArray);
-        Sort(rightArray);
-        Merge(numberArray, leftArray, rightArray);
+        sort(leftArray);
+        sort(rightArray);
+        merge(numberArray, leftArray, rightArray);
     }
 
-    static void Merge(int[] numberArray, int[] leftArray, int[] rightArray)
+    static void merge(int[] numberArray, int[] leftArray, int[] rightArray)
     {
         int i = 0, j = 0, k = 0;
 

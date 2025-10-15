@@ -12,13 +12,13 @@ public class SelectionSort {
         }
 
         long startTime = System.nanoTime();
-        Sort(theArray);
+        sort(theArray);
         long endTime = System.nanoTime();
         //System.out.println(Arrays.toString(theArray)); // To see the array
         System.out.println(theArray.length + " integers sorted in " + ((endTime - startTime) / 1000000.0) + " milliseconds");
     }
 
-    static void Sort(int[] numberArray)
+    static void sort(int[] numberArray)
     {
         /* In Selection Sort, the program goes through the array and looks for the smallest element. When the
         array ends, it swaps the smallest element with the first element. Then it goes through the array again
