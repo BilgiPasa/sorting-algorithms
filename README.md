@@ -28,22 +28,24 @@ the C# code is in the MadeInC#/SelectionSort/SelectionSort/Program.cs file and
 
 the Python code is in the made_in_python/selection_sort.py file.
 
--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
 
 I didn't implemented the Counting Sort algorithm because it is meant for just numerals.
 
-I didn't implemented the Radix Sort algorithm because it is meant for non-negative integers.
-
 I didn't implemented the Bucket Sort algorithm because I wanted to use just arrays and not arraylists or linked lists.
 
-I didn't implemented the Pigeonhole Sort algorithm because the maximum array size is limiting the algorithm when I want it to sort random integers (32 bit).
+I didn't implemented the Pigeonhole Sort algorithm because I don't want to come across memory problems due to making the array size very huge (like making the length as 2147483647).
 
--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
 
 TODO:
-    Change the randomizer for unsigned integers and implement the Radix Sort algorithm.
-    Learn C in free time and implement the sorting algorithms in C.
 
--------------------------------------------------------------------------------------------------
+Change the randomizer to just use positive integers.
+
+Implement the Radix Sort algorithm.
+
+Learn C in free time and implement the sorting algorithms in C.
+
+--------------------------------------------------------------------------------------------------
 
 README written by Bilgi Paşa.
