@@ -40,9 +40,7 @@ I didn't implemented the Pigeonhole Sort algorithm because I don't want to come 
 
 TODO:
 
-Change the randomizer to just use positive integers.
-
-Implement the Radix Sort algorithm.
+Try to implement the Radix Sort algorithm and the Heap Sort algorithm.
 
 Learn C in free time and implement the sorting algorithms in C.
 
