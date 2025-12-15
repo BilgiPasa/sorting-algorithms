@@ -2,11 +2,11 @@
 
 These are sorting algorithms in different programming languages.
 
-This repository is focused on integer (32 bit) sorting algorithms to keep it simple.
+This repository is focused on positive 32 bit integer sorting algorithms to keep it simple.
 
 Implemented sorting algorithms (from fastest to slowest*): Quick Sort, Merge Sort, Shell Sort, Selection Sort, Insertsion Sort, Cocktail Shaker Sort, Gnome Sort, Bubble Sort, Sootage Sort, Bozo Sort, Bogo Sort.
 
-Implemented languages (from fastest to slowest**): Java, C#, Python.
+Implemented languages (from fastest to slowest**): Java (25), C# (.Net 10), Python (3.14).
 
 *According to my tests when I test with Java. (I didn't compare any language's built in sorter in this list.)
 
@@ -14,19 +14,17 @@ Implemented languages (from fastest to slowest**): Java, C#, Python.
 
 You can analyze the code but please don't use this repository for cheating.
 
-I DID NOT copy-pasted any code from any Generitive AI (like ChatGPT, Deepseek, Claude) or any website. I wrote them myself. (But of course I get insprations from websites (for example geeksforgeeks) and videos (for example Bro Code and udiprod channels' videos). Also, I don't like using Generitive AI and I don't recommend using it.)
+I DID NOT copy-pasted any code from any Generitive AI (like ChatGPT, Deepseek, Claude, etc.) or any website. I wrote them myself. (But of course I get insprations from websites (for example geeksforgeeks) and videos (for example Bro Code and udiprod channels' videos). Also, I don't like using Generitive AI and I don't recommend using it.)
 
 -------------------------------------------------------------------------------------------------
 
-The codes' file locations:
+The codes' file locations (use backward slashes if you use Windows file manager):
 
-If we give an example from Selection Sort, (use backward slashes if you use Windows file manager)
+the Java code is in the MadeInJava/src/SortingAlgorithms.java file,
 
-the Java code is in the MadeInJava/src/SelectionSort.java file,
+the C# code is in the MadeInC#/MadeInCSharp/SortingAlgorithms.cs file,
 
-the C# code is in the MadeInC#/SelectionSort/SelectionSort/Program.cs file and
-
-the Python code is in the made_in_python/selection_sort.py file.
+the Python code is in the made_in_python/sorting_algorithms.py file.
 
 --------------------------------------------------------------------------------------------------
 
