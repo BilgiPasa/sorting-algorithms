@@ -28,8 +28,6 @@ the Python code is in the made_in_python/sorting_algorithms.py file.
 
 --------------------------------------------------------------------------------------------------
 
-I didn't implemented the Counting Sort algorithm because it is meant for just numerals.
-
 I didn't implemented the Bucket Sort algorithm because I wanted to use just arrays and not arraylists or linked lists.
 
 I didn't implemented the Pigeonhole Sort algorithm because I don't want to come across memory problems due to making the array size very huge (like making the length as 2147483647).
