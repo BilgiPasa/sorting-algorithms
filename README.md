@@ -2,7 +2,7 @@
 
 These are sorting algorithms in different programming languages.
 
-This repository is focused on positive 32 bit integer sorting algorithms to keep it simple.
+This repository is focused on non-negative integer sorting algorithms to keep it simple. (Specifically, signed 32 bit integers but I only use the non-negative integers.)
 
 Implemented sorting algorithms (from fastest to slowest*): Quick Sort, Merge Sort, Shell Sort, Selection Sort, Insertsion Sort, Cocktail Shaker Sort, Gnome Sort, Bubble Sort, Sootage Sort, Bozo Sort, Bogo Sort.
 
