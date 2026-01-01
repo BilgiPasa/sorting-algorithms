@@ -16,7 +16,7 @@ You can analyze the code but please don't use this repository for cheating.
 
 I DID NOT copy-pasted any code from any Generitive AI (like ChatGPT, Gemini, Claude, etc.) or any website. I wrote them myself. (But of course I get insprations from websites (for example geeksforgeeks) and videos (for example Bro Code and udiprod channels' videos). Also, I don't like using Generitive AI and I don't recommend using it.)
 
--------------------------------------------------------------------------------------------------
+---
 
 The codes' file locations (use backward slashes if you use Windows file manager):
 
@@ -26,13 +26,13 @@ the C# code is in the MadeInC#/MadeInCSharp/SortingAlgorithms.cs file,
 
 the Python code is in the made_in_python/sorting_algorithms.py file.
 
---------------------------------------------------------------------------------------------------
+---
 
 I didn't implemented the Bucket Sort algorithm because I wanted to use just arrays and not arraylists or linked lists.
 
 I didn't implemented the Pigeonhole Sort algorithm because I don't want to come across memory problems due to making the array size very huge (like making the length as 2^31).
 
---------------------------------------------------------------------------------------------------
+---
 
 TODO:
 
@@ -40,6 +40,6 @@ Try to implement the Radix Sort algorithm and the Heap Sort algorithm.
 
 Learn C in free time and implement the sorting algorithms in C.
 
---------------------------------------------------------------------------------------------------
+---
 
 README written by Bilgi Paşa.
