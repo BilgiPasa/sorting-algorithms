@@ -18,23 +18,29 @@ I DID NOT copy-pasted any code from any Generative AI (like ChatGPT, Gemini, Cla
 
 ---
 
-The codes' file locations (use backward slashes if you use Windows file manager):
+The code files' locations:
 
-the Java code is in the MadeInJava/src/SortingAlgorithms.java file,
+the Java files are in the MadeInJava/src folder,
 
-the C# code is in the MadeInC#/MadeInCSharp/SortingAlgorithms.cs file,
+the C# files are in the MadeInC#/MadeInCSharp folder,
 
-the Python code is in the made_in_python/sorting_algorithms.py file.
+the Python files are in the made_in_python folder.
+
+(Use backward slashes if you use Windows file explorer.)
 
 ---
 
-I didn't implemented the Pigeonhole Sort algorithm because I don't want to come across memory problems due to making the array size very huge (like making the length as 2^31).
+I'm not planning to implement the Pigeonhole Sort algorithm because I don't want to come across memory problems due to making the array size very huge (like making the length as 2^31).
+
+I'm not planning to implement the Bucket Sort algorithm because I want to use just arrays in this repo. I don't want to use array lists or linked lists in this repo.
 
 ---
 
 TODO:
 
-Try to implement the Bucket Sort, the Radix Sort and the Heap Sort algorithms.
+Change the Python code to use its built in lists. (I used array module in the code.)
+
+Try to implement the Radix Sort and the Heap Sort algorithms.
 
 Learn C in free time and implement the sorting algorithms in C.
 
