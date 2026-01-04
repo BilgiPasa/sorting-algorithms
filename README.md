@@ -28,15 +28,13 @@ the Python code is in the made_in_python/sorting_algorithms.py file.
 
 ---
 
-I didn't implemented the Bucket Sort algorithm because I wanted to use just arrays and not arraylists or linked lists.
-
 I didn't implemented the Pigeonhole Sort algorithm because I don't want to come across memory problems due to making the array size very huge (like making the length as 2^31).
 
 ---
 
 TODO:
 
-Try to implement the Radix Sort algorithm and the Heap Sort algorithm.
+Try to implement the Bucket Sort, the Radix Sort and the Heap Sort algorithms.
 
 Learn C in free time and implement the sorting algorithms in C.
 
