@@ -38,13 +38,13 @@ I'm not planning to implement the Bucket Sort algorithm because I want to use ju
 
 TODO:
 
-Change the Python code to use its built in lists. (I used the array module in the code.)
+* Change the Python code to use its built in lists. (I used the array module in the code.)
 
-Add a license to this repository.
+* Add a license to this repository.
 
-Try to implement the Radix Sort and the Heap Sort algorithms.
+* Try to implement the Radix Sort and the Heap Sort algorithms.
 
-Learn C and implement the sorting algorithms in C.
+* Learn C and implement the sorting algorithms in C.
 
 ---
 
