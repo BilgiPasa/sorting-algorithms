@@ -38,7 +38,7 @@ I'm not planning to implement the Bucket Sort algorithm because I want to use ju
 
 TODO:
 
-Change the Python code to use its built in lists. (I used array module in the code.)
+Change the Python code to use its built in lists. (I used the array module in the code.)
 
 Add a license to this repository.
 
