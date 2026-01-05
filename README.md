@@ -44,7 +44,7 @@ Add a license to this repository.
 
 Try to implement the Radix Sort and the Heap Sort algorithms.
 
-Learn C in free time and implement the sorting algorithms in C.
+Learn C and implement the sorting algorithms in C.
 
 ---
 
