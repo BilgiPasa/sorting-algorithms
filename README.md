@@ -40,8 +40,6 @@ TODO:
 
 * Change the Python code to use its built in lists. (I used the array module in the code.)
 
-* Add a license to this repository. (Probably the MIT licence.)
-
 * Try to implement the Radix Sort and the Heap Sort algorithms.
 
 * Learn C and implement the sorting algorithms in C.
