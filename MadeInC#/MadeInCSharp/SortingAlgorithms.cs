@@ -4,7 +4,7 @@ public static class SortingAlgorithms
 {
     // The algorithms are listed from the slowest to the fastest.
 
-    public static void BogoSort(int[] numberArray) // Recommended array size: 11
+    public static void BogoSort(int[] numberArray)
     {
         /* In Bogo Sort; firstly, the program checks if the array is sorted. If not, it shuffels the array and
         checks again if the array is sorted. The program repeates this process until the array is sorted. */
@@ -44,7 +44,7 @@ public static class SortingAlgorithms
         }
     }
 
-    public static void BozoSort(int[] numberArray) // Recommended array size: 12
+    public static void BozoSort(int[] numberArray)
     {
         /* In Bozo Sort; firstly, the program checks if the array is sorted. If not, it selects two random
         items and swaps them. Then, it checks again if the array is sorted. The program repeates this process
@@ -94,7 +94,7 @@ public static class SortingAlgorithms
         }
     }
 
-    public static void SootageSort(int[] numberArray, int start, int end) // Recommended array size: 4444
+    public static void SootageSort(int[] numberArray, int start, int end)
     {
         if (start == end)
         {
@@ -115,7 +115,7 @@ public static class SortingAlgorithms
         }
     }
 
-    public static void BubbleSort(int[] numberArray) // Recommended array size: 55555
+    public static void BubbleSort(int[] numberArray)
     {
         /* In Bubble Sort, the program goes through the array and checks the elements and the elements next to
         it. If the left element is bigger than the right element, the program swaps the elements. When the
@@ -139,7 +139,7 @@ public static class SortingAlgorithms
         while (i > 0);
     }
 
-    public static void GnomeSort(int[] numberArray) // Recommended array size: 55555
+    public static void GnomeSort(int[] numberArray)
     {
         /* In Gnome Sort, the program goes through the array from the start and checks the elements and the
         elements next to it. If the left element is bigger than the right element, the program swaps the
@@ -189,7 +189,7 @@ public static class SortingAlgorithms
         }
     }
 
-    public static void CocktailShakerSort(int[] numberArray) // Recommended array size: 55555
+    public static void CocktailShakerSort(int[] numberArray)
     {
         /* You can think Cocktail Shaker Sort as a double sided Bubble Sort. Cocktail Shaker Sort starts from
         the left side and moves to right like Bubble Sort but when it reaches the end, it moves to left. So the
@@ -223,7 +223,7 @@ public static class SortingAlgorithms
         }
     }
 
-    public static void InsertsionSort(int[] numberArray) // Recommended array size: 55555
+    public static void InsertsionSort(int[] numberArray)
     {
         /* In Insertsion Sort; the program checks at the array multiple times part by part as first 2 elements,
         first 3 elements, first 4 ... and all of the elements. In each checking, the program goes through each
@@ -253,7 +253,7 @@ public static class SortingAlgorithms
         }
     }
 
-    public static void SelectionSort(int[] numberArray) // Recommended array size: 55555
+    public static void SelectionSort(int[] numberArray)
     {
         /* In Selection Sort, the program goes through the array and looks for the smallest element. When the
         array ends, it swaps the smallest element with the first element. Then it goes through the array again
@@ -278,7 +278,7 @@ public static class SortingAlgorithms
         }
     }
 
-    public static void ShellSort(int[] numberArray) // Recommended array size: 12345678
+    public static void ShellSort(int[] numberArray)
     {
         int temp, j;
 
@@ -298,7 +298,7 @@ public static class SortingAlgorithms
         }
     }
 
-    public static void MergeSort(int[] numberArray) // Recommended array size: 12345678
+    public static void MergeSort(int[] numberArray)
     {
         if (numberArray.Length < 2)
         {
@@ -350,7 +350,7 @@ public static class SortingAlgorithms
         }
     }
 
-    public static void QuickSort(int[] numberArray, int start, int end) // Recommended array size: 12345678
+    public static void QuickSort(int[] numberArray, int start, int end)
     {
         if (start >= end)
         {

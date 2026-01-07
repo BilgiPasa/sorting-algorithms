@@ -3,7 +3,7 @@ import java.util.Random;
 public class SortingAlgorithms {
     // The algorithms are listed from the slowest to the fastest.
 
-    public static void bogoSort(int[] numberArray) { // Recommended array size: 11
+    public static void bogoSort(int[] numberArray) {
         /* In Bogo Sort; firstly, the program checks if the array is sorted. If not, it shuffels the array and
         checks again if the array is sorted. The program repeates this process until the array is sorted. */
 
@@ -21,39 +21,38 @@ public class SortingAlgorithms {
             return;
         }
 
-        int[] bogoSortedArray = new int[numberArray.length];
-        int temp;
-        Random r = new Random();
-
         while (!b) {
             i = 0;
             b = true;
-            boolean[] didIUseThisElementForSelectingRandomlyArray = new boolean[numberArray.length];
 
-            while (i < numberArray.length) {
-                // I couldn't find a built in primitive integer array shuffler. So, here is my shuffler.
-                temp = r.nextInt(numberArray.length);
-
-                if (!didIUseThisElementForSelectingRandomlyArray[temp]) {
-                    bogoSortedArray[i++] = numberArray[temp]; // This means bogoSortedArray[i] = numberArray[temp]; i += 1;
-                    didIUseThisElementForSelectingRandomlyArray[temp] = true;
-                }
-            }
+            fisherYatesAlgorithm(numberArray); // For shuffling the array
 
             for (i = 1; i < numberArray.length; i++) { // Cheking if the array is sorted
-                if (bogoSortedArray[i - 1] > bogoSortedArray[i]) {
+                if (numberArray[i - 1] > numberArray[i]) {
                     b = false;
                     break;
                 }
             }
         }
+    }
 
-        for (i = 0; i < numberArray.length; i++) {
-            numberArray[i] = bogoSortedArray[i];
+    // I couldn't find a built in primitive integer array shuffler. So, here is the Fisher-Yates algorithm.
+    static void fisherYatesAlgorithm(int[] numberArray)
+    {
+        int randomNumber, temp;
+        Random r = new Random();
+
+        for (int i = numberArray.length - 1; i > 0; i--)
+        {
+            randomNumber = (int)Math.floor(r.nextFloat() * (i + 1));
+
+            temp = numberArray[i];
+            numberArray[i] = numberArray[randomNumber];
+            numberArray[randomNumber] = temp;
         }
     }
 
-    public static void bozoSort(int[] numberArray) { // Recommended array size: 12
+    public static void bozoSort(int[] numberArray) {
         /* In Bozo Sort; firstly, the program checks if the array is sorted. If not, it selects two random
         items and swaps them. Then, it checks again if the array is sorted. The program repeates this process
         until the array is sorted. */
@@ -97,7 +96,7 @@ public class SortingAlgorithms {
         }
     }
 
-    public static void sootageSort(int[] numberArray, int start, int end) { // Recommended array size: 4444
+    public static void sootageSort(int[] numberArray, int start, int end) {
         if (start == end) {
             return;
         }
@@ -116,7 +115,7 @@ public class SortingAlgorithms {
         }
     }
 
-    public static void bubbleSort(int[] numberArray) { // Recommended array size: 55555
+    public static void bubbleSort(int[] numberArray) {
         /* In Bubble Sort, the program goes through the array and checks the elements and the elements next to
         it. If the left element is bigger than the right element, the program swaps the elements. When the
         array ends, if the array is not sorted, the program repeats this process until the array is sorted. */
@@ -138,7 +137,7 @@ public class SortingAlgorithms {
         while (i > 0);
     }
 
-    public static void gnomeSort(int[] numberArray) { // Recommended array size: 55555
+    public static void gnomeSort(int[] numberArray) {
         /* In Gnome Sort, the program goes through the array from the start and checks the elements and the
         elements next to it. If the left element is bigger than the right element, the program swaps the
         elements and starts to go backwards. While going backwards, if the left element is bigger than the
@@ -182,7 +181,7 @@ public class SortingAlgorithms {
         }
     }
 
-    public static void cocktailShakerSort(int[] numberArray) { // Recommended array size: 55555
+    public static void cocktailShakerSort(int[] numberArray) {
         /* You can think Cocktail Shaker Sort as a double sided Bubble Sort. Cocktail Shaker Sort starts from
         the left side and moves to right like Bubble Sort but when it reaches the end, it moves to left. So the
         Cocktail Shaker Sort moves back and forth and swaps the elements if the left element is bigger than the
@@ -214,7 +213,7 @@ public class SortingAlgorithms {
         }
     }
 
-    public static void insertsionSort(int[] numberArray) { // Recommended array size: 55555
+    public static void insertsionSort(int[] numberArray) {
         /* In Insertsion Sort; the program checks at the array multiple times part by part as first 2 elements,
         first 3 elements, first 4 ... and all of the elements. In each checking, the program goes through each
         part starting from the second to last element of the part and goes to the first element. If the element
@@ -239,7 +238,7 @@ public class SortingAlgorithms {
         }
     }
 
-    public static void selectionSort(int[] numberArray) { // Recommended array size: 55555
+    public static void selectionSort(int[] numberArray) {
         /* In Selection Sort, the program goes through the array and looks for the smallest element. When the
         array ends, it swaps the smallest element with the first element. Then it goes through the array again
         and looks for the second smallest element. When the array ends, it swaps the second smallest element
@@ -262,7 +261,7 @@ public class SortingAlgorithms {
         }
     }
 
-    public static void shellSort(int[] numberArray) { // Recommended array size: 12345678
+    public static void shellSort(int[] numberArray) {
         int temp, j;
 
         for (int interval = numberArray.length / 2; interval > 0; interval /= 2) {
@@ -278,7 +277,7 @@ public class SortingAlgorithms {
         }
     }
 
-    public static void mergeSort(int[] numberArray) { // Recommended array size: 12345678
+    public static void mergeSort(int[] numberArray) {
         if (numberArray.length < 2) {
             return;
         }
@@ -319,7 +318,7 @@ public class SortingAlgorithms {
         }
     }
 
-    public static void quickSort(int[] numberArray, int start, int end) { // Recommended array size: 12345678
+    public static void quickSort(int[] numberArray, int start, int end) {
         if (start >= end) {
             return;
         }

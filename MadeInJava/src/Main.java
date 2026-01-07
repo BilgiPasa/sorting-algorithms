@@ -56,15 +56,12 @@ public class Main {
 
         switch (algorithmType) {
             case AlgorithmTypes.BOGO_SORT:
-                System.out.print("Enter the array size (11 is recommended): ");
-                break;
-
             case AlgorithmTypes.BOZO_SORT:
-                System.out.print("Enter the array size (12 is recommended): ");
+                System.out.print("Enter the array size (maximum 12 is recommended): ");
                 break;
 
             case AlgorithmTypes.SOOTAGE_SORT:
-                System.out.print("Enter the array size (4444 is recommended): ");
+                System.out.print("Enter the array size (3223 is recommended): ");
                 break;
 
             case AlgorithmTypes.BUBBLE_SORT:

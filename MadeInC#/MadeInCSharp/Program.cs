@@ -91,15 +91,12 @@ class Program
         switch (algorithmType)
         {
             case AlgorithmTypes.BogoSort:
-                Console.Write("Enter the array size (11 is recommended): ");
-                break;
-
             case AlgorithmTypes.BozoSort:
-                Console.Write("Enter the array size (12 is recommended): ");
+                Console.Write("Enter the array size (maximum 12 is recommended): ");
                 break;
 
             case AlgorithmTypes.SootageSort:
-                Console.Write("Enter the array size (4444 is recommended): ");
+                Console.Write("Enter the array size (3223 is recommended): ");
                 break;
 
             case AlgorithmTypes.BubbleSort:
