@@ -37,15 +37,12 @@ public class SortingAlgorithms {
     }
 
     // I couldn't find a built in primitive integer array shuffler. So, here is the Fisher-Yates algorithm.
-    static void fisherYatesAlgorithm(int[] numberArray)
-    {
+    static void fisherYatesAlgorithm(int[] numberArray) { // This is for Bogo Sort
         int randomNumber, temp;
         Random r = new Random();
 
-        for (int i = numberArray.length - 1; i > 0; i--)
-        {
+        for (int i = numberArray.length - 1; i > 0; i--) {
             randomNumber = (int)Math.floor(r.nextFloat() * (i + 1));
-
             temp = numberArray[i];
             numberArray[i] = numberArray[randomNumber];
             numberArray[randomNumber] = temp;
