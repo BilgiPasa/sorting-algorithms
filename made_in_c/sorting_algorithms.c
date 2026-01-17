@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include "sorting_algorithms.h"
 
 void print_array(const int arr[], int n)
@@ -44,7 +45,7 @@ void selection_sort(int arr[], int n)
 
 void bubble_sort(int arr[], int n)
 {
-    bool swapped = false;
+    bool swapped;
 
     do
     {
