@@ -37,7 +37,7 @@ void selection_sort(int arr[], int n)
 {
     for (int i = 0; i < n - 1; i++)
     {
-        int j = indexOfMin(arr, n, i);
+        int j = index_of_min(arr, n, i);
         swap(&arr[i], &arr[j]);
     }
 }
