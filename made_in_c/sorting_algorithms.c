@@ -80,3 +80,21 @@ void insertion_sort(int arr[], int n)
         arr[j + 1] = temp;
     }
 }
+
+void gnome_sort(int arr[], int n)
+{
+    int i = 0;
+
+    while (i < n)
+    {
+        if (i > 0 && arr[i - 1] > arr[i])
+        {
+            swap(&arr[i - 1], &arr[i]);
+            i--;
+        }
+        else
+        {
+            i++;
+        }
+    }
+}
