@@ -92,38 +92,6 @@ class SortingAlgorithms:
             if i == 0:
                 break
 
-    def gnome_sort(number_list):
-        """ In Gnome Sort, the program goes through the list from the start and checks the elements and the
-        elements next to it. If the left element is bigger than the right element, the program swaps the
-        elements and starts to go backwards. While going backwards, if the left element is bigger than the
-        right next element, the program swaps the elements. When the program is at the start again, it starts
-        to go forward and this process repeates until the program is at the end of the list. """
-
-        i: int = 1
-        forward: bool = True
-
-        while True:
-            while forward:
-                if i == len(number_list):
-                    return
-
-                if number_list[i - 1] <= number_list[i]:
-                    i += 1
-                else:
-                    number_list[i - 1], number_list[i] = number_list[i], number_list[i - 1]
-                    forward = False
-                    break
-
-            while not forward:
-                if i == 1:
-                    forward = True
-                    break
-
-                if number_list[i - 1] > number_list[i]:
-                    number_list[i - 1], number_list[i] = number_list[i], number_list[i - 1]
-
-                i -= 1
-
     def cocktail_shaker_sort(number_list):
         """ You can think Cocktail Shaker Sort as a double sided Bubble Sort. Cocktail Shaker Sort starts from
         the left side and moves to right like Bubble Sort but when it reaches the end, it moves to left. So the
@@ -138,15 +106,25 @@ class SortingAlgorithms:
         while end - start > 1:
             for i in range(start, end):
                 if number_list[i] > number_list[i + 1]:
-                    number_list[i], number_list[i + 1] = number_list[i + 1], number_list[i]
+                    number_list[i], number_list[i + 1] = number_list[i + 1], number_list[i] # Swapping elements
 
             end -= 1
 
             for i in range(end, start, -1):
                 if number_list[i - 1] > number_list[i]:
-                    number_list[i - 1], number_list[i] = number_list[i], number_list[i - 1]
+                    number_list[i - 1], number_list[i] = number_list[i], number_list[i - 1] # Swapping elements
 
             start += 1
+
+    def gnome_sort(number_list):
+        i: int = 1
+
+        while i < len(number_list):
+            if i > 0 and number_list[i - 1] > number_list[i]:
+                number_list[i - 1], number_list[i] = number_list[i], number_list[i - 1] # Swapping elements
+                i -= 1
+            else:
+                i += 1
 
     def insertsion_sort(number_list):
         """ In Insertsion Sort; the program checks at the list multiple times part by part as first 2

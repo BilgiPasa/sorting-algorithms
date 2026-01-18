@@ -11,8 +11,8 @@ class Program
         BozoSort,
         SootageSort,
         BubbleSort,
-        GnomeSort,
         CocktailShakerSort,
+        GnomeSort,
         InsertsionSort,
         SelectionSort,
         ShellSort,
@@ -23,7 +23,7 @@ class Program
     static void Main(string[] args)
     {
         AlgorithmTypes algorithmType;
-        Console.Write("\nSorting algorithms (from slowest to fastest)\n1) Bogo Sort\n2) Bozo Sort\n3) Sootage Sort\n4) Bubble Sort\n5) Gnome Sort\n6) Cocktail Shaker Sort\n7) Insertsion Sort\n8) Selection Sort\n9) Shell Sort\n10) Merge Sort\n11) Quick Sort\nSelect an algorithm: ");
+        Console.Write("\nSorting algorithms (from slowest to fastest)\n1) Bogo Sort\n2) Bozo Sort\n3) Sootage Sort\n4) Bubble Sort\n5) Cocktail Shaker Sort\n6) Gnome Sort\n7) Insertsion Sort\n8) Selection Sort\n9) Shell Sort\n10) Merge Sort\n11) Quick Sort\nSelect an algorithm: ");
         string? algorithmTypeSelection = Console.ReadLine();
 
         if (!string.IsNullOrEmpty(algorithmTypeSelection))
@@ -48,13 +48,13 @@ class Program
             {
                 algorithmType = AlgorithmTypes.BubbleSort;
             }
-            else if (algorithmTypeSelection.Equals("5") || algorithmTypeSelection.Equals("Gnome Sort") || algorithmTypeSelection.Equals("GnomeSort"))
-            {
-                algorithmType = AlgorithmTypes.GnomeSort;
-            }
-            else if (algorithmTypeSelection.Equals("6") || algorithmTypeSelection.Equals("Cocktail Shaker Sort") || algorithmTypeSelection.Equals("CocktailShaker Sort") || algorithmTypeSelection.Equals("CocktailShakerSort") || algorithmTypeSelection.Equals("Cocktail Sort") || algorithmTypeSelection.Equals("CocktailSort") || algorithmTypeSelection.Equals("Shaker Sort") || algorithmTypeSelection.Equals("ShakerSort"))
+            else if (algorithmTypeSelection.Equals("5") || algorithmTypeSelection.Equals("Cocktail Shaker Sort") || algorithmTypeSelection.Equals("CocktailShaker Sort") || algorithmTypeSelection.Equals("CocktailShakerSort") || algorithmTypeSelection.Equals("Cocktail Sort") || algorithmTypeSelection.Equals("CocktailSort") || algorithmTypeSelection.Equals("Shaker Sort") || algorithmTypeSelection.Equals("ShakerSort"))
             {
                 algorithmType = AlgorithmTypes.CocktailShakerSort;
+            }
+            else if (algorithmTypeSelection.Equals("6") || algorithmTypeSelection.Equals("Gnome Sort") || algorithmTypeSelection.Equals("GnomeSort"))
+            {
+                algorithmType = AlgorithmTypes.GnomeSort;
             }
             else if (algorithmTypeSelection.Equals("7") || algorithmTypeSelection.Equals("Insertsion Sort") || algorithmTypeSelection.Equals("InsertsionSort"))
             {
@@ -100,8 +100,8 @@ class Program
                 break;
 
             case AlgorithmTypes.BubbleSort:
-            case AlgorithmTypes.GnomeSort:
             case AlgorithmTypes.CocktailShakerSort:
+            case AlgorithmTypes.GnomeSort:
             case AlgorithmTypes.InsertsionSort:
             case AlgorithmTypes.SelectionSort:
                 Console.Write("Enter the array size (55555 is recommended): ");
@@ -162,6 +162,7 @@ class Program
         }
 
         Console.WriteLine("The array has randomized.");
+        //Console.WriteLine("[{0}]", string.Join(", ", theArray)); // To see the array before sorting
         Console.WriteLine("Starting to sort the array.");
 
         switch (algorithmType)
@@ -196,15 +197,15 @@ class Program
                 s.Stop();
                 break;
 
-            case AlgorithmTypes.GnomeSort:
-                s.Start();
-                SortingAlgorithms.GnomeSort(theArray);
-                s.Stop();
-                break;
-
             case AlgorithmTypes.CocktailShakerSort:
                 s.Start();
                 SortingAlgorithms.CocktailShakerSort(theArray);
+                s.Stop();
+                break;
+
+            case AlgorithmTypes.GnomeSort:
+                s.Start();
+                SortingAlgorithms.GnomeSort(theArray);
                 s.Stop();
                 break;
 
@@ -243,7 +244,7 @@ class Program
                 return;
         }
 
-        //Console.WriteLine("[{0}]", string.Join(", ", theArray)); // To see the array
+        //Console.WriteLine("[{0}]", string.Join(", ", theArray)); // To see the array after sorting
         Console.WriteLine($"{theArray.Length} integers has been sorted in {s.Elapsed.TotalNanoseconds / 1000000} milliseconds");
     }
 }

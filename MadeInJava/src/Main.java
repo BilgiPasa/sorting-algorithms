@@ -9,8 +9,8 @@ public class Main {
         BOZO_SORT,
         SOOTAGE_SORT,
         BUBBLE_SORT,
-        GNOME_SORT,
         COCKTAIL_SHAKER_SORT,
+        GNOME_SORT,
         INSERTSION_SORT,
         SELECTION_SORT,
         SHELL_SORT,
@@ -21,7 +21,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         AlgorithmTypes algorithmType;
-        System.out.print("\nSorting algorithms (from slowest to fastest)\n1) Bogo Sort\n2) Bozo Sort\n3) Sootage Sort\n4) Bubble Sort\n5) Gnome Sort\n6) Cocktail Shaker Sort\n7) Insertsion Sort\n8) Selection Sort\n9) Shell Sort\n10) Merge Sort\n11) Quick Sort\nSelect an algorithm: ");
+        System.out.print("\nSorting algorithms (from slowest to fastest)\n1) Bogo Sort\n2) Bozo Sort\n3) Sootage Sort\n4) Bubble Sort\n5) Cocktail Shaker Sort\n6) Gnome Sort\n7) Insertsion Sort\n8) Selection Sort\n9) Shell Sort\n10) Merge Sort\n11) Quick Sort\nSelect an algorithm: ");
         String algorithmTypeSelection = s.nextLine();
 
         if (algorithmTypeSelection.equals("0") || algorithmTypeSelection.equals("Built In") || algorithmTypeSelection.equals("BuiltIn")) {
@@ -34,10 +34,10 @@ public class Main {
             algorithmType = AlgorithmTypes.SOOTAGE_SORT;
         } else if (algorithmTypeSelection.equals("4") || algorithmTypeSelection.equals("Bubble Sort") || algorithmTypeSelection.equals("BubbleSort")) {
             algorithmType = AlgorithmTypes.BUBBLE_SORT;
-        } else if (algorithmTypeSelection.equals("5") || algorithmTypeSelection.equals("Gnome Sort") || algorithmTypeSelection.equals("GnomeSort")) {
-            algorithmType = AlgorithmTypes.GNOME_SORT;
-        } else if (algorithmTypeSelection.equals("6") || algorithmTypeSelection.equals("Cocktail Shaker Sort") || algorithmTypeSelection.equals("CocktailShaker Sort") || algorithmTypeSelection.equals("CocktailShakerSort") || algorithmTypeSelection.equals("Cocktail Sort") || algorithmTypeSelection.equals("CocktailSort") || algorithmTypeSelection.equals("Shaker Sort") || algorithmTypeSelection.equals("ShakerSort")) {
+        } else if (algorithmTypeSelection.equals("5") || algorithmTypeSelection.equals("Cocktail Shaker Sort") || algorithmTypeSelection.equals("CocktailShaker Sort") || algorithmTypeSelection.equals("CocktailShakerSort") || algorithmTypeSelection.equals("Cocktail Sort") || algorithmTypeSelection.equals("CocktailSort") || algorithmTypeSelection.equals("Shaker Sort") || algorithmTypeSelection.equals("ShakerSort")) {
             algorithmType = AlgorithmTypes.COCKTAIL_SHAKER_SORT;
+        } else if (algorithmTypeSelection.equals("6") || algorithmTypeSelection.equals("Gnome Sort") || algorithmTypeSelection.equals("GnomeSort")) {
+            algorithmType = AlgorithmTypes.GNOME_SORT;
         } else if (algorithmTypeSelection.equals("7") || algorithmTypeSelection.equals("Insertsion Sort") || algorithmTypeSelection.equals("InsertsionSort")) {
             algorithmType = AlgorithmTypes.INSERTSION_SORT;
         } else if (algorithmTypeSelection.equals("8") || algorithmTypeSelection.equals("Selection Sort") || algorithmTypeSelection.equals("SelectionSort")) {
@@ -65,8 +65,8 @@ public class Main {
                 break;
 
             case AlgorithmTypes.BUBBLE_SORT:
-            case AlgorithmTypes.GNOME_SORT:
             case AlgorithmTypes.COCKTAIL_SHAKER_SORT:
+            case AlgorithmTypes.GNOME_SORT:
             case AlgorithmTypes.INSERTSION_SORT:
             case AlgorithmTypes.SELECTION_SORT:
                 System.out.print("Enter the array size (55555 is recommended): ");
@@ -114,6 +114,7 @@ public class Main {
 
         System.out.println("The array has randomized.");
         long startTime = 0, endTime = 0;
+        //System.out.println(Arrays.toString(theArray)); // To see the array before sorting
         System.out.println("Starting to sort the array.");
 
         switch (algorithmType)
@@ -148,15 +149,15 @@ public class Main {
                 endTime = System.nanoTime();
                 break;
 
-            case AlgorithmTypes.GNOME_SORT:
-                startTime = System.nanoTime();
-                SortingAlgorithms.gnomeSort(theArray);
-                endTime = System.nanoTime();
-                break;
-
             case AlgorithmTypes.COCKTAIL_SHAKER_SORT:
                 startTime = System.nanoTime();
                 SortingAlgorithms.cocktailShakerSort(theArray);
+                endTime = System.nanoTime();
+                break;
+
+            case AlgorithmTypes.GNOME_SORT:
+                startTime = System.nanoTime();
+                SortingAlgorithms.gnomeSort(theArray);
                 endTime = System.nanoTime();
                 break;
 
@@ -195,7 +196,7 @@ public class Main {
                 return;
         }
 
-        //System.out.println(Arrays.toString(theArray)); // To see the array
+        //System.out.println(Arrays.toString(theArray)); // To see the array after sorting
         System.out.println(theArray.length + " integers has been sorted in " + ((endTime - startTime) / 1000000.0) + " milliseconds");
     }
 }

@@ -9,8 +9,8 @@ class AlgorithmTypes(Enum):
     BOZO_SORT = 2
     SOOTAGE_SORT = 3
     BUBBLE_SORT = 4
-    GNOME_SORT = 5
-    COCKTAIL_SHAKER_SORT = 6
+    COCKTAIL_SHAKER_SORT = 5
+    GNOME_SORT = 6
     INSERTSION_SORT = 7
     SELECTION_SORT = 8
     SHELL_SORT = 9
@@ -20,7 +20,7 @@ class AlgorithmTypes(Enum):
 class Main:
     def main():
         algorithm_type: AlgorithmTypes
-        algorithm_type_selection: str = input("\nSorting algorithms (from slowest to fastest)\n1) Bogo Sort\n2) Bozo Sort\n3) Sootage Sort\n4) Bubble Sort\n5) Gnome Sort\n6) Cocktail Shaker Sort\n7) Insertsion Sort\n8) Selection Sort\n9) Shell Sort\n10) Merge Sort\n11) Quick Sort\nSelect an algorithm: ")
+        algorithm_type_selection: str = input("\nSorting algorithms (from slowest to fastest)\n1) Bogo Sort\n2) Bozo Sort\n3) Sootage Sort\n4) Bubble Sort\n5) Cocktail Shaker Sort\n6) Gnome Sort\n7) Insertsion Sort\n8) Selection Sort\n9) Shell Sort\n10) Merge Sort\n11) Quick Sort\nSelect an algorithm: ")
 
         if algorithm_type_selection == "0" or algorithm_type_selection == "Built In" or algorithm_type_selection == "BuiltIn":
             algorithm_type = AlgorithmTypes.BUILT_IN
@@ -32,10 +32,10 @@ class Main:
             algorithm_type = AlgorithmTypes.SOOTAGE_SORT
         elif algorithm_type_selection == "4" or algorithm_type_selection == "Bubble Sort" or algorithm_type_selection == "BubbleSort":
             algorithm_type = AlgorithmTypes.BUBBLE_SORT
-        elif algorithm_type_selection == "5" or algorithm_type_selection == "Gnome Sort" or algorithm_type_selection == "GnomeSort":
-            algorithm_type = AlgorithmTypes.GNOME_SORT
-        elif algorithm_type_selection == "6" or algorithm_type_selection == "Cocktail Shaker Sort" or algorithm_type_selection == "CocktailShaker Sort" or algorithm_type_selection == "CocktailShakerSort" or algorithm_type_selection == "Cocktail Sort" or algorithm_type_selection == "CocktailSort" or algorithm_type_selection == "Shaker Sort" or algorithm_type_selection == "ShakerSort":
+        elif algorithm_type_selection == "5" or algorithm_type_selection == "Cocktail Shaker Sort" or algorithm_type_selection == "CocktailShaker Sort" or algorithm_type_selection == "CocktailShakerSort" or algorithm_type_selection == "Cocktail Sort" or algorithm_type_selection == "CocktailSort" or algorithm_type_selection == "Shaker Sort" or algorithm_type_selection == "ShakerSort":
             algorithm_type = AlgorithmTypes.COCKTAIL_SHAKER_SORT
+        elif algorithm_type_selection == "6" or algorithm_type_selection == "Gnome Sort" or algorithm_type_selection == "GnomeSort":
+            algorithm_type = AlgorithmTypes.GNOME_SORT
         elif algorithm_type_selection == "7" or algorithm_type_selection == "Insertsion Sort" or algorithm_type_selection == "InsertsionSort":
             algorithm_type = AlgorithmTypes.INSERTSION_SORT
         elif algorithm_type_selection == "8" or algorithm_type_selection == "Selection Sort" or algorithm_type_selection == "SelectionSort":
@@ -57,7 +57,7 @@ class Main:
             case AlgorithmTypes.SOOTAGE_SORT:
                 print("Enter the list size (less than 3223 is recommended): ", end="")
 
-            case AlgorithmTypes.BUBBLE_SORT | AlgorithmTypes.GNOME_SORT | AlgorithmTypes.COCKTAIL_SHAKER_SORT | AlgorithmTypes.INSERTSION_SORT | AlgorithmTypes.SELECTION_SORT:
+            case AlgorithmTypes.BUBBLE_SORT | AlgorithmTypes.COCKTAIL_SHAKER_SORT | AlgorithmTypes.GNOME_SORT | AlgorithmTypes.INSERTSION_SORT | AlgorithmTypes.SELECTION_SORT:
                 print("Enter the list size (less than 55555 is recommended): ", end="")
 
             case AlgorithmTypes.SHELL_SORT | AlgorithmTypes.MERGE_SORT | AlgorithmTypes.QUICK_SORT:
@@ -92,6 +92,7 @@ class Main:
         print("The list has randomized.")
         start_time: float
         end_time: float
+        #print("[" + ", ".join(str(x) for x in the_list) + "]") # To see the list before sorting
         print("Starting to sort the list.")
 
         match algorithm_type:
@@ -120,14 +121,14 @@ class Main:
                 sorting_algorithms.SortingAlgorithms.bubble_sort(the_list)
                 end_time = time()
 
-            case AlgorithmTypes.GNOME_SORT:
-                start_time = time()
-                sorting_algorithms.SortingAlgorithms.gnome_sort(the_list)
-                end_time = time()
-
             case AlgorithmTypes.COCKTAIL_SHAKER_SORT:
                 start_time = time()
                 sorting_algorithms.SortingAlgorithms.cocktail_shaker_sort(the_list)
+                end_time = time()
+
+            case AlgorithmTypes.GNOME_SORT:
+                start_time = time()
+                sorting_algorithms.SortingAlgorithms.gnome_sort(the_list)
                 end_time = time()
 
             case AlgorithmTypes.INSERTSION_SORT:
@@ -159,7 +160,7 @@ class Main:
                 print("The algorithm type could not found. Aborting.")
                 return
 
-        #print("[" + ", ".join(str(x) for x in the_list) + "]") # To see the list
+        #print("[" + ", ".join(str(x) for x in the_list) + "]") # To see the list after sorting
         print((str)(len(the_list)) + " integers has been sorted in " + (str)((end_time - start_time) * 1000) + " milliseconds.")
 
     if __name__ == "__main__":

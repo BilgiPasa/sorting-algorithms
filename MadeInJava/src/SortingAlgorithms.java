@@ -135,50 +135,6 @@ public class SortingAlgorithms {
         while (i > 0);
     }
 
-    public static void gnomeSort(int[] numberArray) {
-        /* In Gnome Sort, the program goes through the array from the start and checks the elements and the
-        elements next to it. If the left element is bigger than the right element, the program swaps the
-        elements and starts to go backwards. While going backwards, if the left element is bigger than the
-        right next element, the program swaps the elements. When the program is at the start again, it starts
-        to go forward and this process repeates until the program is at the end of the array. */
-
-        int i = 1, temp;
-        boolean forward = true;
-
-        while (true) {
-            while (forward) {
-                if (i == numberArray.length) {
-                    return;
-                }
-
-                if (numberArray[i - 1] <= numberArray[i]) {
-                    i++;
-                } else {
-                    temp = numberArray[i - 1];
-                    numberArray[i - 1] = numberArray[i];
-                    numberArray[i] = temp;
-                    forward = false;
-                    break;
-                }
-            }
-
-            while (!forward) {
-                if (i == 1) {
-                    forward = true;
-                    break;
-                }
-
-                if (numberArray[i - 1] > numberArray[i]) {
-                    temp = numberArray[i - 1];
-                    numberArray[i - 1] = numberArray[i];
-                    numberArray[i] = temp;
-                }
-
-                i--;
-            }
-        }
-    }
-
     public static void cocktailShakerSort(int[] numberArray) {
         /* You can think Cocktail Shaker Sort as a double sided Bubble Sort. Cocktail Shaker Sort starts from
         the left side and moves to right like Bubble Sort but when it reaches the end, it moves to left. So the
@@ -208,6 +164,20 @@ public class SortingAlgorithms {
             }
 
             start++;
+        }
+    }
+
+    public static void gnomeSort(int[] numberArray) {
+        int i = 1, temp;
+
+        while (i < numberArray.length) {
+            if (i > 0 && numberArray[i - 1] > numberArray[i]) {
+                temp = numberArray[i - 1];
+                numberArray[i - 1] = numberArray[i];
+                numberArray[i--] = temp; // This means numberArray[i] = temp; i -= 1;
+            } else {
+                i++;
+            }
         }
     }
 

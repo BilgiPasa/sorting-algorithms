@@ -139,56 +139,6 @@ public static class SortingAlgorithms
         while (i > 0);
     }
 
-    public static void GnomeSort(int[] numberArray)
-    {
-        /* In Gnome Sort, the program goes through the array from the start and checks the elements and the
-        elements next to it. If the left element is bigger than the right element, the program swaps the
-        elements and starts to go backwards. While going backwards, if the left element is bigger than the
-        right next element, the program swaps the elements. When the program is at the start again, it starts
-        to go forward and this process repeates until the program is at the end of the array. */
-
-        int i = 1;
-        bool forward = true;
-
-        while (true)
-        {
-            while (forward)
-            {
-                if (i == numberArray.Length)
-                {
-                    return;
-                }
-
-                if (numberArray[i - 1] <= numberArray[i])
-                {
-                    i++;
-                }
-                else
-                {
-                    (numberArray[i - 1], numberArray[i]) = (numberArray[i], numberArray[i - 1]); // Swapping elements
-                    forward = false;
-                    break;
-                }
-            }
-
-            while (!forward)
-            {
-                if (i == 1)
-                {
-                    forward = true;
-                    break;
-                }
-
-                if (numberArray[i - 1] > numberArray[i])
-                {
-                    (numberArray[i - 1], numberArray[i]) = (numberArray[i], numberArray[i - 1]); // Swapping elements
-                }
-
-                i--;
-            }
-        }
-    }
-
     public static void CocktailShakerSort(int[] numberArray)
     {
         /* You can think Cocktail Shaker Sort as a double sided Bubble Sort. Cocktail Shaker Sort starts from
@@ -220,6 +170,24 @@ public static class SortingAlgorithms
             }
 
             start++;
+        }
+    }
+
+    public static void GnomeSort(int[] numberArray)
+    {
+        int i = 1;
+
+        while (i < numberArray.Length)
+        {
+            if (i > 0 && numberArray[i - 1] > numberArray[i])
+            {
+                (numberArray[i - 1], numberArray[i]) = (numberArray[i], numberArray[i - 1]); // Swapping elements
+                i--;
+            }
+            else
+            {
+                i++;
+            }
         }
     }
 
