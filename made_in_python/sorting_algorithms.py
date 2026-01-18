@@ -80,7 +80,6 @@ class SortingAlgorithms:
         list ends, if the list is not sorted, the program repeats this process until the list is sorted. """
 
         i: int
-        j: int
 
         while True:
             i = 0
@@ -223,29 +222,23 @@ class SortingAlgorithms:
         SortingAlgorithms.merge(number_list, left_list, right_list)
 
     def merge(number_list, left_list, right_list): # This is for Merge Sort
-        i: int = 0
         j: int = 0
         k: int = 0
 
-        while i < len(left_list) and j < len(right_list):
-            if left_list[i] > right_list[j]:
-                number_list[k] = right_list[j]
+        for i in range(len(number_list)):
+            if j >= len(left_list):
+                number_list[i] = right_list[k]
                 k += 1
+            elif k >= len(right_list):
+                number_list[i] = left_list[j]
                 j += 1
             else:
-                number_list[k] = left_list[i]
-                k += 1
-                i += 1
-
-        while i < len(left_list):
-            number_list[k] = left_list[i]
-            k += 1
-            i += 1
-
-        while j < len(right_list):
-            number_list[k] = right_list[j]
-            k += 1
-            j += 1
+                if left_list[j] < right_list[k]:
+                    number_list[i] = left_list[j]
+                    j += 1
+                else:
+                    number_list[i] = right_list[k]
+                    k += 1
 
     def quick_sort(number_list, start: int, end: int):
         if start >= end:

@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Arrays;
 
 public class SortingAlgorithms {
     // The algorithms are listed from the slowest to the fastest.
@@ -117,12 +118,12 @@ public class SortingAlgorithms {
         it. If the left element is bigger than the right element, the program swaps the elements. When the
         array ends, if the array is not sorted, the program repeats this process until the array is sorted. */
 
-        int i, j, temp;
+        int i, temp;
 
         do {
             i = 0;
 
-            for (j = 1; j < numberArray.length; j++) {
+            for (int j = 1; j < numberArray.length; j++) {
                 if (numberArray[j - 1] > numberArray[j]) {
                     temp = numberArray[j - 1];
                     numberArray[j - 1] = numberArray[j];
@@ -279,40 +280,30 @@ public class SortingAlgorithms {
             return;
         }
 
-        int middle = numberArray.length / 2, i;
-        int[] leftArray = new int[middle], rightArray = new int[numberArray.length - middle];
-
-        for (i = 0; i < middle; i++) {
-            leftArray[i] = numberArray[i];
-        }
-
-        for (i = middle; i < numberArray.length; i++) {
-            rightArray[i - middle] = numberArray[i];
-        }
-
+        int middle = numberArray.length / 2;
+        int[] leftArray = Arrays.copyOfRange(numberArray, 0, middle); // Copying the numberArray's first half to the leftArray
+        int[] rightArray = Arrays.copyOfRange(numberArray, middle, numberArray.length); // Copying the numberArray's second half to the rightArray
         mergeSort(leftArray);
         mergeSort(rightArray);
         merge(numberArray, leftArray, rightArray);
     }
 
     static void merge(int[] numberArray, int[] leftArray, int[] rightArray) { // This is for Merge Sort
-        int i = 0, j = 0, k = 0;
+        int j = 0, k = 0;
 
-        while (i < leftArray.length && j < rightArray.length) {
-            if (leftArray[i] > rightArray[j]) {
-                numberArray[k++] = rightArray[j++]; // This means numberArray[k] = rightArray[j]; k += 1; j += 1;
-            } else {
-                numberArray[k++] = leftArray[i++]; // This means numberArray[k] = leftArray[i]; k += 1; i += 1;
-            }
-        }
-
-        while (i < leftArray.length) {
-            numberArray[k++] = leftArray[i++]; // This means numberArray[k] = leftArray[i]; k += 1; i += 1;
-        }
-
-        while (j < rightArray.length) {
-            numberArray[k++] = rightArray[j++]; // This means numberArray[k] = rightArray[j]; k += 1; j += 1;
-        }
+		for (int i = 0; i < numberArray.length; i++) {
+		    if (j >= leftArray.length) {
+		        numberArray[i] = rightArray[k++]; // This means numberArray[i] = rightArray[k]; k += 1;
+		    } else if (k >= rightArray.length) {
+		        numberArray[i] = leftArray[j++]; // This means numberArray[i] = leftArray[j]; j += 1;
+		    } else {
+		        if (leftArray[j] < rightArray[k]) {
+		            numberArray[i] = leftArray[j++]; // This means numberArray[i] = leftArray[j]; j += 1;
+		        } else {
+		            numberArray[i] = rightArray[k++]; // This means numberArray[i] = rightArray[k]; k += 1;
+		        }
+		    }
+		}
     }
 
     public static void quickSort(int[] numberArray, int start, int end) {
