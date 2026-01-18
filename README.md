@@ -8,6 +8,8 @@ Implemented sorting algorithms (from fastest to slowest*): Quick Sort, Merge Sor
 
 Implemented languages (from fastest to slowest**): Java (25), C# (.Net 10), Python (3.14).
 
+The C version is being implemented by bartu-g. After it is implemented, I am going to test it and add it to this list
+
 *According to my tests when I test with Java. (I didn't compare any language's built in sorter in this list.)
 
 **According to my tests when I use Selection Sort. (I used VS Code for testing.)
@@ -39,10 +41,6 @@ I'm not planning to implement the Bucket Sort algorithm because I want to use ju
 TODO:
 
 * Try to implement the Radix Sort and the Heap Sort algorithms.
-
-* Learn C and implement the sorting algorithms in C.
-
-* When you bored, find some more sorting algorithms and implement those too.
 
 ---
 

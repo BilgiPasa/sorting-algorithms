@@ -121,13 +121,13 @@ public static class SortingAlgorithms
         it. If the left element is bigger than the right element, the program swaps the elements. When the
         array ends, if the array is not sorted, the program repeats this process until the array is sorted. */
 
-        int i, j;
+        int i;
 
         do
         {
             i = 0;
 
-            for (j = 1; j < numberArray.Length; j++)
+            for (int j = 1; j < numberArray.Length; j++)
             {
                 if (numberArray[j - 1] > numberArray[j])
                 {
@@ -305,19 +305,10 @@ public static class SortingAlgorithms
             return;
         }
 
-        int middle = numberArray.Length / 2, i;
+        int middle = numberArray.Length / 2;
         int[] leftArray = new int[middle], rightArray = new int[numberArray.Length - middle];
-
-        for (i = 0; i < middle; i++)
-        {
-            leftArray[i] = numberArray[i];
-        }
-
-        for (i = middle; i < numberArray.Length; i++)
-        {
-            rightArray[i - middle] = numberArray[i];
-        }
-
+        Array.Copy(numberArray, leftArray, middle); // Copying the numberArray's first half to the leftArray
+        Array.Copy(numberArray, middle, rightArray, 0, numberArray.Length - middle); // Copying the numberArray's second half to the rightArray
         MergeSort(leftArray);
         MergeSort(rightArray);
         Merge(numberArray, leftArray, rightArray);
@@ -325,29 +316,30 @@ public static class SortingAlgorithms
 
     static void Merge(int[] numberArray, int[] leftArray, int[] rightArray) // This is for Merge Sort
     {
-        int i = 0, j = 0, k = 0;
+        int j = 0, k = 0;
 
-        while (i < leftArray.Length && j < rightArray.Length)
+		for (int i = 0; i < numberArray.Length; i++)
         {
-            if (leftArray[i] > rightArray[j])
+		    if (j >= leftArray.Length)
             {
-                numberArray[k++] = rightArray[j++]; // This means numberArray[k] = rightArray[j]; k += 1; j += 1;
-            }
+		        numberArray[i] = rightArray[k++]; // This means numberArray[i] = rightArray[k]; k += 1;
+		    }
+            else if (k >= rightArray.Length)
+            {
+		        numberArray[i] = leftArray[j++]; // This means numberArray[i] = leftArray[j]; j += 1;
+		    }
             else
             {
-                numberArray[k++] = leftArray[i++]; // This means numberArray[k] = leftArray[i]; k += 1; i += 1;
-            }
-        }
-
-        while (i < leftArray.Length)
-        {
-            numberArray[k++] = leftArray[i++]; // This means numberArray[k] = leftArray[i]; k += 1; i += 1;
-        }
-
-        while (j < rightArray.Length)
-        {
-            numberArray[k++] = rightArray[j++]; // This means numberArray[k] = rightArray[j]; k += 1; j += 1;
-        }
+		        if (leftArray[j] < rightArray[k])
+                {
+		            numberArray[i] = leftArray[j++]; // This means numberArray[i] = leftArray[j]; j += 1;
+		        }
+                else
+                {
+		            numberArray[i] = rightArray[k++]; // This means numberArray[i] = rightArray[k]; k += 1;
+		        }
+		    }
+		}
     }
 
     public static void QuickSort(int[] numberArray, int start, int end)
