@@ -34,15 +34,6 @@ int index_of_min(const int arr[], int n, int start)
     return min;
 }
 
-void selection_sort(int arr[], int n)
-{
-    for (int i = 0; i < n - 1; i++)
-    {
-        int j = index_of_min(arr, n, i);
-        swap(&arr[i], &arr[j]);
-    }
-}
-
 void bubble_sort(int arr[], int n)
 {
     bool swapped;
@@ -64,6 +55,24 @@ void bubble_sort(int arr[], int n)
     } while (swapped);
 }
 
+void gnome_sort(int arr[], int n)
+{
+    int i = 1;
+
+    while (i < n)
+    {
+        if (i > 0 && arr[i - 1] > arr[i])
+        {
+            swap(&arr[i - 1], &arr[i]);
+            i--;
+        }
+        else
+        {
+            i++;
+        }
+    }
+}
+
 void insertion_sort(int arr[], int n)
 {
     for (int i = 1; i < n; i++)
@@ -81,20 +90,11 @@ void insertion_sort(int arr[], int n)
     }
 }
 
-void gnome_sort(int arr[], int n)
+void selection_sort(int arr[], int n)
 {
-    int i = 1;
-
-    while (i < n)
+    for (int i = 0; i < n - 1; i++)
     {
-        if (i > 0 && arr[i - 1] > arr[i])
-        {
-            swap(&arr[i - 1], &arr[i]);
-            i--;
-        }
-        else
-        {
-            i++;
-        }
+        int j = index_of_min(arr, n, i);
+        swap(&arr[i], &arr[j]);
     }
 }
