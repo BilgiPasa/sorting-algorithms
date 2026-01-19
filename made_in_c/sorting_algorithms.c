@@ -83,7 +83,7 @@ void insertion_sort(int arr[], int n)
 
 void gnome_sort(int arr[], int n)
 {
-    int i = 0;
+    int i = 1;
 
     while (i < n)
     {
