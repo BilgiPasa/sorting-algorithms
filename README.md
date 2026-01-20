@@ -18,7 +18,7 @@ Speed comparison of the languages (from fastest to slowest**): Java (25), C# (.N
 
 **According to my tests when I use Selection Sort. (I used VS Code for testing.)
 
-I DID NOT copy-pasted any code from any Generative AI. I wrote the code of the algorithms that I maintain myself. I learned these algorithms from websites (for example geeksforgeeks) and videos (for example Bro Code and udiprod channels' videos). Also, I don't like using Generative AI and I don't recommend using it.
+I DID NOT copy-pasted any code from any Generative AI prompt. I wrote the code of the algorithms that I maintain myself. I learned these algorithms from websites (for example geeksforgeeks) and videos (for example Bro Code and udiprod channels' videos). Also, I don't like using Generative AI and I don't recommend using it.
 
 ---
 
