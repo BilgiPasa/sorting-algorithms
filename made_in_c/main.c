@@ -74,24 +74,33 @@ int main(void)
     //print_array(number_array, length); // To see the array before sorting
     printf("Starting to sort the array.\n");
 
+    clock_t start, end;
+    
     switch (algorithm_type)
     {
         case BUBBLE_SORT:
+            start = clock();
             bubble_sort(number_array, length);
+            end = clock();
             break;
         case GNOME_SORT:
+            start = clock();
             gnome_sort(number_array, length);
+            end = clock();
             break;
         case INSERTION_SORT:
+            start = clock();
             insertion_sort(number_array, length);
+            end = clock();
             break;
         case SELECTION_SORT:
+            start = clock();
             selection_sort(number_array, length);
+            end = clock();
             break;
     }
 
     //print_array(number_array, length); // To see the array after sorting
-    // TODO: IMPLEMENT A TIMER AND CALCULATE THE TIME ELAPSED
-    printf("%d integers has been sorted in IDK milliseconds.\n", length);
+    printf("%d integers has been sorted in %f milliseconds.\n", length, ((double) (end - start) / CLOCKS_PER_SEC) * 1000);
     return 0;
 }
