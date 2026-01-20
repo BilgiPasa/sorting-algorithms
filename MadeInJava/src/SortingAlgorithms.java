@@ -2,43 +2,35 @@ import java.util.Random;
 import java.util.Arrays;
 
 public class SortingAlgorithms {
+    public static boolean isSorted(int[] numberArray)
+    {
+        for (int i = 1; i < numberArray.length; i++)
+        {
+            if (numberArray[i - 1] > numberArray[i])
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     // The algorithms are listed from the slowest to the fastest.
 
     public static void bogoSort(int[] numberArray) {
         /* In Bogo Sort; firstly, the program checks if the array is sorted. If not, it shuffels the array and
         checks again if the array is sorted. The program repeates this process until the array is sorted. */
 
-        int i;
-        boolean b = true;
-
-        for (i = 1; i < numberArray.length; i++) { // Cheking if the array is sorted
-            if (numberArray[i - 1] > numberArray[i]) {
-                b = false;
-                break;
-            }
-        }
-
-        if (b) {
-            return;
-        }
+        boolean b = isSorted(numberArray);
 
         while (!b) {
-            i = 0;
-            b = true;
-
-            fisherYatesAlgorithm(numberArray); // For shuffling the array
-
-            for (i = 1; i < numberArray.length; i++) { // Cheking if the array is sorted
-                if (numberArray[i - 1] > numberArray[i]) {
-                    b = false;
-                    break;
-                }
-            }
+            shuffle(numberArray);
+            b = isSorted(numberArray);
         }
     }
 
     // I couldn't find a built in primitive integer array shuffler. So, here is the Fisher-Yates algorithm.
-    static void fisherYatesAlgorithm(int[] numberArray) { // This is for Bogo Sort
+    static void shuffle(int[] numberArray) { // This is for Bogo Sort
         int randomNumber, temp;
         Random r = new Random();
 
@@ -55,26 +47,11 @@ public class SortingAlgorithms {
         items and swaps them. Then, it checks again if the array is sorted. The program repeates this process
         until the array is sorted. */
 
-        int i;
-        boolean b = true;
-
-        for (i = 1; i < numberArray.length; i++) { // Cheking if the array is sorted
-            if (numberArray[i - 1] > numberArray[i]) {
-                b = false;
-                break;
-            }
-        }
-
-        if (b) {
-            return;
-        }
-
+        boolean b = isSorted(numberArray);
         int index1, index2, temp;
         Random r = new Random();
 
         while (!b) {
-            b = true;
-
             do {
                 index1 = r.nextInt(numberArray.length);
                 index2 = r.nextInt(numberArray.length);
@@ -84,13 +61,7 @@ public class SortingAlgorithms {
             temp = numberArray[index1];
             numberArray[index1] = numberArray[index2];
             numberArray[index2] = temp;
-
-            for (i = 1; i < numberArray.length; i++) { // Cheking if the array is sorted
-                if (numberArray[i - 1] > numberArray[i]) {
-                    b = false;
-                    break;
-                }
-            }
+            b = isSorted(numberArray);
         }
     }
 
@@ -118,21 +89,24 @@ public class SortingAlgorithms {
         it. If the left element is bigger than the right element, the program swaps the elements. When the
         array ends, if the array is not sorted, the program repeats this process until the array is sorted. */
 
-        int i, temp;
+        int temp, length = numberArray.length;
+        boolean swapped;
 
         do {
-            i = 0;
+            swapped = false;
 
-            for (int j = 1; j < numberArray.length; j++) {
-                if (numberArray[j - 1] > numberArray[j]) {
-                    temp = numberArray[j - 1];
-                    numberArray[j - 1] = numberArray[j];
-                    numberArray[j] = temp;
-                    i++;
+            for (int i = 1; i < length; i++) {
+                if (numberArray[i - 1] > numberArray[i]) {
+                    temp = numberArray[i - 1];
+                    numberArray[i - 1] = numberArray[i];
+                    numberArray[i] = temp;
+                    swapped = true;
                 }
             }
+
+            length--; // Every time it restarts, the largest elements moves to the end of the array. So, we don't need to check it again.
         }
-        while (i > 0);
+        while (swapped);
     }
 
     public static void cocktailShakerSort(int[] numberArray) {

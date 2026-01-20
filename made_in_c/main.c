@@ -1,79 +1,97 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 #include <time.h>
 #include "sorting_algorithms.h"
 
 int main(void)
 {
-    srand(time(NULL));
-
-    int n = (rand() % 1000) + 1;
-
-    printf("Array length generated as %d\n", n);
-
-    int nums[n];
-
-    printf("Initial Array:\n");
-
-    for (int i = 0; i < n; i++)
-    {
-        nums[i] = rand() % 2500;
-
-        printf("%d ", nums[i]);
-    }
-
-    printf("\n");
-
-    int a;
-    char buf[1024];
-
-    enum SortingAlgorithm {
+    enum AlgorithmTypes {
         BUBBLE_SORT,
         GNOME_SORT,
         INSERTION_SORT,
         SELECTION_SORT
-        /* TODO: ADD MORE SORTING ALGORITHMS HERE */
+        // TODO: IMPLEMENT MORE ALGORITHMS AND ADD THEM HERE
     };
 
-    enum SortingAlgorithm choice;
+    enum AlgorithmTypes algorithm_type;
+    printf("\nSorting algorithms (from slowest to fastest)\n");
+    printf("1) Bubble Sort\n");
+    printf("2) Gnome Sort\n");
+    printf("3) Insertion Sort\n");
+    printf("4) Selection Sort\n");
+    printf("Select an algorithm: ");
+    char algorithm_type_selection[1024];
 
-    do
+    if (!fgets(algorithm_type_selection, sizeof(algorithm_type_selection), stdin))
     {
-        printf("Select a sorting algorithm\n");
-        printf("1) Bubble Sort\n");
-        printf("2) Gnome Sort\n");
-        printf("3) Insertion Sort\n");
-        printf("4) Selection Sort\n");
+        return 1;
+    }
 
-        if (!fgets(buf, sizeof(buf), stdin))
-        {
-            return 1;
-        }
+    int temp = atoi(algorithm_type_selection);
 
-        a = atoi(buf);
-    } while (a < 1 || a > 4);
+    if (temp > 4 || temp < 1)
+    {
+        printf("Couldn't understand the input. Aborting.\n");
+        return 1;
+    }
 
-    choice = --a;
+    algorithm_type = --temp; // This means temp -= 1; algorithm_type = temp;
 
-    switch (choice)
+    switch (algorithm_type)
     {
         case BUBBLE_SORT:
-            bubble_sort(nums, n);
+        case GNOME_SORT:
+        case INSERTION_SORT:
+        case SELECTION_SORT:
+            printf("Enter the array size (55555 is recommended): ");
+            break;
+
+        default:
+            printf("The algorithm type could not found. Aborting.\n");
+            return 1;
+    }
+
+    int length;
+    scanf("%d", &length);
+
+    if (length < 0)
+    {
+        printf("The array size cannot be %d. Aborting.\n", length);
+        return 1;
+    }
+
+    int nums[length];
+    printf("Starting to randomize the array.\n");
+    srand((unsigned int)time(NULL));
+
+    for (int i = 0; i < length; i++)
+    {
+        nums[i] = rand() % INT_MAX; // Write this next to percent sign: INT_MAX
+    }
+
+    printf("The array has randomized.\n");
+    //print_array(nums, length); // To see the array before sorting
+    printf("Starting to sort the array.\n");
+
+    switch (algorithm_type)
+    {
+        case BUBBLE_SORT:
+            bubble_sort(nums, length);
             break;
         case GNOME_SORT:
-            gnome_sort(nums, n);
+            gnome_sort(nums, length);
             break;
         case INSERTION_SORT:
-            insertion_sort(nums, n);
+            insertion_sort(nums, length);
             break;
         case SELECTION_SORT:
-            selection_sort(nums, n);
+            selection_sort(nums, length);
             break;
     }
 
-    printf("Sorted Array:\n");
-
-    print_array(nums, n);
-
+    //print_array(nums, length); // To see the array after sorting
+    // TODO: IMPLEMENT A TIMER AND CALCULATE THE TIME ELAPSED
+    printf("%d integers has been sorted in IDK milliseconds.\n", length);
     return 0;
 }

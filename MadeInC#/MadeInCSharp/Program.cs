@@ -23,7 +23,19 @@ class Program
     static void Main(string[] args)
     {
         AlgorithmTypes algorithmType;
-        Console.Write("\nSorting algorithms (from slowest to fastest)\n1) Bogo Sort\n2) Bozo Sort\n3) Sootage Sort\n4) Bubble Sort\n5) Cocktail Shaker Sort\n6) Gnome Sort\n7) Insertsion Sort\n8) Selection Sort\n9) Shell Sort\n10) Merge Sort\n11) Quick Sort\nSelect an algorithm: ");
+        Console.WriteLine("\nSorting algorithms (from slowest to fastest)");
+        Console.WriteLine("1) Bogo Sort");
+        Console.WriteLine("2) Bozo Sort");
+        Console.WriteLine("3) Sootage Sort");
+        Console.WriteLine("4) Bubble Sort");
+        Console.WriteLine("5) Cocktail Shaker Sort");
+        Console.WriteLine("6) Gnome Sort");
+        Console.WriteLine("7) Insertsion Sort");
+        Console.WriteLine("8) Selection Sort");
+        Console.WriteLine("9) Shell Sort");
+        Console.WriteLine("10) Merge Sort");
+        Console.WriteLine("11) Quick Sort");
+        Console.Write("Select an algorithm: ");
         string? algorithmTypeSelection = Console.ReadLine();
 
         if (!string.IsNullOrEmpty(algorithmTypeSelection))
@@ -140,11 +152,11 @@ class Program
             return;
         }
 
-        int[] theArray;
+        int[] numberArray;
 
         try
         {
-            theArray = new int[length];
+            numberArray = new int[length];
         }
         catch
         {
@@ -156,86 +168,86 @@ class Program
         Stopwatch s = new Stopwatch();
         Console.WriteLine("Starting to randomize the array.");
 
-        for (int i = 0; i < theArray.Length; i++)
+        for (int i = 0; i < numberArray.Length; i++)
         {
-            theArray[i] = r.Next(int.MaxValue);
+            numberArray[i] = r.Next(int.MaxValue); // Write this in as the parameter: int.MaxValue
         }
 
         Console.WriteLine("The array has randomized.");
-        //Console.WriteLine("[{0}]", string.Join(", ", theArray)); // To see the array before sorting
+        //Console.WriteLine("[{0}]", string.Join(", ", numberArray)); // To see the array before sorting
         Console.WriteLine("Starting to sort the array.");
 
         switch (algorithmType)
         {
             case AlgorithmTypes.BuiltIn:
                 s.Start();
-                Array.Sort(theArray);
+                Array.Sort(numberArray);
                 s.Stop();
                 break;
 
             case AlgorithmTypes.BogoSort:
                 s.Start();
-                SortingAlgorithms.BogoSort(theArray);
+                SortingAlgorithms.BogoSort(numberArray);
                 s.Stop();
                 break;
 
             case AlgorithmTypes.BozoSort:
                 s.Start();
-                SortingAlgorithms.BozoSort(theArray);
+                SortingAlgorithms.BozoSort(numberArray);
                 s.Stop();
                 break;
 
             case AlgorithmTypes.SootageSort:
                 s.Start();
-                SortingAlgorithms.SootageSort(theArray, 0, theArray.Length - 1);
+                SortingAlgorithms.SootageSort(numberArray, 0, numberArray.Length - 1);
                 s.Stop();
                 break;
 
             case AlgorithmTypes.BubbleSort:
                 s.Start();
-                SortingAlgorithms.BubbleSort(theArray);
+                SortingAlgorithms.BubbleSort(numberArray);
                 s.Stop();
                 break;
 
             case AlgorithmTypes.CocktailShakerSort:
                 s.Start();
-                SortingAlgorithms.CocktailShakerSort(theArray);
+                SortingAlgorithms.CocktailShakerSort(numberArray);
                 s.Stop();
                 break;
 
             case AlgorithmTypes.GnomeSort:
                 s.Start();
-                SortingAlgorithms.GnomeSort(theArray);
+                SortingAlgorithms.GnomeSort(numberArray);
                 s.Stop();
                 break;
 
             case AlgorithmTypes.InsertsionSort:
                 s.Start();
-                SortingAlgorithms.InsertsionSort(theArray);
+                SortingAlgorithms.InsertsionSort(numberArray);
                 s.Stop();
                 break;
 
             case AlgorithmTypes.SelectionSort:
                 s.Start();
-                SortingAlgorithms.SelectionSort(theArray);
+                SortingAlgorithms.SelectionSort(numberArray);
                 s.Stop();
                 break;
 
             case AlgorithmTypes.ShellSort:
                 s.Start();
-                SortingAlgorithms.ShellSort(theArray);
+                SortingAlgorithms.ShellSort(numberArray);
                 s.Stop();
                 break;
 
             case AlgorithmTypes.MergeSort:
                 s.Start();
-                SortingAlgorithms.MergeSort(theArray);
+                SortingAlgorithms.MergeSort(numberArray);
                 s.Stop();
                 break;
 
             case AlgorithmTypes.QuickSort:
                 s.Start();
-                SortingAlgorithms.QuickSort(theArray, 0, theArray.Length - 1);
+                SortingAlgorithms.QuickSort(numberArray, 0, numberArray.Length - 1);
                 s.Stop();
                 break;
 
@@ -244,7 +256,15 @@ class Program
                 return;
         }
 
-        //Console.WriteLine("[{0}]", string.Join(", ", theArray)); // To see the array after sorting
-        Console.WriteLine($"{theArray.Length} integers has been sorted in {s.Elapsed.TotalNanoseconds / 1000000} milliseconds");
+        //Console.WriteLine("[{0}]", string.Join(", ", numberArray)); // To see the array after sorting
+
+        if (SortingAlgorithms.isSorted(numberArray))
+        {
+            Console.WriteLine($"{numberArray.Length} integers has been sorted in {s.Elapsed.TotalNanoseconds / 1000000} milliseconds");
+        }
+        else
+        {
+            Console.WriteLine("The sorting algorithm ran but the array is not fully sorted.");
+        }
     }
 }

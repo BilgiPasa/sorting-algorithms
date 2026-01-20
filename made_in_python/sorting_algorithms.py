@@ -2,51 +2,35 @@ from random import shuffle, randint
 import main
 
 class SortingAlgorithms:
+    def is_sorted(number_list) -> bool:
+        for i in range(1, len(number_list)):
+            if number_list[i - 1] > number_list[i]:
+                return False
+
+        return True
+
     # The algorithms are listed from the slowest to the fastest.
 
     def bogo_sort(number_list):
         """ In Bogo Sort; firstly, the program checks if the list is sorted. If not, it shuffels the list and
         checks again if the list is sorted. The program repeates this process until the list is sorted. """
 
-        i: int
-        b: bool = True
-
-        for i in range(1, len(number_list)): # Cheking if the list is sorted
-            if number_list[i - 1] > number_list[i]:
-                b = False
-                break
+        b: bool = SortingAlgorithms.is_sorted(number_list)
 
         while not b:
-            b = True
             shuffle(number_list)
-
-            for i in range(1, len(number_list)): # Cheking if the list is sorted
-                if number_list[i - 1] > number_list[i]:
-                    b = False
-                    break
+            b = SortingAlgorithms.is_sorted(number_list)
 
     def bozo_sort(number_list):
         """ In Bozo Sort; firstly, the program checks if the list is sorted. If not, it selects two random
         items and swaps them. Then, it checks again if the list is sorted. The program repeates this process
         until the list is sorted. """
 
-        i: int
-        b: bool = True
-
-        for i in range(1, len(number_list)): # Cheking if the list is sorted
-            if number_list[i - 1] > number_list[i]:
-                b = False
-                break
-
-        if b:
-            return
-
+        b: bool = SortingAlgorithms.is_sorted(number_list)
         index1: int
         index2: int
 
         while not b:
-            b = True
-
             while True:
                 index1 = randint(0, len(number_list) - 1)
                 index2 = randint(0, len(number_list) - 1)
@@ -55,11 +39,7 @@ class SortingAlgorithms:
                     break
 
             number_list[index1], number_list[index2] = number_list[index2], number_list[index1] # Swapping elements
-
-            for i in range(1, len(number_list)): # Cheking if the list is sorted
-                if number_list[i - 1] > number_list[i]:
-                    b = False
-                    break
+            b = SortingAlgorithms.is_sorted(number_list)
 
     def sootage_sort(number_list, start: int, end: int):
         if start == end:
@@ -79,17 +59,20 @@ class SortingAlgorithms:
         to it. If the left element is bigger than the right element, the program swaps the elements. When the
         list ends, if the list is not sorted, the program repeats this process until the list is sorted. """
 
-        i: int
+        length: int = len(number_list)
+        swapped: bool
 
         while True:
-            i = 0
+            swapped = False
 
-            for j in range(1, len(number_list)):
-                if number_list[j - 1] > number_list[j]:
-                    number_list[j - 1], number_list[j] = number_list[j], number_list[j - 1] # Swapping elements
-                    i += 1
+            for i in range(1, len(length)):
+                if number_list[i - 1] > number_list[i]:
+                    number_list[i - 1], number_list[i] = number_list[i], number_list[i - 1] # Swapping elements
+                    swapped = True
 
-            if i == 0:
+            length -= 1
+
+            if not swapped:
                 break
 
     def cocktail_shaker_sort(number_list):

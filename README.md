@@ -6,21 +6,25 @@ This repository is focused on non-negative integer sorting algorithms to keep it
 
 Implemented sorting algorithms (from fastest to slowest*): Quick Sort, Merge Sort, Shell Sort, Selection Sort, Insertsion Sort, Gnome Sort, Cocktail Shaker Sort, Bubble Sort, Sootage Sort, Bozo Sort, Bogo Sort.
 
-Implemented languages (from fastest to slowest**): Java (25), C# (.Net 10), Python (3.14).
-
-The C version is being implemented by bartu-g. After it is implemented, I am going to test it and add it to this list
-
 *According to my tests when I test with Java. (I didn't compare any language's built in sorter in this list.)
+
+Implemented languages: C, Java, C#, Python.
+(C implementation is not fully done yet.)
+
+C is implemented and mostly maintained by bartu-g. Thank you for contributing.
+
+Speed comparison of the languages (from fastest to slowest**): Java (25), C# (.Net 10), Python (3.14).
+(Currently, C implementation does not have a timer implemented.)
 
 **According to my tests when I use Selection Sort. (I used VS Code for testing.)
 
-You can analyze the code but please don't use this repository for cheating.
-
-I DID NOT copy-pasted any code from any Generative AI (like ChatGPT, Gemini, Claude, etc.) or any website. I wrote them myself. (But of course I get insprations from websites (for example geeksforgeeks) and videos (for example Bro Code and udiprod channels' videos). Also, I don't like using Generative AI and I don't recommend using it.)
+I DID NOT copy-pasted any code from any Generative AI. I wrote the code of the algorithms that I maintain myself. I learned these algorithms from websites (for example geeksforgeeks) and videos (for example Bro Code and udiprod channels' videos). Also, I don't like using Generative AI and I don't recommend using it.
 
 ---
 
 The code files' locations:
+
+the C files are in the made_in_c folder,
 
 the Java files are in the MadeInJava/src folder,
 
@@ -40,7 +44,7 @@ I'm not planning to implement the Bucket Sort algorithm because I want to use ju
 
 TODO:
 
-* Try to implement the Radix Sort and the Heap Sort algorithms.
+* Try to implement the Radix Sort and the Heap Sort algorithms in Java, C# and Python.
 
 ---
 

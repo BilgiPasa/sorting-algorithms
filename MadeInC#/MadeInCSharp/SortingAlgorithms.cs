@@ -2,6 +2,19 @@ namespace MadeInCSharp;
 
 public static class SortingAlgorithms
 {
+    public static bool isSorted(int[] numberArray)
+    {
+        for (int i = 1; i < numberArray.Length; i++)
+        {
+            if (numberArray[i - 1] > numberArray[i])
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     // The algorithms are listed from the slowest to the fastest.
 
     public static void BogoSort(int[] numberArray)
@@ -9,38 +22,13 @@ public static class SortingAlgorithms
         /* In Bogo Sort; firstly, the program checks if the array is sorted. If not, it shuffels the array and
         checks again if the array is sorted. The program repeates this process until the array is sorted. */
 
-        int i;
-        bool b = true;
-
-        for (i = 1; i < numberArray.Length; i++) // Cheking if the array is sorted
-        {
-            if (numberArray[i - 1] > numberArray[i])
-            {
-                b = false;
-                break;
-            }
-        }
-
-        if (b)
-        {
-            return;
-        }
-
+        bool b = isSorted(numberArray);
         Random r = new Random();
 
         while (!b)
         {
-            b = true;
             r.Shuffle(numberArray);
-
-            for (i = 1; i < numberArray.Length; i++) // Cheking if the array is sorted
-            {
-                if (numberArray[i - 1] > numberArray[i])
-                {
-                    b = false;
-                    break;
-                }
-            }
+            b = isSorted(numberArray);
         }
     }
 
@@ -50,30 +38,12 @@ public static class SortingAlgorithms
         items and swaps them. Then, it checks again if the array is sorted. The program repeates this process
         until the array is sorted. */
 
-        int i;
-        bool b = true;
-
-        for (i = 1; i < numberArray.Length; i++) // Cheking if the array is sorted
-        {
-            if (numberArray[i - 1] > numberArray[i])
-            {
-                b = false;
-                break;
-            }
-        }
-
-        if (b)
-        {
-            return;
-        }
-
+        bool b = isSorted(numberArray);
         int index1, index2;
         Random r = new Random();
 
         while (!b)
         {
-            b = true;
-
             do
             {
                 index1 = r.Next(numberArray.Length);
@@ -82,15 +52,7 @@ public static class SortingAlgorithms
             while (index1 == index2);
 
             (numberArray[index1], numberArray[index2]) = (numberArray[index2], numberArray[index1]); // Swapping elements
-
-            for (i = 1; i < numberArray.Length; i++) // Cheking if the array is sorted
-            {
-                if (numberArray[i - 1] > numberArray[i])
-                {
-                    b = false;
-                    break;
-                }
-            }
+            b = isSorted(numberArray);
         }
     }
 
@@ -121,22 +83,25 @@ public static class SortingAlgorithms
         it. If the left element is bigger than the right element, the program swaps the elements. When the
         array ends, if the array is not sorted, the program repeats this process until the array is sorted. */
 
-        int i;
+        int length = numberArray.Length;
+        bool swapped;
 
         do
         {
-            i = 0;
+            swapped = false;
 
-            for (int j = 1; j < numberArray.Length; j++)
+            for (int i = 1; i < length; i++)
             {
-                if (numberArray[j - 1] > numberArray[j])
+                if (numberArray[i - 1] > numberArray[i])
                 {
-                    (numberArray[j - 1], numberArray[j]) = (numberArray[j], numberArray[j - 1]); // Swapping elements
-                    i++;
+                    (numberArray[i - 1], numberArray[i]) = (numberArray[i], numberArray[i - 1]); // Swapping elements
+                    swapped = true;
                 }
             }
+
+            length--; // Every time it restarts, the largest elements moves to the end of the array. So, we don't need to check it again.
         }
-        while (i > 0);
+        while (swapped);
     }
 
     public static void CocktailShakerSort(int[] numberArray)

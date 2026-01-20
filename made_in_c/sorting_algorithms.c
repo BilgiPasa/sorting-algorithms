@@ -1,15 +1,19 @@
-#include <stdio.h>
 #include <stdbool.h>
+#include <stdio.h>
 #include "sorting_algorithms.h"
 
-void print_array(const int arr[], int n)
+// TODO: ADD A FUNCTION NAMED is_sorted TO CHECK IF THE ARRAY SORTED OR NOT
+
+void print_array(const int number_array[], int length)
 {
-    for (int i = 0; i < n; i++)
+    printf("[");
+
+    for (int i = 0; i < length; i++)
     {
-        printf("%d ", arr[i]);
+        printf("%d, ", number_array[i]);
     }
 
-    printf("\n");
+    printf("]\n");
 }
 
 void swap(int *a, int *b)
@@ -19,51 +23,43 @@ void swap(int *a, int *b)
     *b = temp;
 }
 
-int index_of_min(const int arr[], int n, int start)
+// The algorithms are listed from the slowest to the fastest.
+
+void bubble_sort(int number_array[], int length)
 {
-    int min = start;
+    /* In Bubble Sort, the program goes through the array and checks the elements and the elements next to
+    it. If the left element is bigger than the right element, the program swaps the elements. When the
+    array ends, if the array is not sorted, the program repeats this process until the array is sorted. */
 
-    for (int i = start; i < n; i++)
-    {
-        if (arr[i] < arr[min])
-        {
-            min = i;
-        }
-    }
-
-    return min;
-}
-
-void bubble_sort(int arr[], int n)
-{
     bool swapped;
 
     do
     {
         swapped = false;
 
-        for (int i = 0; i < n - 1; i++)
+        for (int i = 1; i < length; i++)
         {
-            if (arr[i] > arr[i + 1])
+            if (number_array[i - 1] > number_array[i])
             {
-                swap(&arr[i], &arr[i + 1]);
+                swap(&number_array[i - 1], &number_array[i]);
                 swapped = true;
             }
         }
 
-        n--;
-    } while (swapped);
+        length--; // Every time it restarts, the largest elements moves to the end of the array. So, we don't need to check it again.
+    }
+    while (swapped);
 }
 
-void gnome_sort(int arr[], int n)
+void gnome_sort(int number_array[], int length)
 {
     int i = 1;
 
-    while (i < n)
+    while (i < length)
     {
-        if (i > 0 && arr[i - 1] > arr[i])
+        if (i > 0 && number_array[i - 1] > number_array[i])
         {
-            swap(&arr[i - 1], &arr[i]);
+            swap(&number_array[i - 1], &number_array[i]);
             i--;
         }
         else
@@ -73,28 +69,59 @@ void gnome_sort(int arr[], int n)
     }
 }
 
-void insertion_sort(int arr[], int n)
+void insertion_sort(int number_array[], int length)
 {
-    for (int i = 1; i < n; i++)
-    {
-        int temp = arr[i];
-        int j = i - 1;
+    /* In Insertsion Sort; the program checks at the array multiple times part by part as first 2 elements,
+    first 3 elements, first 4 ... and all of the elements. In each checking, the program goes through each
+    part starting from the second to last element of the part and goes to the first element. If the element
+    that the program is checking is bigger than the last element of the part, it moves the last element of
+    the part in front of the element that the program is checking. The sorting process ends when all of the
+    elements are checked. */
 
-        while (j >= 0 && arr[j] > temp)
+    int j;
+
+    for (int i = 1; i < length; i++)
+    {
+        int temp = number_array[i];
+        j = i - 1;
+
+        while (j >= 0 && number_array[j] > temp)
         {
-            arr[j + 1] = arr[j];
+            number_array[j + 1] = number_array[j];
             j--;
         }
 
-        arr[j + 1] = temp;
+        number_array[j + 1] = temp;
     }
 }
 
-void selection_sort(int arr[], int n)
+void selection_sort(int arr[], int length)
 {
-    for (int i = 0; i < n - 1; i++)
+    /* In Selection Sort, the program goes through the array and looks for the smallest element. When the
+    array ends, it swaps the smallest element with the first element. Then it goes through the array again
+    and looks for the second smallest element. When the array ends, it swaps the second smallest element
+    with the second element and the process goes on like that until the array is sorted. */
+
+    int j;
+
+    for (int i = 0; i < length - 1; i++)
     {
-        int j = index_of_min(arr, n, i);
+        j = index_of_min(arr, length, i);
         swap(&arr[i], &arr[j]);
     }
+}
+
+int index_of_min(const int number_array[], int length, int start) // This is for Selection Sort
+{
+    int min = start;
+
+    for (int i = start; i < length; i++)
+    {
+        if (number_array[i] < number_array[min])
+        {
+            min = i;
+        }
+    }
+
+    return min;
 }
