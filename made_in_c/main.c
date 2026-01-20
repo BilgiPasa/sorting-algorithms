@@ -61,36 +61,36 @@ int main(void)
         return 1;
     }
 
-    int nums[length];
+    int number_array[length];
     printf("Starting to randomize the array.\n");
     srand((unsigned int)time(NULL));
 
     for (int i = 0; i < length; i++)
     {
-        nums[i] = rand() % INT_MAX; // Write this next to percent sign: INT_MAX
+        number_array[i] = rand() % INT_MAX; // Write this next to percent sign: INT_MAX
     }
 
     printf("The array has randomized.\n");
-    //print_array(nums, length); // To see the array before sorting
+    //print_array(number_array, length); // To see the array before sorting
     printf("Starting to sort the array.\n");
 
     switch (algorithm_type)
     {
         case BUBBLE_SORT:
-            bubble_sort(nums, length);
+            bubble_sort(number_array, length);
             break;
         case GNOME_SORT:
-            gnome_sort(nums, length);
+            gnome_sort(number_array, length);
             break;
         case INSERTION_SORT:
-            insertion_sort(nums, length);
+            insertion_sort(number_array, length);
             break;
         case SELECTION_SORT:
-            selection_sort(nums, length);
+            selection_sort(number_array, length);
             break;
     }
 
-    //print_array(nums, length); // To see the array after sorting
+    //print_array(number_array, length); // To see the array after sorting
     // TODO: IMPLEMENT A TIMER AND CALCULATE THE TIME ELAPSED
     printf("%d integers has been sorted in IDK milliseconds.\n", length);
     return 0;
