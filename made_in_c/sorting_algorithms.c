@@ -1,8 +1,5 @@
-#include <stdbool.h>
 #include <stdio.h>
 #include "sorting_algorithms.h"
-
-// TODO: ADD A FUNCTION NAMED is_sorted TO CHECK IF THE ARRAY SORTED OR NOT
 
 void print_array(const int number_array[], int length)
 {
@@ -16,11 +13,27 @@ void print_array(const int number_array[], int length)
     printf("]\n");
 }
 
+bool is_sorted(const int number_array[], int length)
+{
+    for (int i = 1; i < length; i++)
+    {
+        if (number_array[i - 1] > number_array[i])
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
 void swap(int *a, int *b)
 {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
+    if (a != b)
+    {
+        *a ^= *b;
+        *b ^= *a;
+        *a ^= *b;
+    }
 }
 
 // The algorithms are listed from the slowest to the fastest.
