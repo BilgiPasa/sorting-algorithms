@@ -18,9 +18,9 @@ void print_array(const int number_array[], int length)
 
 void swap(int *a, int *b)
 {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
+    *a ^= *b;
+    *b ^= *a;
+    *a ^= *b;
 }
 
 // The algorithms are listed from the slowest to the fastest.
