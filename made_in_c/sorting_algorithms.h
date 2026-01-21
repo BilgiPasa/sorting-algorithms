@@ -1,5 +1,7 @@
 #pragma once
+#include <stdbool.h>
 
+bool is_sorted(const int number_array[], int length);
 void print_array(const int number_array[], int length);
 void swap(int *a, int *b);
 void bubble_sort(int number_array[], int length);
