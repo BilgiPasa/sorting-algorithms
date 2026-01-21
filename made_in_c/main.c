@@ -101,6 +101,14 @@ int main(void)
     }
 
     //print_array(number_array, length); // To see the array after sorting
-    printf("%d integers has been sorted in %f milliseconds.\n", length, ((double) (end - start) / CLOCKS_PER_SEC) * 1000);
+    if (is_sorted(number_array, length)
+    {
+        printf("%d integers has been sorted in %f milliseconds.\n", length, ((double) (end - start) / CLOCKS_PER_SEC) * 1000);
+    }
+    else
+    {
+        printf("The sorting algorithm ran but the array is not fully sorted.\n");
+    }
+    
     return 0;
 }
