@@ -1,5 +1,5 @@
 Use this command to compile the C code:
-    gcc -std=c23 -pedantic -Wall -Wextra -o main main.c sorting_algorithms.c
+    gcc -std=c23 -pedantic -Wall -Wextra -O3 -o main main.c sorting_algorithms.c
 
 Use this command to run the C code:
     ./main
