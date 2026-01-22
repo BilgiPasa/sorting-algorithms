@@ -34,7 +34,7 @@ class Main:
         print("11) Quick Sort")
         algorithm_type_selection: str = input("Select an algorithm: ")
 
-        if algorithm_type_selection == "0" or algorithm_type_selection == "Built In" or algorithm_type_selection == "BuiltIn":
+        if algorithm_type_selection == "0" or algorithm_type_selection == "Built In" or algorithm_type_selection == "BuiltIn" or algorithm_type_selection == "Built-In":
             algorithm_type = AlgorithmTypes.BUILT_IN
         elif algorithm_type_selection == "1" or algorithm_type_selection == "Bogo Sort" or algorithm_type_selection == "BogoSort":
             algorithm_type = AlgorithmTypes.BOGO_SORT
@@ -115,7 +115,7 @@ class Main:
                 start_time = time()
                 number_list = sorted(number_list)
                 end_time = time()
-                used_algorithm_type = "Java's built in sorter"
+                used_algorithm_type = "Python's built-in sorter"
 
             case AlgorithmTypes.BOGO_SORT:
                 start_time = time()

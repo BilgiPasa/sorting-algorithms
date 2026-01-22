@@ -1,17 +1,7 @@
-import java.util.Random;
 import java.util.Arrays;
+import java.util.Random;
 
 public class SortingAlgorithms {
-    static void swapElements(int[] numberArray, int a, int b) { // Swapping elements using XOR
-        if (a == b) {
-            return;
-        }
-
-        numberArray[a] ^= numberArray[b];
-        numberArray[b] ^= numberArray[a];
-        numberArray[a] ^= numberArray[b];
-    }
-
     public static boolean isSorted(int[] numberArray)
     {
         for (int i = 1; i < numberArray.length; i++)
@@ -23,6 +13,16 @@ public class SortingAlgorithms {
         }
 
         return true;
+    }
+
+    static void swapElements(int[] numberArray, int a, int b) { // To swap elements using XOR
+        if (a == b) {
+            return;
+        }
+
+        numberArray[a] ^= numberArray[b];
+        numberArray[b] ^= numberArray[a];
+        numberArray[a] ^= numberArray[b];
     }
 
     // The algorithms are listed from the slowest to the fastest.

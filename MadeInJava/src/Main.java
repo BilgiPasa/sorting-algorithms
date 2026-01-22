@@ -1,6 +1,6 @@
-import java.util.Scanner;
-import java.util.Random;
 import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
     enum AlgorithmTypes {
@@ -34,10 +34,9 @@ public class Main {
         System.out.println("10) Merge Sort");
         System.out.println("11) Quick Sort");
         System.out.print("Select an algorithm: ");
-
         String algorithmTypeSelection = s.nextLine();
 
-        if (algorithmTypeSelection.equals("0") || algorithmTypeSelection.equals("Built In") || algorithmTypeSelection.equals("BuiltIn")) {
+        if (algorithmTypeSelection.equals("0") || algorithmTypeSelection.equals("Built In") || algorithmTypeSelection.equals("BuiltIn") || algorithmTypeSelection.equals("Built-In")) {
             algorithmType = AlgorithmTypes.BUILT_IN;
         } else if (algorithmTypeSelection.equals("1") || algorithmTypeSelection.equals("Bogo Sort") || algorithmTypeSelection.equals("BogoSort")) {
             algorithmType = AlgorithmTypes.BOGO_SORT;
@@ -137,7 +136,7 @@ public class Main {
                 startTime = System.nanoTime();
                 Arrays.sort(numberArray);
                 endTime = System.nanoTime();
-                usedAlgorithmType = "Java's built in sorter";
+                usedAlgorithmType = "Java's built-in sorter";
                 break;
 
             case AlgorithmTypes.BOGO_SORT:

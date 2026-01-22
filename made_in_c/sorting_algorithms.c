@@ -1,16 +1,17 @@
 #include <stdio.h>
 #include "sorting_algorithms.h"
 
-void swap(int *a, int *b) // Swapping elements using XOR
+void print_array(const int number_array[], int length)
 {
-    if (a == b)
+    int length_minus_one = length - 1;
+    printf("[");
+
+    for (int i = 0; i < length_minus_one; i++)
     {
-        return;
+        printf("%d, ", number_array[i]);
     }
 
-    *a ^= *b;
-    *b ^= *a;
-    *a ^= *b;
+    printf("%d]\n", number_array[length_minus_one]);
 }
 
 bool is_sorted(const int number_array[], int length)
@@ -26,17 +27,16 @@ bool is_sorted(const int number_array[], int length)
     return true;
 }
 
-void print_array(const int number_array[], int length)
+void swap(int *a, int *b) // To swap elements using XOR
 {
-    int length_minus_one = length - 1;
-    printf("[");
-
-    for (int i = 0; i < length_minus_one; i++)
+    if (a == b)
     {
-        printf("%d, ", number_array[i]);
+        return;
     }
 
-    printf("%d]\n", number_array[length_minus_one]);
+    *a ^= *b;
+    *b ^= *a;
+    *a ^= *b;
 }
 
 // The algorithms are listed from the slowest to the fastest.

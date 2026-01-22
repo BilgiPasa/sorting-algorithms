@@ -6,11 +6,13 @@ This repository is focused on non-negative integer sorting algorithms to keep it
 
 Implemented sorting algorithms (from fastest to slowest*): Quick Sort, Merge Sort, Shell Sort, Selection Sort, Insertsion Sort, Gnome Sort, Cocktail Shaker Sort, Bubble Sort, Sootage Sort, Bozo Sort, Bogo Sort.
 
-*According to my tests when I test with Java. (If you compare the sorting algorithms' speed in different languages, you might get a different result. Also, I didn't compare any language's built in sorter in this list.)
+*According to my tests when I test with Java. (If you compare the sorting algorithms' speed in different languages, you might get a different result. Also, I didn't compare any language's built-in sorter in this list.)
 
-Implemented languages are C, C#, Java and Python.
+Implemented languages: C, C#, Java, Python.
 
 C is implemented and mostly maintained by bartu-g. Thank you for contributing.
+
+C#, Java and Python is implemented and mostly maintained by me (BilgiPasa).
 
 Speed comparison of the languages (from fastest to slowest**): Java (25), C (GCC 15), C# (.Net 10), Python (3.14).
 

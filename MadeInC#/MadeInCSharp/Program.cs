@@ -40,7 +40,7 @@ class Program
 
         if (!string.IsNullOrEmpty(algorithmTypeSelection))
         {
-            if (algorithmTypeSelection.Equals("0") || algorithmTypeSelection.Equals("Built In") || algorithmTypeSelection.Equals("BuiltIn"))
+            if (algorithmTypeSelection.Equals("0") || algorithmTypeSelection.Equals("Built In") || algorithmTypeSelection.Equals("BuiltIn") || algorithmTypeSelection.Equals("Built-In"))
             {
                 algorithmType = AlgorithmTypes.BuiltIn;
             }
@@ -184,7 +184,7 @@ class Program
                 s.Start();
                 Array.Sort(numberArray);
                 s.Stop();
-                usedAlgorithmType = "Java's built in sorter";
+                usedAlgorithmType = "C#'s built-in sorter";
                 break;
 
             case AlgorithmTypes.BogoSort:

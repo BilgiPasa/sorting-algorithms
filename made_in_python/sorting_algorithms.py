@@ -1,4 +1,4 @@
-from random import shuffle, randint
+from random import randint, shuffle
 import main
 
 class SortingAlgorithms:
