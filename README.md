@@ -48,4 +48,4 @@ TODO:
 
 ---
 
-README written by Bilgi Paşa.
+README written by BilgiPasa.
