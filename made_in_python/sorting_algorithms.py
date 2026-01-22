@@ -110,27 +110,6 @@ class SortingAlgorithms:
             else:
                 i += 1
 
-    def insertsion_sort(number_list):
-        """ In Insertsion Sort; the program checks at the list multiple times part by part as first 2
-        elements, first 3 elements, first 4 ... and all of the elements. In each checking, the program goes
-        through each part starting from the second to last element of the part and goes to the first element.
-        If the element that the program is checking is bigger than the last element of the part, it moves the
-        last element of the part in front of the element that the program is checking. The sorting process ends
-        when all of the elements are checked. """
-
-        temp: int
-        j: int
-
-        for i in range(1, len(number_list)):
-            temp = number_list[i]
-            j = i - 1
-
-            while j >= 0 and number_list[j] > temp:
-                number_list[j + 1] = number_list[j]
-                j -= 1
-
-            number_list[j + 1] = temp
-
     def selection_sort(number_list):
         """ In Selection Sort, the program goes through the list and looks for the smallest element. When the
         list ends, it swaps the smallest element with the first element. Then it goes through the list again
@@ -152,6 +131,27 @@ class SortingAlgorithms:
                 min = i
 
         return min
+
+    def insertsion_sort(number_list):
+        """ In Insertsion Sort; the program checks at the list multiple times part by part as first 2
+        elements, first 3 elements, first 4 ... and all of the elements. In each checking, the program goes
+        through each part starting from the second to last element of the part and goes to the first element.
+        If the element that the program is checking is bigger than the last element of the part, it moves the
+        last element of the part in front of the element that the program is checking. The sorting process ends
+        when all of the elements are checked. """
+
+        temp: int
+        j: int
+
+        for i in range(1, len(number_list)):
+            temp = number_list[i]
+            j = i - 1
+
+            while j >= 0 and number_list[j] > temp:
+                number_list[j + 1] = number_list[j]
+                j -= 1
+
+            number_list[j + 1] = temp
 
     def shell_sort(number_list):
         interval: int = len(number_list) // 2

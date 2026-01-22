@@ -152,29 +152,6 @@ public class SortingAlgorithms {
         }
     }
 
-    public static void insertsionSort(int[] numberArray) {
-        /* In Insertsion Sort; the program checks at the array multiple times part by part as first 2 elements,
-        first 3 elements, first 4 ... and all of the elements. In each checking, the program goes through each
-        part starting from the second to last element of the part and goes to the first element. If the element
-        that the program is checking is bigger than the last element of the part, it moves the last element of
-        the part in front of the element that the program is checking. The sorting process ends when all of the
-        elements are checked. */
-
-        int temp, j;
-
-        for (int i = 1; i < numberArray.length; i++) {
-            temp = numberArray[i];
-            j = i - 1;
-
-            while (j >= 0 && numberArray[j] > temp) {
-                numberArray[j + 1] = numberArray[j];
-                j--;
-            }
-
-            numberArray[j + 1] = temp;
-        }
-    }
-
     public static void selectionSort(int[] numberArray) {
         /* In Selection Sort, the program goes through the array and looks for the smallest element. When the
         array ends, it swaps the smallest element with the first element. Then it goes through the array again
@@ -202,6 +179,29 @@ public class SortingAlgorithms {
         }
 
         return min;
+    }
+
+    public static void insertsionSort(int[] numberArray) {
+        /* In Insertsion Sort; the program checks at the array multiple times part by part as first 2 elements,
+        first 3 elements, first 4 ... and all of the elements. In each checking, the program goes through each
+        part starting from the second to last element of the part and goes to the first element. If the element
+        that the program is checking is bigger than the last element of the part, it moves the last element of
+        the part in front of the element that the program is checking. The sorting process ends when all of the
+        elements are checked. */
+
+        int temp, j;
+
+        for (int i = 1; i < numberArray.length; i++) {
+            temp = numberArray[i];
+            j = i - 1;
+
+            while (j >= 0 && numberArray[j] > temp) {
+                numberArray[j + 1] = numberArray[j];
+                j--;
+            }
+
+            numberArray[j + 1] = temp;
+        }
     }
 
     public static void shellSort(int[] numberArray) {

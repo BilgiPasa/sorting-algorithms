@@ -13,8 +13,8 @@ class Program
         BubbleSort,
         CocktailShakerSort,
         GnomeSort,
-        InsertsionSort,
         SelectionSort,
+        InsertsionSort,
         ShellSort,
         MergeSort,
         QuickSort
@@ -30,8 +30,8 @@ class Program
         Console.WriteLine("4) Bubble Sort");
         Console.WriteLine("5) Cocktail Shaker Sort");
         Console.WriteLine("6) Gnome Sort");
-        Console.WriteLine("7) Insertsion Sort");
-        Console.WriteLine("8) Selection Sort");
+        Console.WriteLine("7) Selection Sort");
+        Console.WriteLine("8) Insertsion Sort");
         Console.WriteLine("9) Shell Sort");
         Console.WriteLine("10) Merge Sort");
         Console.WriteLine("11) Quick Sort");
@@ -68,13 +68,13 @@ class Program
             {
                 algorithmType = AlgorithmTypes.GnomeSort;
             }
-            else if (algorithmTypeSelection.Equals("7") || algorithmTypeSelection.Equals("Insertsion Sort") || algorithmTypeSelection.Equals("InsertsionSort"))
-            {
-                algorithmType = AlgorithmTypes.InsertsionSort;
-            }
-            else if (algorithmTypeSelection.Equals("8") || algorithmTypeSelection.Equals("Selection Sort") || algorithmTypeSelection.Equals("SelectionSort"))
+            else if (algorithmTypeSelection.Equals("7") || algorithmTypeSelection.Equals("Selection Sort") || algorithmTypeSelection.Equals("SelectionSort"))
             {
                 algorithmType = AlgorithmTypes.SelectionSort;
+            }
+            else if (algorithmTypeSelection.Equals("8") || algorithmTypeSelection.Equals("Insertsion Sort") || algorithmTypeSelection.Equals("InsertsionSort"))
+            {
+                algorithmType = AlgorithmTypes.InsertsionSort;
             }
             else if (algorithmTypeSelection.Equals("9") || algorithmTypeSelection.Equals("Shell Sort") || algorithmTypeSelection.Equals("ShellSort"))
             {
@@ -114,8 +114,8 @@ class Program
             case AlgorithmTypes.BubbleSort:
             case AlgorithmTypes.CocktailShakerSort:
             case AlgorithmTypes.GnomeSort:
-            case AlgorithmTypes.InsertsionSort:
             case AlgorithmTypes.SelectionSort:
+            case AlgorithmTypes.InsertsionSort:
                 Console.Write("Enter the array size (55555 is recommended): ");
                 break;
 
@@ -229,18 +229,18 @@ class Program
                 usedAlgorithmType = "Gnome Sort";
                 break;
 
-            case AlgorithmTypes.InsertsionSort:
-                s.Start();
-                SortingAlgorithms.InsertsionSort(numberArray);
-                s.Stop();
-                usedAlgorithmType = "Insertsion Sort";
-                break;
-
             case AlgorithmTypes.SelectionSort:
                 s.Start();
                 SortingAlgorithms.SelectionSort(numberArray);
                 s.Stop();
                 usedAlgorithmType = "Selection Sort";
+                break;
+
+            case AlgorithmTypes.InsertsionSort:
+                s.Start();
+                SortingAlgorithms.InsertsionSort(numberArray);
+                s.Stop();
+                usedAlgorithmType = "Insertsion Sort";
                 break;
 
             case AlgorithmTypes.ShellSort:

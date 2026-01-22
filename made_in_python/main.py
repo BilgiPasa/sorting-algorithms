@@ -11,8 +11,8 @@ class AlgorithmTypes(Enum):
     BUBBLE_SORT = 4
     COCKTAIL_SHAKER_SORT = 5
     GNOME_SORT = 6
-    INSERTSION_SORT = 7
-    SELECTION_SORT = 8
+    SELECTION_SORT = 7
+    INSERTSION_SORT = 8
     SHELL_SORT = 9
     MERGE_SORT = 10
     QUICK_SORT = 11
@@ -27,8 +27,8 @@ class Main:
         print("4) Bubble Sort")
         print("5) Cocktail Shaker Sort")
         print("6) Gnome Sort")
-        print("7) Insertsion Sort")
-        print("8) Selection Sort")
+        print("7) Selection Sort")
+        print("8) Insertsion Sort")
         print("9) Shell Sort")
         print("10) Merge Sort")
         print("11) Quick Sort")
@@ -48,10 +48,10 @@ class Main:
             algorithm_type = AlgorithmTypes.COCKTAIL_SHAKER_SORT
         elif algorithm_type_selection == "6" or algorithm_type_selection == "Gnome Sort" or algorithm_type_selection == "GnomeSort":
             algorithm_type = AlgorithmTypes.GNOME_SORT
-        elif algorithm_type_selection == "7" or algorithm_type_selection == "Insertsion Sort" or algorithm_type_selection == "InsertsionSort":
-            algorithm_type = AlgorithmTypes.INSERTSION_SORT
-        elif algorithm_type_selection == "8" or algorithm_type_selection == "Selection Sort" or algorithm_type_selection == "SelectionSort":
+        elif algorithm_type_selection == "7" or algorithm_type_selection == "Selection Sort" or algorithm_type_selection == "SelectionSort":
             algorithm_type = AlgorithmTypes.SELECTION_SORT
+        elif algorithm_type_selection == "8" or algorithm_type_selection == "Insertsion Sort" or algorithm_type_selection == "InsertsionSort":
+            algorithm_type = AlgorithmTypes.INSERTSION_SORT
         elif algorithm_type_selection == "9" or algorithm_type_selection == "Shell Sort" or algorithm_type_selection == "ShellSort":
             algorithm_type = AlgorithmTypes.SHELL_SORT
         elif algorithm_type_selection == "10" or algorithm_type_selection == "Merge Sort" or algorithm_type_selection == "MergeSort":
@@ -69,7 +69,7 @@ class Main:
             case AlgorithmTypes.SOOTAGE_SORT:
                 print("Enter the list size (less than 3223 is recommended): ", end="")
 
-            case AlgorithmTypes.BUBBLE_SORT | AlgorithmTypes.COCKTAIL_SHAKER_SORT | AlgorithmTypes.GNOME_SORT | AlgorithmTypes.INSERTSION_SORT | AlgorithmTypes.SELECTION_SORT:
+            case AlgorithmTypes.BUBBLE_SORT | AlgorithmTypes.COCKTAIL_SHAKER_SORT | AlgorithmTypes.GNOME_SORT | AlgorithmTypes.SELECTION_SORT | AlgorithmTypes.INSERTSION_SORT:
                 print("Enter the list size (less than 55555 is recommended): ", end="")
 
             case AlgorithmTypes.SHELL_SORT | AlgorithmTypes.MERGE_SORT | AlgorithmTypes.QUICK_SORT:
@@ -153,17 +153,17 @@ class Main:
                 end_time = time()
                 used_algorithm_type = "Gnome Sort"
 
-            case AlgorithmTypes.INSERTSION_SORT:
-                start_time = time()
-                sorting_algorithms.SortingAlgorithms.insertsion_sort(number_list)
-                end_time = time()
-                used_algorithm_type = "Insertsion Sort"
-
             case AlgorithmTypes.SELECTION_SORT:
                 start_time = time()
                 sorting_algorithms.SortingAlgorithms.selection_sort(number_list)
                 end_time = time()
                 used_algorithm_type = "Selection Sort"
+
+            case AlgorithmTypes.INSERTSION_SORT:
+                start_time = time()
+                sorting_algorithms.SortingAlgorithms.insertsion_sort(number_list)
+                end_time = time()
+                used_algorithm_type = "Insertsion Sort"
 
             case AlgorithmTypes.SHELL_SORT:
                 start_time = time()

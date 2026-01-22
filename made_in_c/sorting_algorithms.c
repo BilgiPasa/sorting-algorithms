@@ -93,32 +93,6 @@ void gnome_sort(int number_array[], int length)
     }
 }
 
-void insertion_sort(int number_array[], int length)
-{
-    /* In Insertsion Sort; the program checks at the array multiple times part by part as first 2 elements,
-    first 3 elements, first 4 ... and all of the elements. In each checking, the program goes through each
-    part starting from the second to last element of the part and goes to the first element. If the element
-    that the program is checking is bigger than the last element of the part, it moves the last element of
-    the part in front of the element that the program is checking. The sorting process ends when all of the
-    elements are checked. */
-
-    int temp, j;
-
-    for (int i = 1; i < length; i++)
-    {
-        temp = number_array[i];
-        j = i - 1;
-
-        while (j >= 0 && number_array[j] > temp)
-        {
-            number_array[j + 1] = number_array[j];
-            j--;
-        }
-
-        number_array[j + 1] = temp;
-    }
-}
-
 void selection_sort(int number_array[], int length)
 {
     /* In Selection Sort, the program goes through the array and looks for the smallest element. When the
@@ -148,6 +122,32 @@ int index_of_min(const int number_array[], int length, int start) // This is for
     }
 
     return min;
+}
+
+void insertion_sort(int number_array[], int length)
+{
+    /* In Insertsion Sort; the program checks at the array multiple times part by part as first 2 elements,
+    first 3 elements, first 4 ... and all of the elements. In each checking, the program goes through each
+    part starting from the second to last element of the part and goes to the first element. If the element
+    that the program is checking is bigger than the last element of the part, it moves the last element of
+    the part in front of the element that the program is checking. The sorting process ends when all of the
+    elements are checked. */
+
+    int temp, j;
+
+    for (int i = 1; i < length; i++)
+    {
+        temp = number_array[i];
+        j = i - 1;
+
+        while (j >= 0 && number_array[j] > temp)
+        {
+            number_array[j + 1] = number_array[j];
+            j--;
+        }
+
+        number_array[j + 1] = temp;
+    }
 }
 
 // TODO: IMPLEMENT SHELL SORT HERE.

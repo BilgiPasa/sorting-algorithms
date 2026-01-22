@@ -11,8 +11,8 @@ public class Main {
         BUBBLE_SORT,
         COCKTAIL_SHAKER_SORT,
         GNOME_SORT,
-        INSERTSION_SORT,
         SELECTION_SORT,
+        INSERTSION_SORT,
         SHELL_SORT,
         MERGE_SORT,
         QUICK_SORT
@@ -28,8 +28,8 @@ public class Main {
         System.out.println("4) Bubble Sort");
         System.out.println("5) Cocktail Shaker Sort");
         System.out.println("6) Gnome Sort");
-        System.out.println("7) Insertsion Sort");
-        System.out.println("8) Selection Sort");
+        System.out.println("7) Selection Sort");
+        System.out.println("8) Insertsion Sort");
         System.out.println("9) Shell Sort");
         System.out.println("10) Merge Sort");
         System.out.println("11) Quick Sort");
@@ -50,10 +50,10 @@ public class Main {
             algorithmType = AlgorithmTypes.COCKTAIL_SHAKER_SORT;
         } else if (algorithmTypeSelection.equals("6") || algorithmTypeSelection.equals("Gnome Sort") || algorithmTypeSelection.equals("GnomeSort")) {
             algorithmType = AlgorithmTypes.GNOME_SORT;
-        } else if (algorithmTypeSelection.equals("7") || algorithmTypeSelection.equals("Insertsion Sort") || algorithmTypeSelection.equals("InsertsionSort")) {
-            algorithmType = AlgorithmTypes.INSERTSION_SORT;
-        } else if (algorithmTypeSelection.equals("8") || algorithmTypeSelection.equals("Selection Sort") || algorithmTypeSelection.equals("SelectionSort")) {
+        } else if (algorithmTypeSelection.equals("7") || algorithmTypeSelection.equals("Selection Sort") || algorithmTypeSelection.equals("SelectionSort")) {
             algorithmType = AlgorithmTypes.SELECTION_SORT;
+        } else if (algorithmTypeSelection.equals("8") || algorithmTypeSelection.equals("Insertsion Sort") || algorithmTypeSelection.equals("InsertsionSort")) {
+            algorithmType = AlgorithmTypes.INSERTSION_SORT;
         } else if (algorithmTypeSelection.equals("9") || algorithmTypeSelection.equals("Shell Sort") || algorithmTypeSelection.equals("ShellSort")) {
             algorithmType = AlgorithmTypes.SHELL_SORT;
         } else if (algorithmTypeSelection.equals("10") || algorithmTypeSelection.equals("Merge Sort") || algorithmTypeSelection.equals("MergeSort")) {
@@ -79,8 +79,8 @@ public class Main {
             case AlgorithmTypes.BUBBLE_SORT:
             case AlgorithmTypes.COCKTAIL_SHAKER_SORT:
             case AlgorithmTypes.GNOME_SORT:
-            case AlgorithmTypes.INSERTSION_SORT:
             case AlgorithmTypes.SELECTION_SORT:
+            case AlgorithmTypes.INSERTSION_SORT:
                 System.out.print("Enter the array size (55555 is recommended): ");
                 break;
 
@@ -181,18 +181,18 @@ public class Main {
                 usedAlgorithmType = "Gnome Sort";
                 break;
 
-            case AlgorithmTypes.INSERTSION_SORT:
-                startTime = System.nanoTime();
-                SortingAlgorithms.insertsionSort(numberArray);
-                endTime = System.nanoTime();
-                usedAlgorithmType = "Insertsion Sort";
-                break;
-
             case AlgorithmTypes.SELECTION_SORT:
                 startTime = System.nanoTime();
                 SortingAlgorithms.selectionSort(numberArray);
                 endTime = System.nanoTime();
                 usedAlgorithmType = "Selection Sort";
+                break;
+
+            case AlgorithmTypes.INSERTSION_SORT:
+                startTime = System.nanoTime();
+                SortingAlgorithms.insertsionSort(numberArray);
+                endTime = System.nanoTime();
+                usedAlgorithmType = "Insertsion Sort";
                 break;
 
             case AlgorithmTypes.SHELL_SORT:

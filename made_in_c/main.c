@@ -10,8 +10,8 @@ int main(void)
     enum AlgorithmTypes {
         BUBBLE_SORT,
         GNOME_SORT,
-        INSERTION_SORT,
-        SELECTION_SORT
+        SELECTION_SORT,
+        INSERTION_SORT
         // TODO: IMPLEMENT MORE ALGORITHMS AND ADD THEM HERE.
     };
 
@@ -19,8 +19,8 @@ int main(void)
     printf("\nSorting algorithms (from slowest to fastest)\n");
     printf("1) Bubble Sort\n");
     printf("2) Gnome Sort\n");
-    printf("3) Insertion Sort\n");
-    printf("4) Selection Sort\n");
+    printf("3) Selection Sort\n");
+    printf("4) Insertion Sort\n");
     printf("Select an algorithm: ");
     char algorithm_type_selection[1024];
 
@@ -44,8 +44,8 @@ int main(void)
     {
         case BUBBLE_SORT:
         case GNOME_SORT:
-        case INSERTION_SORT:
         case SELECTION_SORT:
+        case INSERTION_SORT:
             printf("Enter the array size (55555 is recommended): ");
             break;
 
@@ -94,18 +94,18 @@ int main(void)
             strcpy(used_algorithm_type, "Gnome Sort");
             break;
 
-        case INSERTION_SORT:
-            start = clock();
-            insertion_sort(number_array, length);
-            end = clock();
-            strcpy(used_algorithm_type, "Insertsion Sort");
-            break;
-
         case SELECTION_SORT:
             start = clock();
             selection_sort(number_array, length);
             end = clock();
             strcpy(used_algorithm_type, "Selection Sort");
+            break;
+
+        case INSERTION_SORT:
+            start = clock();
+            insertion_sort(number_array, length);
+            end = clock();
+            strcpy(used_algorithm_type, "Insertsion Sort");
             break;
 
         default:
