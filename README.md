@@ -9,6 +9,7 @@ Implemented sorting algorithms (from fastest to slowest*): Quick Sort, Merge Sor
 *According to my tests when I test with Java. (If you compare the sorting algorithms' speed in different languages, you might get a different result. Also, I didn't compare any language's built in sorter in this list.)
 
 Implemented languages are C, C#, Java and Python.
+
 (C implementation is not fully done yet.)
 
 C is implemented and mostly maintained by bartu-g. Thank you for contributing.
