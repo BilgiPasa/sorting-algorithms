@@ -18,7 +18,7 @@ I DID NOT copy-pasted any code from any Generative AI prompt. I wrote the code o
 
 *According to my tests when I test with C#. (If you compare the sorting algorithms' speed in different languages, you might get a different result. For example, when I test with Java, Selection Sort was faster than Insertsion Sort but in C, C# and Python, Insertsion Sort was faster than Selection Sort. Also, I didn't compare any language's built-in sorter in this list.)
 
-**According to my tests when I use Insertsion Sort. (I used VS Code for testing. I compiled and ran the C files using the commands that I wrote at made_in_c/README.md file. If you test yourself, you might get a different result.)
+**According to my tests when I use Insertsion Sort. (I used VS Code for testing. I compiled and ran the C files using the commands that I wrote in the made_in_c/README.md file. If you test yourself, you might get a different result.)
 
 ---
 
