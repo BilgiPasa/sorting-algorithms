@@ -128,7 +128,7 @@ void selection_sort(int number_array[], int length)
 
     int length_minus_one = length - 1, j;
 
-    for (int i = 0; i < length_minus_one - 1; i++)
+    for (int i = 0; i < length_minus_one; i++)
     {
         j = index_of_min(number_array, length, i);
         swap(&number_array[i], &number_array[j]);
