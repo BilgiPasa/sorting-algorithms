@@ -2,6 +2,16 @@ import java.util.Random;
 import java.util.Arrays;
 
 public class SortingAlgorithms {
+    static void swapElements(int[] numberArray, int a, int b) { // Swapping elements using XOR
+        if (a == b) {
+            return;
+        }
+
+        numberArray[a] ^= numberArray[b];
+        numberArray[b] ^= numberArray[a];
+        numberArray[a] ^= numberArray[b];
+    }
+
     public static boolean isSorted(int[] numberArray)
     {
         for (int i = 1; i < numberArray.length; i++)
@@ -31,14 +41,12 @@ public class SortingAlgorithms {
 
     // I couldn't find a built in primitive integer array shuffler. So, here is the Fisher-Yates algorithm.
     static void shuffle(int[] numberArray) { // This is for Bogo Sort
-        int randomNumber, temp;
+        int lengthMinusOne = numberArray.length - 1, randomNumber;
         Random r = new Random();
 
-        for (int i = numberArray.length - 1; i > 0; i--) {
+        for (int i = lengthMinusOne; i > 0; i--) {
             randomNumber = (int)Math.floor(r.nextFloat() * (i + 1));
-            temp = numberArray[i];
-            numberArray[i] = numberArray[randomNumber];
-            numberArray[randomNumber] = temp;
+            swapElements(numberArray, i, randomNumber);
         }
     }
 
@@ -48,7 +56,7 @@ public class SortingAlgorithms {
         until the array is sorted. */
 
         boolean b = isSorted(numberArray);
-        int index1, index2, temp;
+        int index1, index2;
         Random r = new Random();
 
         while (!b) {
@@ -58,9 +66,7 @@ public class SortingAlgorithms {
             }
             while (index1 == index2);
 
-            temp = numberArray[index1];
-            numberArray[index1] = numberArray[index2];
-            numberArray[index2] = temp;
+            swapElements(numberArray, index1, index2);
             b = isSorted(numberArray);
         }
     }
@@ -71,9 +77,7 @@ public class SortingAlgorithms {
         }
 
         if (numberArray[start] > numberArray[end]) {
-            int temp = numberArray[start];
-            numberArray[start] = numberArray[end];
-            numberArray[end] = temp;
+            swapElements(numberArray, start, end);
         }
 
         if (end - start > 1) { // This means if (array size > 2)
@@ -89,7 +93,7 @@ public class SortingAlgorithms {
         it. If the left element is bigger than the right element, the program swaps the elements. When the
         array ends, if the array is not sorted, the program repeats this process until the array is sorted. */
 
-        int temp, length = numberArray.length;
+        int length = numberArray.length;
         boolean swapped;
 
         do {
@@ -97,9 +101,7 @@ public class SortingAlgorithms {
 
             for (int i = 1; i < length; i++) {
                 if (numberArray[i - 1] > numberArray[i]) {
-                    temp = numberArray[i - 1];
-                    numberArray[i - 1] = numberArray[i];
-                    numberArray[i] = temp;
+                    swapElements(numberArray, i - 1, i);
                     swapped = true;
                 }
             }
@@ -116,14 +118,12 @@ public class SortingAlgorithms {
         right element. While swapping the elements, the smaller elements move to the left side and the bigger
         elements move to the right side. */
 
-        int start = 0, end = numberArray.length - 1, i, temp;
+        int start = 0, end = numberArray.length - 1, i;
 
         while (end - start > 1) {
             for (i = start; i < end; i++) {
                 if (numberArray[i] > numberArray[i + 1]) {
-                    temp = numberArray[i];
-                    numberArray[i] = numberArray[i + 1];
-                    numberArray[i + 1] = temp;
+                    swapElements(numberArray, i, i + 1);
                 }
             }
 
@@ -131,9 +131,7 @@ public class SortingAlgorithms {
 
             for (i = end; i > start; i--) {
                 if (numberArray[i - 1] > numberArray[i]) {
-                    temp = numberArray[i - 1];
-                    numberArray[i - 1] = numberArray[i];
-                    numberArray[i] = temp;
+                    swapElements(numberArray, i - 1, i);
                 }
             }
 
@@ -142,13 +140,12 @@ public class SortingAlgorithms {
     }
 
     public static void gnomeSort(int[] numberArray) {
-        int i = 1, temp;
+        int i = 1;
 
         while (i < numberArray.length) {
             if (i > 0 && numberArray[i - 1] > numberArray[i]) {
-                temp = numberArray[i - 1];
-                numberArray[i - 1] = numberArray[i];
-                numberArray[i--] = temp; // This means numberArray[i] = temp; i -= 1;
+                swapElements(numberArray, i - 1, i);
+                i--;
             } else {
                 i++;
             }
@@ -163,20 +160,18 @@ public class SortingAlgorithms {
         the part in front of the element that the program is checking. The sorting process ends when all of the
         elements are checked. */
 
-        int temp;
+        int temp, j;
 
         for (int i = 1; i < numberArray.length; i++) {
-            for (int j = i - 1; j >= 0; j--) {
-                if (numberArray[i] < numberArray[j]) {
-                    temp = numberArray[i];
+            temp = numberArray[i];
+            j = i - 1;
 
-                    for (int k = i; k > j; k--) { // Shifting the elements 1 to the left
-                        numberArray[k] = numberArray[k - 1];
-                    }
-
-                    numberArray[j] = temp;
-                }
+            while (j >= 0 && numberArray[j] > temp) {
+                numberArray[j + 1] = numberArray[j];
+                j--;
             }
+
+            numberArray[j + 1] = temp;
         }
     }
 
@@ -186,21 +181,27 @@ public class SortingAlgorithms {
         and looks for the second smallest element. When the array ends, it swaps the second smallest element
         with the second element and the process goes on like that until the array is sorted. */
 
-        int smallest, temp;
+        int lengthMinusOne = numberArray.length - 1, j;
 
-        for (int i = 0; i < numberArray.length - 1; i++) {
-            smallest = i;
-
-            for (int j = i; j < numberArray.length; j++) {
-                if (numberArray[smallest] > numberArray[j]) {
-                    smallest = j;
-                }
-            }
-
-            temp = numberArray[i];
-            numberArray[i] = numberArray[smallest];
-            numberArray[smallest] = temp;
+        for (int i = 0; i < lengthMinusOne; i++) {
+            j = indexOfMin(numberArray, numberArray.length, i);
+            swapElements(numberArray, i, j);
         }
+    }
+
+    static int indexOfMin(int[] numberArray, int length, int start) // This is for Selection Sort
+    {
+        int min = start;
+
+        for (int i = start; i < length; i++)
+        {
+            if (numberArray[min] > numberArray[i])
+            {
+                min = i;
+            }
+        }
+
+        return min;
     }
 
     public static void shellSort(int[] numberArray) {
@@ -261,20 +262,18 @@ public class SortingAlgorithms {
     }
 
     static int moveElementsAndReturnPivot(int[] numberArray, int start, int end) { // This is for Quick Sort
-        int i = start - 1, temp;
+        int i = start - 1;
 
         for (int j = start; j < end; j++) { // Initial pivot is the last element of the array
             // The program moves the elements that are smaller than the pivot to the left
             if (numberArray[j] < numberArray[end]) {
-                temp = numberArray[++i]; // This means i += 1; temp = numberArray[i];
-                numberArray[i] = numberArray[j];
-                numberArray[j] = temp;
+                i++;
+                swapElements(numberArray, i, j);
             }
         }
 
-        temp = numberArray[++i]; // This means i += 1; temp = numberArray[i];
-        numberArray[i] = numberArray[end];
-        numberArray[end] = temp;
+        i++;
+        swapElements(numberArray, i, end);
         return i; // Swapped the initial pivot with the new pivot and returning the new pivot
     }
 }

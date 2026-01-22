@@ -165,24 +165,20 @@ public static class SortingAlgorithms
         the part in front of the element that the program is checking. The sorting process ends when all of the
         elements are checked. */
 
-        int temp;
+        int temp, j;
 
         for (int i = 1; i < numberArray.Length; i++)
         {
-            for (int j = i - 1; j >= 0; j--)
+            temp = numberArray[i];
+            j = i - 1;
+
+            while (j >= 0 && numberArray[j] > temp)
             {
-                if (numberArray[i] < numberArray[j])
-                {
-                    temp = numberArray[i];
-
-                    for (int k = i; k > j; k--)
-                    {
-                        numberArray[k] = numberArray[k - 1];
-                    }
-
-                    numberArray[j] = temp;
-                }
+                numberArray[j + 1] = numberArray[j];
+                j--;
             }
+
+            numberArray[j + 1] = temp;
         }
     }
 
@@ -193,22 +189,28 @@ public static class SortingAlgorithms
         and looks for the second smallest element. When the array ends, it swaps the second smallest element
         with the second element and the process goes on like that until the array is sorted. */
 
-        int smallest;
+        int lengthMinusOne = numberArray.Length - 1, j;
 
-        for (int i = 0; i < numberArray.Length - 1; i++)
+        for (int i = 0; i < lengthMinusOne; i++)
         {
-            smallest = i;
-
-            for (int j = i; j < numberArray.Length; j++)
-            {
-                if (numberArray[smallest] > numberArray[j])
-                {
-                    smallest = j;
-                }
-            }
-
-            (numberArray[i], numberArray[smallest]) = (numberArray[smallest], numberArray[i]); // Swapping elements
+            j = IndexOfMin(numberArray, numberArray.Length, i);
+            (numberArray[i], numberArray[j]) = (numberArray[j], numberArray[i]); // Swapping elements
         }
+    }
+
+    static int IndexOfMin(int[] numberArray, int length, int start) // This is for Selection Sort
+    {
+        int min = start;
+
+        for (int i = start; i < length; i++)
+        {
+            if (numberArray[min] > numberArray[i])
+            {
+                min = i;
+            }
+        }
+
+        return min;
     }
 
     public static void ShellSort(int[] numberArray)

@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include "sorting_algorithms.h"
 
-void print_array(const int number_array[], int length)
+void swap(int *a, int *b) // Swapping elements using XOR
 {
-    printf("[");
-
-    for (int i = 0; i < length; i++)
+    if (a == b)
     {
-        printf("%d, ", number_array[i]);
+        return;
     }
 
-    printf("]\n");
+    *a ^= *b;
+    *b ^= *a;
+    *a ^= *b;
 }
 
 bool is_sorted(const int number_array[], int length)
@@ -26,17 +26,26 @@ bool is_sorted(const int number_array[], int length)
     return true;
 }
 
-void swap(int *a, int *b)
+void print_array(const int number_array[], int length)
 {
-    if (a != b)
+    int length_minus_one = length - 1;
+    printf("[");
+
+    for (int i = 0; i < length_minus_one; i++)
     {
-        *a ^= *b;
-        *b ^= *a;
-        *a ^= *b;
+        printf("%d, ", number_array[i]);
     }
+
+    printf("%d]\n", number_array[length_minus_one]);
 }
 
 // The algorithms are listed from the slowest to the fastest.
+
+// TODO: IMPLEMENT BOGO SORT HERE.
+
+// TODO: IMPLEMENT BOZO SORT HERE.
+
+// TODO: IMPLEMENT SOOTAGE SORT HERE.
 
 void bubble_sort(int number_array[], int length)
 {
@@ -63,6 +72,8 @@ void bubble_sort(int number_array[], int length)
     }
     while (swapped);
 }
+
+// TODO: IMPLEMENT COCKTAIL SHAKER SORT HERE.
 
 void gnome_sort(int number_array[], int length)
 {
@@ -91,11 +102,11 @@ void insertion_sort(int number_array[], int length)
     the part in front of the element that the program is checking. The sorting process ends when all of the
     elements are checked. */
 
-    int j;
+    int temp, j;
 
     for (int i = 1; i < length; i++)
     {
-        int temp = number_array[i];
+        temp = number_array[i];
         j = i - 1;
 
         while (j >= 0 && number_array[j] > temp)
@@ -108,19 +119,19 @@ void insertion_sort(int number_array[], int length)
     }
 }
 
-void selection_sort(int arr[], int length)
+void selection_sort(int number_array[], int length)
 {
     /* In Selection Sort, the program goes through the array and looks for the smallest element. When the
     array ends, it swaps the smallest element with the first element. Then it goes through the array again
     and looks for the second smallest element. When the array ends, it swaps the second smallest element
     with the second element and the process goes on like that until the array is sorted. */
 
-    int j;
+    int length_minus_one = length - 1, j;
 
-    for (int i = 0; i < length - 1; i++)
+    for (int i = 0; i < length_minus_one - 1; i++)
     {
-        j = index_of_min(arr, length, i);
-        swap(&arr[i], &arr[j]);
+        j = index_of_min(number_array, length, i);
+        swap(&number_array[i], &number_array[j]);
     }
 }
 
@@ -130,7 +141,7 @@ int index_of_min(const int number_array[], int length, int start) // This is for
 
     for (int i = start; i < length; i++)
     {
-        if (number_array[i] < number_array[min])
+        if (number_array[min] > number_array[i])
         {
             min = i;
         }
@@ -138,3 +149,9 @@ int index_of_min(const int number_array[], int length, int start) // This is for
 
     return min;
 }
+
+// TODO: IMPLEMENT SHELL SORT HERE.
+
+// TODO: IMPLEMENT MERGE SORT HERE.
+
+// TODO: IMPLEMENT QUICK SORT HERE.

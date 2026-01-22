@@ -128,6 +128,7 @@ public class Main {
         System.out.println("The array has randomized.");
         //System.out.println(Arrays.toString(numberArray)); // To see the array before sorting
         long startTime = 0, endTime = 0;
+        String usedAlgorithmType;
         System.out.println("Starting to sort the array.");
 
         switch (algorithmType)
@@ -136,72 +137,84 @@ public class Main {
                 startTime = System.nanoTime();
                 Arrays.sort(numberArray);
                 endTime = System.nanoTime();
+                usedAlgorithmType = "Java's built in sorter";
                 break;
 
             case AlgorithmTypes.BOGO_SORT:
                 startTime = System.nanoTime();
                 SortingAlgorithms.bogoSort(numberArray);
                 endTime = System.nanoTime();
+                usedAlgorithmType = "Bogo Sort";
                 break;
 
             case AlgorithmTypes.BOZO_SORT:
                 startTime = System.nanoTime();
                 SortingAlgorithms.bozoSort(numberArray);
                 endTime = System.nanoTime();
+                usedAlgorithmType = "Bozo Sort";
                 break;
 
             case AlgorithmTypes.SOOTAGE_SORT:
                 startTime = System.nanoTime();
                 SortingAlgorithms.sootageSort(numberArray, 0, numberArray.length - 1);
                 endTime = System.nanoTime();
+                usedAlgorithmType = "Sootage Sort";
                 break;
 
             case AlgorithmTypes.BUBBLE_SORT:
                 startTime = System.nanoTime();
                 SortingAlgorithms.bubbleSort(numberArray);
                 endTime = System.nanoTime();
+                usedAlgorithmType = "Bubble Sort";
                 break;
 
             case AlgorithmTypes.COCKTAIL_SHAKER_SORT:
                 startTime = System.nanoTime();
                 SortingAlgorithms.cocktailShakerSort(numberArray);
                 endTime = System.nanoTime();
+                usedAlgorithmType = "Cocktail Shaker Sort";
                 break;
 
             case AlgorithmTypes.GNOME_SORT:
                 startTime = System.nanoTime();
                 SortingAlgorithms.gnomeSort(numberArray);
                 endTime = System.nanoTime();
+                usedAlgorithmType = "Gnome Sort";
                 break;
 
             case AlgorithmTypes.INSERTSION_SORT:
                 startTime = System.nanoTime();
                 SortingAlgorithms.insertsionSort(numberArray);
                 endTime = System.nanoTime();
+                usedAlgorithmType = "Insertsion Sort";
                 break;
 
             case AlgorithmTypes.SELECTION_SORT:
                 startTime = System.nanoTime();
                 SortingAlgorithms.selectionSort(numberArray);
                 endTime = System.nanoTime();
+                usedAlgorithmType = "Selection Sort";
                 break;
 
             case AlgorithmTypes.SHELL_SORT:
                 startTime = System.nanoTime();
                 SortingAlgorithms.shellSort(numberArray);
                 endTime = System.nanoTime();
+                usedAlgorithmType = "Shell Sort";
                 break;
 
             case AlgorithmTypes.MERGE_SORT:
                 startTime = System.nanoTime();
                 SortingAlgorithms.mergeSort(numberArray);
                 endTime = System.nanoTime();
+                usedAlgorithmType = "Merge Sort";
                 break;
 
             case AlgorithmTypes.QUICK_SORT:
                 startTime = System.nanoTime();
                 SortingAlgorithms.quickSort(numberArray, 0, numberArray.length - 1);
                 endTime = System.nanoTime();
+                usedAlgorithmType = "Quick Sort";
                 break;
 
             default:
@@ -212,7 +225,7 @@ public class Main {
         //System.out.println(Arrays.toString(numberArray)); // To see the array after sorting
 
         if (SortingAlgorithms.isSorted(numberArray)) {
-            System.out.println(numberArray.length + " integers has been sorted in " + ((endTime - startTime) / 1000000.0) + " milliseconds.");
+            System.out.println(numberArray.length + " random integers has been sorted in " + ((endTime - startTime) / 1000000.0) + " milliseconds using " + usedAlgorithmType + ".");
         } else {
             System.out.println("The sorting algorithm ran but the array is not fully sorted.");
         }

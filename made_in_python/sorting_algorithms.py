@@ -27,13 +27,14 @@ class SortingAlgorithms:
         until the list is sorted. """
 
         b: bool = SortingAlgorithms.is_sorted(number_list)
+        length_minus_one: int = len(number_list) - 1
         index1: int
         index2: int
 
         while not b:
             while True:
-                index1 = randint(0, len(number_list) - 1)
-                index2 = randint(0, len(number_list) - 1)
+                index1 = randint(0, length_minus_one)
+                index2 = randint(0, length_minus_one)
 
                 if index1 != index2:
                     break
@@ -118,16 +119,17 @@ class SortingAlgorithms:
         when all of the elements are checked. """
 
         temp: int
+        j: int
 
         for i in range(1, len(number_list)):
-            for j in range(i - 1, -1, -1): # j starts with i - 1 and ends with 0 (included) while going back 1 step
-                if number_list[i] < number_list[j]:
-                    temp = number_list[i]
+            temp = number_list[i]
+            j = i - 1
 
-                    for k in range(i, j, -1):
-                        number_list[k] = number_list[k - 1]
+            while j >= 0 and number_list[j] > temp:
+                number_list[j + 1] = number_list[j]
+                j -= 1
 
-                    number_list[j] = temp
+            number_list[j + 1] = temp
 
     def selection_sort(number_list):
         """ In Selection Sort, the program goes through the list and looks for the smallest element. When the
@@ -135,16 +137,21 @@ class SortingAlgorithms:
         and looks for the second smallest element. When the list ends, it swaps the second smallest element
         with the second element and the process goes on like that until the list is sorted. """
 
-        smallest: int
+        length_minus_one: int = len(number_list) - 1
+        j: int
 
-        for i in range(len(number_list) - 1):
-            smallest = i
+        for i in range(length_minus_one):
+            j = SortingAlgorithms.index_of_min(number_list, len(number_list), i)
+            number_list[i], number_list[j] = number_list[j], number_list[i] # Swapping elements
 
-            for j in range(i, len(number_list)):
-                if number_list[smallest] > number_list[j]:
-                    smallest = j
+    def index_of_min(number_list, length: int, start: int): # This is for Selection Sort
+        min: int = start
 
-            number_list[i], number_list[smallest] = number_list[smallest], number_list[i] # Swapping elements
+        for i in range(start, length):
+            if number_list[min] > number_list[i]:
+                min = i
+
+        return min
 
     def shell_sort(number_list):
         interval: int = len(number_list) // 2
@@ -209,7 +216,7 @@ class SortingAlgorithms:
         SortingAlgorithms.quick_sort(number_list, start, pivot - 1)
         SortingAlgorithms.quick_sort(number_list, pivot + 1, end)
 
-    def move_elements_and_return_pivot(number_list, start: int, end: int): # This is for Quick Sort
+    def move_elements_and_return_pivot(number_list, start: int, end: int) -> int: # This is for Quick Sort
         i: int = start - 1
 
         for j in range(start, end): # Initial pivot is the last element of the list

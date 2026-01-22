@@ -1,6 +1,7 @@
+#include <limits.h> // To use the INT_MAX
 #include <stdio.h>
 #include <stdlib.h>
-#include <limits.h>
+#include <string.h> // To use the strcpy and %s
 #include <time.h>
 #include "sorting_algorithms.h"
 
@@ -11,7 +12,7 @@ int main(void)
         GNOME_SORT,
         INSERTION_SORT,
         SELECTION_SORT
-        // TODO: IMPLEMENT MORE ALGORITHMS AND ADD THEM HERE
+        // TODO: IMPLEMENT MORE ALGORITHMS AND ADD THEM HERE.
     };
 
     enum AlgorithmTypes algorithm_type;
@@ -25,6 +26,7 @@ int main(void)
 
     if (!fgets(algorithm_type_selection, sizeof(algorithm_type_selection), stdin))
     {
+        printf("Couldn't understand the input. Aborting.");
         return 1;
     }
 
@@ -53,7 +55,7 @@ int main(void)
     }
 
     int length;
-    scanf("%d", &length);
+    scanf("%d", &length); // TODO: MAKE A MORE SECURE INPUT LIKE YOU MADE AT ABOVE USING fgets.
 
     if (length < 0)
     {
@@ -72,43 +74,55 @@ int main(void)
 
     printf("The array has randomized.\n");
     //print_array(number_array, length); // To see the array before sorting
+    clock_t start, end;
+    char used_algorithm_type[25];
     printf("Starting to sort the array.\n");
 
-    clock_t start, end;
-    
     switch (algorithm_type)
     {
         case BUBBLE_SORT:
             start = clock();
             bubble_sort(number_array, length);
             end = clock();
+            strcpy(used_algorithm_type, "Java's built in sorter");
             break;
+
         case GNOME_SORT:
             start = clock();
             gnome_sort(number_array, length);
             end = clock();
+            strcpy(used_algorithm_type, "Gnome Sort");
             break;
+
         case INSERTION_SORT:
             start = clock();
             insertion_sort(number_array, length);
             end = clock();
+            strcpy(used_algorithm_type, "Insertsion Sort");
             break;
+
         case SELECTION_SORT:
             start = clock();
             selection_sort(number_array, length);
             end = clock();
+            strcpy(used_algorithm_type, "Selection Sort");
             break;
+
+        default:
+            printf("The algorithm type could not found. Aborting.\n");
+            return 1;
     }
 
     //print_array(number_array, length); // To see the array after sorting
+
     if (is_sorted(number_array, length))
     {
-        printf("%d integers has been sorted in %f milliseconds.\n", length, ((double) (end - start) / CLOCKS_PER_SEC) * 1000);
+        printf("%d random integers has been sorted in %f milliseconds using %s.\n", length, ((double)(end - start) / CLOCKS_PER_SEC) * 1000, used_algorithm_type);
     }
     else
     {
         printf("The sorting algorithm ran but the array is not fully sorted.\n");
     }
-    
+
     return 0;
 }

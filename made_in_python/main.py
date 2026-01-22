@@ -104,9 +104,10 @@ class Main:
             number_list[i] = randint(0, max_value_minus_one) # Write this as the endpoint: max_value_minus_one
 
         print("The list has randomized.")
+        #print("[" + ", ".join(str(x) for x in number_list) + "]") # To see the list before sorting
         start_time: float
         end_time: float
-        #print("[" + ", ".join(str(x) for x in number_list) + "]") # To see the list before sorting
+        used_algorithm_type: str
         print("Starting to sort the list.")
 
         match algorithm_type:
@@ -114,61 +115,73 @@ class Main:
                 start_time = time()
                 number_list = sorted(number_list)
                 end_time = time()
+                used_algorithm_type = "Java's built in sorter"
 
             case AlgorithmTypes.BOGO_SORT:
                 start_time = time()
                 sorting_algorithms.SortingAlgorithms.bogo_sort(number_list)
                 end_time = time()
+                used_algorithm_type = "Bogo Sort"
 
             case AlgorithmTypes.BOZO_SORT:
                 start_time = time()
                 sorting_algorithms.SortingAlgorithms.bozo_sort(number_list)
                 end_time = time()
+                used_algorithm_type = "Bozo Sort"
 
             case AlgorithmTypes.SOOTAGE_SORT:
                 start_time = time()
                 sorting_algorithms.SortingAlgorithms.sootage_sort(number_list, 0, len(number_list) - 1)
                 end_time = time()
+                used_algorithm_type = "Sootage Sort"
 
             case AlgorithmTypes.BUBBLE_SORT:
                 start_time = time()
                 sorting_algorithms.SortingAlgorithms.bubble_sort(number_list)
                 end_time = time()
+                used_algorithm_type = "Bubble Sort"
 
             case AlgorithmTypes.COCKTAIL_SHAKER_SORT:
                 start_time = time()
                 sorting_algorithms.SortingAlgorithms.cocktail_shaker_sort(number_list)
                 end_time = time()
+                used_algorithm_type = "Cocktail Shaker Sort"
 
             case AlgorithmTypes.GNOME_SORT:
                 start_time = time()
                 sorting_algorithms.SortingAlgorithms.gnome_sort(number_list)
                 end_time = time()
+                used_algorithm_type = "Gnome Sort"
 
             case AlgorithmTypes.INSERTSION_SORT:
                 start_time = time()
                 sorting_algorithms.SortingAlgorithms.insertsion_sort(number_list)
                 end_time = time()
+                used_algorithm_type = "Insertsion Sort"
 
             case AlgorithmTypes.SELECTION_SORT:
                 start_time = time()
                 sorting_algorithms.SortingAlgorithms.selection_sort(number_list)
                 end_time = time()
+                used_algorithm_type = "Selection Sort"
 
             case AlgorithmTypes.SHELL_SORT:
                 start_time = time()
                 sorting_algorithms.SortingAlgorithms.shell_sort(number_list)
                 end_time = time()
+                used_algorithm_type = "Shell Sort"
 
             case AlgorithmTypes.MERGE_SORT:
                 start_time = time()
                 sorting_algorithms.SortingAlgorithms.merge_sort(number_list)
                 end_time = time()
+                used_algorithm_type = "Merge Sort"
 
             case AlgorithmTypes.QUICK_SORT:
                 start_time = time()
                 sorting_algorithms.SortingAlgorithms.quick_sort(number_list, 0, len(number_list) - 1)
                 end_time = time()
+                used_algorithm_type = "Quick Sort"
 
             case _:
                 print("The algorithm type could not found. Aborting.")
@@ -177,7 +190,7 @@ class Main:
         #print("[" + ", ".join(str(x) for x in number_list) + "]") # To see the list after sorting
 
         if sorting_algorithms.SortingAlgorithms.is_sorted(number_list):
-            print((str)(len(number_list)) + " integers has been sorted in " + (str)((end_time - start_time) * 1000) + " milliseconds.")
+            print((str)(len(number_list)) + " random integers has been sorted in " + (str)((end_time - start_time) * 1000) + " milliseconds using " + used_algorithm_type + ".")
         else:
             print("The sorting algorithm ran but the array is not fully sorted.")
 

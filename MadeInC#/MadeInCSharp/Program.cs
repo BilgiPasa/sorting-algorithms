@@ -175,6 +175,7 @@ class Program
 
         Console.WriteLine("The array has randomized.");
         //Console.WriteLine("[{0}]", string.Join(", ", numberArray)); // To see the array before sorting
+        string usedAlgorithmType;
         Console.WriteLine("Starting to sort the array.");
 
         switch (algorithmType)
@@ -183,72 +184,84 @@ class Program
                 s.Start();
                 Array.Sort(numberArray);
                 s.Stop();
+                usedAlgorithmType = "Java's built in sorter";
                 break;
 
             case AlgorithmTypes.BogoSort:
                 s.Start();
                 SortingAlgorithms.BogoSort(numberArray);
                 s.Stop();
+                usedAlgorithmType = "Bogo Sort";
                 break;
 
             case AlgorithmTypes.BozoSort:
                 s.Start();
                 SortingAlgorithms.BozoSort(numberArray);
                 s.Stop();
+                usedAlgorithmType = "Bozo Sort";
                 break;
 
             case AlgorithmTypes.SootageSort:
                 s.Start();
                 SortingAlgorithms.SootageSort(numberArray, 0, numberArray.Length - 1);
                 s.Stop();
+                usedAlgorithmType = "Sootage Sort";
                 break;
 
             case AlgorithmTypes.BubbleSort:
                 s.Start();
                 SortingAlgorithms.BubbleSort(numberArray);
                 s.Stop();
+                usedAlgorithmType = "Bubble Sort";
                 break;
 
             case AlgorithmTypes.CocktailShakerSort:
                 s.Start();
                 SortingAlgorithms.CocktailShakerSort(numberArray);
                 s.Stop();
+                usedAlgorithmType = "Cocktail Shaker Sort";
                 break;
 
             case AlgorithmTypes.GnomeSort:
                 s.Start();
                 SortingAlgorithms.GnomeSort(numberArray);
                 s.Stop();
+                usedAlgorithmType = "Gnome Sort";
                 break;
 
             case AlgorithmTypes.InsertsionSort:
                 s.Start();
                 SortingAlgorithms.InsertsionSort(numberArray);
                 s.Stop();
+                usedAlgorithmType = "Insertsion Sort";
                 break;
 
             case AlgorithmTypes.SelectionSort:
                 s.Start();
                 SortingAlgorithms.SelectionSort(numberArray);
                 s.Stop();
+                usedAlgorithmType = "Selection Sort";
                 break;
 
             case AlgorithmTypes.ShellSort:
                 s.Start();
                 SortingAlgorithms.ShellSort(numberArray);
                 s.Stop();
+                usedAlgorithmType = "Shell Sort";
                 break;
 
             case AlgorithmTypes.MergeSort:
                 s.Start();
                 SortingAlgorithms.MergeSort(numberArray);
                 s.Stop();
+                usedAlgorithmType = "Merge Sort";
                 break;
 
             case AlgorithmTypes.QuickSort:
                 s.Start();
                 SortingAlgorithms.QuickSort(numberArray, 0, numberArray.Length - 1);
                 s.Stop();
+                usedAlgorithmType = "Quick Sort";
                 break;
 
             default:
@@ -260,7 +273,7 @@ class Program
 
         if (SortingAlgorithms.isSorted(numberArray))
         {
-            Console.WriteLine($"{numberArray.Length} integers has been sorted in {s.Elapsed.TotalNanoseconds / 1000000} milliseconds");
+            Console.WriteLine($"{numberArray.Length} random integers has been sorted in {s.Elapsed.TotalNanoseconds / 1000000} milliseconds using {usedAlgorithmType}.");
         }
         else
         {
