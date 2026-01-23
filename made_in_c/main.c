@@ -1,4 +1,3 @@
-#include <limits.h> // To use the INT_MAX
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -68,7 +67,7 @@ int main(void)
 
     for (int i = 0; i < length; i++)
     {
-        number_array[i] = rand() % INT_MAX; // Write this next to percent sign: INT_MAX
+        number_array[i] = rand(); // rand returns a random integer from 0 to INT_MAX (both 0 and INT_MAX are included)
     }
 
     printf("The array has randomized.\n");
