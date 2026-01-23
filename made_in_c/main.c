@@ -1,7 +1,6 @@
 #include <limits.h> // To use the INT_MAX
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h> // To use the strcpy and %s
 #include <time.h>
 #include "sorting_algorithms.h"
 
@@ -75,7 +74,7 @@ int main(void)
     printf("The array has randomized.\n");
     //print_array(number_array, length); // To see the array before sorting
     clock_t start, end;
-    char used_algorithm_type[25];
+    const char *used_algorithm_type;
     printf("Starting to sort the array.\n");
 
     switch (algorithm_type)
@@ -84,28 +83,28 @@ int main(void)
             start = clock();
             bubble_sort(number_array, length);
             end = clock();
-            strcpy(used_algorithm_type, "Java's built in sorter");
+            used_algorithm_type = "Bubble Sort";
             break;
 
         case GNOME_SORT:
             start = clock();
             gnome_sort(number_array, length);
             end = clock();
-            strcpy(used_algorithm_type, "Gnome Sort");
+            used_algorithm_type = "Gnome Sort";
             break;
 
         case SELECTION_SORT:
             start = clock();
             selection_sort(number_array, length);
             end = clock();
-            strcpy(used_algorithm_type, "Selection Sort");
+            used_algorithm_type = "Selection Sort";
             break;
 
         case INSERTION_SORT:
             start = clock();
             insertion_sort(number_array, length);
             end = clock();
-            strcpy(used_algorithm_type, "Insertsion Sort");
+            used_algorithm_type = "Insertion Sort";
             break;
 
         default:
