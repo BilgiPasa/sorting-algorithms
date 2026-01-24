@@ -32,7 +32,7 @@ int main(void)
 
     if (!ok || algorithm_type_selection > 4 || algorithm_type_selection < 1)
     {
-        printf("Couldn't understand the input. Aborting.\n");
+        fprintf(stderr, "Couldn't understand the input. Aborting.\n");
         return 1;
     }
 
@@ -48,7 +48,7 @@ int main(void)
             break;
 
         default:
-            printf("The algorithm type could not found. Aborting.\n");
+            fprintf(stderr, "The algorithm type could not found. Aborting.\n");
             return 1;
     }
 
@@ -57,12 +57,12 @@ int main(void)
 
     if (!ok)
     {
-        printf("Couldn't understand the input. Aborting.\n");
+        fprintf(stderr, "Couldn't understand the input. Aborting.\n");
         return 1;
     }
     if (length <= 0)
     {
-        printf("The array size cannot be %d. Aborting.\n", length);
+        fprintf(stderr, "The array size cannot be %d. Aborting.\n", length);
         return 1;
     }
 
@@ -112,7 +112,7 @@ int main(void)
             break;
 
         default:
-            printf("The algorithm type could not found. Aborting.\n");
+            fprintf(stderr, "The algorithm type could not found. Aborting.\n");
             return 1;
     }
 
@@ -124,7 +124,7 @@ int main(void)
     }
     else
     {
-        printf("The sorting algorithm ran but the array is not fully sorted.\n");
+        fprintf(stderr, "The sorting algorithm ran but the array is not fully sorted.\n");
     }
 
     return 0;
