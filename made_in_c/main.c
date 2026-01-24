@@ -25,23 +25,18 @@ int main(void)
     printf("3) Selection Sort\n");
     printf("4) Insertion Sort\n");
     printf("Select an algorithm: ");
-    char algorithm_type_selection[1024];
+    
+    int algorithm_type_selection;
 
-    if (!fgets(algorithm_type_selection, sizeof(algorithm_type_selection), stdin))
-    {
-        printf("Couldn't understand the input. Aborting.");
-        return 1;
-    }
+    int ok = get_int(&algorithm_type_selection);
 
-    int temp = atoi(algorithm_type_selection);
-
-    if (temp > 4 || temp < 1)
+    if (!ok || algorithm_type_selection > 4 || algorithm_type_selection < 1)
     {
         printf("Couldn't understand the input. Aborting.\n");
         return 1;
     }
 
-    algorithm_type = --temp; // This means temp -= 1; algorithm_type = temp;
+    algorithm_type = --algorithm_type_selection; // This means algorithm_type_selection -= 1; algorithm_type = algorithm_type_selection;
 
     switch (algorithm_type)
     {
@@ -58,9 +53,14 @@ int main(void)
     }
 
     int length;
-    scanf("%d", &length); // TODO: MAKE A MORE SECURE INPUT LIKE YOU MADE AT ABOVE USING fgets.
+    ok = get_int(&length);
 
-    if (length < 0)
+    if (!ok)
+    {
+        printf("Couldn't understand the input. Aborting.\n");
+        return 1;
+    }
+    if (length <= 0)
     {
         printf("The array size cannot be %d. Aborting.\n", length);
         return 1;
