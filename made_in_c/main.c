@@ -1,9 +1,12 @@
-#include <limits.h> // To use the INT_MAX
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h> // To use the strcpy and %s
+#include <string.h>
+#include <errno.h>
+#include <limits.h>
 #include <time.h>
 #include "sorting_algorithms.h"
+
+int get_int(int *num);
 
 int main(void)
 {
@@ -22,23 +25,18 @@ int main(void)
     printf("3) Selection Sort\n");
     printf("4) Insertion Sort\n");
     printf("Select an algorithm: ");
-    char algorithm_type_selection[1024];
+    
+    int algorithm_type_selection;
 
-    if (!fgets(algorithm_type_selection, sizeof(algorithm_type_selection), stdin))
+    int ok = get_int(&algorithm_type_selection);
+
+    if (!ok || algorithm_type_selection > 4 || algorithm_type_selection < 1)
     {
-        printf("Couldn't understand the input. Aborting.");
+        fprintf(stderr, "Couldn't understand the input. Aborting.\n");
         return 1;
     }
 
-    int temp = atoi(algorithm_type_selection);
-
-    if (temp > 4 || temp < 1)
-    {
-        printf("Couldn't understand the input. Aborting.\n");
-        return 1;
-    }
-
-    algorithm_type = --temp; // This means temp -= 1; algorithm_type = temp;
+    algorithm_type = --algorithm_type_selection; // This means algorithm_type_selection -= 1; algorithm_type = algorithm_type_selection;
 
     switch (algorithm_type)
     {
@@ -50,16 +48,21 @@ int main(void)
             break;
 
         default:
-            printf("The algorithm type could not found. Aborting.\n");
+            fprintf(stderr, "The algorithm type could not found. Aborting.\n");
             return 1;
     }
 
     int length;
-    scanf("%d", &length); // TODO: MAKE A MORE SECURE INPUT LIKE YOU MADE AT ABOVE USING fgets.
+    ok = get_int(&length);
 
-    if (length < 0)
+    if (!ok)
     {
-        printf("The array size cannot be %d. Aborting.\n", length);
+        fprintf(stderr, "Couldn't understand the input. Aborting.\n");
+        return 1;
+    }
+    if (length <= 0)
+    {
+        fprintf(stderr, "The array size cannot be %d. Aborting.\n", length);
         return 1;
     }
 
@@ -69,13 +72,13 @@ int main(void)
 
     for (int i = 0; i < length; i++)
     {
-        number_array[i] = rand() % INT_MAX; // Write this next to percent sign: INT_MAX
+        number_array[i] = rand(); // rand returns a random integer from 0 to INT_MAX (both 0 and INT_MAX are included)
     }
 
     printf("The array has randomized.\n");
     //print_array(number_array, length); // To see the array before sorting
     clock_t start, end;
-    char used_algorithm_type[25];
+    const char *used_algorithm_type;
     printf("Starting to sort the array.\n");
 
     switch (algorithm_type)
@@ -84,32 +87,32 @@ int main(void)
             start = clock();
             bubble_sort(number_array, length);
             end = clock();
-            strcpy(used_algorithm_type, "Java's built in sorter");
+            used_algorithm_type = "Bubble Sort";
             break;
 
         case GNOME_SORT:
             start = clock();
             gnome_sort(number_array, length);
             end = clock();
-            strcpy(used_algorithm_type, "Gnome Sort");
+            used_algorithm_type = "Gnome Sort";
             break;
 
         case SELECTION_SORT:
             start = clock();
             selection_sort(number_array, length);
             end = clock();
-            strcpy(used_algorithm_type, "Selection Sort");
+            used_algorithm_type = "Selection Sort";
             break;
 
         case INSERTION_SORT:
             start = clock();
             insertion_sort(number_array, length);
             end = clock();
-            strcpy(used_algorithm_type, "Insertsion Sort");
+            used_algorithm_type = "Insertion Sort";
             break;
 
         default:
-            printf("The algorithm type could not found. Aborting.\n");
+            fprintf(stderr, "The algorithm type could not found. Aborting.\n");
             return 1;
     }
 
@@ -121,8 +124,64 @@ int main(void)
     }
     else
     {
-        printf("The sorting algorithm ran but the array is not fully sorted.\n");
+        fprintf(stderr, "The sorting algorithm ran but the array is not fully sorted.\n");
     }
 
     return 0;
+}
+
+// returns 1 on success and 0 on failure
+// based on beginners' guide away from scanf()
+int get_int(int *num)
+{
+    long a;
+    char buf[1024];
+
+    if (!fgets(buf, sizeof(buf), stdin))
+    {
+        // reading input failed
+        return 0;
+    }
+
+    if (!strchr(buf, '\n')) {
+        // fgets didn't covered the whole input
+        // make sure we have empty input buffer before returning
+        int c;
+        while ((c = getchar()) != '\n' && c != EOF) { }
+
+        return 0;
+    }
+
+    char *end_ptr;
+
+    errno = 0; // reset error number
+
+    a = strtol(buf, &end_ptr, 10);
+
+    if (errno == ERANGE)
+    {
+        // input will not fit in a long
+        return 0;
+    }
+
+    if (end_ptr == buf)
+    {
+        // no character was read
+        return 0;
+    }
+
+    if (*end_ptr && *end_ptr != '\n')
+    {
+        // reading didn't convered the whole input
+        return 0;
+    }
+
+    if (a > INT_MAX || a < INT_MIN)
+    {
+        // input will not fit in an int
+        return 0;
+    }
+
+    *num = (int) a;
+    return 1;
 }
