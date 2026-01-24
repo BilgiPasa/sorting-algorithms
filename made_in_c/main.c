@@ -1,7 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <errno.h>
+#include <limits.h>
 #include <time.h>
 #include "sorting_algorithms.h"
+
+int get_int(int *num);
 
 int main(void)
 {
@@ -123,4 +128,60 @@ int main(void)
     }
 
     return 0;
+}
+
+// returns 1 on success and 0 on failure
+// based on beginners' guide away from scanf()
+int get_int(int *num)
+{
+    long a;
+    char buf[1024];
+
+    if (!fgets(buf, sizeof(buf), stdin))
+    {
+        // reading input failed
+        return 0;
+    }
+
+    if (!strchr(buf, '\n')) {
+        // fgets didn't covered the whole input
+        // make sure we have empty input buffer before returning
+        int c;
+        while ((c = getchar()) != '\n' && c != EOF) { }
+
+        return 0;
+    }
+
+    char *end_ptr;
+
+    errno = 0; // reset error number
+
+    a = strtol(buf, &end_ptr, 10);
+
+    if (errno == ERANGE)
+    {
+        // input will not fit in a long
+        return 0;
+    }
+
+    if (end_ptr == buf)
+    {
+        // no character was read
+        return 0;
+    }
+
+    if (*end_ptr && *end_ptr != '\n')
+    {
+        // reading didn't convered the whole input
+        return 0;
+    }
+
+    if (a > INT_MAX || a < INT_MIN)
+    {
+        // input will not fit in an int
+        return 0;
+    }
+
+    *num = (int) a;
+    return 1;
 }
