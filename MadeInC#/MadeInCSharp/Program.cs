@@ -36,67 +36,79 @@ class Program
         Console.WriteLine("10) Merge Sort");
         Console.WriteLine("11) Quick Sort");
         Console.Write("Select an algorithm: ");
-        string? algorithmTypeSelection = Console.ReadLine();
+        int algorithmTypeSelection;
 
-        if (!string.IsNullOrEmpty(algorithmTypeSelection))
+        try
         {
-            if (algorithmTypeSelection.Equals("0") || algorithmTypeSelection.Equals("Built In") || algorithmTypeSelection.Equals("BuiltIn") || algorithmTypeSelection.Equals("Built-In"))
+            string? inputString = Console.ReadLine();
+
+            if (!string.IsNullOrEmpty(inputString))
             {
-                algorithmType = AlgorithmTypes.BuiltIn;
-            }
-            else if (algorithmTypeSelection.Equals("1") || algorithmTypeSelection.Equals("Bogo Sort") || algorithmTypeSelection.Equals("BogoSort"))
-            {
-                algorithmType = AlgorithmTypes.BogoSort;
-            }
-            else if (algorithmTypeSelection.Equals("2") || algorithmTypeSelection.Equals("Bozo Sort") || algorithmTypeSelection.Equals("BozoSort"))
-            {
-                algorithmType = AlgorithmTypes.BozoSort;
-            }
-            else if (algorithmTypeSelection.Equals("3") || algorithmTypeSelection.Equals("Sootage Sort") || algorithmTypeSelection.Equals("SootageSort"))
-            {
-                algorithmType = AlgorithmTypes.SootageSort;
-            }
-            else if (algorithmTypeSelection.Equals("4") || algorithmTypeSelection.Equals("Bubble Sort") || algorithmTypeSelection.Equals("BubbleSort"))
-            {
-                algorithmType = AlgorithmTypes.BubbleSort;
-            }
-            else if (algorithmTypeSelection.Equals("5") || algorithmTypeSelection.Equals("Cocktail Shaker Sort") || algorithmTypeSelection.Equals("CocktailShaker Sort") || algorithmTypeSelection.Equals("CocktailShakerSort") || algorithmTypeSelection.Equals("Cocktail Sort") || algorithmTypeSelection.Equals("CocktailSort") || algorithmTypeSelection.Equals("Shaker Sort") || algorithmTypeSelection.Equals("ShakerSort"))
-            {
-                algorithmType = AlgorithmTypes.CocktailShakerSort;
-            }
-            else if (algorithmTypeSelection.Equals("6") || algorithmTypeSelection.Equals("Gnome Sort") || algorithmTypeSelection.Equals("GnomeSort"))
-            {
-                algorithmType = AlgorithmTypes.GnomeSort;
-            }
-            else if (algorithmTypeSelection.Equals("7") || algorithmTypeSelection.Equals("Selection Sort") || algorithmTypeSelection.Equals("SelectionSort"))
-            {
-                algorithmType = AlgorithmTypes.SelectionSort;
-            }
-            else if (algorithmTypeSelection.Equals("8") || algorithmTypeSelection.Equals("Insertsion Sort") || algorithmTypeSelection.Equals("InsertsionSort"))
-            {
-                algorithmType = AlgorithmTypes.InsertsionSort;
-            }
-            else if (algorithmTypeSelection.Equals("9") || algorithmTypeSelection.Equals("Shell Sort") || algorithmTypeSelection.Equals("ShellSort"))
-            {
-                algorithmType = AlgorithmTypes.ShellSort;
-            }
-            else if (algorithmTypeSelection.Equals("10") || algorithmTypeSelection.Equals("Merge Sort") || algorithmTypeSelection.Equals("MergeSort"))
-            {
-                algorithmType = AlgorithmTypes.MergeSort;
-            }
-            else if (algorithmTypeSelection.Equals("11") || algorithmTypeSelection.Equals("Quick Sort") || algorithmTypeSelection.Equals("QuickSort"))
-            {
-                algorithmType = AlgorithmTypes.QuickSort;
+                algorithmTypeSelection = int.Parse(inputString);
             }
             else
             {
-                Console.WriteLine("Couldn't understand the input. Aborting.");
+                Console.WriteLine("The input should not be null. Aborting.");
                 return;
             }
         }
+        catch
+        {
+            Console.WriteLine("Couldn't understand the input. Aborting.");
+            return;
+        }
+
+        if (algorithmTypeSelection == (int)AlgorithmTypes.BuiltIn)
+        {
+            algorithmType = AlgorithmTypes.BuiltIn;
+        }
+        else if (algorithmTypeSelection == (int)AlgorithmTypes.BogoSort)
+        {
+            algorithmType = AlgorithmTypes.BogoSort;
+        }
+        else if (algorithmTypeSelection == (int)AlgorithmTypes.BozoSort)
+        {
+            algorithmType = AlgorithmTypes.BozoSort;
+        }
+        else if (algorithmTypeSelection == (int)AlgorithmTypes.SootageSort)
+        {
+            algorithmType = AlgorithmTypes.SootageSort;
+        }
+        else if (algorithmTypeSelection == (int)AlgorithmTypes.BubbleSort)
+        {
+            algorithmType = AlgorithmTypes.BubbleSort;
+        }
+        else if (algorithmTypeSelection == (int)AlgorithmTypes.CocktailShakerSort)
+        {
+            algorithmType = AlgorithmTypes.CocktailShakerSort;
+        }
+        else if (algorithmTypeSelection == (int)AlgorithmTypes.GnomeSort)
+        {
+            algorithmType = AlgorithmTypes.GnomeSort;
+        }
+        else if (algorithmTypeSelection == (int)AlgorithmTypes.SelectionSort)
+        {
+            algorithmType = AlgorithmTypes.SelectionSort;
+        }
+        else if (algorithmTypeSelection == (int)AlgorithmTypes.InsertsionSort)
+        {
+            algorithmType = AlgorithmTypes.InsertsionSort;
+        }
+        else if (algorithmTypeSelection == (int)AlgorithmTypes.ShellSort)
+        {
+            algorithmType = AlgorithmTypes.ShellSort;
+        }
+        else if (algorithmTypeSelection == (int)AlgorithmTypes.MergeSort)
+        {
+            algorithmType = AlgorithmTypes.MergeSort;
+        }
+        else if (algorithmTypeSelection == (int)AlgorithmTypes.QuickSort)
+        {
+            algorithmType = AlgorithmTypes.QuickSort;
+        }
         else
         {
-            Console.WriteLine("The input should not be null. Aborting.");
+            Console.WriteLine("Couldn't understand the input. Aborting.");
             return;
         }
 
@@ -170,7 +182,7 @@ class Program
 
         for (int i = 0; i < numberArray.Length; i++)
         {
-            numberArray[i] = r.Next(int.MaxValue); // Write this in as the parameter: int.MaxValue
+            numberArray[i] = r.Next(int.MaxValue); // Don't forget to write int.MaxValue as the parameter.
         }
 
         Console.WriteLine("The array has randomized.");

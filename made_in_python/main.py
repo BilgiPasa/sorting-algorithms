@@ -1,9 +1,9 @@
-from enum import Enum
+from enum import IntEnum
 from random import randint
 from time import time
 import sorting_algorithms
 
-class AlgorithmTypes(Enum):
+class AlgorithmTypes(IntEnum):
     BUILT_IN = 0
     BOGO_SORT = 1
     BOZO_SORT = 2
@@ -32,31 +32,36 @@ class Main:
         print("9) Shell Sort")
         print("10) Merge Sort")
         print("11) Quick Sort")
-        algorithm_type_selection: str = input("Select an algorithm: ")
 
-        if algorithm_type_selection == "0" or algorithm_type_selection == "Built In" or algorithm_type_selection == "BuiltIn" or algorithm_type_selection == "Built-In":
+        try:
+            algorithm_type_selection: int = int(input("Select an algorithm: "))
+        except:
+            print("Couldn't understand the input. Aborting.")
+            return
+
+        if algorithm_type_selection == AlgorithmTypes.BUILT_IN:
             algorithm_type = AlgorithmTypes.BUILT_IN
-        elif algorithm_type_selection == "1" or algorithm_type_selection == "Bogo Sort" or algorithm_type_selection == "BogoSort":
+        elif algorithm_type_selection == AlgorithmTypes.BOGO_SORT:
             algorithm_type = AlgorithmTypes.BOGO_SORT
-        elif algorithm_type_selection == "2" or algorithm_type_selection == "Bozo Sort" or algorithm_type_selection == "BozoSort":
+        elif algorithm_type_selection == AlgorithmTypes.BOZO_SORT:
             algorithm_type = AlgorithmTypes.BOZO_SORT
-        elif algorithm_type_selection == "3" or algorithm_type_selection == "Sootage Sort" or algorithm_type_selection == "SootageSort":
+        elif algorithm_type_selection == AlgorithmTypes.SOOTAGE_SORT:
             algorithm_type = AlgorithmTypes.SOOTAGE_SORT
-        elif algorithm_type_selection == "4" or algorithm_type_selection == "Bubble Sort" or algorithm_type_selection == "BubbleSort":
+        elif algorithm_type_selection == AlgorithmTypes.BUBBLE_SORT:
             algorithm_type = AlgorithmTypes.BUBBLE_SORT
-        elif algorithm_type_selection == "5" or algorithm_type_selection == "Cocktail Shaker Sort" or algorithm_type_selection == "CocktailShaker Sort" or algorithm_type_selection == "CocktailShakerSort" or algorithm_type_selection == "Cocktail Sort" or algorithm_type_selection == "CocktailSort" or algorithm_type_selection == "Shaker Sort" or algorithm_type_selection == "ShakerSort":
+        elif algorithm_type_selection == AlgorithmTypes.COCKTAIL_SHAKER_SORT:
             algorithm_type = AlgorithmTypes.COCKTAIL_SHAKER_SORT
-        elif algorithm_type_selection == "6" or algorithm_type_selection == "Gnome Sort" or algorithm_type_selection == "GnomeSort":
+        elif algorithm_type_selection == AlgorithmTypes.GNOME_SORT:
             algorithm_type = AlgorithmTypes.GNOME_SORT
-        elif algorithm_type_selection == "7" or algorithm_type_selection == "Selection Sort" or algorithm_type_selection == "SelectionSort":
+        elif algorithm_type_selection == AlgorithmTypes.SELECTION_SORT:
             algorithm_type = AlgorithmTypes.SELECTION_SORT
-        elif algorithm_type_selection == "8" or algorithm_type_selection == "Insertsion Sort" or algorithm_type_selection == "InsertsionSort":
+        elif algorithm_type_selection == AlgorithmTypes.INSERTSION_SORT:
             algorithm_type = AlgorithmTypes.INSERTSION_SORT
-        elif algorithm_type_selection == "9" or algorithm_type_selection == "Shell Sort" or algorithm_type_selection == "ShellSort":
+        elif algorithm_type_selection == AlgorithmTypes.SHELL_SORT:
             algorithm_type = AlgorithmTypes.SHELL_SORT
-        elif algorithm_type_selection == "10" or algorithm_type_selection == "Merge Sort" or algorithm_type_selection == "MergeSort":
+        elif algorithm_type_selection == AlgorithmTypes.MERGE_SORT:
             algorithm_type = AlgorithmTypes.MERGE_SORT
-        elif algorithm_type_selection == "11" or algorithm_type_selection == "Quick Sort" or algorithm_type_selection == "QuickSort":
+        elif algorithm_type_selection == AlgorithmTypes.QUICK_SORT:
             algorithm_type = AlgorithmTypes.QUICK_SORT
         else:
             print("Couldn't understand the input. Aborting.")
@@ -101,7 +106,7 @@ class Main:
 
         for i in range(len(number_list)): # Python's integer is 64 bit. Because of that I made the randomizer like this.
             # Note: the randint function includes both end points.
-            number_list[i] = randint(0, max_value_minus_one) # Write this as the endpoint: max_value_minus_one
+            number_list[i] = randint(0, max_value_minus_one) # Don't forget to write max_value_minus_one as the endpoint.
 
         print("The list has randomized.")
         #print("[" + ", ".join(str(x) for x in number_list) + "]") # To see the list before sorting

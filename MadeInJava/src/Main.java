@@ -4,18 +4,28 @@ import java.util.Scanner;
 
 public class Main {
     enum AlgorithmTypes {
-        BUILT_IN,
-        BOGO_SORT,
-        BOZO_SORT,
-        SOOTAGE_SORT,
-        BUBBLE_SORT,
-        COCKTAIL_SHAKER_SORT,
-        GNOME_SORT,
-        SELECTION_SORT,
-        INSERTSION_SORT,
-        SHELL_SORT,
-        MERGE_SORT,
-        QUICK_SORT
+        BUILT_IN(0),
+        BOGO_SORT(1),
+        BOZO_SORT(2),
+        SOOTAGE_SORT(3),
+        BUBBLE_SORT(4),
+        COCKTAIL_SHAKER_SORT(5),
+        GNOME_SORT(6),
+        SELECTION_SORT(7),
+        INSERTSION_SORT(8),
+        SHELL_SORT(9),
+        MERGE_SORT(10),
+        QUICK_SORT(11);
+
+        private final int index;
+
+        AlgorithmTypes(int index) {
+            this.index = index;
+        }
+
+        public int index() {
+            return index;
+        }
     }
 
     public static void main(String[] args) {
@@ -34,31 +44,39 @@ public class Main {
         System.out.println("10) Merge Sort");
         System.out.println("11) Quick Sort");
         System.out.print("Select an algorithm: ");
-        String algorithmTypeSelection = s.nextLine();
+        int algorithmTypeSelection;
 
-        if (algorithmTypeSelection.equals("0") || algorithmTypeSelection.equals("Built In") || algorithmTypeSelection.equals("BuiltIn") || algorithmTypeSelection.equals("Built-In")) {
+        try {
+            algorithmTypeSelection = s.nextInt();
+        } catch (Exception e) {
+            System.out.println("Couldn't understand the input. Aborting.");
+            s.close();
+            return;
+        }
+
+        if (algorithmTypeSelection == AlgorithmTypes.BUILT_IN.index) {
             algorithmType = AlgorithmTypes.BUILT_IN;
-        } else if (algorithmTypeSelection.equals("1") || algorithmTypeSelection.equals("Bogo Sort") || algorithmTypeSelection.equals("BogoSort")) {
+        } else if (algorithmTypeSelection == AlgorithmTypes.BOGO_SORT.index) {
             algorithmType = AlgorithmTypes.BOGO_SORT;
-        } else if (algorithmTypeSelection.equals("2") || algorithmTypeSelection.equals("Bozo Sort") || algorithmTypeSelection.equals("BozoSort")) {
+        } else if (algorithmTypeSelection == AlgorithmTypes.BOZO_SORT.index) {
             algorithmType = AlgorithmTypes.BOZO_SORT;
-        } else if (algorithmTypeSelection.equals("3") || algorithmTypeSelection.equals("Sootage Sort") || algorithmTypeSelection.equals("SootageSort")) {
+        } else if (algorithmTypeSelection == AlgorithmTypes.SOOTAGE_SORT.index) {
             algorithmType = AlgorithmTypes.SOOTAGE_SORT;
-        } else if (algorithmTypeSelection.equals("4") || algorithmTypeSelection.equals("Bubble Sort") || algorithmTypeSelection.equals("BubbleSort")) {
+        } else if (algorithmTypeSelection == AlgorithmTypes.BUBBLE_SORT.index) {
             algorithmType = AlgorithmTypes.BUBBLE_SORT;
-        } else if (algorithmTypeSelection.equals("5") || algorithmTypeSelection.equals("Cocktail Shaker Sort") || algorithmTypeSelection.equals("CocktailShaker Sort") || algorithmTypeSelection.equals("CocktailShakerSort") || algorithmTypeSelection.equals("Cocktail Sort") || algorithmTypeSelection.equals("CocktailSort") || algorithmTypeSelection.equals("Shaker Sort") || algorithmTypeSelection.equals("ShakerSort")) {
+        } else if (algorithmTypeSelection == AlgorithmTypes.COCKTAIL_SHAKER_SORT.index) {
             algorithmType = AlgorithmTypes.COCKTAIL_SHAKER_SORT;
-        } else if (algorithmTypeSelection.equals("6") || algorithmTypeSelection.equals("Gnome Sort") || algorithmTypeSelection.equals("GnomeSort")) {
+        } else if (algorithmTypeSelection == AlgorithmTypes.GNOME_SORT.index) {
             algorithmType = AlgorithmTypes.GNOME_SORT;
-        } else if (algorithmTypeSelection.equals("7") || algorithmTypeSelection.equals("Selection Sort") || algorithmTypeSelection.equals("SelectionSort")) {
+        } else if (algorithmTypeSelection == AlgorithmTypes.SELECTION_SORT.index) {
             algorithmType = AlgorithmTypes.SELECTION_SORT;
-        } else if (algorithmTypeSelection.equals("8") || algorithmTypeSelection.equals("Insertsion Sort") || algorithmTypeSelection.equals("InsertsionSort")) {
+        } else if (algorithmTypeSelection == AlgorithmTypes.INSERTSION_SORT.index) {
             algorithmType = AlgorithmTypes.INSERTSION_SORT;
-        } else if (algorithmTypeSelection.equals("9") || algorithmTypeSelection.equals("Shell Sort") || algorithmTypeSelection.equals("ShellSort")) {
+        } else if (algorithmTypeSelection == AlgorithmTypes.SHELL_SORT.index) {
             algorithmType = AlgorithmTypes.SHELL_SORT;
-        } else if (algorithmTypeSelection.equals("10") || algorithmTypeSelection.equals("Merge Sort") || algorithmTypeSelection.equals("MergeSort")) {
+        } else if (algorithmTypeSelection == AlgorithmTypes.MERGE_SORT.index) {
             algorithmType = AlgorithmTypes.MERGE_SORT;
-        } else if (algorithmTypeSelection.equals("11") || algorithmTypeSelection.equals("Quick Sort") || algorithmTypeSelection.equals("QuickSort")) {
+        } else if (algorithmTypeSelection == AlgorithmTypes.QUICK_SORT.index) {
             algorithmType = AlgorithmTypes.QUICK_SORT;
         } else {
             System.out.println("Couldn't understand the input. Aborting.");
@@ -121,7 +139,7 @@ public class Main {
         System.out.println("Starting to randomize the array.");
 
         for (int i = 0; i < numberArray.length; i++) {
-            numberArray[i] = r.nextInt(Integer.MAX_VALUE); // Write this in as the parameter: Integer.MAX_VALUE
+            numberArray[i] = r.nextInt(Integer.MAX_VALUE); // Don't forget to write Integer.MAX_VALUE as the parameter.
         }
 
         System.out.println("The array has randomized.");
