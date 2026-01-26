@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "sorting_algorithms.h"
 
-void print_array(const int number_array[], int length)
+void print_array(const int number_array[], int length) // To print the array
 {
     int length_minus_one = length - 1;
     printf("[");
@@ -14,7 +14,7 @@ void print_array(const int number_array[], int length)
     printf("%d]\n", number_array[length_minus_one]);
 }
 
-bool is_sorted(const int number_array[], int length)
+bool is_sorted(const int number_array[], int length) // To check if the array is sorted
 {
     for (int i = 1; i < length; i++)
     {
@@ -27,7 +27,7 @@ bool is_sorted(const int number_array[], int length)
     return true;
 }
 
-void swap(int *a, int *b) // To swap elements using XOR
+void swap(int *a, int *b) // This is for to swap elements using XOR
 {
     if (a == b)
     {
@@ -49,9 +49,9 @@ void swap(int *a, int *b) // To swap elements using XOR
 
 void bubble_sort(int number_array[], int length)
 {
-    /* In Bubble Sort, the program goes through the array and checks the elements and the elements next to
-    it. If the left element is bigger than the right element, the program swaps the elements. When the
-    array ends, if the array is not sorted, the program repeats this process until the array is sorted. */
+    /* In Bubble Sort, the program goes through the array and checks the elements and the elements next to it.
+    If the left element is bigger than the right element, the program swaps the elements. When the array ends,
+    if the array is not sorted, the program repeats this process until the array is sorted. */
 
     bool swapped;
 
@@ -95,10 +95,10 @@ void gnome_sort(int number_array[], int length)
 
 void selection_sort(int number_array[], int length)
 {
-    /* In Selection Sort, the program goes through the array and looks for the smallest element. When the
-    array ends, it swaps the smallest element with the first element. Then it goes through the array again
-    and looks for the second smallest element. When the array ends, it swaps the second smallest element
-    with the second element and the process goes on like that until the array is sorted. */
+    /* In Selection Sort, the program goes through the array and looks for the smallest element. When the array
+    ends, it swaps the smallest element with the first element. Then it goes through the array again and looks
+    for the second smallest element. When the array ends, it swaps the second smallest element with the second
+    element and the process goes on like that until the array is sorted. */
 
     int length_minus_one = length - 1, j;
 
@@ -127,11 +127,11 @@ int index_of_min(const int number_array[], int length, int start) // This is for
 void insertion_sort(int number_array[], int length)
 {
     /* In Insertsion Sort; the program checks at the array multiple times part by part as first 2 elements,
-    first 3 elements, first 4 ... and all of the elements. In each checking, the program goes through each
-    part starting from the second to last element of the part and goes to the first element. If the element
-    that the program is checking is bigger than the last element of the part, it moves the last element of
-    the part in front of the element that the program is checking. The sorting process ends when all of the
-    elements are checked. */
+    first 3 elements, first 4 ... and all of the elements. In each checking, the program goes through each part
+    starting from the second to last element of the part and goes to the first element. If the element that the
+    program is checking is bigger than the last element of the part, it moves the last element of the part in
+    front of the element that the program is checking. The sorting process ends when all of the elements are
+    checked. */
 
     int temp, j;
 

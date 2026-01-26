@@ -1,8 +1,8 @@
+#include <errno.h>
+#include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <errno.h>
-#include <limits.h>
 #include <time.h>
 #include "sorting_algorithms.h"
 
@@ -129,22 +129,21 @@ int main(void)
     return 0;
 }
 
-// This function returns 1 on success and 0 on failure
-// This function is based on beginners' guide away from scanf()
+/* Because C does not have try-catch, for a safe input system for C, bartu-g made this function. This function
+returns 1 on success and 0 on failure. Also, this function is based on beginners' guide away from scanf(). */
 int get_int(int *num)
 {
     long a;
     char buffer[1024];
 
-    if (!fgets(buffer, sizeof(buffer), stdin)) // If the input reading failed
+    if (!fgets(buffer, sizeof(buffer), stdin)) // If the input reading fails
     {
         return 0;
     }
 
     if (!strchr(buffer, '\n'))
     {
-        // fgets didn't covered the whole input
-        // make sure we have empty input buffer before returning
+        // If fgets doesn't cover the whole input, make sure we have empty input buffer before returning.
         int c;
         while ((c = getchar()) != '\n' && c != EOF) { }
         return 0;
