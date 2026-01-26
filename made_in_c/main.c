@@ -25,9 +25,7 @@ int main(void)
     printf("3) Selection Sort\n");
     printf("4) Insertion Sort\n");
     printf("Select an algorithm: ");
-    
     int algorithm_type_selection;
-
     int ok = get_int(&algorithm_type_selection);
 
     if (!ok || algorithm_type_selection > 4 || algorithm_type_selection < 1)
@@ -60,6 +58,7 @@ int main(void)
         fprintf(stderr, "Couldn't understand the input. Aborting.\n");
         return 1;
     }
+
     if (length <= 0)
     {
         fprintf(stderr, "The array size cannot be %d. Aborting.\n", length);
@@ -130,58 +129,51 @@ int main(void)
     return 0;
 }
 
-// returns 1 on success and 0 on failure
-// based on beginners' guide away from scanf()
+// This function returns 1 on success and 0 on failure
+// This function is based on beginners' guide away from scanf()
 int get_int(int *num)
 {
     long a;
-    char buf[1024];
+    char buffer[1024];
 
-    if (!fgets(buf, sizeof(buf), stdin))
+    if (!fgets(buffer, sizeof(buffer), stdin)) // If the input reading failed
     {
-        // reading input failed
         return 0;
     }
 
-    if (!strchr(buf, '\n')) {
+    if (!strchr(buffer, '\n'))
+    {
         // fgets didn't covered the whole input
         // make sure we have empty input buffer before returning
         int c;
         while ((c = getchar()) != '\n' && c != EOF) { }
-
         return 0;
     }
 
     char *end_ptr;
-
     errno = 0; // reset error number
+    a = strtol(buffer, &end_ptr, 10);
 
-    a = strtol(buf, &end_ptr, 10);
-
-    if (errno == ERANGE)
+    if (errno == ERANGE) // If the input doesn't fit in a long
     {
-        // input will not fit in a long
         return 0;
     }
 
-    if (end_ptr == buf)
+    if (end_ptr == buffer) // If no character was read
     {
-        // no character was read
         return 0;
     }
 
-    if (*end_ptr && *end_ptr != '\n')
+    if (*end_ptr && *end_ptr != '\n') // If the reading doesn't convert the whole input
     {
-        // reading didn't convered the whole input
         return 0;
     }
 
-    if (a > INT_MAX || a < INT_MIN)
+    if (a > INT_MAX || a < INT_MIN) // If the input doesn't fit in an int
     {
-        // input will not fit in an int
         return 0;
     }
 
-    *num = (int) a;
+    *num = (int)a;
     return 1;
 }
