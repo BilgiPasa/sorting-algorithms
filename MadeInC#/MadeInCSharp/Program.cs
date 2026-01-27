@@ -7,34 +7,34 @@ class Program
     enum AlgorithmTypes
     {
         BuiltIn,
-        BogoSort,
-        BozoSort,
-        SootageSort,
-        BubbleSort,
-        CocktailShakerSort,
-        GnomeSort,
-        SelectionSort,
-        InsertsionSort,
-        ShellSort,
+        QuickSort,
         MergeSort,
-        QuickSort
+        ShellSort,
+        InsertsionSort,
+        SelectionSort,
+        GnomeSort,
+        CocktailShakerSort,
+        BubbleSort,
+        SootageSort,
+        BozoSort,
+        BogoSort
     }
 
     static void Main(string[] args)
     {
         AlgorithmTypes algorithmType;
         Console.WriteLine("\nSorting algorithms (from slowest to fastest)");
-        Console.WriteLine("1) Bogo Sort");
-        Console.WriteLine("2) Bozo Sort");
-        Console.WriteLine("3) Sootage Sort");
-        Console.WriteLine("4) Bubble Sort");
-        Console.WriteLine("5) Cocktail Shaker Sort");
+        Console.WriteLine("1) Quick Sort");
+        Console.WriteLine("2) Merge Sort");
+        Console.WriteLine("3) Shell Sort");
+        Console.WriteLine("4) Insertsion Sort");
+        Console.WriteLine("5) Selection Sort");
         Console.WriteLine("6) Gnome Sort");
-        Console.WriteLine("7) Selection Sort");
-        Console.WriteLine("8) Insertsion Sort");
-        Console.WriteLine("9) Shell Sort");
-        Console.WriteLine("10) Merge Sort");
-        Console.WriteLine("11) Quick Sort");
+        Console.WriteLine("7) Cocktail Shaker Sort");
+        Console.WriteLine("8) Bubble Sort");
+        Console.WriteLine("9) Sootage Sort");
+        Console.WriteLine("10) Bozo Sort");
+        Console.WriteLine("11) Bogo Sort");
         Console.Write("Select an algorithm: ");
         int algorithmTypeSelection;
 
@@ -62,49 +62,49 @@ class Program
         {
             algorithmType = AlgorithmTypes.BuiltIn;
         }
-        else if (algorithmTypeSelection == (int)AlgorithmTypes.BogoSort)
+        else if (algorithmTypeSelection == (int)AlgorithmTypes.QuickSort)
         {
-            algorithmType = AlgorithmTypes.BogoSort;
-        }
-        else if (algorithmTypeSelection == (int)AlgorithmTypes.BozoSort)
-        {
-            algorithmType = AlgorithmTypes.BozoSort;
-        }
-        else if (algorithmTypeSelection == (int)AlgorithmTypes.SootageSort)
-        {
-            algorithmType = AlgorithmTypes.SootageSort;
-        }
-        else if (algorithmTypeSelection == (int)AlgorithmTypes.BubbleSort)
-        {
-            algorithmType = AlgorithmTypes.BubbleSort;
-        }
-        else if (algorithmTypeSelection == (int)AlgorithmTypes.CocktailShakerSort)
-        {
-            algorithmType = AlgorithmTypes.CocktailShakerSort;
-        }
-        else if (algorithmTypeSelection == (int)AlgorithmTypes.GnomeSort)
-        {
-            algorithmType = AlgorithmTypes.GnomeSort;
-        }
-        else if (algorithmTypeSelection == (int)AlgorithmTypes.SelectionSort)
-        {
-            algorithmType = AlgorithmTypes.SelectionSort;
-        }
-        else if (algorithmTypeSelection == (int)AlgorithmTypes.InsertsionSort)
-        {
-            algorithmType = AlgorithmTypes.InsertsionSort;
-        }
-        else if (algorithmTypeSelection == (int)AlgorithmTypes.ShellSort)
-        {
-            algorithmType = AlgorithmTypes.ShellSort;
+            algorithmType = AlgorithmTypes.QuickSort;
         }
         else if (algorithmTypeSelection == (int)AlgorithmTypes.MergeSort)
         {
             algorithmType = AlgorithmTypes.MergeSort;
         }
-        else if (algorithmTypeSelection == (int)AlgorithmTypes.QuickSort)
+        else if (algorithmTypeSelection == (int)AlgorithmTypes.ShellSort)
         {
-            algorithmType = AlgorithmTypes.QuickSort;
+            algorithmType = AlgorithmTypes.ShellSort;
+        }
+        else if (algorithmTypeSelection == (int)AlgorithmTypes.InsertsionSort)
+        {
+            algorithmType = AlgorithmTypes.InsertsionSort;
+        }
+        else if (algorithmTypeSelection == (int)AlgorithmTypes.SelectionSort)
+        {
+            algorithmType = AlgorithmTypes.SelectionSort;
+        }
+        else if (algorithmTypeSelection == (int)AlgorithmTypes.GnomeSort)
+        {
+            algorithmType = AlgorithmTypes.GnomeSort;
+        }
+        else if (algorithmTypeSelection == (int)AlgorithmTypes.CocktailShakerSort)
+        {
+            algorithmType = AlgorithmTypes.CocktailShakerSort;
+        }
+        else if (algorithmTypeSelection == (int)AlgorithmTypes.BubbleSort)
+        {
+            algorithmType = AlgorithmTypes.BubbleSort;
+        }
+        else if (algorithmTypeSelection == (int)AlgorithmTypes.SootageSort)
+        {
+            algorithmType = AlgorithmTypes.SootageSort;
+        }
+        else if (algorithmTypeSelection == (int)AlgorithmTypes.BozoSort)
+        {
+            algorithmType = AlgorithmTypes.BozoSort;
+        }
+        else if (algorithmTypeSelection == (int)AlgorithmTypes.BogoSort)
+        {
+            algorithmType = AlgorithmTypes.BogoSort;
         }
         else
         {
@@ -114,28 +114,28 @@ class Program
 
         switch (algorithmType)
         {
-            case AlgorithmTypes.BogoSort:
-            case AlgorithmTypes.BozoSort:
-                Console.Write("Enter the array size (maximum 12 is recommended): ");
+            case AlgorithmTypes.BuiltIn:
+            case AlgorithmTypes.QuickSort:
+            case AlgorithmTypes.MergeSort:
+            case AlgorithmTypes.ShellSort:
+                Console.Write("Enter the array size (12345678 is recommended): ");
+                break;
+
+            case AlgorithmTypes.InsertsionSort:
+            case AlgorithmTypes.SelectionSort:
+            case AlgorithmTypes.GnomeSort:
+            case AlgorithmTypes.CocktailShakerSort:
+            case AlgorithmTypes.BubbleSort:
+                Console.Write("Enter the array size (55555 is recommended): ");
                 break;
 
             case AlgorithmTypes.SootageSort:
                 Console.Write("Enter the array size (3223 is recommended): ");
                 break;
 
-            case AlgorithmTypes.BubbleSort:
-            case AlgorithmTypes.CocktailShakerSort:
-            case AlgorithmTypes.GnomeSort:
-            case AlgorithmTypes.SelectionSort:
-            case AlgorithmTypes.InsertsionSort:
-                Console.Write("Enter the array size (55555 is recommended): ");
-                break;
-
-            case AlgorithmTypes.BuiltIn:
-            case AlgorithmTypes.ShellSort:
-            case AlgorithmTypes.MergeSort:
-            case AlgorithmTypes.QuickSort:
-                Console.Write("Enter the array size (12345678 is recommended): ");
+            case AlgorithmTypes.BozoSort:
+            case AlgorithmTypes.BogoSort:
+                Console.Write("Enter the array size (maximum 12 is recommended): ");
                 break;
 
             default:
@@ -199,67 +199,11 @@ class Program
                 usedAlgorithmType = "C#'s built-in sorter";
                 break;
 
-            case AlgorithmTypes.BogoSort:
+            case AlgorithmTypes.QuickSort:
                 s.Start();
-                SortingAlgorithms.BogoSort(numberArray);
+                SortingAlgorithms.QuickSort(numberArray, 0, numberArray.Length - 1);
                 s.Stop();
-                usedAlgorithmType = "Bogo Sort";
-                break;
-
-            case AlgorithmTypes.BozoSort:
-                s.Start();
-                SortingAlgorithms.BozoSort(numberArray);
-                s.Stop();
-                usedAlgorithmType = "Bozo Sort";
-                break;
-
-            case AlgorithmTypes.SootageSort:
-                s.Start();
-                SortingAlgorithms.SootageSort(numberArray, 0, numberArray.Length - 1);
-                s.Stop();
-                usedAlgorithmType = "Sootage Sort";
-                break;
-
-            case AlgorithmTypes.BubbleSort:
-                s.Start();
-                SortingAlgorithms.BubbleSort(numberArray);
-                s.Stop();
-                usedAlgorithmType = "Bubble Sort";
-                break;
-
-            case AlgorithmTypes.CocktailShakerSort:
-                s.Start();
-                SortingAlgorithms.CocktailShakerSort(numberArray);
-                s.Stop();
-                usedAlgorithmType = "Cocktail Shaker Sort";
-                break;
-
-            case AlgorithmTypes.GnomeSort:
-                s.Start();
-                SortingAlgorithms.GnomeSort(numberArray);
-                s.Stop();
-                usedAlgorithmType = "Gnome Sort";
-                break;
-
-            case AlgorithmTypes.SelectionSort:
-                s.Start();
-                SortingAlgorithms.SelectionSort(numberArray);
-                s.Stop();
-                usedAlgorithmType = "Selection Sort";
-                break;
-
-            case AlgorithmTypes.InsertsionSort:
-                s.Start();
-                SortingAlgorithms.InsertsionSort(numberArray);
-                s.Stop();
-                usedAlgorithmType = "Insertsion Sort";
-                break;
-
-            case AlgorithmTypes.ShellSort:
-                s.Start();
-                SortingAlgorithms.ShellSort(numberArray);
-                s.Stop();
-                usedAlgorithmType = "Shell Sort";
+                usedAlgorithmType = "Quick Sort";
                 break;
 
             case AlgorithmTypes.MergeSort:
@@ -269,11 +213,67 @@ class Program
                 usedAlgorithmType = "Merge Sort";
                 break;
 
-            case AlgorithmTypes.QuickSort:
+            case AlgorithmTypes.ShellSort:
                 s.Start();
-                SortingAlgorithms.QuickSort(numberArray, 0, numberArray.Length - 1);
+                SortingAlgorithms.ShellSort(numberArray);
                 s.Stop();
-                usedAlgorithmType = "Quick Sort";
+                usedAlgorithmType = "Shell Sort";
+                break;
+
+            case AlgorithmTypes.InsertsionSort:
+                s.Start();
+                SortingAlgorithms.InsertsionSort(numberArray);
+                s.Stop();
+                usedAlgorithmType = "Insertsion Sort";
+                break;
+
+            case AlgorithmTypes.SelectionSort:
+                s.Start();
+                SortingAlgorithms.SelectionSort(numberArray);
+                s.Stop();
+                usedAlgorithmType = "Selection Sort";
+                break;
+
+            case AlgorithmTypes.GnomeSort:
+                s.Start();
+                SortingAlgorithms.GnomeSort(numberArray);
+                s.Stop();
+                usedAlgorithmType = "Gnome Sort";
+                break;
+
+            case AlgorithmTypes.CocktailShakerSort:
+                s.Start();
+                SortingAlgorithms.CocktailShakerSort(numberArray);
+                s.Stop();
+                usedAlgorithmType = "Cocktail Shaker Sort";
+                break;
+
+            case AlgorithmTypes.BubbleSort:
+                s.Start();
+                SortingAlgorithms.BubbleSort(numberArray);
+                s.Stop();
+                usedAlgorithmType = "Bubble Sort";
+                break;
+
+            case AlgorithmTypes.SootageSort:
+                s.Start();
+                SortingAlgorithms.SootageSort(numberArray, 0, numberArray.Length - 1);
+                s.Stop();
+                usedAlgorithmType = "Sootage Sort";
+                break;
+
+            case AlgorithmTypes.BozoSort:
+                s.Start();
+                SortingAlgorithms.BozoSort(numberArray);
+                s.Stop();
+                usedAlgorithmType = "Bozo Sort";
+                break;
+
+            case AlgorithmTypes.BogoSort:
+                s.Start();
+                SortingAlgorithms.BogoSort(numberArray);
+                s.Stop();
+                usedAlgorithmType = "Bogo Sort";
                 break;
 
             default:
