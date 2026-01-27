@@ -39,7 +39,7 @@ void swap(int *a, int *b) // This is for to swap elements using XOR
     *a ^= *b;
 }
 
-// The algorithms are listed from the slowest to the fastest.
+// The algorithms are listed from the fastest to the slowest according to my tests.
 
 // TODO: IMPLEMENT QUICK SORT HERE.
 

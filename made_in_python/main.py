@@ -5,33 +5,33 @@ import sorting_algorithms
 
 class AlgorithmTypes(IntEnum):
     BUILT_IN = 0
-    BOGO_SORT = 1
-    BOZO_SORT = 2
-    SOOTAGE_SORT = 3
-    BUBBLE_SORT = 4
-    COCKTAIL_SHAKER_SORT = 5
+    QUICK_SORT = 1
+    MERGE_SORT = 2
+    SHELL_SORT = 3
+    INSERTSION_SORT = 4
+    SELECTION_SORT = 5
     GNOME_SORT = 6
-    SELECTION_SORT = 7
-    INSERTSION_SORT = 8
-    SHELL_SORT = 9
-    MERGE_SORT = 10
-    QUICK_SORT = 11
+    COCKTAIL_SHAKER_SORT = 7
+    BUBBLE_SORT = 8
+    SOOTAGE_SORT = 9
+    BOZO_SORT = 10
+    BOGO_SORT = 11
 
 class Main:
     def main():
         algorithm_type: AlgorithmTypes
         print("\nSorting algorithms (from slowest to fastest)")
-        print("1) Bogo Sort")
-        print("2) Bozo Sort")
-        print("3) Sootage Sort")
-        print("4) Bubble Sort")
-        print("5) Cocktail Shaker Sort")
+        print("1) Quick Sort")
+        print("2) Merge Sort")
+        print("3) Shell Sort")
+        print("4) Insertsion Sort")
+        print("5) Selection Sort")
         print("6) Gnome Sort")
-        print("7) Selection Sort")
-        print("8) Insertsion Sort")
-        print("9) Shell Sort")
-        print("10) Merge Sort")
-        print("11) Quick Sort")
+        print("7) Cocktail Shaker Sort")
+        print("8) Bubble Sort")
+        print("9) Sootage Sort")
+        print("10) Bozo Sort")
+        print("11) Bogo Sort")
 
         try:
             algorithm_type_selection: int = int(input("Select an algorithm: "))
@@ -41,47 +41,47 @@ class Main:
 
         if algorithm_type_selection == AlgorithmTypes.BUILT_IN:
             algorithm_type = AlgorithmTypes.BUILT_IN
-        elif algorithm_type_selection == AlgorithmTypes.BOGO_SORT:
-            algorithm_type = AlgorithmTypes.BOGO_SORT
-        elif algorithm_type_selection == AlgorithmTypes.BOZO_SORT:
-            algorithm_type = AlgorithmTypes.BOZO_SORT
-        elif algorithm_type_selection == AlgorithmTypes.SOOTAGE_SORT:
-            algorithm_type = AlgorithmTypes.SOOTAGE_SORT
-        elif algorithm_type_selection == AlgorithmTypes.BUBBLE_SORT:
-            algorithm_type = AlgorithmTypes.BUBBLE_SORT
-        elif algorithm_type_selection == AlgorithmTypes.COCKTAIL_SHAKER_SORT:
-            algorithm_type = AlgorithmTypes.COCKTAIL_SHAKER_SORT
-        elif algorithm_type_selection == AlgorithmTypes.GNOME_SORT:
-            algorithm_type = AlgorithmTypes.GNOME_SORT
-        elif algorithm_type_selection == AlgorithmTypes.SELECTION_SORT:
-            algorithm_type = AlgorithmTypes.SELECTION_SORT
-        elif algorithm_type_selection == AlgorithmTypes.INSERTSION_SORT:
-            algorithm_type = AlgorithmTypes.INSERTSION_SORT
-        elif algorithm_type_selection == AlgorithmTypes.SHELL_SORT:
-            algorithm_type = AlgorithmTypes.SHELL_SORT
-        elif algorithm_type_selection == AlgorithmTypes.MERGE_SORT:
-            algorithm_type = AlgorithmTypes.MERGE_SORT
         elif algorithm_type_selection == AlgorithmTypes.QUICK_SORT:
             algorithm_type = AlgorithmTypes.QUICK_SORT
+        elif algorithm_type_selection == AlgorithmTypes.MERGE_SORT:
+            algorithm_type = AlgorithmTypes.MERGE_SORT
+        elif algorithm_type_selection == AlgorithmTypes.SHELL_SORT:
+            algorithm_type = AlgorithmTypes.SHELL_SORT
+        elif algorithm_type_selection == AlgorithmTypes.INSERTSION_SORT:
+            algorithm_type = AlgorithmTypes.INSERTSION_SORT
+        elif algorithm_type_selection == AlgorithmTypes.SELECTION_SORT:
+            algorithm_type = AlgorithmTypes.SELECTION_SORT
+        elif algorithm_type_selection == AlgorithmTypes.GNOME_SORT:
+            algorithm_type = AlgorithmTypes.GNOME_SORT
+        elif algorithm_type_selection == AlgorithmTypes.COCKTAIL_SHAKER_SORT:
+            algorithm_type = AlgorithmTypes.COCKTAIL_SHAKER_SORT
+        elif algorithm_type_selection == AlgorithmTypes.BUBBLE_SORT:
+            algorithm_type = AlgorithmTypes.BUBBLE_SORT
+        elif algorithm_type_selection == AlgorithmTypes.SOOTAGE_SORT:
+            algorithm_type = AlgorithmTypes.SOOTAGE_SORT
+        elif algorithm_type_selection == AlgorithmTypes.BOZO_SORT:
+            algorithm_type = AlgorithmTypes.BOZO_SORT
+        elif algorithm_type_selection == AlgorithmTypes.BOGO_SORT:
+            algorithm_type = AlgorithmTypes.BOGO_SORT
         else:
             print("Couldn't understand the input. Aborting.")
             return
 
         match algorithm_type:
-            case AlgorithmTypes.BOGO_SORT | AlgorithmTypes.BOZO_SORT:
-                print("Enter the list size (maximum 12 is recommended): ", end="")
+            case AlgorithmTypes.BUILT_IN:
+                print("Enter the list size (12345678 is recommended): ", end="")
+
+            case AlgorithmTypes.QUICK_SORT | AlgorithmTypes.MERGE_SORT | AlgorithmTypes.SHELL_SORT:
+                print("Enter the list size (less than 12345678 is recommended): ", end="")
+
+            case AlgorithmTypes.INSERTSION_SORT | AlgorithmTypes.SELECTION_SORT | AlgorithmTypes.GNOME_SORT | AlgorithmTypes.COCKTAIL_SHAKER_SORT | AlgorithmTypes.BUBBLE_SORT:
+                print("Enter the list size (less than 55555 is recommended): ", end="")
 
             case AlgorithmTypes.SOOTAGE_SORT:
                 print("Enter the list size (less than 3223 is recommended): ", end="")
 
-            case AlgorithmTypes.BUBBLE_SORT | AlgorithmTypes.COCKTAIL_SHAKER_SORT | AlgorithmTypes.GNOME_SORT | AlgorithmTypes.SELECTION_SORT | AlgorithmTypes.INSERTSION_SORT:
-                print("Enter the list size (less than 55555 is recommended): ", end="")
-
-            case AlgorithmTypes.SHELL_SORT | AlgorithmTypes.MERGE_SORT | AlgorithmTypes.QUICK_SORT:
-                print("Enter the list size (less than 12345678 is recommended): ", end="")
-
-            case AlgorithmTypes.BUILT_IN:
-                print("Enter the list size (12345678 is recommended): ", end="")
+            case AlgorithmTypes.BOZO_SORT | AlgorithmTypes.BOGO_SORT:
+                print("Enter the list size (maximum 12 is recommended): ", end="")
 
             case _:
                 print("The algorithm type could not found. Aborting.")
@@ -122,59 +122,11 @@ class Main:
                 end_time = time()
                 used_algorithm_type = "Python's built-in sorter"
 
-            case AlgorithmTypes.BOGO_SORT:
+            case AlgorithmTypes.QUICK_SORT:
                 start_time = time()
-                sorting_algorithms.SortingAlgorithms.bogo_sort(number_list)
+                sorting_algorithms.SortingAlgorithms.quick_sort(number_list, 0, len(number_list) - 1)
                 end_time = time()
-                used_algorithm_type = "Bogo Sort"
-
-            case AlgorithmTypes.BOZO_SORT:
-                start_time = time()
-                sorting_algorithms.SortingAlgorithms.bozo_sort(number_list)
-                end_time = time()
-                used_algorithm_type = "Bozo Sort"
-
-            case AlgorithmTypes.SOOTAGE_SORT:
-                start_time = time()
-                sorting_algorithms.SortingAlgorithms.sootage_sort(number_list, 0, len(number_list) - 1)
-                end_time = time()
-                used_algorithm_type = "Sootage Sort"
-
-            case AlgorithmTypes.BUBBLE_SORT:
-                start_time = time()
-                sorting_algorithms.SortingAlgorithms.bubble_sort(number_list)
-                end_time = time()
-                used_algorithm_type = "Bubble Sort"
-
-            case AlgorithmTypes.COCKTAIL_SHAKER_SORT:
-                start_time = time()
-                sorting_algorithms.SortingAlgorithms.cocktail_shaker_sort(number_list)
-                end_time = time()
-                used_algorithm_type = "Cocktail Shaker Sort"
-
-            case AlgorithmTypes.GNOME_SORT:
-                start_time = time()
-                sorting_algorithms.SortingAlgorithms.gnome_sort(number_list)
-                end_time = time()
-                used_algorithm_type = "Gnome Sort"
-
-            case AlgorithmTypes.SELECTION_SORT:
-                start_time = time()
-                sorting_algorithms.SortingAlgorithms.selection_sort(number_list)
-                end_time = time()
-                used_algorithm_type = "Selection Sort"
-
-            case AlgorithmTypes.INSERTSION_SORT:
-                start_time = time()
-                sorting_algorithms.SortingAlgorithms.insertsion_sort(number_list)
-                end_time = time()
-                used_algorithm_type = "Insertsion Sort"
-
-            case AlgorithmTypes.SHELL_SORT:
-                start_time = time()
-                sorting_algorithms.SortingAlgorithms.shell_sort(number_list)
-                end_time = time()
-                used_algorithm_type = "Shell Sort"
+                used_algorithm_type = "Quick Sort"
 
             case AlgorithmTypes.MERGE_SORT:
                 start_time = time()
@@ -182,11 +134,59 @@ class Main:
                 end_time = time()
                 used_algorithm_type = "Merge Sort"
 
-            case AlgorithmTypes.QUICK_SORT:
+            case AlgorithmTypes.SHELL_SORT:
                 start_time = time()
-                sorting_algorithms.SortingAlgorithms.quick_sort(number_list, 0, len(number_list) - 1)
+                sorting_algorithms.SortingAlgorithms.shell_sort(number_list)
                 end_time = time()
-                used_algorithm_type = "Quick Sort"
+                used_algorithm_type = "Shell Sort"
+
+            case AlgorithmTypes.INSERTSION_SORT:
+                start_time = time()
+                sorting_algorithms.SortingAlgorithms.insertsion_sort(number_list)
+                end_time = time()
+                used_algorithm_type = "Insertsion Sort"
+
+            case AlgorithmTypes.SELECTION_SORT:
+                start_time = time()
+                sorting_algorithms.SortingAlgorithms.selection_sort(number_list)
+                end_time = time()
+                used_algorithm_type = "Selection Sort"
+
+            case AlgorithmTypes.GNOME_SORT:
+                start_time = time()
+                sorting_algorithms.SortingAlgorithms.gnome_sort(number_list)
+                end_time = time()
+                used_algorithm_type = "Gnome Sort"
+
+            case AlgorithmTypes.COCKTAIL_SHAKER_SORT:
+                start_time = time()
+                sorting_algorithms.SortingAlgorithms.cocktail_shaker_sort(number_list)
+                end_time = time()
+                used_algorithm_type = "Cocktail Shaker Sort"
+
+            case AlgorithmTypes.BUBBLE_SORT:
+                start_time = time()
+                sorting_algorithms.SortingAlgorithms.bubble_sort(number_list)
+                end_time = time()
+                used_algorithm_type = "Bubble Sort"
+
+            case AlgorithmTypes.SOOTAGE_SORT:
+                start_time = time()
+                sorting_algorithms.SortingAlgorithms.sootage_sort(number_list, 0, len(number_list) - 1)
+                end_time = time()
+                used_algorithm_type = "Sootage Sort"
+
+            case AlgorithmTypes.BOZO_SORT:
+                start_time = time()
+                sorting_algorithms.SortingAlgorithms.bozo_sort(number_list)
+                end_time = time()
+                used_algorithm_type = "Bozo Sort"
+
+            case AlgorithmTypes.BOGO_SORT:
+                start_time = time()
+                sorting_algorithms.SortingAlgorithms.bogo_sort(number_list)
+                end_time = time()
+                used_algorithm_type = "Bogo Sort"
 
             case _:
                 print("The algorithm type could not found. Aborting.")
