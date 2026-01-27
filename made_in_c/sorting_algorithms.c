@@ -41,55 +41,35 @@ void swap(int *a, int *b) // This is for to swap elements using XOR
 
 // The algorithms are listed from the slowest to the fastest.
 
-// TODO: IMPLEMENT BOGO SORT HERE.
+// TODO: IMPLEMENT QUICK SORT HERE.
 
-// TODO: IMPLEMENT BOZO SORT HERE.
+// TODO: IMPLEMENT MERGE SORT HERE.
 
-// TODO: IMPLEMENT SOOTAGE SORT HERE.
+// TODO: IMPLEMENT SHELL SORT HERE.
 
-void bubble_sort(int number_array[], int length)
+void insertion_sort(int number_array[], int length)
 {
-    /* In Bubble Sort, the program goes through the array and checks the elements and the elements next to it.
-    If the left element is bigger than the right element, the program swaps the elements. When the array ends,
-    if the array is not sorted, the program repeats this process until the array is sorted. */
+    /* In Insertsion Sort; the program checks at the array multiple times part by part as first 2 elements,
+    first 3 elements, first 4 ... and all of the elements. In each checking, the program goes through each part
+    starting from the second to last element of the part and goes to the first element. If the element that the
+    program is checking is bigger than the last element of the part, it moves the last element of the part in
+    front of the element that the program is checking. The sorting process ends when all of the elements are
+    checked. */
 
-    bool swapped;
+    int temp, j;
 
-    do
+    for (int i = 1; i < length; i++)
     {
-        swapped = false;
+        temp = number_array[i];
+        j = i - 1;
 
-        for (int i = 1; i < length; i++)
+        while (j >= 0 && number_array[j] > temp)
         {
-            if (number_array[i - 1] > number_array[i])
-            {
-                swap(&number_array[i - 1], &number_array[i]);
-                swapped = true;
-            }
+            number_array[j + 1] = number_array[j];
+            j--;
         }
 
-        length--; // Every time it restarts, the largest elements moves to the end of the array. So, we don't need to check it again.
-    }
-    while (swapped);
-}
-
-// TODO: IMPLEMENT COCKTAIL SHAKER SORT HERE.
-
-void gnome_sort(int number_array[], int length)
-{
-    int i = 1;
-
-    while (i < length)
-    {
-        if (i > 0 && number_array[i - 1] > number_array[i])
-        {
-            swap(&number_array[i - 1], &number_array[i]);
-            i--;
-        }
-        else
-        {
-            i++;
-        }
+        number_array[j + 1] = temp;
     }
 }
 
@@ -124,34 +104,54 @@ int index_of_min(const int number_array[], int length, int start) // This is for
     return min;
 }
 
-void insertion_sort(int number_array[], int length)
+void gnome_sort(int number_array[], int length)
 {
-    /* In Insertsion Sort; the program checks at the array multiple times part by part as first 2 elements,
-    first 3 elements, first 4 ... and all of the elements. In each checking, the program goes through each part
-    starting from the second to last element of the part and goes to the first element. If the element that the
-    program is checking is bigger than the last element of the part, it moves the last element of the part in
-    front of the element that the program is checking. The sorting process ends when all of the elements are
-    checked. */
+    int i = 1;
 
-    int temp, j;
-
-    for (int i = 1; i < length; i++)
+    while (i < length)
     {
-        temp = number_array[i];
-        j = i - 1;
-
-        while (j >= 0 && number_array[j] > temp)
+        if (i > 0 && number_array[i - 1] > number_array[i])
         {
-            number_array[j + 1] = number_array[j];
-            j--;
+            swap(&number_array[i - 1], &number_array[i]);
+            i--;
         }
-
-        number_array[j + 1] = temp;
+        else
+        {
+            i++;
+        }
     }
 }
 
-// TODO: IMPLEMENT SHELL SORT HERE.
+// TODO: IMPLEMENT COCKTAIL SHAKER SORT HERE.
 
-// TODO: IMPLEMENT MERGE SORT HERE.
+void bubble_sort(int number_array[], int length)
+{
+    /* In Bubble Sort, the program goes through the array and checks the elements and the elements next to it.
+    If the left element is bigger than the right element, the program swaps the elements. When the array ends,
+    if the array is not sorted, the program repeats this process until the array is sorted. */
 
-// TODO: IMPLEMENT QUICK SORT HERE.
+    bool swapped;
+
+    do
+    {
+        swapped = false;
+
+        for (int i = 1; i < length; i++)
+        {
+            if (number_array[i - 1] > number_array[i])
+            {
+                swap(&number_array[i - 1], &number_array[i]);
+                swapped = true;
+            }
+        }
+
+        length--; // Every time it restarts, the largest elements moves to the end of the array. So, we don't need to check it again.
+    }
+    while (swapped);
+}
+
+// TODO: IMPLEMENT SOOTAGE SORT HERE.
+
+// TODO: IMPLEMENT BOZO SORT HERE.
+
+// TODO: IMPLEMENT BOGO SORT HERE.

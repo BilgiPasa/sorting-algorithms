@@ -10,20 +10,20 @@ int get_int(int *num);
 
 int main(void)
 {
-    enum AlgorithmTypes {
-        BUBBLE_SORT,
-        GNOME_SORT,
+    enum AlgorithmTypes
+    { // TODO: IMPLEMENT MORE ALGORITHMS AND ADD THEM HERE.
+        INSERTION_SORT,
         SELECTION_SORT,
-        INSERTION_SORT
-        // TODO: IMPLEMENT MORE ALGORITHMS AND ADD THEM HERE.
+        GNOME_SORT,
+        BUBBLE_SORT,
     };
 
     enum AlgorithmTypes algorithm_type;
     printf("\nSorting algorithms (from slowest to fastest)\n");
-    printf("1) Bubble Sort\n");
-    printf("2) Gnome Sort\n");
-    printf("3) Selection Sort\n");
-    printf("4) Insertion Sort\n");
+    printf("1) Insertion Sort\n");
+    printf("2) Selection Sort\n");
+    printf("3) Gnome Sort\n");
+    printf("4) Bubble Sort\n");
     printf("Select an algorithm: ");
     int algorithm_type_selection;
     int ok = get_int(&algorithm_type_selection);
@@ -38,10 +38,10 @@ int main(void)
 
     switch (algorithm_type)
     {
-        case BUBBLE_SORT:
-        case GNOME_SORT:
-        case SELECTION_SORT:
         case INSERTION_SORT:
+        case SELECTION_SORT:
+        case GNOME_SORT:
+        case BUBBLE_SORT:
             printf("Enter the array size (55555 is recommended): ");
             break;
 
@@ -82,18 +82,11 @@ int main(void)
 
     switch (algorithm_type)
     {
-        case BUBBLE_SORT:
+        case INSERTION_SORT:
             start = clock();
-            bubble_sort(number_array, length);
+            insertion_sort(number_array, length);
             end = clock();
-            used_algorithm_type = "Bubble Sort";
-            break;
-
-        case GNOME_SORT:
-            start = clock();
-            gnome_sort(number_array, length);
-            end = clock();
-            used_algorithm_type = "Gnome Sort";
+            used_algorithm_type = "Insertion Sort";
             break;
 
         case SELECTION_SORT:
@@ -103,11 +96,18 @@ int main(void)
             used_algorithm_type = "Selection Sort";
             break;
 
-        case INSERTION_SORT:
+        case GNOME_SORT:
             start = clock();
-            insertion_sort(number_array, length);
+            gnome_sort(number_array, length);
             end = clock();
-            used_algorithm_type = "Insertion Sort";
+            used_algorithm_type = "Gnome Sort";
+            break;
+
+        case BUBBLE_SORT:
+            start = clock();
+            bubble_sort(number_array, length);
+            end = clock();
+            used_algorithm_type = "Bubble Sort";
             break;
 
         default:
