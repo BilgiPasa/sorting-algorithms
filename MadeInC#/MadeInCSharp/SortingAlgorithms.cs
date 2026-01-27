@@ -2,7 +2,7 @@ namespace MadeInCSharp;
 
 public static class SortingAlgorithms
 {
-    public static bool isSorted(int[] numberArray)
+    public static bool isSorted(int[] numberArray) // To check if the array is sorted
     {
         for (int i = 1; i < numberArray.Length; i++)
         {

@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class SortingAlgorithms {
-    public static boolean isSorted(int[] numberArray)
+    public static boolean isSorted(int[] numberArray) // To check if the array is sorted
     {
         for (int i = 1; i < numberArray.length; i++)
         {

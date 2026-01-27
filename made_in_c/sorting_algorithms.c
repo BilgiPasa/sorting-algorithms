@@ -27,7 +27,7 @@ bool is_sorted(const int number_array[], int length) // To check if the array is
     return true;
 }
 
-void swap(int *a, int *b) // This is for to swap elements using XOR
+void swap(int *a, int *b) // To swap elements using XOR
 {
     if (a == b)
     {

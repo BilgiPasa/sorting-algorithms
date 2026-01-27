@@ -2,7 +2,7 @@ from random import randint, shuffle
 import main
 
 class SortingAlgorithms:
-    def is_sorted(number_list) -> bool:
+    def is_sorted(number_list) -> bool: # To check if the array is sorted
         for i in range(1, len(number_list)):
             if number_list[i - 1] > number_list[i]:
                 return False
