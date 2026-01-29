@@ -4,4 +4,7 @@ Use this command to compile the C code:
 Use this command to run the C code:
     ./main
 
-Use gcc to run the C code. So make sure that you have gcc installed.
+I (BilgiPasa) use GCC to run the C code.
+
+The execatable named "main" can be run if you have a computer that has an x86 CPU. If you have an ARM or RISC-V
+CPU, compile the main executable yourself.
