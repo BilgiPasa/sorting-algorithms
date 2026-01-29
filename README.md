@@ -24,15 +24,15 @@ I DID NOT copy-pasted any code from any Generative AI prompt. I wrote the code o
 
 The code files' locations:
 
-the C files are in the made_in_c folder,
+The C files are in the made_in_c folder.
 
-the C# files are in the MadeInC#/MadeInCSharp folder,
+The C# files are in the MadeInC#/MadeInCSharp folder.
 
-the Java files are in the MadeInJava/src folder,
+The Java files are in the MadeInJava/src folder.
 
-the Python files are in the made_in_python folder.
+The Python files are in the made_in_python folder.
 
-(Use backward slashes if you use Windows file explorer.)
+(Use backward slashes if you use the Windows file explorer.)
 
 ---
 
