@@ -1,5 +1,6 @@
 #pragma once
 #include <stdbool.h>
+#include <stdio.h>
 
 void print_array(const int number_array[], int length);
 bool is_sorted(const int number_array[], int length);
