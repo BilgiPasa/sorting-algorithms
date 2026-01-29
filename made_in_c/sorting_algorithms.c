@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include "sorting_algorithms.h"
+#include <stdio.h>
 
 void print_array(const int number_array[], int length) // To print the array
 {
