@@ -17,7 +17,7 @@ class Program
         BubbleSort,
         SootageSort,
         BozoSort,
-        BogoSort
+        BogoSort,
     }
 
     static void Main(string[] args)
