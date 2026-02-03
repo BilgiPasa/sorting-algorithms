@@ -44,7 +44,7 @@ I'm not planning to implement the Bucket Sort algorithm because I want to use ju
 
 TODO:
 
-* In Python, type hint the list variables and type hint all of the functions.
+* In Python, type hint all of the functions.
 
 * Shorten some variable names if you want. (Like number => num, array => arr etc.)
 
