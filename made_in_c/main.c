@@ -152,21 +152,21 @@ int get_int(int *num)
         return 0;
     }
 
-    char *end_ptr;
+    char *ptr_end;
     errno = 0; // reset error number
-    a = strtol(buffer, &end_ptr, 10);
+    a = strtol(buffer, &ptr_end, 10);
 
     if (errno == ERANGE) // If the input doesn't fit in a long
     {
         return 0;
     }
 
-    if (end_ptr == buffer) // If no character was read
+    if (ptr_end == buffer) // If no character was read
     {
         return 0;
     }
 
-    if (*end_ptr && *end_ptr != '\n') // If the reading doesn't convert the whole input
+    if (*ptr_end && *ptr_end != '\n') // If the reading doesn't convert the whole input
     {
         return 0;
     }
