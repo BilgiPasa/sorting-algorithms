@@ -66,7 +66,13 @@ int main(void)
         return 1;
     }
 
-    int num_arr[length];
+    int *num_arr = malloc(length * sizeof(int));
+
+    if (!num_arr)
+    {
+        fprintf(stderr, "Memory allocation for array has failed. Aborting.\n");
+    }
+    
     printf("Starting to randomize the array.\n");
     srand((unsigned int)time(NULL));
 
@@ -128,6 +134,8 @@ int main(void)
     {
         fprintf(stderr, "The sorting algorithm ran but the array is not fully sorted.\n");
     }
+
+    free(num_arr);
 
     return 0;
 }
