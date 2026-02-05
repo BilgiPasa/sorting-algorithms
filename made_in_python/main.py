@@ -18,7 +18,7 @@ class AlgorithmTypes(IntEnum):
     BOGO_SORT = 11
 
 class Main:
-    def main():
+    def main() -> None:
         algorithm_type: AlgorithmTypes
         print("\nSorting algorithms (from slowest to fastest)")
         print("1) Quick Sort")
