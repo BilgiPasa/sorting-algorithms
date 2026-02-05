@@ -44,10 +44,6 @@ I'm not planning to implement the Bucket Sort algorithm because I want to use ju
 
 TODO:
 
-* In Python, type hint all of the functions.
-
-* Shorten some variable names if you want. (Like number => num, array => arr etc.)
-
 * Try to implement the Radix Sort and the Heap Sort algorithms in C#, Java and Python.
 
 ---
