@@ -44,39 +44,39 @@ public class Main {
         System.out.println("10) Bozo Sort");
         System.out.println("11) Bogo Sort");
         System.out.print("Select an algorithm: ");
-        int algorithmTypeSelection;
+        int selectedAlgorithm;
 
         try {
-            algorithmTypeSelection = s.nextInt();
+            selectedAlgorithm = s.nextInt();
         } catch (Exception e) {
             System.out.println("Couldn't understand the input. Aborting.");
             s.close();
             return;
         }
 
-        if (algorithmTypeSelection == AlgorithmTypes.BUILT_IN.index) {
+        if (selectedAlgorithm == AlgorithmTypes.BUILT_IN.index) {
             algorithmType = AlgorithmTypes.BUILT_IN;
-        } else if (algorithmTypeSelection == AlgorithmTypes.QUICK_SORT.index) {
+        } else if (selectedAlgorithm == AlgorithmTypes.QUICK_SORT.index) {
             algorithmType = AlgorithmTypes.QUICK_SORT;
-        } else if (algorithmTypeSelection == AlgorithmTypes.MERGE_SORT.index) {
+        } else if (selectedAlgorithm == AlgorithmTypes.MERGE_SORT.index) {
             algorithmType = AlgorithmTypes.MERGE_SORT;
-        } else if (algorithmTypeSelection == AlgorithmTypes.SHELL_SORT.index) {
+        } else if (selectedAlgorithm == AlgorithmTypes.SHELL_SORT.index) {
             algorithmType = AlgorithmTypes.SHELL_SORT;
-        } else if (algorithmTypeSelection == AlgorithmTypes.INSERTSION_SORT.index) {
+        } else if (selectedAlgorithm == AlgorithmTypes.INSERTSION_SORT.index) {
             algorithmType = AlgorithmTypes.INSERTSION_SORT;
-        } else if (algorithmTypeSelection == AlgorithmTypes.SELECTION_SORT.index) {
+        } else if (selectedAlgorithm == AlgorithmTypes.SELECTION_SORT.index) {
             algorithmType = AlgorithmTypes.SELECTION_SORT;
-        } else if (algorithmTypeSelection == AlgorithmTypes.GNOME_SORT.index) {
+        } else if (selectedAlgorithm == AlgorithmTypes.GNOME_SORT.index) {
             algorithmType = AlgorithmTypes.GNOME_SORT;
-        } else if (algorithmTypeSelection == AlgorithmTypes.COCKTAIL_SHAKER_SORT.index) {
+        } else if (selectedAlgorithm == AlgorithmTypes.COCKTAIL_SHAKER_SORT.index) {
             algorithmType = AlgorithmTypes.COCKTAIL_SHAKER_SORT;
-        } else if (algorithmTypeSelection == AlgorithmTypes.BUBBLE_SORT.index) {
+        } else if (selectedAlgorithm == AlgorithmTypes.BUBBLE_SORT.index) {
             algorithmType = AlgorithmTypes.BUBBLE_SORT;
-        } else if (algorithmTypeSelection == AlgorithmTypes.SOOTAGE_SORT.index) {
+        } else if (selectedAlgorithm == AlgorithmTypes.SOOTAGE_SORT.index) {
             algorithmType = AlgorithmTypes.SOOTAGE_SORT;
-        } else if (algorithmTypeSelection == AlgorithmTypes.BOZO_SORT.index) {
+        } else if (selectedAlgorithm == AlgorithmTypes.BOZO_SORT.index) {
             algorithmType = AlgorithmTypes.BOZO_SORT;
-        } else if (algorithmTypeSelection == AlgorithmTypes.BOGO_SORT.index) {
+        } else if (selectedAlgorithm == AlgorithmTypes.BOGO_SORT.index) {
             algorithmType = AlgorithmTypes.BOGO_SORT;
         } else {
             System.out.println("Couldn't understand the input. Aborting.");
@@ -126,10 +126,10 @@ public class Main {
         }
 
         s.close();
-        int[] numberArray;
+        int[] numArr;
 
         try {
-            numberArray = new int[length];
+            numArr = new int[length];
         } catch (Exception e) {
             System.out.println("The array size cannot be " + length + ". Aborting.");
             return;
@@ -138,12 +138,12 @@ public class Main {
         Random r = new Random();
         System.out.println("Starting to randomize the array.");
 
-        for (int i = 0; i < numberArray.length; i++) {
-            numberArray[i] = r.nextInt(Integer.MAX_VALUE); // Don't forget to write Integer.MAX_VALUE as the parameter.
+        for (int i = 0; i < numArr.length; i++) {
+            numArr[i] = r.nextInt(Integer.MAX_VALUE); // Don't forget to write Integer.MAX_VALUE as the parameter.
         }
 
         System.out.println("The array has randomized.");
-        //System.out.println(Arrays.toString(numberArray)); // To see the array before sorting
+        //System.out.println(Arrays.toString(numArr)); // To see the array before sorting
         long startTime = 0, endTime = 0;
         String usedAlgorithmType;
         System.out.println("Starting to sort the array.");
@@ -152,84 +152,84 @@ public class Main {
         {
             case AlgorithmTypes.BUILT_IN:
                 startTime = System.nanoTime();
-                Arrays.sort(numberArray);
+                Arrays.sort(numArr);
                 endTime = System.nanoTime();
                 usedAlgorithmType = "Java's built-in sorter";
                 break;
 
             case AlgorithmTypes.QUICK_SORT:
                 startTime = System.nanoTime();
-                SortingAlgorithms.quickSort(numberArray, 0, numberArray.length - 1);
+                SortingAlgorithms.quickSort(numArr, 0, numArr.length - 1);
                 endTime = System.nanoTime();
                 usedAlgorithmType = "Quick Sort";
                 break;
 
             case AlgorithmTypes.MERGE_SORT:
                 startTime = System.nanoTime();
-                SortingAlgorithms.mergeSort(numberArray);
+                SortingAlgorithms.mergeSort(numArr);
                 endTime = System.nanoTime();
                 usedAlgorithmType = "Merge Sort";
                 break;
 
             case AlgorithmTypes.SHELL_SORT:
                 startTime = System.nanoTime();
-                SortingAlgorithms.shellSort(numberArray);
+                SortingAlgorithms.shellSort(numArr);
                 endTime = System.nanoTime();
                 usedAlgorithmType = "Shell Sort";
                 break;
 
             case AlgorithmTypes.INSERTSION_SORT:
                 startTime = System.nanoTime();
-                SortingAlgorithms.insertsionSort(numberArray);
+                SortingAlgorithms.insertsionSort(numArr);
                 endTime = System.nanoTime();
                 usedAlgorithmType = "Insertsion Sort";
                 break;
 
             case AlgorithmTypes.SELECTION_SORT:
                 startTime = System.nanoTime();
-                SortingAlgorithms.selectionSort(numberArray);
+                SortingAlgorithms.selectionSort(numArr);
                 endTime = System.nanoTime();
                 usedAlgorithmType = "Selection Sort";
                 break;
 
             case AlgorithmTypes.GNOME_SORT:
                 startTime = System.nanoTime();
-                SortingAlgorithms.gnomeSort(numberArray);
+                SortingAlgorithms.gnomeSort(numArr);
                 endTime = System.nanoTime();
                 usedAlgorithmType = "Gnome Sort";
                 break;
 
             case AlgorithmTypes.COCKTAIL_SHAKER_SORT:
                 startTime = System.nanoTime();
-                SortingAlgorithms.cocktailShakerSort(numberArray);
+                SortingAlgorithms.cocktailShakerSort(numArr);
                 endTime = System.nanoTime();
                 usedAlgorithmType = "Cocktail Shaker Sort";
                 break;
 
             case AlgorithmTypes.BUBBLE_SORT:
                 startTime = System.nanoTime();
-                SortingAlgorithms.bubbleSort(numberArray);
+                SortingAlgorithms.bubbleSort(numArr);
                 endTime = System.nanoTime();
                 usedAlgorithmType = "Bubble Sort";
                 break;
 
             case AlgorithmTypes.SOOTAGE_SORT:
                 startTime = System.nanoTime();
-                SortingAlgorithms.sootageSort(numberArray, 0, numberArray.length - 1);
+                SortingAlgorithms.sootageSort(numArr, 0, numArr.length - 1);
                 endTime = System.nanoTime();
                 usedAlgorithmType = "Sootage Sort";
                 break;
 
             case AlgorithmTypes.BOZO_SORT:
                 startTime = System.nanoTime();
-                SortingAlgorithms.bozoSort(numberArray);
+                SortingAlgorithms.bozoSort(numArr);
                 endTime = System.nanoTime();
                 usedAlgorithmType = "Bozo Sort";
                 break;
 
             case AlgorithmTypes.BOGO_SORT:
                 startTime = System.nanoTime();
-                SortingAlgorithms.bogoSort(numberArray);
+                SortingAlgorithms.bogoSort(numArr);
                 endTime = System.nanoTime();
                 usedAlgorithmType = "Bogo Sort";
                 break;
@@ -239,10 +239,10 @@ public class Main {
                 return;
         }
 
-        //System.out.println(Arrays.toString(numberArray)); // To see the array after sorting
+        //System.out.println(Arrays.toString(numArr)); // To see the array after sorting
 
-        if (SortingAlgorithms.isSorted(numberArray)) {
-            System.out.println(numberArray.length + " random integers has been sorted in " + ((endTime - startTime) / 1000000.0) + " milliseconds using " + usedAlgorithmType + ".");
+        if (SortingAlgorithms.isSorted(numArr)) {
+            System.out.println(numArr.length + " random integers has been sorted in " + ((endTime - startTime) / 1000000.0) + " milliseconds using " + usedAlgorithmType + ".");
         } else {
             System.out.println("The sorting algorithm ran but the array is not fully sorted.");
         }

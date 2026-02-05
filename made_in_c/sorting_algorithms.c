@@ -1,23 +1,23 @@
 #include "sorting_algorithms.h"
 
-void print_array(const int number_array[], int length) // To print the array
+void print_arr(const int num_arr[], int length) // To print the array
 {
     int length_minus_one = length - 1;
     printf("[");
 
     for (int i = 0; i < length_minus_one; i++)
     {
-        printf("%d, ", number_array[i]);
+        printf("%d, ", num_arr[i]);
     }
 
-    printf("%d]\n", number_array[length_minus_one]);
+    printf("%d]\n", num_arr[length_minus_one]);
 }
 
-bool is_sorted(const int number_array[], int length) // To check if the array is sorted
+bool is_sorted(const int num_arr[], int length) // To check if the array is sorted
 {
     for (int i = 1; i < length; i++)
     {
-        if (number_array[i - 1] > number_array[i])
+        if (num_arr[i - 1] > num_arr[i])
         {
             return false;
         }
@@ -46,7 +46,7 @@ void swap(int *a, int *b) // To swap elements using XOR
 
 // TODO: IMPLEMENT SHELL SORT HERE.
 
-void insertion_sort(int number_array[], int length)
+void insertion_sort(int num_arr[], int length)
 {
     /* In Insertsion Sort; the program checks at the array multiple times part by part as first 2 elements,
     first 3 elements, first 4 ... and all of the elements. In each checking, the program goes through each part
@@ -59,20 +59,20 @@ void insertion_sort(int number_array[], int length)
 
     for (int i = 1; i < length; i++)
     {
-        temp = number_array[i];
+        temp = num_arr[i];
         j = i - 1;
 
-        while (j >= 0 && number_array[j] > temp)
+        while (j >= 0 && num_arr[j] > temp)
         {
-            number_array[j + 1] = number_array[j];
+            num_arr[j + 1] = num_arr[j];
             j--;
         }
 
-        number_array[j + 1] = temp;
+        num_arr[j + 1] = temp;
     }
 }
 
-void selection_sort(int number_array[], int length)
+void selection_sort(int num_arr[], int length)
 {
     /* In Selection Sort, the program goes through the array and looks for the smallest element. When the array
     ends, it swaps the smallest element with the first element. Then it goes through the array again and looks
@@ -83,18 +83,18 @@ void selection_sort(int number_array[], int length)
 
     for (int i = 0; i < length_minus_one; i++)
     {
-        j = index_of_min(number_array, length, i);
-        swap(&number_array[i], &number_array[j]);
+        j = index_of_min(num_arr, length, i);
+        swap(&num_arr[i], &num_arr[j]);
     }
 }
 
-int index_of_min(const int number_array[], int length, int start) // This is for Selection Sort
+int index_of_min(const int num_arr[], int length, int start) // This is for Selection Sort
 {
     int min = start;
 
     for (int i = start; i < length; i++)
     {
-        if (number_array[min] > number_array[i])
+        if (num_arr[min] > num_arr[i])
         {
             min = i;
         }
@@ -103,15 +103,15 @@ int index_of_min(const int number_array[], int length, int start) // This is for
     return min;
 }
 
-void gnome_sort(int number_array[], int length)
+void gnome_sort(int num_arr[], int length)
 {
     int i = 1;
 
     while (i < length)
     {
-        if (i > 0 && number_array[i - 1] > number_array[i])
+        if (i > 0 && num_arr[i - 1] > num_arr[i])
         {
-            swap(&number_array[i - 1], &number_array[i]);
+            swap(&num_arr[i - 1], &num_arr[i]);
             i--;
         }
         else
@@ -123,7 +123,7 @@ void gnome_sort(int number_array[], int length)
 
 // TODO: IMPLEMENT COCKTAIL SHAKER SORT HERE.
 
-void bubble_sort(int number_array[], int length)
+void bubble_sort(int num_arr[], int length)
 {
     /* In Bubble Sort, the program goes through the array and checks the elements and the elements next to it.
     If the left element is bigger than the right element, the program swaps the elements. When the array ends,
@@ -137,9 +137,9 @@ void bubble_sort(int number_array[], int length)
 
         for (int i = 1; i < length; i++)
         {
-            if (number_array[i - 1] > number_array[i])
+            if (num_arr[i - 1] > num_arr[i])
             {
-                swap(&number_array[i - 1], &number_array[i]);
+                swap(&num_arr[i - 1], &num_arr[i]);
                 swapped = true;
             }
         }

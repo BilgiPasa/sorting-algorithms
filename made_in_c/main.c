@@ -7,6 +7,7 @@
 
 int get_int(int *num);
 
+// Note: returning 0 means the procces works as intended, returning 1 means there was a problem when running.
 int main(void)
 {
     enum AlgorithmTypes
@@ -18,22 +19,23 @@ int main(void)
     };
 
     enum AlgorithmTypes algorithm_type;
-    printf("\nSorting algorithms (from slowest to fastest)\n");
+    printf("\n");
+    printf("Sorting algorithms (from slowest to fastest)\n");
     printf("1) Insertion Sort\n");
     printf("2) Selection Sort\n");
     printf("3) Gnome Sort\n");
     printf("4) Bubble Sort\n");
     printf("Select an algorithm: ");
-    int algorithm_type_selection;
-    int ok = get_int(&algorithm_type_selection);
+    int selected_algorithm;
+    int ok = get_int(&selected_algorithm); // The "ok" acts as a boolean.
 
-    if (!ok || algorithm_type_selection > 4 || algorithm_type_selection < 1)
+    if (!ok || selected_algorithm > 4 || selected_algorithm < 1)
     {
         fprintf(stderr, "Couldn't understand the input. Aborting.\n");
         return 1;
     }
 
-    algorithm_type = --algorithm_type_selection; // This means algorithm_type_selection -= 1; algorithm_type = algorithm_type_selection;
+    algorithm_type = --selected_algorithm; // This means selected_algorithm -= 1; algorithm_type = selected_algorithm;
 
     switch (algorithm_type)
     {
@@ -64,17 +66,19 @@ int main(void)
         return 1;
     }
 
-    int number_array[length];
+    int num_arr[length];
     printf("Starting to randomize the array.\n");
     srand((unsigned int)time(NULL));
 
     for (int i = 0; i < length; i++)
     {
-        number_array[i] = rand(); // rand returns a random integer from 0 to INT_MAX (both 0 and INT_MAX are included)
+        // rand function returns a random integer from 0 to INT_MAX (both 0 and INT_MAX are included).
+        // If you want to get a random integer from 0 to X, write like this: num_arr[i] = rand() % X;
+        num_arr[i] = rand();
     }
 
     printf("The array has randomized.\n");
-    //print_array(number_array, length); // To see the array before sorting
+    //print_arr(num_arr, length); // To see the array before sorting
     clock_t start, end;
     const char *used_algorithm_type;
     printf("Starting to sort the array.\n");
@@ -83,28 +87,28 @@ int main(void)
     {
         case INSERTION_SORT:
             start = clock();
-            insertion_sort(number_array, length);
+            insertion_sort(num_arr, length);
             end = clock();
             used_algorithm_type = "Insertion Sort";
             break;
 
         case SELECTION_SORT:
             start = clock();
-            selection_sort(number_array, length);
+            selection_sort(num_arr, length);
             end = clock();
             used_algorithm_type = "Selection Sort";
             break;
 
         case GNOME_SORT:
             start = clock();
-            gnome_sort(number_array, length);
+            gnome_sort(num_arr, length);
             end = clock();
             used_algorithm_type = "Gnome Sort";
             break;
 
         case BUBBLE_SORT:
             start = clock();
-            bubble_sort(number_array, length);
+            bubble_sort(num_arr, length);
             end = clock();
             used_algorithm_type = "Bubble Sort";
             break;
@@ -114,9 +118,9 @@ int main(void)
             return 1;
     }
 
-    //print_array(number_array, length); // To see the array after sorting
+    //print_arr(num_arr, length); // To see the array after sorting
 
-    if (is_sorted(number_array, length))
+    if (is_sorted(num_arr, length))
     {
         printf("%d random integers has been sorted in %f milliseconds using %s.\n", length, ((double)(end - start) / CLOCKS_PER_SEC) * 1000, used_algorithm_type);
     }
