@@ -12,10 +12,12 @@ int main(void)
 {
     enum AlgorithmTypes
     { // TODO: IMPLEMENT MORE ALGORITHMS AND ADD THEM HERE.
+        BUILT_IN,
         INSERTION_SORT,
         SELECTION_SORT,
         GNOME_SORT,
         BUBBLE_SORT,
+        SIZE
     };
 
     enum AlgorithmTypes algorithm_type;
@@ -29,16 +31,19 @@ int main(void)
     int selected_algorithm;
     int ok = get_int(&selected_algorithm); // The "ok" acts as a boolean.
 
-    if (!ok || selected_algorithm > 4 || selected_algorithm < 1)
+    if (!ok || selected_algorithm >= SIZE || selected_algorithm < 0)
     {
         fprintf(stderr, "Couldn't understand the input. Aborting.\n");
         return 1;
     }
 
-    algorithm_type = --selected_algorithm; // This means selected_algorithm -= 1; algorithm_type = selected_algorithm;
+    algorithm_type = selected_algorithm;
 
     switch (algorithm_type)
     {
+        case BUILT_IN:
+            printf("Enter the array size (12345678 is recommended): ");
+            break;
         case INSERTION_SORT:
         case SELECTION_SORT:
         case GNOME_SORT:
@@ -71,6 +76,7 @@ int main(void)
     if (!num_arr)
     {
         fprintf(stderr, "Memory allocation for array has failed. Aborting.\n");
+        return 1;
     }
     
     printf("Starting to randomize the array.\n");
@@ -91,6 +97,13 @@ int main(void)
 
     switch (algorithm_type)
     {
+        case BUILT_IN:
+            start = clock();
+            qsort(num_arr, length, sizeof(int), compar);
+            end = clock();
+            used_algorithm_type = "Built In";
+            break;
+
         case INSERTION_SORT:
             start = clock();
             insertion_sort(num_arr, length);
