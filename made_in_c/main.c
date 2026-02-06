@@ -1,6 +1,7 @@
 #include "sorting_algorithms.h"
 #include <errno.h>
 #include <limits.h>
+#include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
@@ -71,6 +72,15 @@ int main(void)
         return 1;
     }
 
+    // if length > SIZE_MAX / sizeof(int)
+    // then length * sizeof(int) > SIZE_MAX
+    // which means size overflow will occur
+    if ((size_t) length > SIZE_MAX / sizeof(int))
+    {
+        fprintf(stderr, "Given length causes size overflow. Aborting.\n");
+        return 1;
+    }
+
     int *num_arr = malloc(length * sizeof(int));
 
     if (!num_arr)
@@ -134,20 +144,20 @@ int main(void)
 
         default:
             fprintf(stderr, "The algorithm type could not found. Aborting.\n");
+            free(num_arr); // free before returning
             return 1;
     }
 
     //print_arr(num_arr, length); // To see the array after sorting
 
-    if (is_sorted(num_arr, length))
-    {
-        printf("%d random integers has been sorted in %f milliseconds using %s.\n", length, ((double)(end - start) / CLOCKS_PER_SEC) * 1000, used_algorithm_type);
-    }
-    else
+    if (!is_sorted(num_arr, length))
     {
         fprintf(stderr, "The sorting algorithm ran but the array is not fully sorted.\n");
+        free(num_arr); // free before returning
+        return 1;
     }
 
+    printf("%d random integers has been sorted in %f milliseconds using %s.\n", length, ((double)(end - start) / CLOCKS_PER_SEC) * 1000, used_algorithm_type);
     free(num_arr);
 
     return 0;
