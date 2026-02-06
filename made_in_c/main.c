@@ -1,6 +1,7 @@
 #include "sorting_algorithms.h"
 #include <errno.h>
 #include <limits.h>
+#include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
@@ -12,10 +13,12 @@ int main(void)
 {
     enum AlgorithmTypes
     { // TODO: IMPLEMENT MORE ALGORITHMS AND ADD THEM HERE.
+        BUILT_IN,
         INSERTION_SORT,
         SELECTION_SORT,
         GNOME_SORT,
         BUBBLE_SORT,
+        SIZE
     };
 
     enum AlgorithmTypes algorithm_type;
@@ -29,16 +32,19 @@ int main(void)
     int selected_algorithm;
     int ok = get_int(&selected_algorithm); // The "ok" acts as a boolean.
 
-    if (!ok || selected_algorithm > 4 || selected_algorithm < 1)
+    if (!ok || selected_algorithm >= SIZE || selected_algorithm < 0)
     {
         fprintf(stderr, "Couldn't understand the input. Aborting.\n");
         return 1;
     }
 
-    algorithm_type = --selected_algorithm; // This means selected_algorithm -= 1; algorithm_type = selected_algorithm;
+    algorithm_type = selected_algorithm;
 
     switch (algorithm_type)
     {
+        case BUILT_IN:
+            printf("Enter the array size (12345678 is recommended): ");
+            break;
         case INSERTION_SORT:
         case SELECTION_SORT:
         case GNOME_SORT:
@@ -66,7 +72,23 @@ int main(void)
         return 1;
     }
 
-    int num_arr[length];
+    // if length > SIZE_MAX / sizeof(int)
+    // then length * sizeof(int) > SIZE_MAX
+    // which means size overflow will occur
+    if ((size_t) length > SIZE_MAX / sizeof(int))
+    {
+        fprintf(stderr, "Given length causes size overflow. Aborting.\n");
+        return 1;
+    }
+
+    int *num_arr = malloc(length * sizeof(int));
+
+    if (!num_arr)
+    {
+        fprintf(stderr, "Memory allocation for array has failed. Aborting.\n");
+        return 1;
+    }
+    
     printf("Starting to randomize the array.\n");
     srand((unsigned int)time(NULL));
 
@@ -85,6 +107,13 @@ int main(void)
 
     switch (algorithm_type)
     {
+        case BUILT_IN:
+            start = clock();
+            qsort(num_arr, length, sizeof(int), compar);
+            end = clock();
+            used_algorithm_type = "Built In";
+            break;
+
         case INSERTION_SORT:
             start = clock();
             insertion_sort(num_arr, length);
@@ -115,19 +144,21 @@ int main(void)
 
         default:
             fprintf(stderr, "The algorithm type could not found. Aborting.\n");
+            free(num_arr); // free before returning
             return 1;
     }
 
     //print_arr(num_arr, length); // To see the array after sorting
 
-    if (is_sorted(num_arr, length))
-    {
-        printf("%d random integers has been sorted in %f milliseconds using %s.\n", length, ((double)(end - start) / CLOCKS_PER_SEC) * 1000, used_algorithm_type);
-    }
-    else
+    if (!is_sorted(num_arr, length))
     {
         fprintf(stderr, "The sorting algorithm ran but the array is not fully sorted.\n");
+        free(num_arr); // free before returning
+        return 1;
     }
+
+    printf("%d random integers has been sorted in %f milliseconds using %s.\n", length, ((double)(end - start) / CLOCKS_PER_SEC) * 1000, used_algorithm_type);
+    free(num_arr);
 
     return 0;
 }

@@ -38,6 +38,13 @@ void swap(int *a, int *b) // To swap elements using XOR
     *a ^= *b;
 }
 
+int compar(const void *elem1, const void *elem2) // This is for qsort
+{
+    const int *num1 = elem1, *num2 = elem2;
+
+    return *num1 - *num2;
+}
+
 // The algorithms are listed from the fastest to the slowest according to my tests.
 
 // TODO: IMPLEMENT QUICK SORT HERE.
