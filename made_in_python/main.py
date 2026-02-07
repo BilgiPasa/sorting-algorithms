@@ -20,7 +20,8 @@ class AlgorithmTypes(IntEnum):
 class Main:
     def main() -> None:
         algorithm_type: AlgorithmTypes
-        print("\nSorting algorithms (from slowest to fastest)")
+        print()
+        print("Sorting algorithms (from slowest to fastest)")
         print("1) Quick Sort")
         print("2) Merge Sort")
         print("3) Shell Sort")
@@ -194,10 +195,12 @@ class Main:
 
         #print("[" + ", ".join(str(x) for x in num_list) + "]") # To see the list after sorting
 
-        if sorting_algorithms.SortingAlgorithms.is_sorted(num_list):
-            print((str)(len(num_list)) + " random integers has been sorted in " + (str)((end_time - start_time) * 1000) + " milliseconds using " + used_algorithm_type + ".")
-        else:
+        if not sorting_algorithms.SortingAlgorithms.is_sorted(num_list):
             print("The sorting algorithm ran but the array is not fully sorted.")
+            return
+
+        print(str(len(num_list)) + " random integers has been sorted in " + str((end_time - start_time) * 1000) + " milliseconds using " + used_algorithm_type + ".")
+        print()
 
     if __name__ == "__main__":
         main()

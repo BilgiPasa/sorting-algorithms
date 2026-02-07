@@ -23,7 +23,8 @@ class Program
     static void Main(string[] args)
     {
         AlgorithmTypes algorithmType;
-        Console.WriteLine("\nSorting algorithms (from slowest to fastest)");
+        Console.WriteLine();
+        Console.WriteLine("Sorting algorithms (from slowest to fastest)");
         Console.WriteLine("1) Quick Sort");
         Console.WriteLine("2) Merge Sort");
         Console.WriteLine("3) Shell Sort");
@@ -283,13 +284,13 @@ class Program
 
         //Console.WriteLine("[{0}]", string.Join(", ", numArr)); // To see the array after sorting
 
-        if (SortingAlgorithms.isSorted(numArr))
-        {
-            Console.WriteLine($"{numArr.Length} random integers has been sorted in {s.Elapsed.TotalNanoseconds / 1000000} milliseconds using {usedAlgorithmType}.");
-        }
-        else
+        if (!SortingAlgorithms.isSorted(numArr))
         {
             Console.WriteLine("The sorting algorithm ran but the array is not fully sorted.");
+            return;
         }
+
+        Console.WriteLine($"{numArr.Length} random integers has been sorted in {s.Elapsed.TotalNanoseconds / 1000000} milliseconds using {usedAlgorithmType}.");
+        Console.WriteLine();
     }
 }

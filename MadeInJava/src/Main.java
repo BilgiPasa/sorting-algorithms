@@ -31,7 +31,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         AlgorithmTypes algorithmType;
-        System.out.println("\nSorting algorithms (from slowest to fastest)");
+        System.out.println();
+        System.out.println("Sorting algorithms (from slowest to fastest)");
         System.out.println("1) Quick Sort");
         System.out.println("2) Merge Sort");
         System.out.println("3) Shell Sort");
@@ -241,10 +242,12 @@ public class Main {
 
         //System.out.println(Arrays.toString(numArr)); // To see the array after sorting
 
-        if (SortingAlgorithms.isSorted(numArr)) {
-            System.out.println(numArr.length + " random integers has been sorted in " + ((endTime - startTime) / 1000000.0) + " milliseconds using " + usedAlgorithmType + ".");
-        } else {
+        if (!SortingAlgorithms.isSorted(numArr)) {
             System.out.println("The sorting algorithm ran but the array is not fully sorted.");
+            return;
         }
+
+        System.out.println(numArr.length + " random integers has been sorted in " + ((endTime - startTime) / 1000000.0) + " milliseconds using " + usedAlgorithmType + ".");
+        System.out.println();
     }
 }

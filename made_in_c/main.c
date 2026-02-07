@@ -45,6 +45,7 @@ int main(void)
         case BUILT_IN:
             printf("Enter the array size (12345678 is recommended): ");
             break;
+
         case INSERTION_SORT:
         case SELECTION_SORT:
         case GNOME_SORT:
@@ -60,7 +61,7 @@ int main(void)
     int length;
     ok = get_int(&length);
 
-    if (!ok)
+    if (!ok) // If ok == 0, it gives an error.
     {
         fprintf(stderr, "Couldn't understand the input. Aborting.\n");
         return 1;
@@ -88,7 +89,7 @@ int main(void)
         fprintf(stderr, "Memory allocation for array has failed. Aborting.\n");
         return 1;
     }
-    
+
     printf("Starting to randomize the array.\n");
     srand((unsigned int)time(NULL));
 
@@ -111,7 +112,7 @@ int main(void)
             start = clock();
             qsort(num_arr, length, sizeof(int), compar);
             end = clock();
-            used_algorithm_type = "Built In";
+            used_algorithm_type = "C's built-in sorter";
             break;
 
         case INSERTION_SORT:
@@ -158,8 +159,8 @@ int main(void)
     }
 
     printf("%d random integers has been sorted in %f milliseconds using %s.\n", length, ((double)(end - start) / CLOCKS_PER_SEC) * 1000, used_algorithm_type);
+    printf("\n");
     free(num_arr);
-
     return 0;
 }
 
