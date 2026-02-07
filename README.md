@@ -42,10 +42,4 @@ I'm not planning to implement the Bucket Sort algorithm because I want to use ju
 
 ---
 
-TODO:
-
-* Try to implement the Radix Sort and the Heap Sort algorithms in C#, Java and Python.
-
----
-
 README written by BilgiPasa.
