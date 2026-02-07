@@ -5,7 +5,7 @@
 void print_arr(const int num_arr[], int length);
 bool is_sorted(const int num_arr[], int length);
 void swap(int *a, int *b);
-int compar(const void *elem1, const void *elem2);
+int compare(const void *elem1, const void *elem2);
 void insertion_sort(int num_arr[], int length);
 void selection_sort(int arr[], int length);
 int index_of_min(const int num_arr[], int length, int start);

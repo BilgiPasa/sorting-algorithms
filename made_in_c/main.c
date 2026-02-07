@@ -12,7 +12,7 @@ int get_int(int *num);
 int main(void)
 {
     enum AlgorithmTypes
-    { // TODO: IMPLEMENT MORE ALGORITHMS AND ADD THEM HERE.
+    {// TODO: IMPLEMENT MORE ALGORITHMS AND ADD THEM HERE.
         BUILT_IN,
         INSERTION_SORT,
         SELECTION_SORT,
@@ -110,7 +110,7 @@ int main(void)
     {
         case BUILT_IN:
             start = clock();
-            qsort(num_arr, length, sizeof(int), compar);
+            qsort(num_arr, length, sizeof(int), compare);
             end = clock();
             used_algorithm_type = "C's built-in sorter";
             break;
