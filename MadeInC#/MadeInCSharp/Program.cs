@@ -183,7 +183,10 @@ class Program
 
         for (int i = 0; i < numArr.Length; i++)
         {
-            numArr[i] = r.Next(int.MaxValue); // Don't forget to write int.MaxValue as the parameter.
+            // r.Next() function returns a random integer from 0 to INT_MAX (both 0 and INT_MAX are included).
+            // If you want to get a random integer from 0 to X, write like this: r.Next(X);
+            // Note: X is not included.
+            numArr[i] = r.Next();
         }
 
         Console.WriteLine("The array has randomized.");

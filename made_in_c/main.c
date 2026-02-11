@@ -95,8 +95,9 @@ int main(void)
 
     for (int i = 0; i < length; i++)
     {
-        // rand function returns a random integer from 0 to INT_MAX (both 0 and INT_MAX are included).
+        // rand() function returns a random integer from 0 to INT_MAX (both 0 and INT_MAX are included).
         // If you want to get a random integer from 0 to X, write like this: num_arr[i] = rand() % X;
+        // Note: X is not included.
         num_arr[i] = rand();
     }
 
