@@ -97,7 +97,7 @@ class Main:
             return
 
         try:
-            num_list = [0] * length
+            num_list: list[int] = [0] * length
         except:
             print("The list size cannot be " + str(length) + ". Aborting.")
             return
