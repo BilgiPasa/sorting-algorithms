@@ -1,8 +1,8 @@
 #include "sorting_algorithms.h"
 #include <errno.h>
 #include <limits.h>
-#include <stdio.h>
 #include <stdint.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
@@ -13,7 +13,7 @@ int get_int(int *num);
 int main(void)
 {
     enum AlgorithmTypes
-    {// TODO: IMPLEMENT MORE ALGORITHMS AND ADD THEM HERE.
+    {
         BUILT_IN,
         INSERTION_SORT,
         SELECTION_SORT,

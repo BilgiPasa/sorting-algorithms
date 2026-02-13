@@ -258,15 +258,12 @@ public class SortingAlgorithms {
         /* In Bogo Sort; firstly, the program checks if the array is sorted. If not, it shuffels the array and
         checks again if the array is sorted. The program repeates this process until the array is sorted. */
 
-        boolean b = isSorted(numArr);
-
-        while (!b) {
+        while (!isSorted(numArr)) {
             fisherYatesShuffle(numArr);
-            b = isSorted(numArr);
         }
     }
 
-    // I couldn't find a built in primitive integer array shuffler. So, here is the Fisher-Yates algorithm.
+    // Fisher-Yates shuffle algorithm for shuffling the array.
     static void fisherYatesShuffle(int[] numArr) { // This is for Bogo Sort
         int lengthMinusOne = numArr.length - 1, randomNum;
         Random r = new Random();

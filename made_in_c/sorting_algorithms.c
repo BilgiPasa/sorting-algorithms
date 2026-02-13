@@ -164,9 +164,12 @@ void bubble_sort(int num_arr[], int length)
 void bogo_sort(int num_arr[], int length)
 {
     while (!is_sorted(num_arr, length))
+    {
         fisher_yates_shuffle(num_arr, length);
+    }
 }
 
+// Fisher-Yates shuffle algorithm for shuffling the array.
 void fisher_yates_shuffle(int num_arr[], int length) // This is for Bogo Sort
 {
     for (int i = length - 1; i > 0; i--)
