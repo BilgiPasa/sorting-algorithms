@@ -32,13 +32,7 @@ The Java files are in the MadeInJava/src folder.
 
 The Python files are in the made_in_python folder.
 
-(Use backward slashes if you use the Windows file explorer.)
-
----
-
-I'm not planning to implement the Pigeonhole Sort algorithm because I don't want to come across memory problems due to making the array size very huge (like making the length as 2^31).
-
-I'm not planning to implement the Bucket Sort algorithm because I want to use just arrays in this repo. I don't want to use array lists or linked lists in this repo.
+(Use backward slashes if you are using the Windows file explorer.)
 
 ---
 
