@@ -1,4 +1,6 @@
 #include "sorting_algorithms.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 void print_arr(const int num_arr[], int length) // To print the array
 {
@@ -160,3 +162,12 @@ void bubble_sort(int num_arr[], int length)
 // TODO: IMPLEMENT BOZO SORT HERE.
 
 // TODO: IMPLEMENT BOGO SORT HERE.
+
+void fisher_yates_shuffle(int arr[], int length)
+{
+    for (int i = length - 1; i > 0; i--)
+    {
+        int random_index = rand() % (i + 1);
+        swap(&arr[i], &arr[random_index]);
+    }
+}
