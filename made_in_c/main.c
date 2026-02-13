@@ -1,6 +1,7 @@
 #include "sorting_algorithms.h"
 #include <errno.h>
 #include <limits.h>
+#include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
@@ -18,6 +19,7 @@ int main(void)
         SELECTION_SORT,
         GNOME_SORT,
         BUBBLE_SORT,
+        BOGO_SORT,
         SIZE
     };
 
@@ -28,6 +30,7 @@ int main(void)
     printf("2) Selection Sort\n");
     printf("3) Gnome Sort\n");
     printf("4) Bubble Sort\n");
+    printf("5) Bogo Sort\n");
     printf("Select an algorithm: ");
     int selected_algorithm;
     int ok = get_int(&selected_algorithm); // The "ok" acts as a boolean.
@@ -51,6 +54,10 @@ int main(void)
         case GNOME_SORT:
         case BUBBLE_SORT:
             printf("Enter the array size (55555 is recommended): ");
+            break;
+
+        case BOGO_SORT:
+            printf("Enter the array size (maximum 12 is recommended): ");
             break;
 
         default:
@@ -142,6 +149,13 @@ int main(void)
             bubble_sort(num_arr, length);
             end = clock();
             used_algorithm_type = "Bubble Sort";
+            break;
+
+        case BOGO_SORT:
+            start = clock();
+            bogo_sort(num_arr, length);
+            end = clock();
+            used_algorithm_type = "Bogo Sort";
             break;
 
         default:
