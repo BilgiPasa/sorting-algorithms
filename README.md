@@ -14,7 +14,7 @@ C#, Java and Python is implemented and mostly maintained by me (BilgiPasa).
 
 Speed comparison of the languages (from fastest to slowest**): C (GCC 15), Java (25), C# (.Net 10), Python (3.14).
 
-For your information, I (BilgiPasa) don't vibe code. I write the code myself. I learned these algorithms from websites (for example geeksforgeeks) and videos (for example Bro Code and udiprod channels' videos).
+I wrote the code of the parts that I maintain myself. I did not vibe code. I learned these algorithms from websites (for example geeksforgeeks) and videos (for example Bro Code and udiprod channels' videos).
 
 *According to my tests when I test with C#. (If you compare the sorting algorithms' speed in different languages, you might get a different result. For example, when I test with Java, Selection Sort was faster than Insertsion Sort but in C, C# and Python, Insertsion Sort was faster than Selection Sort. Also, I didn't compare any language's built-in sorter in this list.)
 
