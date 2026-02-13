@@ -161,13 +161,17 @@ void bubble_sort(int num_arr[], int length)
 
 // TODO: IMPLEMENT BOZO SORT HERE.
 
-// TODO: IMPLEMENT BOGO SORT HERE.
+void bogo_sort(int num_arr[], int length)
+{
+    while (!is_sorted(num_arr, length))
+        fisher_yates_shuffle(num_arr, length);
+}
 
-void fisher_yates_shuffle(int arr[], int length)
+void fisher_yates_shuffle(int num_arr[], int length) // This is for Bogo Sort
 {
     for (int i = length - 1; i > 0; i--)
     {
         int random_index = rand() % (i + 1);
-        swap(&arr[i], &arr[random_index]);
+        swap(&num_arr[i], &num_arr[random_index]);
     }
 }
