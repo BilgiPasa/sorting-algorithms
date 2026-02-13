@@ -261,18 +261,18 @@ public class SortingAlgorithms {
         boolean b = isSorted(numArr);
 
         while (!b) {
-            shuffle(numArr);
+            fisherYatesShuffle(numArr);
             b = isSorted(numArr);
         }
     }
 
     // I couldn't find a built in primitive integer array shuffler. So, here is the Fisher-Yates algorithm.
-    static void shuffle(int[] numArr) { // This is for Bogo Sort
+    static void fisherYatesShuffle(int[] numArr) { // This is for Bogo Sort
         int lengthMinusOne = numArr.length - 1, randomNum;
         Random r = new Random();
 
         for (int i = lengthMinusOne; i > 0; i--) {
-            randomNum = (int)Math.floor(r.nextFloat() * (i + 1));
+            randomNum = r.nextInt(i + 1);
             swapElements(numArr, i, randomNum);
         }
     }
