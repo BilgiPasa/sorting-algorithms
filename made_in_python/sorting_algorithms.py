@@ -88,13 +88,6 @@ class SortingAlgorithms:
             interval = interval // 2
 
     def insertsion_sort(num_list: list[int]) -> None:
-        """ In Insertsion Sort; the program checks at the list multiple times part by part as first 2
-        elements, first 3 elements, first 4 ... and all of the elements. In each checking, the program goes
-        through each part starting from the second to last element of the part and goes to the first element.
-        If the element that the program is checking is bigger than the last element of the part, it moves the
-        last element of the part in front of the element that the program is checking. The sorting process ends
-        when all of the elements are checked. """
-
         temp: int
         j: int
 
@@ -109,11 +102,6 @@ class SortingAlgorithms:
             num_list[j + 1] = temp
 
     def selection_sort(num_list: list[int]) -> None:
-        """ In Selection Sort, the program goes through the list and looks for the smallest element. When the
-        list ends, it swaps the smallest element with the first element. Then it goes through the list again
-        and looks for the second smallest element. When the list ends, it swaps the second smallest element
-        with the second element and the process goes on like that until the list is sorted. """
-
         length_minus_one: int = len(num_list) - 1
         j: int
 
@@ -141,12 +129,6 @@ class SortingAlgorithms:
                 i += 1
 
     def cocktail_shaker_sort(num_list: list[int]) -> None:
-        """ You can think Cocktail Shaker Sort as a double sided Bubble Sort. Cocktail Shaker Sort starts from
-        the left side and moves to right like Bubble Sort but when it reaches the end, it moves to left. So the
-        Cocktail Shaker Sort moves back and forth and swaps the elements if the left element is bigger than the
-        right element. While swapping the elements, the smaller elements move to the left side and the bigger
-        elements move to the right side. """
-
         start: int = 0
         end: int = len(num_list) - 1
         i: int
@@ -165,10 +147,6 @@ class SortingAlgorithms:
             start += 1
 
     def bubble_sort(num_list: list[int]) -> None:
-        """ In Bubble Sort, the program goes through the list and checks the elements and the elements next
-        to it. If the left element is bigger than the right element, the program swaps the elements. When the
-        list ends, if the list is not sorted, the program repeats this process until the list is sorted. """
-
         length: int = len(num_list)
         swapped: bool
 
@@ -192,23 +170,18 @@ class SortingAlgorithms:
         if num_list[start] > num_list[end]:
             num_list[start], num_list[end] = num_list[end], num_list[start] # Swapping elements
 
-        if end - start > 1: # This means if (list size > 2)
+        if end - start > 1: # This means if list size > 2
             one_third: int = (end - start + 1) // 3
             SortingAlgorithms.sootage_sort(num_list, start, end - one_third)
             SortingAlgorithms.sootage_sort(num_list, start + one_third, end)
             SortingAlgorithms.sootage_sort(num_list, start, end - one_third)
 
     def bozo_sort(num_list: list[int]) -> None:
-        """ In Bozo Sort; firstly, the program checks if the list is sorted. If not, it selects two random
-        items and swaps them. Then, it checks again if the list is sorted. The program repeates this process
-        until the list is sorted. """
-
-        b: bool = SortingAlgorithms.is_sorted(num_list)
         length_minus_one: int = len(num_list) - 1
         index1: int
         index2: int
 
-        while not b:
+        while not SortingAlgorithms.is_sorted(num_list):
             while True:
                 index1 = randint(0, length_minus_one)
                 index2 = randint(0, length_minus_one)
@@ -217,17 +190,10 @@ class SortingAlgorithms:
                     break
 
             num_list[index1], num_list[index2] = num_list[index2], num_list[index1] # Swapping elements
-            b = SortingAlgorithms.is_sorted(num_list)
 
     def bogo_sort(num_list: list[int]) -> None:
-        """ In Bogo Sort; firstly, the program checks if the list is sorted. If not, it shuffels the list and
-        checks again if the list is sorted. The program repeates this process until the list is sorted. """
-
-        b: bool = SortingAlgorithms.is_sorted(num_list)
-
-        while not b:
+        while not SortingAlgorithms.is_sorted(num_list):
             shuffle(num_list)
-            b = SortingAlgorithms.is_sorted(num_list)
 
     if __name__ == "__main__":
         main.Main.main()

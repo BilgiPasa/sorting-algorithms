@@ -101,13 +101,6 @@ public class SortingAlgorithms {
     }
 
     public static void insertsionSort(int[] numArr) {
-        /* In Insertsion Sort; the program checks at the array multiple times part by part as first 2 elements,
-        first 3 elements, first 4 ... and all of the elements. In each checking, the program goes through each
-        part starting from the second to last element of the part and goes to the first element. If the element
-        that the program is checking is bigger than the last element of the part, it moves the last element of
-        the part in front of the element that the program is checking. The sorting process ends when all of the
-        elements are checked. */
-
         int temp, j;
 
         for (int i = 1; i < numArr.length; i++) {
@@ -124,11 +117,6 @@ public class SortingAlgorithms {
     }
 
     public static void selectionSort(int[] numArr) {
-        /* In Selection Sort, the program goes through the array and looks for the smallest element. When the
-        array ends, it swaps the smallest element with the first element. Then it goes through the array again
-        and looks for the second smallest element. When the array ends, it swaps the second smallest element
-        with the second element and the process goes on like that until the array is sorted. */
-
         int lengthMinusOne = numArr.length - 1, j;
 
         for (int i = 0; i < lengthMinusOne; i++) {
@@ -166,12 +154,6 @@ public class SortingAlgorithms {
     }
 
     public static void cocktailShakerSort(int[] numArr) {
-        /* You can think Cocktail Shaker Sort as a double sided Bubble Sort. Cocktail Shaker Sort starts from
-        the left side and moves to right like Bubble Sort but when it reaches the end, it moves to left. So the
-        Cocktail Shaker Sort moves back and forth and swaps the elements if the left element is bigger than the
-        right element. While swapping the elements, the smaller elements move to the left side and the bigger
-        elements move to the right side. */
-
         int start = 0, end = numArr.length - 1, i;
 
         while (end - start > 1) {
@@ -194,10 +176,6 @@ public class SortingAlgorithms {
     }
 
     public static void bubbleSort(int[] numArr) {
-        /* In Bubble Sort, the program goes through the array and checks the elements and the elements next to
-        it. If the left element is bigger than the right element, the program swaps the elements. When the
-        array ends, if the array is not sorted, the program repeats this process until the array is sorted. */
-
         int length = numArr.length;
         boolean swapped;
 
@@ -234,15 +212,10 @@ public class SortingAlgorithms {
     }
 
     public static void bozoSort(int[] numArr) {
-        /* In Bozo Sort; firstly, the program checks if the array is sorted. If not, it selects two random
-        items and swaps them. Then, it checks again if the array is sorted. The program repeates this process
-        until the array is sorted. */
-
-        boolean b = isSorted(numArr);
         int index1, index2;
         Random r = new Random();
 
-        while (!b) {
+        while (!isSorted(numArr)) {
             do {
                 index1 = r.nextInt(numArr.length);
                 index2 = r.nextInt(numArr.length);
@@ -250,14 +223,10 @@ public class SortingAlgorithms {
             while (index1 == index2);
 
             swapElements(numArr, index1, index2);
-            b = isSorted(numArr);
         }
     }
 
     public static void bogoSort(int[] numArr) {
-        /* In Bogo Sort; firstly, the program checks if the array is sorted. If not, it shuffels the array and
-        checks again if the array is sorted. The program repeates this process until the array is sorted. */
-
         while (!isSorted(numArr)) {
             fisherYatesShuffle(numArr);
         }
