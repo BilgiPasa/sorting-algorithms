@@ -76,7 +76,12 @@ int main(void)
 
     if (length <= 0)
     {
-        fprintf(stderr, "The array size cannot be %d. Aborting.\n", length);
+        fprintf(stderr, "Don't make the array size as 0 or less. Aborting.\n");
+        return 1;
+    }
+    else if (length >= INT_MAX) // Just in case.
+    {
+        fprintf(stderr, "Don't make the array size as INT_MAX or more. Aborting.\n");
         return 1;
     }
 
@@ -102,7 +107,8 @@ int main(void)
 
     for (int i = 0; i < length; i++)
     {
-        // rand() function returns a random integer from 0 to INT_MAX (both 0 and INT_MAX are included).
+        // rand() function returns a random integer from 0 to RAND_MAX (both 0 and RAND_MAX are included).
+        // In Linux, RAND_MAX is INT_MAX. In Windows, RAND_MAX is 32767.
         // If you want to get a random integer from 0 to X, write like this: num_arr[i] = rand() % X;
         // Note: X is not included.
         num_arr[i] = rand();
@@ -152,6 +158,14 @@ int main(void)
             break;
 
         case BOGO_SORT:
+            // In Linux, RAND_MAX is INT_MAX. In Windows, RAND_MAX is 32767.
+            // Because of that, don't enter a number bigger or equal to 32767 (which you shouldn't anyways).
+            if (length >= 32767)
+            {
+                fprintf(stderr, "You should not enter a number bigger or equal to 32767 in this Bogo Sort. Aborting.\n");
+                return 1;
+            }
+
             start = clock();
             bogo_sort(num_arr, length);
             end = clock();

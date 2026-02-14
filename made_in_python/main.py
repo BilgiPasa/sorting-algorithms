@@ -99,6 +99,16 @@ class Main:
             print("Wrong input. Aborting.")
             return
 
+        INT_MAX: int = 2147483647
+
+        # Just in case.
+        if length <= 0:
+            print("Don't make the array size as 0 or less. Aborting.")
+            return
+        elif length >= INT_MAX:
+            print("Don't make the array size as INT_MAX or more. Aborting.")
+            return
+
         try:
             num_list: list[int] = [0] * length
         except:
@@ -106,11 +116,10 @@ class Main:
             return
 
         print("Starting to randomize the list.")
-        MAX_VALUE: int = 2147483647
 
         for i in range(len(num_list)): # Python's integer is 64 bit. Because of that I made the randomizer like this.
             # Note: the randint function includes both end points.
-            num_list[i] = randint(0, MAX_VALUE) # Don't forget to write MAX_VALUE as the endpoint.
+            num_list[i] = randint(0, INT_MAX) # Don't forget to write INT_MAX as the endpoint.
 
         print("The list has randomized.")
         #print("[" + ", ".join(str(x) for x in num_list) + "]") # To see the list before sorting

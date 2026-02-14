@@ -165,6 +165,18 @@ class Program
             return;
         }
 
+        // Just in case.
+        if (length <= 0)
+        {
+            Console.WriteLine("Don't make the array size as 0 or less. Aborting.");
+            return;
+        }
+        else if (length >= int.MaxValue)
+        {
+            Console.WriteLine("Don't make the array size as INT_MAX or more. Aborting.");
+            return;
+        }
+
         int[] numArr;
 
         try

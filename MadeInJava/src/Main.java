@@ -127,6 +127,16 @@ public class Main {
         }
 
         s.close();
+
+        // Just in case.
+        if (length <= 0) {
+            System.out.println("Don't make the array size as 0 or less. Aborting.");
+            return;
+        } else if (length >= Integer.MAX_VALUE) {
+            System.out.println("Don't make the array size as INT_MAX or more. Aborting.");
+            return;
+        }
+
         int[] numArr;
 
         try {
