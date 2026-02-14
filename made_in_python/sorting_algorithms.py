@@ -182,13 +182,8 @@ class SortingAlgorithms:
         index2: int
 
         while not SortingAlgorithms.is_sorted(num_list):
-            while True:
-                index1 = randint(0, length_minus_one)
-                index2 = randint(0, length_minus_one)
-
-                if index1 != index2:
-                    break
-
+            index1 = randint(0, length_minus_one)
+            index2 = randint(0, length_minus_one)
             num_list[index1], num_list[index2] = num_list[index2], num_list[index1] # Swapping elements
 
     def bogo_sort(num_list: list[int]) -> None:

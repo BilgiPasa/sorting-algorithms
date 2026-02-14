@@ -82,11 +82,14 @@ class Main:
                 print("Enter the list size (less than 3223 is recommended): ", end="")
 
             case AlgorithmTypes.BOZO_SORT | AlgorithmTypes.BOGO_SORT:
-                print("Enter the list size (maximum 12 is recommended): ", end="")
+                print("Enter the list size (less than 12 is recommended): ", end="")
 
             case _:
                 print("The algorithm type could not found. Aborting.")
                 return
+
+        # Why do I write "less than" at the part above? Because Python is slow. I am not joking.
+        # But fortunately, Python's built-in sorter is fast enough.
 
         length: int
 

@@ -216,12 +216,8 @@ public class SortingAlgorithms {
         Random r = new Random();
 
         while (!isSorted(numArr)) {
-            do {
-                index1 = r.nextInt(numArr.length);
-                index2 = r.nextInt(numArr.length);
-            }
-            while (index1 == index2);
-
+            index1 = r.nextInt(numArr.length);
+            index2 = r.nextInt(numArr.length);
             swapElements(numArr, index1, index2);
         }
     }

@@ -252,13 +252,8 @@ public static class SortingAlgorithms
 
         while (!isSorted(numArr))
         {
-            do
-            {
-                index1 = r.Next(numArr.Length);
-                index2 = r.Next(numArr.Length);
-            }
-            while (index1 == index2);
-
+            index1 = r.Next(numArr.Length);
+            index2 = r.Next(numArr.Length);
             (numArr[index1], numArr[index2]) = (numArr[index2], numArr[index1]); // Swapping elements
         }
     }
