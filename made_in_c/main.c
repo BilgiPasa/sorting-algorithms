@@ -79,12 +79,7 @@ int main(void)
         fprintf(stderr, "Don't make the array size as 0 or less. Aborting.\n");
         return 1;
     }
-    else if (length >= INT_MAX) // Just in case.
-    {
-        fprintf(stderr, "Don't make the array size as INT_MAX or more. Aborting.\n");
-        return 1;
-    }
-
+    
     // if length > SIZE_MAX / sizeof(int)
     // then length * sizeof(int) > SIZE_MAX
     // which means size overflow will occur
