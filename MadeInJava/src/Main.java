@@ -128,12 +128,11 @@ public class Main {
 
         s.close();
 
-        // Just in case.
-        if (length <= 0) {
-            System.out.println("Don't make the array size as 0 or less. Aborting.");
+        if (length == 0) {
+            System.out.println("Don't make the array size as 0. Aborting.");
             return;
-        } else if (length >= Integer.MAX_VALUE) {
-            System.out.println("Don't make the array size as INT_MAX or more. Aborting.");
+        } else if (length == Integer.MAX_VALUE) {
+            System.out.println("Don't make the array size as Integer.MAX_VALUE. Aborting.");
             return;
         }
 
@@ -150,7 +149,10 @@ public class Main {
         System.out.println("Starting to randomize the array.");
 
         for (int i = 0; i < numArr.length; i++) {
-            numArr[i] = r.nextInt(Integer.MAX_VALUE); // Don't forget to write Integer.MAX_VALUE as the parameter.
+            // If X is a positive integer, the r.nextInt(X) returns a random number from 0 to X.
+            // Note: X is not included.
+            numArr[i] = r.nextInt(Integer.MAX_VALUE);
+            // Don't forget to write Integer.MAX_VALUE as the parameter.
         }
 
         System.out.println("The array has randomized.");

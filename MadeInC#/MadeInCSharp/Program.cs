@@ -165,15 +165,14 @@ class Program
             return;
         }
 
-        // Just in case.
-        if (length <= 0)
+        if (length == 0)
         {
-            Console.WriteLine("Don't make the array size as 0 or less. Aborting.");
+            Console.WriteLine("Don't make the array size as 0. Aborting.");
             return;
         }
-        else if (length >= int.MaxValue)
+        else if (length == int.MaxValue)
         {
-            Console.WriteLine("Don't make the array size as INT_MAX or more. Aborting.");
+            Console.WriteLine("Don't make the array size as int.MaxValue. Aborting.");
             return;
         }
 
@@ -195,9 +194,12 @@ class Program
 
         for (int i = 0; i < numArr.Length; i++)
         {
-            // r.Next() function returns a random integer from 0 to INT_MAX (both 0 and INT_MAX are included).
+            // r.Next() function returns a random integer from 0 to int.MaxValue.
+            // Note: 0 is included, int.MaxValue is excluded.
+
             // If you want to get a random integer from 0 to X, write like this: r.Next(X);
             // Note: X is not included.
+
             numArr[i] = r.Next();
         }
 

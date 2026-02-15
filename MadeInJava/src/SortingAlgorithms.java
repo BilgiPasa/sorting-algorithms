@@ -2,12 +2,9 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class SortingAlgorithms {
-    public static boolean isSorted(int[] numArr) // To check if the array is sorted
-    {
-        for (int i = 1; i < numArr.length; i++)
-        {
-            if (numArr[i - 1] > numArr[i])
-            {
+    public static boolean isSorted(int[] numArr) { // To check if the array is sorted
+        for (int i = 1; i < numArr.length; i++) {
+            if (numArr[i - 1] > numArr[i]) {
                 return false;
             }
         }
@@ -125,14 +122,11 @@ public class SortingAlgorithms {
         }
     }
 
-    static int indexOfMin(int[] numArr, int length, int start) // This is for Selection Sort
-    {
+    static int indexOfMin(int[] numArr, int length, int start) { // This is for Selection Sort
         int min = start;
 
-        for (int i = start; i < length; i++)
-        {
-            if (numArr[min] > numArr[i])
-            {
+        for (int i = start; i < length; i++) {
+            if (numArr[min] > numArr[i]) {
                 min = i;
             }
         }

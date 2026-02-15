@@ -80,12 +80,12 @@ int main(void)
         return 1;
     }
 
-    if (length <= 0)
+    if (length == 0)
     {
-        fprintf(stderr, "Don't make the array size as 0 or less. Aborting.\n");
+        fprintf(stderr, "Don't make the array size as 0. Aborting.\n");
         return 1;
     }
-    
+
     // if length > SIZE_MAX / sizeof(int)
     // then length * sizeof(int) > SIZE_MAX
     // which means size overflow will occur
@@ -110,8 +110,10 @@ int main(void)
     {
         // rand() function returns a random integer from 0 to RAND_MAX (both 0 and RAND_MAX are included).
         // In Linux, RAND_MAX is INT_MAX. In Windows, RAND_MAX is RAND_MAX_GUARANTEED (32767).
+
         // If you want to get a random integer from 0 to X, write like this: num_arr[i] = rand() % X;
         // Note: X is not included.
+
         num_arr[i] = rand();
     }
 
