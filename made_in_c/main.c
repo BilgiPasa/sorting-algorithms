@@ -7,7 +7,7 @@
 #include <string.h>
 #include <time.h>
 
-// RAND_MAX guaranteed to be at least 32767
+// RAND_MAX is guaranteed to be at least 32767
 #define RAND_MAX_GUARANTEED 32767
 
 int get_int(int *num);
@@ -157,10 +157,10 @@ int main(void)
 
         case BOGO_SORT:
             // In Linux, RAND_MAX is INT_MAX. In Windows, RAND_MAX is RAND_MAX_GUARANTEED (32767).
-            // Because of that, don't enter a number bigger or equal to RAND_MAX_GUARANTEED (which you shouldn't anyways).
-            if (length >= RAND_MAX_GUARANTEED)
+            // Because of that, don't enter a number greater than RAND_MAX_GUARANTEED (which you shouldn't anyways).
+            if (length > RAND_MAX_GUARANTEED)
             {
-                fprintf(stderr, "You should not enter a number bigger or equal to %d in this Bogo Sort. Aborting.\n", RAND_MAX_GUARANTEED);
+                fprintf(stderr, "You should not enter a number greater than %d in this Bogo Sort. Aborting.\n", RAND_MAX_GUARANTEED);
                 free(num_arr); // free before returning
                 return 1;
             }
