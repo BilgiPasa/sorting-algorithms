@@ -22,6 +22,7 @@ int main(void)
         SELECTION_SORT,
         GNOME_SORT,
         BUBBLE_SORT,
+        BOZO_SORT,
         BOGO_SORT,
         SIZE
     };
@@ -33,7 +34,8 @@ int main(void)
     printf("2) Selection Sort\n");
     printf("3) Gnome Sort\n");
     printf("4) Bubble Sort\n");
-    printf("5) Bogo Sort\n");
+    printf("5) Bozo Sort\n");
+    printf("6) Bogo Sort\n");
     printf("Select an algorithm: ");
     int selected_algorithm;
     int ok = get_int(&selected_algorithm); // The "ok" acts as a boolean.
@@ -59,6 +61,7 @@ int main(void)
             printf("Enter the array size (55555 is recommended): ");
             break;
 
+        case BOZO_SORT:
         case BOGO_SORT:
             printf("Enter the array size (maximum 12 is recommended): ");
             break;
@@ -153,6 +156,23 @@ int main(void)
             bubble_sort(num_arr, length);
             end = clock();
             used_algorithm_type = "Bubble Sort";
+            break;
+
+
+        case BOZO_SORT:
+            // In Linux, RAND_MAX is INT_MAX. In Windows, RAND_MAX is RAND_MAX_GUARANTEED (32767).
+            // Because of that, don't enter a number greater than RAND_MAX_GUARANTEED (which you shouldn't anyways).
+            if (length > RAND_MAX_GUARANTEED)
+            {
+                fprintf(stderr, "You should not enter a number greater than %d in this Bogo Sort. Aborting.\n", RAND_MAX_GUARANTEED);
+                free(num_arr); // free before returning
+                return 1;
+            }
+
+            start = clock();
+            bozo_sort(num_arr, length);
+            end = clock();
+            used_algorithm_type = "Bozo Sort";
             break;
 
         case BOGO_SORT:

@@ -10,5 +10,6 @@ void selection_sort(int arr[], int length);
 int index_of_min(const int num_arr[], int length, int start);
 void gnome_sort(int num_arr[], int length);
 void bubble_sort(int num_arr[], int length);
+void bozo_sort(int num_arr[], int length);
 void bogo_sort(int num_arr[], int length);
 void fisher_yates_shuffle(int num_arr[], int length);

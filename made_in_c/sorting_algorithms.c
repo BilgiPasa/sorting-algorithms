@@ -143,7 +143,15 @@ void bubble_sort(int num_arr[], int length)
 
 // TODO: IMPLEMENT SOOTAGE SORT HERE.
 
-// TODO: IMPLEMENT BOZO SORT HERE.
+void bozo_sort(int num_arr[], int length)
+{
+    while (!is_sorted(num_arr, length))
+    {
+        int i = rand() % length;
+        int j = rand() % length;
+        swap(&num_arr[i], &num_arr[j]);
+    }
+}
 
 void bogo_sort(int num_arr[], int length)
 {
