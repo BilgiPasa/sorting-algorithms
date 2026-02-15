@@ -7,6 +7,9 @@
 #include <string.h>
 #include <time.h>
 
+// RAND_MAX is guaranteed to be at least 32767
+#define RAND_MAX_GUARANTEED 32767
+
 int get_int(int *num);
 
 // Note: returning 0 means the procces works as intended, returning 1 means there was a problem when running.
@@ -19,6 +22,7 @@ int main(void)
         SELECTION_SORT,
         GNOME_SORT,
         BUBBLE_SORT,
+        BOZO_SORT,
         BOGO_SORT,
         SIZE
     };
@@ -30,7 +34,8 @@ int main(void)
     printf("2) Selection Sort\n");
     printf("3) Gnome Sort\n");
     printf("4) Bubble Sort\n");
-    printf("5) Bogo Sort\n");
+    printf("5) Bozo Sort\n");
+    printf("6) Bogo Sort\n");
     printf("Select an algorithm: ");
     int selected_algorithm;
     int ok = get_int(&selected_algorithm); // The "ok" acts as a boolean.
@@ -56,6 +61,7 @@ int main(void)
             printf("Enter the array size (55555 is recommended): ");
             break;
 
+        case BOZO_SORT:
         case BOGO_SORT:
             printf("Enter the array size (maximum 12 is recommended): ");
             break;
@@ -79,12 +85,7 @@ int main(void)
         fprintf(stderr, "Don't make the array size as 0 or less. Aborting.\n");
         return 1;
     }
-    else if (length >= INT_MAX) // Just in case.
-    {
-        fprintf(stderr, "Don't make the array size as INT_MAX or more. Aborting.\n");
-        return 1;
-    }
-
+    
     // if length > SIZE_MAX / sizeof(int)
     // then length * sizeof(int) > SIZE_MAX
     // which means size overflow will occur
@@ -108,7 +109,7 @@ int main(void)
     for (int i = 0; i < length; i++)
     {
         // rand() function returns a random integer from 0 to RAND_MAX (both 0 and RAND_MAX are included).
-        // In Linux, RAND_MAX is INT_MAX. In Windows, RAND_MAX is 32767.
+        // In Linux, RAND_MAX is INT_MAX. In Windows, RAND_MAX is RAND_MAX_GUARANTEED (32767).
         // If you want to get a random integer from 0 to X, write like this: num_arr[i] = rand() % X;
         // Note: X is not included.
         num_arr[i] = rand();
@@ -123,53 +124,71 @@ int main(void)
     switch (algorithm_type)
     {
         case BUILT_IN:
+            used_algorithm_type = "C's built-in sorter";
             start = clock();
             qsort(num_arr, length, sizeof(int), compare);
             end = clock();
-            used_algorithm_type = "C's built-in sorter";
             break;
 
         case INSERTION_SORT:
+            used_algorithm_type = "Insertion Sort";
             start = clock();
             insertion_sort(num_arr, length);
             end = clock();
-            used_algorithm_type = "Insertion Sort";
             break;
 
         case SELECTION_SORT:
+            used_algorithm_type = "Selection Sort";
             start = clock();
             selection_sort(num_arr, length);
             end = clock();
-            used_algorithm_type = "Selection Sort";
             break;
 
         case GNOME_SORT:
+            used_algorithm_type = "Gnome Sort";
             start = clock();
             gnome_sort(num_arr, length);
             end = clock();
-            used_algorithm_type = "Gnome Sort";
             break;
 
         case BUBBLE_SORT:
+            used_algorithm_type = "Bubble Sort";
             start = clock();
             bubble_sort(num_arr, length);
             end = clock();
-            used_algorithm_type = "Bubble Sort";
+            break;
+
+
+        case BOZO_SORT:
+            used_algorithm_type = "Bozo Sort";
+            // In Linux, RAND_MAX is INT_MAX. In Windows, RAND_MAX is RAND_MAX_GUARANTEED (32767).
+            // Because of that, don't enter a number greater than RAND_MAX_GUARANTEED (which you shouldn't anyways).
+            if (length > RAND_MAX_GUARANTEED)
+            {
+                fprintf(stderr, "You should not enter a number greater than %d in %s. Aborting.\n", RAND_MAX_GUARANTEED, used_algorithm_type);
+                free(num_arr); // free before returning
+                return 1;
+            }
+
+            start = clock();
+            bozo_sort(num_arr, length);
+            end = clock();
             break;
 
         case BOGO_SORT:
-            // In Linux, RAND_MAX is INT_MAX. In Windows, RAND_MAX is 32767.
-            // Because of that, don't enter a number bigger or equal to 32767 (which you shouldn't anyways).
-            if (length >= 32767)
+            used_algorithm_type = "Bogo Sort";
+            // In Linux, RAND_MAX is INT_MAX. In Windows, RAND_MAX is RAND_MAX_GUARANTEED (32767).
+            // Because of that, don't enter a number greater than RAND_MAX_GUARANTEED (which you shouldn't anyways).
+            if (length > RAND_MAX_GUARANTEED)
             {
-                fprintf(stderr, "You should not enter a number bigger or equal to 32767 in this Bogo Sort. Aborting.\n");
+                fprintf(stderr, "You should not enter a number greater than %d in %s. Aborting.\n", RAND_MAX_GUARANTEED, used_algorithm_type);
+                free(num_arr); // free before returning
                 return 1;
             }
 
             start = clock();
             bogo_sort(num_arr, length);
             end = clock();
-            used_algorithm_type = "Bogo Sort";
             break;
 
         default:
