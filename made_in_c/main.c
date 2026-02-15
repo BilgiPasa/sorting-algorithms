@@ -7,6 +7,9 @@
 #include <string.h>
 #include <time.h>
 
+// RAND_MAX guaranteed to be at least 32767
+#define RAND_MAX_GUARANTEED 32767
+
 int get_int(int *num);
 
 // Note: returning 0 means the procces works as intended, returning 1 means there was a problem when running.
@@ -103,7 +106,7 @@ int main(void)
     for (int i = 0; i < length; i++)
     {
         // rand() function returns a random integer from 0 to RAND_MAX (both 0 and RAND_MAX are included).
-        // In Linux, RAND_MAX is INT_MAX. In Windows, RAND_MAX is 32767.
+        // In Linux, RAND_MAX is INT_MAX. In Windows, RAND_MAX is RAND_MAX_GUARANTEED (32767).
         // If you want to get a random integer from 0 to X, write like this: num_arr[i] = rand() % X;
         // Note: X is not included.
         num_arr[i] = rand();
@@ -153,11 +156,12 @@ int main(void)
             break;
 
         case BOGO_SORT:
-            // In Linux, RAND_MAX is INT_MAX. In Windows, RAND_MAX is 32767.
-            // Because of that, don't enter a number bigger or equal to 32767 (which you shouldn't anyways).
-            if (length >= 32767)
+            // In Linux, RAND_MAX is INT_MAX. In Windows, RAND_MAX is RAND_MAX_GUARANTEED (32767).
+            // Because of that, don't enter a number bigger or equal to RAND_MAX_GUARANTEED (which you shouldn't anyways).
+            if (length >= RAND_MAX_GUARANTEED)
             {
-                fprintf(stderr, "You should not enter a number bigger or equal to 32767 in this Bogo Sort. Aborting.\n");
+                fprintf(stderr, "You should not enter a number bigger or equal to %d in this Bogo Sort. Aborting.\n", RAND_MAX_GUARANTEED);
+                free(num_arr); // free before returning
                 return 1;
             }
 
