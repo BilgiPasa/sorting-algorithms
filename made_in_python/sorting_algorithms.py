@@ -1,5 +1,5 @@
-from main import main
 from random import randint, shuffle
+import main
 
 def is_sorted(num_arr) -> bool: # To check if the array is sorted
     for i in range(1, len(num_arr)):
@@ -190,4 +190,4 @@ def bogo_sort(num_arr) -> None:
         shuffle(num_arr)
 
 if __name__ == "__main__":
-    main()
+    main.main()
