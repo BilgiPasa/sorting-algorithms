@@ -211,87 +211,87 @@ class Program
         switch (algorithmType)
         {
             case AlgorithmTypes.BuiltIn:
+                usedAlgorithmType = "C#'s built-in sorter";
                 s.Start();
                 Array.Sort(numArr);
                 s.Stop();
-                usedAlgorithmType = "C#'s built-in sorter";
                 break;
 
             case AlgorithmTypes.QuickSort:
+                usedAlgorithmType = "Quick Sort";
                 s.Start();
                 SortingAlgorithms.QuickSort(numArr, 0, numArr.Length - 1);
                 s.Stop();
-                usedAlgorithmType = "Quick Sort";
                 break;
 
             case AlgorithmTypes.MergeSort:
+                usedAlgorithmType = "Merge Sort";
                 s.Start();
                 SortingAlgorithms.MergeSort(numArr);
                 s.Stop();
-                usedAlgorithmType = "Merge Sort";
                 break;
 
             case AlgorithmTypes.ShellSort:
+                usedAlgorithmType = "Shell Sort";
                 s.Start();
                 SortingAlgorithms.ShellSort(numArr);
                 s.Stop();
-                usedAlgorithmType = "Shell Sort";
                 break;
 
             case AlgorithmTypes.InsertsionSort:
+                usedAlgorithmType = "Insertsion Sort";
                 s.Start();
                 SortingAlgorithms.InsertsionSort(numArr);
                 s.Stop();
-                usedAlgorithmType = "Insertsion Sort";
                 break;
 
             case AlgorithmTypes.SelectionSort:
+                usedAlgorithmType = "Selection Sort";
                 s.Start();
                 SortingAlgorithms.SelectionSort(numArr);
                 s.Stop();
-                usedAlgorithmType = "Selection Sort";
                 break;
 
             case AlgorithmTypes.GnomeSort:
+                usedAlgorithmType = "Gnome Sort";
                 s.Start();
                 SortingAlgorithms.GnomeSort(numArr);
                 s.Stop();
-                usedAlgorithmType = "Gnome Sort";
                 break;
 
             case AlgorithmTypes.CocktailShakerSort:
+                usedAlgorithmType = "Cocktail Shaker Sort";
                 s.Start();
                 SortingAlgorithms.CocktailShakerSort(numArr);
                 s.Stop();
-                usedAlgorithmType = "Cocktail Shaker Sort";
                 break;
 
             case AlgorithmTypes.BubbleSort:
+                usedAlgorithmType = "Bubble Sort";
                 s.Start();
                 SortingAlgorithms.BubbleSort(numArr);
                 s.Stop();
-                usedAlgorithmType = "Bubble Sort";
                 break;
 
             case AlgorithmTypes.SootageSort:
+                usedAlgorithmType = "Sootage Sort";
                 s.Start();
                 SortingAlgorithms.SootageSort(numArr, 0, numArr.Length - 1);
                 s.Stop();
-                usedAlgorithmType = "Sootage Sort";
                 break;
 
             case AlgorithmTypes.BozoSort:
+                usedAlgorithmType = "Bozo Sort";
                 s.Start();
                 SortingAlgorithms.BozoSort(numArr);
                 s.Stop();
-                usedAlgorithmType = "Bozo Sort";
                 break;
 
             case AlgorithmTypes.BogoSort:
+                usedAlgorithmType = "Bogo Sort";
                 s.Start();
                 SortingAlgorithms.BogoSort(numArr);
                 s.Stop();
-                usedAlgorithmType = "Bogo Sort";
                 break;
 
             default:

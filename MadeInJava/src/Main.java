@@ -164,87 +164,87 @@ public class Main {
         switch (algorithmType)
         {
             case AlgorithmTypes.BUILT_IN:
+                usedAlgorithmType = "Java's built-in sorter";
                 startTime = System.nanoTime();
                 Arrays.sort(numArr);
                 endTime = System.nanoTime();
-                usedAlgorithmType = "Java's built-in sorter";
                 break;
 
             case AlgorithmTypes.QUICK_SORT:
+                usedAlgorithmType = "Quick Sort";
                 startTime = System.nanoTime();
                 SortingAlgorithms.quickSort(numArr, 0, numArr.length - 1);
                 endTime = System.nanoTime();
-                usedAlgorithmType = "Quick Sort";
                 break;
 
             case AlgorithmTypes.MERGE_SORT:
+                usedAlgorithmType = "Merge Sort";
                 startTime = System.nanoTime();
                 SortingAlgorithms.mergeSort(numArr);
                 endTime = System.nanoTime();
-                usedAlgorithmType = "Merge Sort";
                 break;
 
             case AlgorithmTypes.SHELL_SORT:
+                usedAlgorithmType = "Shell Sort";
                 startTime = System.nanoTime();
                 SortingAlgorithms.shellSort(numArr);
                 endTime = System.nanoTime();
-                usedAlgorithmType = "Shell Sort";
                 break;
 
             case AlgorithmTypes.INSERTSION_SORT:
+                usedAlgorithmType = "Insertsion Sort";
                 startTime = System.nanoTime();
                 SortingAlgorithms.insertsionSort(numArr);
                 endTime = System.nanoTime();
-                usedAlgorithmType = "Insertsion Sort";
                 break;
 
             case AlgorithmTypes.SELECTION_SORT:
+                usedAlgorithmType = "Selection Sort";
                 startTime = System.nanoTime();
                 SortingAlgorithms.selectionSort(numArr);
                 endTime = System.nanoTime();
-                usedAlgorithmType = "Selection Sort";
                 break;
 
             case AlgorithmTypes.GNOME_SORT:
+                usedAlgorithmType = "Gnome Sort";
                 startTime = System.nanoTime();
                 SortingAlgorithms.gnomeSort(numArr);
                 endTime = System.nanoTime();
-                usedAlgorithmType = "Gnome Sort";
                 break;
 
             case AlgorithmTypes.COCKTAIL_SHAKER_SORT:
+                usedAlgorithmType = "Cocktail Shaker Sort";
                 startTime = System.nanoTime();
                 SortingAlgorithms.cocktailShakerSort(numArr);
                 endTime = System.nanoTime();
-                usedAlgorithmType = "Cocktail Shaker Sort";
                 break;
 
             case AlgorithmTypes.BUBBLE_SORT:
+                usedAlgorithmType = "Bubble Sort";
                 startTime = System.nanoTime();
                 SortingAlgorithms.bubbleSort(numArr);
                 endTime = System.nanoTime();
-                usedAlgorithmType = "Bubble Sort";
                 break;
 
             case AlgorithmTypes.SOOTAGE_SORT:
+                usedAlgorithmType = "Sootage Sort";
                 startTime = System.nanoTime();
                 SortingAlgorithms.sootageSort(numArr, 0, numArr.length - 1);
                 endTime = System.nanoTime();
-                usedAlgorithmType = "Sootage Sort";
                 break;
 
             case AlgorithmTypes.BOZO_SORT:
+                usedAlgorithmType = "Bozo Sort";
                 startTime = System.nanoTime();
                 SortingAlgorithms.bozoSort(numArr);
                 endTime = System.nanoTime();
-                usedAlgorithmType = "Bozo Sort";
                 break;
 
             case AlgorithmTypes.BOGO_SORT:
+                usedAlgorithmType = "Bogo Sort";
                 startTime = System.nanoTime();
                 SortingAlgorithms.bogoSort(numArr);
                 endTime = System.nanoTime();
-                usedAlgorithmType = "Bogo Sort";
                 break;
 
             default:

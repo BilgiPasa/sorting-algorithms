@@ -132,76 +132,76 @@ def main() -> None:
 
     match algorithm_type:
         case AlgorithmTypes.BUILT_IN:
+            used_algorithm_type = "Python's built-in sorter"
             start_time = time()
             num_arr = sorted(num_arr)
             end_time = time()
-            used_algorithm_type = "Python's built-in sorter"
 
         case AlgorithmTypes.QUICK_SORT:
+            used_algorithm_type = "Quick Sort"
             start_time = time()
             quick_sort(num_arr, 0, len(num_arr) - 1)
             end_time = time()
-            used_algorithm_type = "Quick Sort"
 
         case AlgorithmTypes.MERGE_SORT:
+            used_algorithm_type = "Merge Sort"
             start_time = time()
             merge_sort(num_arr)
             end_time = time()
-            used_algorithm_type = "Merge Sort"
 
         case AlgorithmTypes.SHELL_SORT:
+            used_algorithm_type = "Shell Sort"
             start_time = time()
             shell_sort(num_arr)
             end_time = time()
-            used_algorithm_type = "Shell Sort"
 
         case AlgorithmTypes.INSERTSION_SORT:
+            used_algorithm_type = "Insertsion Sort"
             start_time = time()
             insertsion_sort(num_arr)
             end_time = time()
-            used_algorithm_type = "Insertsion Sort"
 
         case AlgorithmTypes.SELECTION_SORT:
+            used_algorithm_type = "Selection Sort"
             start_time = time()
             selection_sort(num_arr)
             end_time = time()
-            used_algorithm_type = "Selection Sort"
 
         case AlgorithmTypes.GNOME_SORT:
+            used_algorithm_type = "Gnome Sort"
             start_time = time()
             gnome_sort(num_arr)
             end_time = time()
-            used_algorithm_type = "Gnome Sort"
 
         case AlgorithmTypes.COCKTAIL_SHAKER_SORT:
+            used_algorithm_type = "Cocktail Shaker Sort"
             start_time = time()
             cocktail_shaker_sort(num_arr)
             end_time = time()
-            used_algorithm_type = "Cocktail Shaker Sort"
 
         case AlgorithmTypes.BUBBLE_SORT:
+            used_algorithm_type = "Bubble Sort"
             start_time = time()
             bubble_sort(num_arr)
             end_time = time()
-            used_algorithm_type = "Bubble Sort"
 
         case AlgorithmTypes.SOOTAGE_SORT:
+            used_algorithm_type = "Sootage Sort"
             start_time = time()
             sootage_sort(num_arr, 0, len(num_arr) - 1)
             end_time = time()
-            used_algorithm_type = "Sootage Sort"
 
         case AlgorithmTypes.BOZO_SORT:
+            used_algorithm_type = "Bozo Sort"
             start_time = time()
             bozo_sort(num_arr)
             end_time = time()
-            used_algorithm_type = "Bozo Sort"
 
         case AlgorithmTypes.BOGO_SORT:
+            used_algorithm_type = "Bogo Sort"
             start_time = time()
             bogo_sort(num_arr)
             end_time = time()
-            used_algorithm_type = "Bogo Sort"
 
         case _:
             print("The algorithm type could not found. Aborting.")
