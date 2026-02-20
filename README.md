@@ -38,4 +38,4 @@ The Python files are in the made_in_python folder.
 
 ---
 
-README written by BilgiPasa.
+This README has written by BilgiPasa.
