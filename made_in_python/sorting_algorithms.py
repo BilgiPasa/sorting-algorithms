@@ -1,6 +1,9 @@
 from random import randint, shuffle
 import main
 
+# The input exceptions are handled at the main.py file.
+# So, these functions are assuming that the parameter inputs are non-negative integers or integer arrays.
+
 def is_sorted(num_arr) -> bool: # To check if the array is sorted
     for i in range(1, len(num_arr)):
         if num_arr[i - 1] > num_arr[i]:

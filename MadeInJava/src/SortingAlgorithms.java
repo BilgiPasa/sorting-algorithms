@@ -2,6 +2,9 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class SortingAlgorithms {
+    // The input exceptions are handled at the Main class.
+    // So, these functions are assuming that the parameter inputs are non-negative integers or integer arrays.
+
     public static boolean isSorted(int[] numArr) { // To check if the array is sorted
         for (int i = 1; i < numArr.length; i++) {
             if (numArr[i - 1] > numArr[i]) {

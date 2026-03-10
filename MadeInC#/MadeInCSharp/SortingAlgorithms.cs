@@ -2,6 +2,9 @@ namespace MadeInCSharp;
 
 public static class SortingAlgorithms
 {
+    // The input exceptions are handled at the Program class.
+    // So, these functions are assuming that the parameter inputs are non-negative integers or integer arrays.
+
     public static bool isSorted(int[] numArr) // To check if the array is sorted
     {
         for (int i = 1; i < numArr.Length; i++)

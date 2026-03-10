@@ -2,6 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// The input exceptions are handled at the main.c file.
+// So, these functions are assuming that the parameter inputs are non-negative integers or integer arrays.
+
 void print_arr(const int num_arr[], int length) // To print the array
 {
     int length_minus_one = length - 1;

@@ -134,6 +134,9 @@ public class Main {
         } else if (length == Integer.MAX_VALUE) {
             System.out.println("Don't make the array size as Integer.MAX_VALUE. Aborting.");
             return;
+        } else if (length < 0) {
+            System.out.println("Don't try to make the array size as a negative integer. Aborting.");
+            return;
         }
 
         int[] numArr;

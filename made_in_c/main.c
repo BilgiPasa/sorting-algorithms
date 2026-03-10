@@ -85,6 +85,11 @@ int main(void)
         fprintf(stderr, "Don't make the array size as 0. Aborting.\n");
         return 1;
     }
+    else if (length < 0)
+    {
+        fprintf(stderr, "Don't try to make the array size as a negative integer. Aborting.\n");
+        return 1;
+    }
 
     // if length > SIZE_MAX / sizeof(int)
     // then length * sizeof(int) > SIZE_MAX

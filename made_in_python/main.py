@@ -108,6 +108,9 @@ def main() -> None:
     elif length > MAX_VALUE:
         print("Don't make the array size more than MAX_VALUE. Aborting.")
         return
+    elif length < 0:
+        print("Don't try to make the array size as a negative integer. Aborting.")
+        return
 
     try:
         num_arr = array('i', [0] * length)
