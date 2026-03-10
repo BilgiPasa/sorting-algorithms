@@ -137,8 +137,7 @@ void bubble_sort(int num_arr[], int length)
         }
 
         length--; // Every time it restarts, the largest elements moves to the end of the array. So, we don't need to check it again.
-    }
-    while (swapped);
+    } while (swapped);
 }
 
 // TODO: IMPLEMENT SOOTAGE SORT HERE.

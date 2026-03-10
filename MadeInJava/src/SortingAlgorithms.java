@@ -184,8 +184,7 @@ public class SortingAlgorithms {
             }
 
             length--; // Every time it restarts, the largest elements moves to the end of the array. So, we don't need to check it again.
-        }
-        while (swapped);
+        } while (swapped);
     }
 
     public static void sootageSort(int[] numArr, int start, int end) {
