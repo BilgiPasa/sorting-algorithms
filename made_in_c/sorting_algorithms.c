@@ -51,11 +51,11 @@ int compare(const void *elem1, const void *elem2) // This is for qsort (C's buil
 
 // The algorithms are listed from the fastest to the slowest according to my tests.
 
-//TODO: IMPLEMENT QUICK SORT HERE.
+// TODO: IMPLEMENT QUICK SORT HERE.
 
-//TODO: IMPLEMENT MERGE SORT HERE.
+// TODO: IMPLEMENT MERGE SORT HERE.
 
-//TODO: IMPLEMENT SHELL SORT HERE.
+// TODO: IMPLEMENT SHELL SORT HERE.
 
 void insertion_sort(int num_arr[], int length)
 {
@@ -120,7 +120,7 @@ void gnome_sort(int num_arr[], int length)
     }
 }
 
-//TODO: IMPLEMENT COCKTAIL SHAKER SORT HERE.
+// TODO: IMPLEMENT COCKTAIL SHAKER SORT HERE.
 
 void bubble_sort(int num_arr[], int length)
 {
@@ -143,7 +143,7 @@ void bubble_sort(int num_arr[], int length)
     } while (swapped);
 }
 
-//TODO: IMPLEMENT SOOTAGE SORT HERE.
+// TODO: IMPLEMENT SOOTAGE SORT HERE.
 
 void bozo_sort(int num_arr[], int length)
 {
