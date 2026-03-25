@@ -1,0 +1,15 @@
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/bin/Debug/net10.0/MadeInC#
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/bin/Debug/net10.0/MadeInC#.deps.json
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/bin/Debug/net10.0/MadeInC#.runtimeconfig.json
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/bin/Debug/net10.0/MadeInC#.dll
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/bin/Debug/net10.0/MadeInC#.pdb
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/obj/Debug/net10.0/MadeInC#.GeneratedMSBuildEditorConfig.editorconfig
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/obj/Debug/net10.0/MadeInC#.AssemblyInfoInputs.cache
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/obj/Debug/net10.0/MadeInC#.AssemblyInfo.cs
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/obj/Debug/net10.0/MadeInC#.csproj.CoreCompileInputs.cache
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/obj/Debug/net10.0/MadeInC#.sourcelink.json
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/obj/Debug/net10.0/MadeInC#.dll
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/obj/Debug/net10.0/refint/MadeInC#.dll
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/obj/Debug/net10.0/MadeInC#.pdb
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/obj/Debug/net10.0/MadeInC#.genruntimeconfig.cache
+/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/obj/Debug/net10.0/ref/MadeInC#.dll

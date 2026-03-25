@@ -29,7 +29,7 @@ int main(void)
 
     enum AlgorithmTypes algorithm_type;
     printf("\n");
-    printf("Sorting algorithms (from slowest to fastest)\n");
+    printf("Sorting algorithms (from fastest to slowest)\n");
     printf("1) Insertion Sort\n");
     printf("2) Selection Sort\n");
     printf("3) Gnome Sort\n");

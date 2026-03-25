@@ -20,7 +20,7 @@ I wrote the code of the parts that I maintain myself. **I did not do** "vibe cod
 
 *According to my tests when I test with C#. (If you compare the sorting algorithms' speed in different languages, you might get a different result. For example, when I test with Java, Selection Sort was faster than Insertsion Sort but in C, C# and Python, Insertsion Sort was faster than Selection Sort. Also, I didn't compare any language's built-in sorter in this list.)
 
-**According to my tests when I use Insertsion Sort. (I used VS Code for testing. I compiled and ran the C files using the commands that has written in the made_in_c/README.md file.)
+**According to my tests when I use Insertsion Sort.
 
 ---
 
@@ -28,13 +28,11 @@ The code files' locations:
 
 The C files are in the made_in_c folder.
 
-The C# files are in the MadeInC#/MadeInCSharp folder.
+The C# files are in the MadeInC# folder.
 
-The Java files are in the MadeInJava/src folder.
+The Java files are in the MadeInJava folder.
 
 The Python files are in the made_in_python folder.
-
-(Use backward slashes if you are using the Windows file explorer.)
 
 ---
 

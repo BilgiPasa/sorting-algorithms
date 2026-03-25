@@ -22,7 +22,7 @@ class AlgorithmTypes(IntEnum):
 def main() -> None:
     algorithm_type: AlgorithmTypes
     print()
-    print("Sorting algorithms (from slowest to fastest)")
+    print("Sorting algorithms (from fastest to slowest)")
     print("1) Quick Sort")
     print("2) Merge Sort")
     print("3) Shell Sort")
