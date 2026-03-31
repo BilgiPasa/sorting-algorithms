@@ -1,7 +1,7 @@
 from array import array
 from enum import IntEnum
 from random import randint
-from sorting_algorithms import *
+from sorting_algorithms import is_sorted, quick_sort, merge_sort, shell_sort, insertsion_sort, selection_sort, gnome_sort, cocktail_shaker_sort, bubble_sort, sootage_sort, bozo_sort, bogo_sort
 from time import time
 
 class AlgorithmTypes(IntEnum):
@@ -17,7 +17,6 @@ class AlgorithmTypes(IntEnum):
     SOOTAGE_SORT = 9
     BOZO_SORT = 10
     BOGO_SORT = 11
-
 
 def main() -> None:
     algorithm_type: AlgorithmTypes

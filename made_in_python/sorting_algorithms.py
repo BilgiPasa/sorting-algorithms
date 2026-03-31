@@ -1,5 +1,4 @@
 from random import randint, shuffle
-import main
 
 # The input exceptions are handled at the main.py file.
 # So, these functions are assuming that the parameter inputs are non-negative integers or integer arrays.
@@ -111,7 +110,7 @@ def selection_sort(num_arr) -> None:
         j = index_of_min(num_arr, len(num_arr), i)
         num_arr[i], num_arr[j] = num_arr[j], num_arr[i] # Swapping elements
 
-def index_of_min(num_arr, length: int, start: int) -> None: # This is for Selection Sort
+def index_of_min(num_arr, length: int, start: int) -> int: # This is for Selection Sort
     min: int = start
 
     for i in range(start, length):
@@ -191,6 +190,3 @@ def bozo_sort(num_arr) -> None:
 def bogo_sort(num_arr) -> None:
     while not is_sorted(num_arr):
         shuffle(num_arr)
-
-if __name__ == "__main__":
-    main.main()

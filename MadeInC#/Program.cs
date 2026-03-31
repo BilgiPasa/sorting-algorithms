@@ -20,7 +20,7 @@ class Program
         BogoSort,
     }
 
-    static void Main(string[] args)
+    static void Main()
     {
         AlgorithmTypes algorithmType;
         Console.WriteLine();
@@ -193,8 +193,8 @@ class Program
             return;
         }
 
-        Random r = new Random();
-        Stopwatch s = new Stopwatch();
+        Random r = new(); // This is the short version of Random r = new Random();
+        Stopwatch s = new(); // This is the short version of Stopwatch s = new Stopwatch();
         Console.WriteLine("Starting to randomize the array.");
 
         for (int i = 0; i < numArr.Length; i++)
@@ -306,7 +306,7 @@ class Program
 
         //Console.WriteLine("[{0}]", string.Join(", ", numArr)); // To see the array after sorting
 
-        if (!SortingAlgorithms.isSorted(numArr))
+        if (!SortingAlgorithms.IsSorted(numArr))
         {
             Console.WriteLine("The sorting algorithm ran but the array is not fully sorted.");
             return;

@@ -5,7 +5,7 @@ public static class SortingAlgorithms
     // The input exceptions are handled at the Program class.
     // So, these functions are assuming that the parameter inputs are non-negative integers or integer arrays.
 
-    public static bool isSorted(int[] numArr) // To check if the array is sorted
+    public static bool IsSorted(int[] numArr) // To check if the array is sorted
     {
         for (int i = 1; i < numArr.Length; i++)
         {
@@ -252,7 +252,7 @@ public static class SortingAlgorithms
         int index1, index2;
         Random r = new Random();
 
-        while (!isSorted(numArr))
+        while (!IsSorted(numArr))
         {
             index1 = r.Next(numArr.Length);
             index2 = r.Next(numArr.Length);
@@ -264,7 +264,7 @@ public static class SortingAlgorithms
     {
         Random r = new Random();
 
-        while (!isSorted(numArr))
+        while (!IsSorted(numArr))
         {
             r.Shuffle(numArr);
         }
