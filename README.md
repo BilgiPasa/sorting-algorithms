@@ -33,7 +33,3 @@ The C# files are in the [MadeInC#](https://github.com/BilgiPasa/sorting-algorith
 The Java files are in the [MadeInJava](https://github.com/BilgiPasa/sorting-algorithms/tree/main/MadeInJava) folder.
 
 The Python files are in the [made_in_python](https://github.com/BilgiPasa/sorting-algorithms/tree/main/made_in_python) folder.
-
----
-
-This README has written by [BilgiPasa](https://github.com/BilgiPasa).
