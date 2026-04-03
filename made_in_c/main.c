@@ -12,7 +12,6 @@
 
 int get_int(int *num);
 
-// Note: returning 0 means the procces works as intended, returning 1 means there was a problem when running.
 int main(void)
 {
     enum AlgorithmTypes
@@ -45,7 +44,7 @@ int main(void)
     if (!ok || selected_algorithm >= SIZE || selected_algorithm < 0)
     {
         fprintf(stderr, "Couldn't understand the input. Aborting.\n");
-        return 1;
+        return EXIT_FAILURE;
     }
 
     algorithm_type = selected_algorithm;
@@ -71,7 +70,7 @@ int main(void)
 
         default:
             fprintf(stderr, "The algorithm type could not found. Aborting.\n");
-            return 1;
+            return EXIT_FAILURE;
     }
 
     int length;
@@ -80,18 +79,18 @@ int main(void)
     if (!ok) // If ok == 0, it gives an error.
     {
         fprintf(stderr, "Couldn't understand the input. Aborting.\n");
-        return 1;
+        return EXIT_FAILURE;
     }
 
     if (length == 0)
     {
         fprintf(stderr, "Don't make the array size as 0. Aborting.\n");
-        return 1;
+        return EXIT_FAILURE;
     }
     else if (length < 0)
     {
         fprintf(stderr, "Don't try to make the array size as a negative integer. Aborting.\n");
-        return 1;
+        return EXIT_FAILURE;
     }
 
     // if length > SIZE_MAX / sizeof(int)
@@ -100,7 +99,7 @@ int main(void)
     if ((size_t) length > SIZE_MAX / sizeof(int))
     {
         fprintf(stderr, "Given length causes size overflow. Aborting.\n");
-        return 1;
+        return EXIT_FAILURE;
     }
 
     int *num_arr = malloc(length * sizeof(int));
@@ -108,7 +107,7 @@ int main(void)
     if (!num_arr)
     {
         fprintf(stderr, "Memory allocation for array has failed. Aborting.\n");
-        return 1;
+        return EXIT_FAILURE;
     }
 
     printf("Starting to randomize the array.\n");
@@ -141,7 +140,7 @@ int main(void)
             break;
         
         case MERGE_SORT:
-            used_algorithm_type = "Merge sort";
+            used_algorithm_type = "Merge Sort";
             start = clock();
             merge_sort(num_arr, length);
             end = clock();
@@ -184,7 +183,7 @@ int main(void)
             {
                 fprintf(stderr, "You should not enter a number greater than %d in %s. Aborting.\n", RAND_MAX_GUARANTEED, used_algorithm_type);
                 free(num_arr); // free before returning
-                return 1;
+                return EXIT_FAILURE;
             }
 
             start = clock();
@@ -200,7 +199,7 @@ int main(void)
             {
                 fprintf(stderr, "You should not enter a number greater than %d in %s. Aborting.\n", RAND_MAX_GUARANTEED, used_algorithm_type);
                 free(num_arr); // free before returning
-                return 1;
+                return EXIT_FAILURE;
             }
 
             start = clock();
@@ -211,7 +210,7 @@ int main(void)
         default:
             fprintf(stderr, "The algorithm type could not found. Aborting.\n");
             free(num_arr); // free before returning
-            return 1;
+            return EXIT_FAILURE;
     }
 
     //print_arr(num_arr, length); // To see the array after sorting
@@ -220,13 +219,13 @@ int main(void)
     {
         fprintf(stderr, "The sorting algorithm ran but the array is not fully sorted.\n");
         free(num_arr); // free before returning
-        return 1;
+        return EXIT_FAILURE;
     }
 
     printf("%d random integers has been sorted in %f milliseconds using %s.\n", length, ((double)(end - start) / CLOCKS_PER_SEC) * 1000, used_algorithm_type);
     printf("\n");
     free(num_arr);
-    return 0;
+    return EXIT_SUCCESS;
 }
 
 /* Because C does not have try-catch, for a safe input system for C, bartu-g made this function. This function
