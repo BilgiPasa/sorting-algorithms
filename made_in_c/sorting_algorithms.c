@@ -1,6 +1,7 @@
 #include "sorting_algorithms.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 // The input exceptions are handled at the main.c file.
 // So, these functions are assuming that the parameter inputs are non-negative integers or integer arrays.
@@ -53,7 +54,43 @@ int compare(const void *elem1, const void *elem2) // This is for qsort (C's buil
 
 // TODO: IMPLEMENT QUICK SORT HERE.
 
-// TODO: IMPLEMENT MERGE SORT HERE.
+void merge_sort(int num_arr[], int length)
+{
+    int *temp = malloc(length * sizeof(int));
+    merge_sort_range(num_arr, temp, 0, length - 1);
+    free(temp);
+}
+
+void merge_sort_range(int num_arr[], int temp[], int low, int high)
+{
+    if (high <= low) return;
+
+    int mid = low + (high - low) / 2;
+
+    merge_sort_range(num_arr, temp, low, mid);
+    merge_sort_range(num_arr, temp, mid + 1, high);
+
+    merge(num_arr, temp, low, mid, high);
+}
+
+void merge(int num_arr[], int temp[], int low, int mid, int high)
+{
+    memcpy(temp + low, num_arr + low, sizeof(int) * (high - low + 1));
+
+    int i = low, j = mid + 1, k = low;
+
+    while (i <= mid && j <= high)
+    {
+        if (temp[i] <= temp[j]) num_arr[k++] = temp[i++];
+        else                    num_arr[k++] = temp[j++];
+    }
+
+    while (i <= mid)
+        num_arr[k++] = temp[i++];
+
+    while (j <= high)
+        num_arr[k++] = temp[j++];
+}
 
 // TODO: IMPLEMENT SHELL SORT HERE.
 

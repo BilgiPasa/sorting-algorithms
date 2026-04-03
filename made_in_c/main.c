@@ -18,6 +18,7 @@ int main(void)
     enum AlgorithmTypes
     {
         BUILT_IN,
+        MERGE_SORT,
         INSERTION_SORT,
         SELECTION_SORT,
         GNOME_SORT,
@@ -30,12 +31,13 @@ int main(void)
     enum AlgorithmTypes algorithm_type;
     printf("\n");
     printf("Sorting algorithms (from fastest to slowest)\n");
-    printf("1) Insertion Sort\n");
-    printf("2) Selection Sort\n");
-    printf("3) Gnome Sort\n");
-    printf("4) Bubble Sort\n");
-    printf("5) Bozo Sort\n");
-    printf("6) Bogo Sort\n");
+    printf("1) Merge Sort\n");
+    printf("2) Insertion Sort\n");
+    printf("3) Selection Sort\n");
+    printf("4) Gnome Sort\n");
+    printf("5) Bubble Sort\n");
+    printf("6) Bozo Sort\n");
+    printf("7) Bogo Sort\n");
     printf("Select an algorithm: ");
     int selected_algorithm;
     int ok = get_int(&selected_algorithm); // The "ok" acts as a boolean.
@@ -51,6 +53,7 @@ int main(void)
     switch (algorithm_type)
     {
         case BUILT_IN:
+        case MERGE_SORT:
             printf("Enter the array size (12345678 is recommended): ");
             break;
 
@@ -134,6 +137,13 @@ int main(void)
             used_algorithm_type = "C's built-in sorter";
             start = clock();
             qsort(num_arr, length, sizeof(int), compare);
+            end = clock();
+            break;
+        
+        case MERGE_SORT:
+            used_algorithm_type = "Merge sort";
+            start = clock();
+            merge_sort(num_arr, length);
             end = clock();
             break;
 
