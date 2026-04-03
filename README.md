@@ -2,7 +2,7 @@
 
 These are sorting algorithms in different programming languages.
 
-This repository is focused on non-negative integer sorting algorithms to keep it simple. (Specifically, signed 32 bit integers but I only use the non-negative integers.)
+This repository is focused on non-negative integer sorting algorithms to keep it simple. (Specifically, signed 32 bit integers but only non-negative integers are used.)
 
 This project is open source and licensed with the MIT licence.
 
@@ -16,7 +16,7 @@ C#, Java and Python is implemented and mostly maintained by me (BilgiPasa).
 
 Speed comparison of the languages (from fastest to slowest**): C (GCC 15), Java (25), C# (.Net 10), Python (3.14).
 
-I wrote the code of the parts that I maintain myself. **I did not do** "vibe coding". I learned these algorithms from websites (for example geeksforgeeks) and videos (for example Bro Code and udiprod channels' videos).
+I wrote the code of the parts that I maintain myself. **I did not do** "vibe coding". I learned these algorithms from websites (for example geeksforgeeks), videos (for example Bro Code and udiprod channels' videos) and from the data structures and algorithms class in the university.
 
 *According to my tests when I test with C#. (If you compare the sorting algorithms' speed in different languages, you might get a different result. For example, when I test with Java, Selection Sort was faster than Insertsion Sort but in C, C# and Python, Insertsion Sort was faster than Selection Sort. Also, I didn't compare any language's built-in sorter in this list.)
 
