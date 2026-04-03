@@ -10,9 +10,9 @@ Implemented sorting algorithms (from fastest to slowest*): Quick Sort, Merge Sor
 
 Implemented languages: C, C#, Java, Python.
 
-C is implemented and mostly maintained by bartu-g. Thank you for contributing.
+C is implemented and mostly maintained by [bartu-g](https://github.com/bartu-g). Thank you for contributing.
 
-C#, Java and Python is implemented and mostly maintained by me (BilgiPasa).
+C#, Java and Python are implemented and mostly maintained by me ([BilgiPasa](https://github.com/BilgiPasa)).
 
 Speed comparison of the languages (from fastest to slowest**): C (GCC 15), Java (25), C# (.Net 10), Python (3.14).
 
@@ -26,14 +26,14 @@ I wrote the code of the parts that I maintain myself. **I did not do** "vibe cod
 
 The code files' locations:
 
-The C files are in the made_in_c folder.
+The C files are in the [made_in_c](https://github.com/BilgiPasa/sorting-algorithms/tree/main/made_in_c) folder.
 
-The C# files are in the MadeInC# folder.
+The C# files are in the [MadeInC#](https://github.com/BilgiPasa/sorting-algorithms/tree/main/MadeInC%23) folder.
 
-The Java files are in the MadeInJava folder.
+The Java files are in the [MadeInJava](https://github.com/BilgiPasa/sorting-algorithms/tree/main/MadeInJava) folder.
 
-The Python files are in the made_in_python folder.
+The Python files are in the [made_in_python](https://github.com/BilgiPasa/sorting-algorithms/tree/main/made_in_python) folder.
 
 ---
 
-This README has written by BilgiPasa.
+This README has written by [BilgiPasa](https://github.com/BilgiPasa).
