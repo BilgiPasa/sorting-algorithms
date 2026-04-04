@@ -138,7 +138,7 @@ int main(void)
             qsort(num_arr, length, sizeof(int), compare);
             end = clock();
             break;
-        
+
         case MERGE_SORT:
             used_algorithm_type = "Merge Sort";
             start = clock();
@@ -177,6 +177,7 @@ int main(void)
 
         case BOZO_SORT:
             used_algorithm_type = "Bozo Sort";
+
             // In Linux, RAND_MAX is INT_MAX. In Windows, RAND_MAX is RAND_MAX_GUARANTEED (32767).
             // Because of that, don't enter a number greater than RAND_MAX_GUARANTEED (which you shouldn't anyways).
             if (length > RAND_MAX_GUARANTEED)
@@ -193,6 +194,7 @@ int main(void)
 
         case BOGO_SORT:
             used_algorithm_type = "Bogo Sort";
+
             // In Linux, RAND_MAX is INT_MAX. In Windows, RAND_MAX is RAND_MAX_GUARANTEED (32767).
             // Because of that, don't enter a number greater than RAND_MAX_GUARANTEED (which you shouldn't anyways).
             if (length > RAND_MAX_GUARANTEED)

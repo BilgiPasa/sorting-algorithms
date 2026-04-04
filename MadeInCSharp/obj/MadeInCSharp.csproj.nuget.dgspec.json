@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/MadeInC#.csproj": {}
+    "/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInCSharp/MadeInCSharp.csproj": {}
   },
   "projects": {
-    "/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/MadeInC#.csproj": {
+    "/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInCSharp/MadeInCSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/MadeInC#.csproj",
-        "projectName": "MadeInC#",
-        "projectPath": "/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/MadeInC#.csproj",
+        "projectUniqueName": "/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInCSharp/MadeInCSharp.csproj",
+        "projectName": "MadeInCSharp",
+        "projectPath": "/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInCSharp/MadeInCSharp.csproj",
         "packagesPath": "/home/bilgipasa/.nuget/packages/",
-        "outputPath": "/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInC#/obj/",
+        "outputPath": "/home/bilgipasa/Desktop/GitHub/sorting-algorithms/MadeInCSharp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/bilgipasa/.nuget/NuGet/NuGet.Config"

@@ -1,0 +1,14 @@
+# For made_in_c
+made_in_c/main
+made_in_c/main.exe
+
+# For MadeInCSharp
+MadeInCSharp/bin/
+
+# For MadeInJava
+MadeInJava/Main.class
+MadeInJava/Main$AlgorithmTypes.class
+MadeInJava/SortingAlgorithms.class
+
+# For made_in_python
+made_in_python/__pycache__/
