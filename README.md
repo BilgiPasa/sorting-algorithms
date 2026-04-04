@@ -28,7 +28,7 @@ The code files' locations:
 
 The C files are in the [made_in_c](https://github.com/BilgiPasa/sorting-algorithms/tree/main/made_in_c) folder.
 
-The C# files are in the [MadeInC#](https://github.com/BilgiPasa/sorting-algorithms/tree/main/MadeInC%23) folder.
+The C# files are in the [MadeInCSharp](https://github.com/BilgiPasa/sorting-algorithms/tree/main/MadeInCSharp) folder.
 
 The Java files are in the [MadeInJava](https://github.com/BilgiPasa/sorting-algorithms/tree/main/MadeInJava) folder.
 
