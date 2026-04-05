@@ -1,4 +1,4 @@
-Use this command in this directory to run the C# code:
+Use this command in this directory to run the C# files:
     dotnet run
 
-If you are going to run the C# code, make sure that you have .NET 10 SDK installed.
+If you are going to run the C# files, make sure that you have .NET 10 SDK installed.
