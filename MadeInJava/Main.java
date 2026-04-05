@@ -30,7 +30,6 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        AlgorithmTypes algorithmType;
         System.out.println();
         System.out.println("Sorting algorithms (from fastest to slowest)");
         System.out.println("1) Quick Sort");
@@ -55,65 +54,20 @@ public class Main {
             return;
         }
 
-        if (selectedAlgorithm == AlgorithmTypes.BUILT_IN.index) {
-            algorithmType = AlgorithmTypes.BUILT_IN;
-        } else if (selectedAlgorithm == AlgorithmTypes.QUICK_SORT.index) {
-            algorithmType = AlgorithmTypes.QUICK_SORT;
-        } else if (selectedAlgorithm == AlgorithmTypes.MERGE_SORT.index) {
-            algorithmType = AlgorithmTypes.MERGE_SORT;
-        } else if (selectedAlgorithm == AlgorithmTypes.SHELL_SORT.index) {
-            algorithmType = AlgorithmTypes.SHELL_SORT;
-        } else if (selectedAlgorithm == AlgorithmTypes.INSERTSION_SORT.index) {
-            algorithmType = AlgorithmTypes.INSERTSION_SORT;
-        } else if (selectedAlgorithm == AlgorithmTypes.SELECTION_SORT.index) {
-            algorithmType = AlgorithmTypes.SELECTION_SORT;
-        } else if (selectedAlgorithm == AlgorithmTypes.GNOME_SORT.index) {
-            algorithmType = AlgorithmTypes.GNOME_SORT;
-        } else if (selectedAlgorithm == AlgorithmTypes.COCKTAIL_SHAKER_SORT.index) {
-            algorithmType = AlgorithmTypes.COCKTAIL_SHAKER_SORT;
-        } else if (selectedAlgorithm == AlgorithmTypes.BUBBLE_SORT.index) {
-            algorithmType = AlgorithmTypes.BUBBLE_SORT;
+        /* I did not use switch-case to compare integers with the enum indexes
+        because of the "case expressions must be constant expressions" warning. */
+        if (selectedAlgorithm == AlgorithmTypes.BUILT_IN.index || selectedAlgorithm == AlgorithmTypes.QUICK_SORT.index || selectedAlgorithm == AlgorithmTypes.MERGE_SORT.index || selectedAlgorithm == AlgorithmTypes.SHELL_SORT.index) {
+            System.out.print("Enter the array size (12345678 is recommended): ");
+        } else if (selectedAlgorithm == AlgorithmTypes.INSERTSION_SORT.index || selectedAlgorithm == AlgorithmTypes.SELECTION_SORT.index || selectedAlgorithm == AlgorithmTypes.GNOME_SORT.index || selectedAlgorithm == AlgorithmTypes.COCKTAIL_SHAKER_SORT.index || selectedAlgorithm == AlgorithmTypes.BUBBLE_SORT.index) {
+            System.out.print("Enter the array size (55555 is recommended): ");
         } else if (selectedAlgorithm == AlgorithmTypes.SOOTAGE_SORT.index) {
-            algorithmType = AlgorithmTypes.SOOTAGE_SORT;
-        } else if (selectedAlgorithm == AlgorithmTypes.BOZO_SORT.index) {
-            algorithmType = AlgorithmTypes.BOZO_SORT;
-        } else if (selectedAlgorithm == AlgorithmTypes.BOGO_SORT.index) {
-            algorithmType = AlgorithmTypes.BOGO_SORT;
+            System.out.print("Enter the array size (3223 is recommended): ");
+        } else if (selectedAlgorithm == AlgorithmTypes.BOZO_SORT.index || selectedAlgorithm == AlgorithmTypes.BOGO_SORT.index) {
+            System.out.print("Enter the array size (maximum 12 is recommended): ");
         } else {
             System.out.println("Couldn't understand the input. Aborting.");
             s.close();
             return;
-        }
-
-        switch (algorithmType) {
-            case AlgorithmTypes.BUILT_IN:
-            case AlgorithmTypes.QUICK_SORT:
-            case AlgorithmTypes.MERGE_SORT:
-            case AlgorithmTypes.SHELL_SORT:
-                System.out.print("Enter the array size (12345678 is recommended): ");
-                break;
-
-            case AlgorithmTypes.INSERTSION_SORT:
-            case AlgorithmTypes.SELECTION_SORT:
-            case AlgorithmTypes.GNOME_SORT:
-            case AlgorithmTypes.COCKTAIL_SHAKER_SORT:
-            case AlgorithmTypes.BUBBLE_SORT:
-                System.out.print("Enter the array size (55555 is recommended): ");
-                break;
-
-            case AlgorithmTypes.SOOTAGE_SORT:
-                System.out.print("Enter the array size (3223 is recommended): ");
-                break;
-
-            case AlgorithmTypes.BOZO_SORT:
-            case AlgorithmTypes.BOGO_SORT:
-                System.out.print("Enter the array size (maximum 12 is recommended): ");
-                break;
-
-            default:
-                System.out.println("The algorithm type could not found. Aborting.");
-                s.close();
-                return;
         }
 
         int length;
@@ -164,95 +118,71 @@ public class Main {
         String usedAlgorithmType;
         System.out.println("Starting to sort the array.");
 
-        switch (algorithmType)
-        {
-            case AlgorithmTypes.BUILT_IN:
-                usedAlgorithmType = "Java's built-in sorter";
-                startTime = System.nanoTime();
-                Arrays.sort(numArr);
-                endTime = System.nanoTime();
-                break;
-
-            case AlgorithmTypes.QUICK_SORT:
-                usedAlgorithmType = "Quick Sort";
-                startTime = System.nanoTime();
-                SortingAlgorithms.quickSort(numArr, 0, numArr.length - 1);
-                endTime = System.nanoTime();
-                break;
-
-            case AlgorithmTypes.MERGE_SORT:
-                usedAlgorithmType = "Merge Sort";
-                startTime = System.nanoTime();
-                SortingAlgorithms.mergeSort(numArr);
-                endTime = System.nanoTime();
-                break;
-
-            case AlgorithmTypes.SHELL_SORT:
-                usedAlgorithmType = "Shell Sort";
-                startTime = System.nanoTime();
-                SortingAlgorithms.shellSort(numArr);
-                endTime = System.nanoTime();
-                break;
-
-            case AlgorithmTypes.INSERTSION_SORT:
-                usedAlgorithmType = "Insertsion Sort";
-                startTime = System.nanoTime();
-                SortingAlgorithms.insertsionSort(numArr);
-                endTime = System.nanoTime();
-                break;
-
-            case AlgorithmTypes.SELECTION_SORT:
-                usedAlgorithmType = "Selection Sort";
-                startTime = System.nanoTime();
-                SortingAlgorithms.selectionSort(numArr);
-                endTime = System.nanoTime();
-                break;
-
-            case AlgorithmTypes.GNOME_SORT:
-                usedAlgorithmType = "Gnome Sort";
-                startTime = System.nanoTime();
-                SortingAlgorithms.gnomeSort(numArr);
-                endTime = System.nanoTime();
-                break;
-
-            case AlgorithmTypes.COCKTAIL_SHAKER_SORT:
-                usedAlgorithmType = "Cocktail Shaker Sort";
-                startTime = System.nanoTime();
-                SortingAlgorithms.cocktailShakerSort(numArr);
-                endTime = System.nanoTime();
-                break;
-
-            case AlgorithmTypes.BUBBLE_SORT:
-                usedAlgorithmType = "Bubble Sort";
-                startTime = System.nanoTime();
-                SortingAlgorithms.bubbleSort(numArr);
-                endTime = System.nanoTime();
-                break;
-
-            case AlgorithmTypes.SOOTAGE_SORT:
-                usedAlgorithmType = "Sootage Sort";
-                startTime = System.nanoTime();
-                SortingAlgorithms.sootageSort(numArr, 0, numArr.length - 1);
-                endTime = System.nanoTime();
-                break;
-
-            case AlgorithmTypes.BOZO_SORT:
-                usedAlgorithmType = "Bozo Sort";
-                startTime = System.nanoTime();
-                SortingAlgorithms.bozoSort(numArr);
-                endTime = System.nanoTime();
-                break;
-
-            case AlgorithmTypes.BOGO_SORT:
-                usedAlgorithmType = "Bogo Sort";
-                startTime = System.nanoTime();
-                SortingAlgorithms.bogoSort(numArr);
-                endTime = System.nanoTime();
-                break;
-
-            default:
-                System.out.println("The algorithm type could not found. Aborting.");
-                return;
+        /* I did not use switch-case to compare integers with the enum indexes
+        because of the "case expressions must be constant expressions" warning. */
+        if (selectedAlgorithm == AlgorithmTypes.BUILT_IN.index) {
+            usedAlgorithmType = "Java's built-in sorter";
+            startTime = System.nanoTime();
+            Arrays.sort(numArr);
+            endTime = System.nanoTime();
+        } else if (selectedAlgorithm == AlgorithmTypes.QUICK_SORT.index) {
+            usedAlgorithmType = "Quick Sort";
+            startTime = System.nanoTime();
+            SortingAlgorithms.quickSort(numArr, 0, numArr.length - 1);
+            endTime = System.nanoTime();
+        } else if (selectedAlgorithm == AlgorithmTypes.MERGE_SORT.index) {
+            usedAlgorithmType = "Merge Sort";
+            startTime = System.nanoTime();
+            SortingAlgorithms.mergeSort(numArr);
+            endTime = System.nanoTime();
+        } else if (selectedAlgorithm == AlgorithmTypes.SHELL_SORT.index) {
+            usedAlgorithmType = "Shell Sort";
+            startTime = System.nanoTime();
+            SortingAlgorithms.shellSort(numArr);
+            endTime = System.nanoTime();
+        } else if (selectedAlgorithm == AlgorithmTypes.INSERTSION_SORT.index) {
+            usedAlgorithmType = "Insertsion Sort";
+            startTime = System.nanoTime();
+            SortingAlgorithms.insertsionSort(numArr);
+            endTime = System.nanoTime();
+        } else if (selectedAlgorithm == AlgorithmTypes.SELECTION_SORT.index) {
+            usedAlgorithmType = "Selection Sort";
+            startTime = System.nanoTime();
+            SortingAlgorithms.selectionSort(numArr);
+            endTime = System.nanoTime();
+        } else if (selectedAlgorithm == AlgorithmTypes.GNOME_SORT.index) {
+            usedAlgorithmType = "Gnome Sort";
+            startTime = System.nanoTime();
+            SortingAlgorithms.gnomeSort(numArr);
+            endTime = System.nanoTime();
+        } else if (selectedAlgorithm == AlgorithmTypes.COCKTAIL_SHAKER_SORT.index) {
+            usedAlgorithmType = "Cocktail Shaker Sort";
+            startTime = System.nanoTime();
+            SortingAlgorithms.cocktailShakerSort(numArr);
+            endTime = System.nanoTime();
+        } else if (selectedAlgorithm == AlgorithmTypes.BUBBLE_SORT.index) {
+            usedAlgorithmType = "Bubble Sort";
+            startTime = System.nanoTime();
+            SortingAlgorithms.bubbleSort(numArr);
+            endTime = System.nanoTime();
+        } else if (selectedAlgorithm == AlgorithmTypes.SOOTAGE_SORT.index) {
+            usedAlgorithmType = "Sootage Sort";
+            startTime = System.nanoTime();
+            SortingAlgorithms.sootageSort(numArr, 0, numArr.length - 1);
+            endTime = System.nanoTime();
+        } else if (selectedAlgorithm == AlgorithmTypes.BOZO_SORT.index) {
+            usedAlgorithmType = "Bozo Sort";
+            startTime = System.nanoTime();
+            SortingAlgorithms.bozoSort(numArr);
+            endTime = System.nanoTime();
+        } else if (selectedAlgorithm == AlgorithmTypes.BOGO_SORT.index) {
+            usedAlgorithmType = "Bogo Sort";
+            startTime = System.nanoTime();
+            SortingAlgorithms.bogoSort(numArr);
+            endTime = System.nanoTime();
+        } else {
+            System.out.println("A problem occured about the 'selectedAlgorithm' variable. Aborting.");
+            return;
         }
 
         //System.out.println(Arrays.toString(numArr)); // To see the array after sorting
