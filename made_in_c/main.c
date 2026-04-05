@@ -27,7 +27,6 @@ int main(void)
         SIZE
     };
 
-    enum AlgorithmTypes algorithm_type;
     printf("\n");
     printf("Sorting algorithms (from fastest to slowest)\n");
     printf("1) Merge Sort\n");
@@ -47,9 +46,7 @@ int main(void)
         return EXIT_FAILURE;
     }
 
-    algorithm_type = selected_algorithm;
-
-    switch (algorithm_type)
+    switch (selected_algorithm)
     {
         case BUILT_IN:
         case MERGE_SORT:
@@ -130,7 +127,7 @@ int main(void)
     const char *used_algorithm_type;
     printf("Starting to sort the array.\n");
 
-    switch (algorithm_type)
+    switch (selected_algorithm)
     {
         case BUILT_IN:
             used_algorithm_type = "C's built-in sorter";
@@ -210,7 +207,7 @@ int main(void)
             break;
 
         default:
-            fprintf(stderr, "The algorithm type could not found. Aborting.\n");
+            fprintf(stderr, "The 'selected_algorithm' variable has a problem. Aborting.\n");
             free(num_arr); // free before returning
             return EXIT_FAILURE;
     }
