@@ -155,7 +155,7 @@ class Program
 
         Console.WriteLine("The array has randomized.");
         //Console.WriteLine("[{0}]", string.Join(", ", numArr)); // To see the array before sorting
-        string usedAlgorithmType = "";
+        string usedAlgorithmType;
         Console.WriteLine("Starting to sort the array.");
 
         switch (selectedAlgorithm)
@@ -243,6 +243,10 @@ class Program
                 SortingAlgorithms.BogoSort(numArr);
                 s.Stop();
                 break;
+
+            default:
+                Console.WriteLine("The 'selectedAlgorithm' variable has a problem. Aborting.");
+                return;
         }
 
         //Console.WriteLine("[{0}]", string.Join(", ", numArr)); // To see the array after sorting

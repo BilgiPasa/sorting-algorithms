@@ -115,7 +115,7 @@ public class Main {
         System.out.println("The array has randomized.");
         //System.out.println(Arrays.toString(numArr)); // To see the array before sorting
         long startTime = 0, endTime = 0;
-        String usedAlgorithmType = "";
+        String usedAlgorithmType;
         System.out.println("Starting to sort the array.");
 
         /* I did not use switch-case to compare integers with the enum indexes
@@ -180,6 +180,9 @@ public class Main {
             startTime = System.nanoTime();
             SortingAlgorithms.bogoSort(numArr);
             endTime = System.nanoTime();
+        } else {
+            System.out.println("The 'selectedAlgorithm' variable has a problem. Aborting.");
+            return;
         }
 
         //System.out.println(Arrays.toString(numArr)); // To see the array after sorting
