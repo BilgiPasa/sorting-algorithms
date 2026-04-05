@@ -4,6 +4,7 @@ made_in_c/main.exe
 
 # For MadeInCSharp
 MadeInCSharp/bin/
+MadeInCSharp/obj/Debug/
 
 # For MadeInJava
 MadeInJava/Main.class
