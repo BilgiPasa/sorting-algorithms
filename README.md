@@ -16,7 +16,7 @@ C#, Java and Python are implemented and mostly maintained by [BilgiPasa](https:/
 
 Speed comparison of the languages (from fastest to slowest**): C (GCC 15), Java (25), C# (.Net 10), Python (3.14).
 
-BilgiPasa and bartu-g wrote the code of the parts that they maintain. **They did not do** "vibe coding".
+BilgiPasa and bartu-g wrote the code of the parts that they maintain. **We did not do** "vibe coding".
 
 ---
 
