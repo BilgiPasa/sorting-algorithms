@@ -70,10 +70,8 @@ public class SortingAlgorithms {
 
     static void merge(int[] numArr, int[] temp, int low, int mid, int high) { // This is for Merge Sort
         int i;
-
-        for (i = low; i <= high; i++) {
-            temp[i] = numArr[i];
-        }
+        
+        System.arraycopy(numArr, low, temp, low, (high - low + 1));
 
         int k = i = low; // int k = low; i = low;
         int j = mid + 1;
