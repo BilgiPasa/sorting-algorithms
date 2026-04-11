@@ -74,8 +74,7 @@ public static class SortingAlgorithms
         }
 
         i = start;
-        int j = mid + 1;
-        int k = start;
+        int j = mid + 1, k = start;
 
         while (i <= mid && j <= end) {
             if (temp[i] <= temp[j]) {

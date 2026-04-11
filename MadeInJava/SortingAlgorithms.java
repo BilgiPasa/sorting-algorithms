@@ -71,10 +71,7 @@ public class SortingAlgorithms {
     static void merge(int[] numArr, int[] temp, int start, int mid, int end) { // For Merge Sort
         // Copying some part of the numArr to temp
         System.arraycopy(numArr, start, temp, start, (end - start + 1));
-
-        int i = start;
-        int j = mid + 1;
-        int k = start;
+        int i = start, j = mid + 1, k = start;
 
         while (i <= mid && j <= end) {
             if (temp[i] <= temp[j]) {
