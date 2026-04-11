@@ -54,30 +54,30 @@ public static class SortingAlgorithms
         MergeSortRange(numArr, temp, 0, numArr.Length - 1);
     }
 
-    static void MergeSortRange(int[] numArr, int[] temp, int low, int high) { // For Merge Sort
-        if (high <= low) {
+    static void MergeSortRange(int[] numArr, int[] temp, int start, int end) { // For Merge Sort
+        if (end <= start) {
             return;
         }
 
-        int mid = low + (high - low) / 2;
-        MergeSortRange(numArr, temp, low, mid);
-        MergeSortRange(numArr, temp, mid + 1, high);
-        Merge(numArr, temp, low, mid, high);
+        int mid = start + (end - start) / 2;
+        MergeSortRange(numArr, temp, start, mid);
+        MergeSortRange(numArr, temp, mid + 1, end);
+        Merge(numArr, temp, start, mid, end);
     }
 
-    static void Merge(int[] numArr, int[] temp, int low, int mid, int high) { // For Merge Sort
+    static void Merge(int[] numArr, int[] temp, int start, int mid, int end) { // For Merge Sort
         int i;
 
         // Copying some part of the numArr to temp
-        for (i = low; i <= high; i++) {
+        for (i = start; i <= end; i++) {
             temp[i] = numArr[i];
         }
 
-        i = low;
+        i = start;
         int j = mid + 1;
-        int k = low;
+        int k = start;
 
-        while (i <= mid && j <= high) {
+        while (i <= mid && j <= end) {
             if (temp[i] <= temp[j]) {
                 numArr[k++] = temp[i++]; // numArr[k] = temp[i]; k += 1; i += 1;
             } else {

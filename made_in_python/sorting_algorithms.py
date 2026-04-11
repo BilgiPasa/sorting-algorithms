@@ -37,27 +37,27 @@ def merge_sort(num_list: list[int]) -> None:
     temp: list[int] = [0] * len(num_list)
     merge_sort_range(num_list, temp, 0, len(num_list) - 1)
 
-def merge_sort_range(num_list: list[int], temp: list[int], low: int, high: int) -> None: # For Merge Sort
-    if high <= low:
+def merge_sort_range(num_list: list[int], temp: list[int], start: int, end: int) -> None: # For Merge Sort
+    if end <= start:
         return
 
-    mid: int = low + (high - low) // 2
-    merge_sort_range(num_list, temp, low, mid)
-    merge_sort_range(num_list, temp, mid + 1, high)
-    merge(num_list, temp, low, mid, high)
+    mid: int = start + (end - start) // 2
+    merge_sort_range(num_list, temp, start, mid)
+    merge_sort_range(num_list, temp, mid + 1, end)
+    merge(num_list, temp, start, mid, end)
 
-def merge(num_list: list[int], temp: list[int], low: int, mid: int, high: int) -> None: # For Merge Sort
+def merge(num_list: list[int], temp: list[int], start: int, mid: int, end: int) -> None: # For Merge Sort
     i: int
 
     # Copying some part of the num_list to temp
-    for i in range(low, high + 1):
+    for i in range(start, end + 1): # end + 1 to make the end included
         temp[i] = num_list[i]
 
-    i = low
-    k: int = low
+    i = start
+    k: int = start
     j: int = mid + 1
 
-    while i <= mid and j <= high:
+    while i <= mid and j <= end:
         if temp[i] <= temp[j]:
             num_list[k] = temp[i]
             k += 1

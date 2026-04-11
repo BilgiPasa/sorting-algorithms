@@ -57,26 +57,26 @@ public class SortingAlgorithms {
         mergeSortRange(numArr, temp, 0, numArr.length - 1);
     }
 
-    static void mergeSortRange(int[] numArr, int[] temp, int low, int high) { // For Merge Sort
-        if (high <= low) {
+    static void mergeSortRange(int[] numArr, int[] temp, int start, int end) { // For Merge Sort
+        if (end <= start) {
             return;
         }
 
-        int mid = low + (high - low) / 2;
-        mergeSortRange(numArr, temp, low, mid);
-        mergeSortRange(numArr, temp, mid + 1, high);
-        merge(numArr, temp, low, mid, high);
+        int mid = start + (end - start) / 2;
+        mergeSortRange(numArr, temp, start, mid);
+        mergeSortRange(numArr, temp, mid + 1, end);
+        merge(numArr, temp, start, mid, end);
     }
 
-    static void merge(int[] numArr, int[] temp, int low, int mid, int high) { // For Merge Sort
+    static void merge(int[] numArr, int[] temp, int start, int mid, int end) { // For Merge Sort
         // Copying some part of the numArr to temp
-        System.arraycopy(numArr, low, temp, low, (high - low + 1));
+        System.arraycopy(numArr, start, temp, start, (end - start + 1));
 
-        int i = low;
+        int i = start;
         int j = mid + 1;
-        int k = low;
+        int k = start;
 
-        while (i <= mid && j <= high) {
+        while (i <= mid && j <= end) {
             if (temp[i] <= temp[j]) {
                 numArr[k++] = temp[i++]; // numArr[k] = temp[i]; k += 1; i += 1;
             } else {

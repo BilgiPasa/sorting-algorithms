@@ -70,26 +70,26 @@ int merge_sort(int num_arr[], int length)
     return 1;
 }
 
-void merge_sort_range(int num_arr[], int temp[], int low, int high) // For Merge Sort
+void merge_sort_range(int num_arr[], int temp[], int start, int end) // For Merge Sort
 {
-    if (high <= low) return;
+    if (end <= start) return;
 
-    int mid = low + (high - low) / 2;
+    int mid = start + (end - start) / 2;
 
-    merge_sort_range(num_arr, temp, low, mid);
-    merge_sort_range(num_arr, temp, mid + 1, high);
+    merge_sort_range(num_arr, temp, start, mid);
+    merge_sort_range(num_arr, temp, mid + 1, end);
 
-    merge(num_arr, temp, low, mid, high);
+    merge(num_arr, temp, start, mid, end);
 }
 
-void merge(int num_arr[], int temp[], int low, int mid, int high) // For Merge Sort
+void merge(int num_arr[], int temp[], int start, int mid, int end) // For Merge Sort
 {
     // Copying some part of the num_arr to temp
-    memcpy(temp + low, num_arr + low, sizeof(int) * (high - low + 1));
+    memcpy(temp + start, num_arr + start, sizeof(int) * (end - start + 1));
 
-    int i = low, j = mid + 1, k = low;
+    int i = start, j = mid + 1, k = start;
 
-    while (i <= mid && j <= high)
+    while (i <= mid && j <= end)
     {
         if (temp[i] <= temp[j]) num_arr[k++] = temp[i++]; // num_arr[k] = temp[i]; k += 1; i += 1;
         else                    num_arr[k++] = temp[j++]; // num_arr[k] = temp[j]; k += 1; j += 1;
@@ -98,7 +98,7 @@ void merge(int num_arr[], int temp[], int low, int mid, int high) // For Merge S
     while (i <= mid)
         num_arr[k++] = temp[i++]; // num_arr[k] = temp[i]; k += 1; i += 1;
 
-    while (j <= high)
+    while (j <= end)
         num_arr[k++] = temp[j++]; // num_arr[k] = temp[j]; k += 1; j += 1;
 }
 
