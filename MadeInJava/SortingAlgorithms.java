@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Random;
 
 public class SortingAlgorithms {
@@ -54,34 +53,46 @@ public class SortingAlgorithms {
     }
 
     public static void mergeSort(int[] numArr) {
-        if (numArr.length < 2) {
+        int[] temp = new int[numArr.length];
+        mergeSortRange(numArr, temp, 0, numArr.length - 1);
+    }
+
+    static void mergeSortRange(int[] numArr, int[] temp, int low, int high) { // This is for Merge Sort
+        if (high <= low) {
             return;
         }
 
-        int middle = numArr.length / 2;
-        int[] leftArr = Arrays.copyOfRange(numArr, 0, middle); // Copying the numArr's first half to the leftArr
-        int[] rightArr = Arrays.copyOfRange(numArr, middle, numArr.length); // Copying the numArr's second half to the rightArr
-        mergeSort(leftArr);
-        mergeSort(rightArr);
-        merge(numArr, leftArr, rightArr);
+        int mid = low + (high - low) / 2;
+        mergeSortRange(numArr, temp, low, mid);
+        mergeSortRange(numArr, temp, mid + 1, high);
+        merge(numArr, temp, low, mid, high);
     }
 
-    static void merge(int[] numArr, int[] leftArr, int[] rightArr) { // This is for Merge Sort
-        int j = 0, k = 0;
+    static void merge(int[] numArr, int[] temp, int low, int mid, int high) { // This is for Merge Sort
+        int i;
 
-		for (int i = 0; i < numArr.length; i++) {
-		    if (j >= leftArr.length) {
-		        numArr[i] = rightArr[k++]; // This means numArr[i] = rightArr[k]; k += 1;
-		    } else if (k >= rightArr.length) {
-		        numArr[i] = leftArr[j++]; // This means numArr[i] = leftArr[j]; j += 1;
-		    } else {
-		        if (leftArr[j] < rightArr[k]) {
-		            numArr[i] = leftArr[j++]; // This means numArr[i] = leftArr[j]; j += 1;
-		        } else {
-		            numArr[i] = rightArr[k++]; // This means numArr[i] = rightArr[k]; k += 1;
-		        }
-		    }
-		}
+        for (i = low; i <= high; i++) {
+            temp[i] = numArr[i];
+        }
+
+        int k = i = low; // int k = low; i = low;
+        int j = mid + 1;
+
+        while (i <= mid && j <= high) {
+            if (temp[i] <= temp[j]) {
+                numArr[k++] = temp[i++]; // numArr[k] = temp[i]; k += 1; i += 1;
+            } else {
+                numArr[k++] = temp[j++]; // numArr[k] = temp[j]; k += 1; j += 1;
+            }
+        }
+
+        while (i <= mid) {
+            numArr[k++] = temp[i++]; // numArr[k] = temp[i]; k += 1; i += 1;
+        }
+
+        while (j <= mid) {
+            numArr[k++] = temp[j++]; // numArr[k] = temp[j]; k += 1; j += 1;
+        }
     }
 
     public static void shellSort(int[] numArr) {
@@ -199,7 +210,7 @@ public class SortingAlgorithms {
             swapElements(numArr, start, end);
         }
 
-        if (end - start > 1) { // This means if (array size > 2)
+        if (end - start > 1) { // if (array size > 2)
             int oneThird = (end - start + 1) / 3;
             sootageSort(numArr, start, end - oneThird);
             sootageSort(numArr, start + oneThird, end);
