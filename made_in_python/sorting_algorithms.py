@@ -38,7 +38,7 @@ def move_elements_and_return_pivot(num_list: list[int], start: int, end: int) ->
                 break
 
         while True:
-            j -= 1
+            j -= 1 # I can't do --j in Python.
 
             if not (num_list[start] < num_list[j]) or j == start:
                 break
