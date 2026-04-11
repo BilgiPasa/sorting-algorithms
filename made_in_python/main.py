@@ -41,7 +41,7 @@ def main() -> None:
 
     match selected_algorithm:
         case AlgorithmTypes.BUILT_IN:
-            print("Enter the list size (88888888 is recommended): ", end="")
+            print("Enter the list size (12345678 is recommended): ", end="")
 
         case AlgorithmTypes.QUICK_SORT | AlgorithmTypes.MERGE_SORT | AlgorithmTypes.SHELL_SORT:
             print("Enter the list size (1234567 is recommended): ", end="")
