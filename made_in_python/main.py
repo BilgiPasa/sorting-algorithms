@@ -41,25 +41,25 @@ def main() -> None:
 
     match selected_algorithm:
         case AlgorithmTypes.BUILT_IN:
-            print("Enter the list size (12345678 is recommended): ", end="")
+            print("Enter the list size (88888888 is recommended): ", end="")
 
         case AlgorithmTypes.QUICK_SORT | AlgorithmTypes.MERGE_SORT | AlgorithmTypes.SHELL_SORT:
-            print("Enter the list size (less than 12345678 is recommended): ", end="")
+            print("Enter the list size (1234567 is recommended): ", end="")
 
         case AlgorithmTypes.INSERTSION_SORT | AlgorithmTypes.SELECTION_SORT | AlgorithmTypes.GNOME_SORT | AlgorithmTypes.COCKTAIL_SHAKER_SORT | AlgorithmTypes.BUBBLE_SORT:
-            print("Enter the list size (less than 55555 is recommended): ", end="")
+            print("Enter the list size (12345 is recommended): ", end="")
 
         case AlgorithmTypes.SOOTAGE_SORT:
-            print("Enter the list size (less than 3223 is recommended): ", end="")
+            print("Enter the list size (2222 is recommended): ", end="")
 
         case AlgorithmTypes.BOZO_SORT | AlgorithmTypes.BOGO_SORT:
-            print("Enter the list size (less than 12 is recommended): ", end="")
+            print("Enter the list size (12 is recommended): ", end="")
 
         case _:
             print("Couldn't understand the input. Aborting.")
             return
 
-    # Why did I write "less than" at the parts above? Because Python is SLOW. I am not joking.
+    # Why the recommended values are different compare to C, C# and Java? Because Python is SLOW. I am not joking.
     # But fortunately, Python's built-in sorter is fast enough.
 
     length: int
