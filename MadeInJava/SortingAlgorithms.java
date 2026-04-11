@@ -27,7 +27,7 @@ public class SortingAlgorithms {
     // The algorithms are listed from the fastest to the slowest according to my tests.
 
     public static void quickSort(int[] numArr, int start, int end) {
-        if (start >= end) {
+        if (end <= start) {
             return;
         }
 
@@ -37,19 +37,37 @@ public class SortingAlgorithms {
     }
 
     static int moveElementsAndReturnPivot(int[] numArr, int start, int end) { // For Quick Sort
-        int i = start - 1;
+        // Note: The initial pivot is the numArr[start] element.
 
-        for (int j = start; j < end; j++) { // Initial pivot is the last element of the array
-            // The program moves the elements that are smaller than the pivot to the left
-            if (numArr[j] < numArr[end]) {
-                i++;
-                swapElements(numArr, i, j);
+        int i = start, j = end + 1;
+        // Yes, i and j are initially out of bounds but no problem occurs...
+        // ...because, we use prefixes in the while loops.
+
+        // Each iteration, the elements that are smaller than or equal to the pivot are moved to the left...
+        // ...and the elements that are bigger than the pivot are moved to the right.
+        while (true) {
+            while (numArr[++i] <= numArr[start]) {
+                if (i == end) {
+                    break;
+                }
             }
+
+            while (numArr[start] < numArr[--j]) {
+                if (j == start) {
+                    break;
+                }
+            }
+
+            if (j <= i) {
+                break;
+            }
+
+            swapElements(numArr, i, j);
         }
 
-        i++;
-        swapElements(numArr, i, end);
-        return i; // Swapped the initial pivot with the new pivot and returning the new pivot
+        // Swapping the initial pivot with the new pivot and returning the new pivot
+        swapElements(numArr, start, j);
+        return j;
     }
 
     public static void mergeSort(int[] numArr) {

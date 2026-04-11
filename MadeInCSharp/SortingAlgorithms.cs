@@ -22,7 +22,7 @@ public static class SortingAlgorithms
 
     public static void QuickSort(int[] numArr, int start, int end)
     {
-        if (start >= end)
+        if (end <= start)
         {
             return;
         }
@@ -34,28 +34,49 @@ public static class SortingAlgorithms
 
     static int MoveElementsAndReturnPivot(int[] numArr, int start, int end) // For Quick Sort
     {
-        int i = start - 1;
+        // Note: The initial pivot is the numArr[start] element.
 
-        for (int j = start; j < end; j++)
-        {// Initial pivot is the last element of the array
-            // The program moves the elements that are smaller than the pivot to the left
-            if (numArr[j] < numArr[end])
-            {
-                (numArr[++i], numArr[j]) = (numArr[j], numArr[i]); // i += 1; int temp = numArr[i]; numArr[i] = numArr[j]; numArr[j] = temp;
+        int i = start, j = end + 1;
+        // Yes, i and j are initially out of bounds but no problem occurs...
+        // ...because, we use prefixes in the while loops.
+
+        // Each iteration, the elements that are smaller than or equal to the pivot are moved to the left...
+        // ...and the elements that are bigger than the pivot are moved to the right.
+        while (true) {
+            while (numArr[++i] <= numArr[start]) {
+                if (i == end) {
+                    break;
+                }
             }
+
+            while (numArr[start] < numArr[--j]) {
+                if (j == start) {
+                    break;
+                }
+            }
+
+            if (j <= i) {
+                break;
+            }
+
+            (numArr[i], numArr[j]) = (numArr[j], numArr[i]); // Swapping elements
         }
 
-        (numArr[++i], numArr[end]) = (numArr[end], numArr[i]); // i += 1; int temp = numArr[i]; numArr[i] = numArr[end]; numArr[end] = temp;
-        return i; // Swapped the initial pivot with the new pivot and returning the new pivot
+        // Swapping the initial pivot with the new pivot and returning the new pivot
+        (numArr[start], numArr[j]) = (numArr[j], numArr[start]);
+        return j;
     }
 
-    public static void MergeSort(int[] numArr) {
+    public static void MergeSort(int[] numArr)
+    {
         int[] temp = new int[numArr.Length];
         MergeSortRange(numArr, temp, 0, numArr.Length - 1);
     }
 
-    static void MergeSortRange(int[] numArr, int[] temp, int start, int end) { // For Merge Sort
-        if (end <= start) {
+    static void MergeSortRange(int[] numArr, int[] temp, int start, int end) // For Merge Sort
+    {
+        if (end <= start)
+        {
             return;
         }
 
@@ -65,30 +86,38 @@ public static class SortingAlgorithms
         Merge(numArr, temp, start, mid, end);
     }
 
-    static void Merge(int[] numArr, int[] temp, int start, int mid, int end) { // For Merge Sort
+    static void Merge(int[] numArr, int[] temp, int start, int mid, int end) // For Merge Sort
+    {
         int i;
 
         // Copying some part of the numArr to temp
-        for (i = start; i <= end; i++) {
+        for (i = start; i <= end; i++)
+        {
             temp[i] = numArr[i];
         }
 
         i = start;
         int j = mid + 1, k = start;
 
-        while (i <= mid && j <= end) {
-            if (temp[i] <= temp[j]) {
+        while (i <= mid && j <= end)
+        {
+            if (temp[i] <= temp[j])
+            {
                 numArr[k++] = temp[i++]; // numArr[k] = temp[i]; k += 1; i += 1;
-            } else {
+            }
+            else
+            {
                 numArr[k++] = temp[j++]; // numArr[k] = temp[j]; k += 1; j += 1;
             }
         }
 
-        while (i <= mid) {
+        while (i <= mid)
+        {
             numArr[k++] = temp[i++]; // numArr[k] = temp[i]; k += 1; i += 1;
         }
 
-        while (j <= mid) {
+        while (j <= mid)
+        {
             numArr[k++] = temp[j++]; // numArr[k] = temp[j]; k += 1; j += 1;
         }
     }
