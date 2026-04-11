@@ -5,7 +5,7 @@ void print_arr(const int num_arr[], int length);
 bool is_sorted(const int num_arr[], int length);
 void swap(int *a, int *b);
 int compare(const void *elem1, const void *elem2);
-void merge_sort(int num_arr[], int length);
+int merge_sort(int num_arr[], int length);
 void merge_sort_range(int num_arr[], int temp[], int low, int high);
 void merge(int num_arr[], int temp[], int low, int mid, int high);
 void insertion_sort(int num_arr[], int length);
