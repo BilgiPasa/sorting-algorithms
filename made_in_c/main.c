@@ -139,11 +139,13 @@ int main(void)
         case MERGE_SORT:
             used_algorithm_type = "Merge Sort";
             start = clock();
+
             if (!merge_sort(num_arr, length))
             {
                 fprintf(stderr, "In merge sort, memory allocation for temp array has failed. Aborting.\n");
                 return EXIT_FAILURE;
             }
+
             end = clock();
             break;
 
