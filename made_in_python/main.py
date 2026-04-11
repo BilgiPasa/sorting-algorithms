@@ -59,7 +59,7 @@ def main() -> None:
             print("Couldn't understand the input. Aborting.")
             return
 
-    # Why the recommended values are different compare to C, C# and Java? Because Python is SLOW. I am not joking.
+    # Why the recommended values are smaller compared to C, C# and Java? Because Python is SLOW. I am not joking.
     # But fortunately, Python's built-in sorter is fast enough.
 
     length: int

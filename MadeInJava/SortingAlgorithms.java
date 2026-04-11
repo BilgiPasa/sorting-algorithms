@@ -36,7 +36,7 @@ public class SortingAlgorithms {
         quickSort(numArr, pivot + 1, end);
     }
 
-    static int moveElementsAndReturnPivot(int[] numArr, int start, int end) { // This is for Quick Sort
+    static int moveElementsAndReturnPivot(int[] numArr, int start, int end) { // For Quick Sort
         int i = start - 1;
 
         for (int j = start; j < end; j++) { // Initial pivot is the last element of the array
@@ -57,7 +57,7 @@ public class SortingAlgorithms {
         mergeSortRange(numArr, temp, 0, numArr.length - 1);
     }
 
-    static void mergeSortRange(int[] numArr, int[] temp, int low, int high) { // This is for Merge Sort
+    static void mergeSortRange(int[] numArr, int[] temp, int low, int high) { // For Merge Sort
         if (high <= low) {
             return;
         }
@@ -68,13 +68,13 @@ public class SortingAlgorithms {
         merge(numArr, temp, low, mid, high);
     }
 
-    static void merge(int[] numArr, int[] temp, int low, int mid, int high) { // This is for Merge Sort
-        int i;
-        
+    static void merge(int[] numArr, int[] temp, int low, int mid, int high) { // For Merge Sort
+        // Copying some part of the numArr to temp
         System.arraycopy(numArr, low, temp, low, (high - low + 1));
 
-        int k = i = low; // int k = low; i = low;
+        int i = low;
         int j = mid + 1;
+        int k = low;
 
         while (i <= mid && j <= high) {
             if (temp[i] <= temp[j]) {
@@ -134,7 +134,7 @@ public class SortingAlgorithms {
         }
     }
 
-    static int indexOfMin(int[] numArr, int length, int start) { // This is for Selection Sort
+    static int indexOfMin(int[] numArr, int length, int start) { // For Selection Sort
         int min = start;
 
         for (int i = start; i < length; i++) {
@@ -233,8 +233,8 @@ public class SortingAlgorithms {
         }
     }
 
-    // Fisher-Yates shuffle algorithm for shuffling the array.
-    static void fisherYatesShuffle(int[] numArr) { // This is for Bogo Sort
+    // Fisher-Yates shuffle algorithm
+    static void fisherYatesShuffle(int[] numArr) { // For Bogo Sort
         int lengthMinusOne = numArr.length - 1, randomNum;
         Random r = new Random();
 

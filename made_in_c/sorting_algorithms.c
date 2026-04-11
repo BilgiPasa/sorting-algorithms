@@ -44,7 +44,7 @@ void swap(int *a, int *b) // To swap elements using XOR
     *a ^= *b;
 }
 
-int compare(const void *elem1, const void *elem2) // This is for qsort (C's built-in sorter)
+int compare(const void *elem1, const void *elem2) // For qsort (C's built-in sorter)
 {
     const int *num1 = elem1, *num2 = elem2;
     return *num1 - *num2;
@@ -59,16 +59,18 @@ int compare(const void *elem1, const void *elem2) // This is for qsort (C's buil
 int merge_sort(int num_arr[], int length)
 {
     int *temp = malloc(length * sizeof(int));
+
     if (!temp)
     {
         return 0;
     }
+
     merge_sort_range(num_arr, temp, 0, length - 1);
     free(temp);
     return 1;
 }
 
-void merge_sort_range(int num_arr[], int temp[], int low, int high)
+void merge_sort_range(int num_arr[], int temp[], int low, int high) // For Merge Sort
 {
     if (high <= low) return;
 
@@ -80,23 +82,24 @@ void merge_sort_range(int num_arr[], int temp[], int low, int high)
     merge(num_arr, temp, low, mid, high);
 }
 
-void merge(int num_arr[], int temp[], int low, int mid, int high)
+void merge(int num_arr[], int temp[], int low, int mid, int high) // For Merge Sort
 {
+    // Copying some part of the num_arr to temp
     memcpy(temp + low, num_arr + low, sizeof(int) * (high - low + 1));
 
     int i = low, j = mid + 1, k = low;
 
     while (i <= mid && j <= high)
     {
-        if (temp[i] <= temp[j]) num_arr[k++] = temp[i++];
-        else                    num_arr[k++] = temp[j++];
+        if (temp[i] <= temp[j]) num_arr[k++] = temp[i++]; // num_arr[k] = temp[i]; k += 1; i += 1;
+        else                    num_arr[k++] = temp[j++]; // num_arr[k] = temp[j]; k += 1; j += 1;
     }
 
     while (i <= mid)
-        num_arr[k++] = temp[i++];
+        num_arr[k++] = temp[i++]; // num_arr[k] = temp[i]; k += 1; i += 1;
 
     while (j <= high)
-        num_arr[k++] = temp[j++];
+        num_arr[k++] = temp[j++]; // num_arr[k] = temp[j]; k += 1; j += 1;
 }
 
 // TODO: IMPLEMENT SHELL SORT HERE.
@@ -131,7 +134,7 @@ void selection_sort(int num_arr[], int length)
     }
 }
 
-int index_of_min(const int num_arr[], int length, int start) // This is for Selection Sort
+int index_of_min(const int num_arr[], int length, int start) // For Selection Sort
 {
     int min = start;
 
@@ -207,8 +210,8 @@ void bogo_sort(int num_arr[], int length)
     }
 }
 
-// Fisher-Yates shuffle algorithm for shuffling the array.
-void fisher_yates_shuffle(int num_arr[], int length) // This is for Bogo Sort
+// Fisher-Yates shuffle algorithm
+void fisher_yates_shuffle(int num_arr[], int length) // For Bogo Sort
 {
     for (int i = length - 1; i > 0; i--)
     {

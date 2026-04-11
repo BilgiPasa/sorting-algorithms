@@ -32,7 +32,7 @@ public static class SortingAlgorithms
         QuickSort(numArr, pivot + 1, end);
     }
 
-    static int MoveElementsAndReturnPivot(int[] numArr, int start, int end) // This is for Quick Sort
+    static int MoveElementsAndReturnPivot(int[] numArr, int start, int end) // For Quick Sort
     {
         int i = start - 1;
 
@@ -54,7 +54,7 @@ public static class SortingAlgorithms
         MergeSortRange(numArr, temp, 0, numArr.Length - 1);
     }
 
-    static void MergeSortRange(int[] numArr, int[] temp, int low, int high) { // This is for Merge Sort
+    static void MergeSortRange(int[] numArr, int[] temp, int low, int high) { // For Merge Sort
         if (high <= low) {
             return;
         }
@@ -65,15 +65,17 @@ public static class SortingAlgorithms
         Merge(numArr, temp, low, mid, high);
     }
 
-    static void Merge(int[] numArr, int[] temp, int low, int mid, int high) { // This is for Merge Sort
+    static void Merge(int[] numArr, int[] temp, int low, int mid, int high) { // For Merge Sort
         int i;
 
+        // Copying some part of the numArr to temp
         for (i = low; i <= high; i++) {
             temp[i] = numArr[i];
         }
 
-        int k = i = low; // int k = low; i = low;
+        i = low;
         int j = mid + 1;
+        int k = low;
 
         while (i <= mid && j <= high) {
             if (temp[i] <= temp[j]) {
@@ -142,7 +144,7 @@ public static class SortingAlgorithms
         }
     }
 
-    static int IndexOfMin(int[] numArr, int length, int start) // This is for Selection Sort
+    static int IndexOfMin(int[] numArr, int length, int start) // For Selection Sort
     {
         int min = start;
 
