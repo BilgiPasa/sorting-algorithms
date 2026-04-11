@@ -64,7 +64,7 @@ class Program
             case (int)AlgorithmTypes.QuickSort:
             case (int)AlgorithmTypes.MergeSort:
             case (int)AlgorithmTypes.ShellSort:
-                Console.Write("Enter the array size (12345678 is recommended): ");
+                Console.Write("Enter the array size (88888888 is recommended): ");
                 break;
 
             case (int)AlgorithmTypes.InsertsionSort:
@@ -72,11 +72,11 @@ class Program
             case (int)AlgorithmTypes.GnomeSort:
             case (int)AlgorithmTypes.CocktailShakerSort:
             case (int)AlgorithmTypes.BubbleSort:
-                Console.Write("Enter the array size (55555 is recommended): ");
+                Console.Write("Enter the array size (123456 is recommended): ");
                 break;
 
             case (int)AlgorithmTypes.SootageSort:
-                Console.Write("Enter the array size (3223 is recommended): ");
+                Console.Write("Enter the array size (4444 is recommended): ");
                 break;
 
             case (int)AlgorithmTypes.BozoSort:

@@ -49,48 +49,47 @@ public static class SortingAlgorithms
         return i; // Swapped the initial pivot with the new pivot and returning the new pivot
     }
 
-    public static void MergeSort(int[] numArr)
-    {
-        if (numArr.Length < 2)
-        {
+    public static void MergeSort(int[] numArr) {
+        int[] temp = new int[numArr.Length];
+        MergeSortRange(numArr, temp, 0, numArr.Length - 1);
+    }
+
+    static void MergeSortRange(int[] numArr, int[] temp, int low, int high) { // This is for Merge Sort
+        if (high <= low) {
             return;
         }
 
-        int middle = numArr.Length / 2;
-        int[] leftArr = new int[middle], rightArr = new int[numArr.Length - middle];
-        Array.Copy(numArr, leftArr, middle); // Copying the numArr's first half to the leftArr
-        Array.Copy(numArr, middle, rightArr, 0, numArr.Length - middle); // Copying the numArr's second half to the rightArr
-        MergeSort(leftArr);
-        MergeSort(rightArr);
-        Merge(numArr, leftArr, rightArr);
+        int mid = low + (high - low) / 2;
+        MergeSortRange(numArr, temp, low, mid);
+        MergeSortRange(numArr, temp, mid + 1, high);
+        Merge(numArr, temp, low, mid, high);
     }
 
-    static void Merge(int[] numArr, int[] leftArr, int[] rightArr) // This is for Merge Sort
-    {
-        int j = 0, k = 0;
+    static void Merge(int[] numArr, int[] temp, int low, int mid, int high) { // This is for Merge Sort
+        int i;
 
-		for (int i = 0; i < numArr.Length; i++)
-        {
-		    if (j >= leftArr.Length)
-            {
-		        numArr[i] = rightArr[k++]; // This means numArr[i] = rightArr[k]; k += 1;
-		    }
-            else if (k >= rightArr.Length)
-            {
-		        numArr[i] = leftArr[j++]; // This means numArr[i] = leftArr[j]; j += 1;
-		    }
-            else
-            {
-		        if (leftArr[j] < rightArr[k])
-                {
-		            numArr[i] = leftArr[j++]; // This means numArr[i] = leftArr[j]; j += 1;
-		        }
-                else
-                {
-		            numArr[i] = rightArr[k++]; // This means numArr[i] = rightArr[k]; k += 1;
-		        }
-		    }
-		}
+        for (i = low; i <= high; i++) {
+            temp[i] = numArr[i];
+        }
+
+        int k = i = low; // int k = low; i = low;
+        int j = mid + 1;
+
+        while (i <= mid && j <= high) {
+            if (temp[i] <= temp[j]) {
+                numArr[k++] = temp[i++]; // numArr[k] = temp[i]; k += 1; i += 1;
+            } else {
+                numArr[k++] = temp[j++]; // numArr[k] = temp[j]; k += 1; j += 1;
+            }
+        }
+
+        while (i <= mid) {
+            numArr[k++] = temp[i++]; // numArr[k] = temp[i]; k += 1; i += 1;
+        }
+
+        while (j <= mid) {
+            numArr[k++] = temp[j++]; // numArr[k] = temp[j]; k += 1; j += 1;
+        }
     }
 
     public static void ShellSort(int[] numArr)
