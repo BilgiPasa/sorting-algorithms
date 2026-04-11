@@ -54,11 +54,18 @@ int compare(const void *elem1, const void *elem2) // This is for qsort (C's buil
 
 // TODO: IMPLEMENT QUICK SORT HERE.
 
-void merge_sort(int num_arr[], int length)
+// returns 1 on success which is guaranteed unless malloc fails
+// returns 0 if memory allocation for temporary array fails
+int merge_sort(int num_arr[], int length)
 {
     int *temp = malloc(length * sizeof(int));
+    if (!temp)
+    {
+        return 0;
+    }
     merge_sort_range(num_arr, temp, 0, length - 1);
     free(temp);
+    return 1;
 }
 
 void merge_sort_range(int num_arr[], int temp[], int low, int high)
