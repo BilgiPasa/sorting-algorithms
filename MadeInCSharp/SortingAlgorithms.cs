@@ -41,11 +41,11 @@ public static class SortingAlgorithms
             // The program moves the elements that are smaller than the pivot to the left
             if (numArr[j] < numArr[end])
             {
-                (numArr[++i], numArr[j]) = (numArr[j], numArr[i]); // This means i += 1; int temp = numArr[i]; numArr[i] = numArr[j]; numArr[j] = temp;
+                (numArr[++i], numArr[j]) = (numArr[j], numArr[i]); // i += 1; int temp = numArr[i]; numArr[i] = numArr[j]; numArr[j] = temp;
             }
         }
 
-        (numArr[++i], numArr[end]) = (numArr[end], numArr[i]); // This means i += 1; int temp = numArr[i]; numArr[i] = numArr[end]; numArr[end] = temp;
+        (numArr[++i], numArr[end]) = (numArr[end], numArr[i]); // i += 1; int temp = numArr[i]; numArr[i] = numArr[end]; numArr[end] = temp;
         return i; // Swapped the initial pivot with the new pivot and returning the new pivot
     }
 
@@ -237,7 +237,7 @@ public static class SortingAlgorithms
             (numArr[start], numArr[end]) = (numArr[end], numArr[start]); // Swapping elements
         }
 
-        if (end - start > 1) // This means if (array size > 2)
+        if (end - start > 1) // if (array size > 2)
         {
             int oneThird = (end - start + 1) / 3;
             SootageSort(numArr, start, end - oneThird);
