@@ -46,13 +46,13 @@ public class SortingAlgorithms {
         // Each iteration, the elements that are smaller than or equal to the pivot are moved to the left...
         // ...and the elements that are bigger than the pivot are moved to the right.
         while (true) {
-            while (numArr[++i] <= numArr[start]) {
+            while (numArr[++i] <= numArr[start]) { // ++i -> Before this line executes, do i += 1
                 if (i == end) {
                     break;
                 }
             }
 
-            while (numArr[start] < numArr[--j]) {
+            while (numArr[start] < numArr[--j]) { // --j -> Before this line executes, do j -= 1
                 if (j == start) {
                     break;
                 }
