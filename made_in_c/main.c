@@ -50,14 +50,14 @@ int main(void)
     {
         case BUILT_IN:
         case MERGE_SORT:
-            printf("Enter the array size (12345678 is recommended): ");
+            printf("Enter the array size (44444444 is recommended): ");
             break;
 
         case INSERTION_SORT:
         case SELECTION_SORT:
         case GNOME_SORT:
         case BUBBLE_SORT:
-            printf("Enter the array size (55555 is recommended): ");
+            printf("Enter the array size (123456 is recommended): ");
             break;
 
         case BOZO_SORT:
