@@ -32,6 +32,6 @@ The Python files are in the [made_in_python](https://github.com/BilgiPasa/sortin
 
 ---
 
-*According to BilgiPasa's tests when tested with C#. (If you compare the sorting algorithms' speed in different languages, you might get a different result. For example, when BilgiPasa tested with Java, Selection Sort was faster than Insertsion Sort. But in C, C# and Python, Insertsion Sort was faster than Selection Sort.)
+*According to BilgiPasa's tests when tested in C# with random input. (If you compare the sorting algorithms' speed in different languages, you might get a different result. For example, when BilgiPasa tested with Java, Selection Sort was faster than Insertsion Sort. But in C, C# and Python, Insertsion Sort was faster than Selection Sort.)
 
-**According to BilgiPasa's tests when Insertsion Sort used.
+**According to BilgiPasa's tests when Insertsion Sort used with random input.
