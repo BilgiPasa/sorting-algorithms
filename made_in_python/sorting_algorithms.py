@@ -25,8 +25,8 @@ def move_elements_and_return_pivot(num_list: list[int], start: int, end: int) ->
 
     i: int = start
     j: int = end + 1
-    # Yes, i and j are initially out of bounds but no problem occurs...
-    # ...because, we do i += 1 and j -= 1 in the while loops before the if statements execute.
+    # Initially, i and j are at the points where they shouldn't be. But no problem occurs.
+    # Because, we do i += 1 and j -= 1 in the while loops before the if statements execute.
 
     # Each iteration, the elements that are smaller than or equal to the pivot are moved to the left...
     # ...and the elements that are bigger than the pivot are moved to the right.

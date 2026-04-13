@@ -233,8 +233,9 @@ int main(void)
     return EXIT_SUCCESS;
 }
 
-/* Because C does not have try-catch, for a safe input system for C, bartu-g made this function. This function
-returns 1 on success and 0 on failure. Also, this function is based on beginners' guide away from scanf(). */
+// Because C does not have try-catch, for a safe input system for C, bartu-g made this function.
+// This function returns 1 on success and 0 on failure.
+// This function is based on beginners' guide away from scanf().
 int get_int(int *num)
 {
     long a;

@@ -40,8 +40,8 @@ public class SortingAlgorithms {
         // Note: The initial pivot is the numArr[start] element.
 
         int i = start, j = end + 1;
-        // Yes, i and j are initially out of bounds but no problem occurs...
-        // ...because, we use prefixes in the while loops.
+        // Initially, i and j are at the points where they shouldn't be. But no problem occurs.
+        // Because, we use prefixes in the while loops.
 
         // Each iteration, the elements that are smaller than or equal to the pivot are moved to the left...
         // ...and the elements that are bigger than the pivot are moved to the right.
