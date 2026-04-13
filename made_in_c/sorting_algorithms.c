@@ -194,12 +194,10 @@ void bubble_sort(int num_arr[], int length)
 
 void bozo_sort(int num_arr[], int length)
 {
-    int i, j;
-
     while (!is_sorted(num_arr, length))
     {
-        i = rand() % length;
-        j = rand() % length;
+        int i = rand() % length;
+        int j = rand() % length;
         swap(&num_arr[i], &num_arr[j]);
     }
 }
@@ -215,11 +213,9 @@ void bogo_sort(int num_arr[], int length)
 // Fisher-Yates shuffle algorithm
 void fisher_yates_shuffle(int num_arr[], int length) // For Bogo Sort
 {
-    int random_index;
-
     for (int i = length - 1; i > 0; i--)
     {
-        random_index = rand() % (i + 1);
+        int random_index = rand() % (i + 1);
         swap(&num_arr[i], &num_arr[random_index]);
     }
 }
