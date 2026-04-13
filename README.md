@@ -18,6 +18,8 @@ Speed comparison of the languages (from fastest to slowest**): C (GCC 15), Java 
 
 BilgiPasa and bartu-g wrote the code of the parts that they maintain. **We did not do** "vibe coding".
 
+We maintain the parts that we implemented. Also, we may maintain each other's parts via pull requests.
+
 ---
 
 The code files' locations:
