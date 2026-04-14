@@ -139,11 +139,13 @@ int main(void)
         case MERGE_SORT:
             used_algorithm_type = "Merge Sort";
             start = clock();
+
             if (!merge_sort(num_arr, length))
             {
                 fprintf(stderr, "In merge sort, memory allocation for temp array has failed. Aborting.\n");
                 return EXIT_FAILURE;
             }
+
             end = clock();
             break;
 
@@ -231,8 +233,9 @@ int main(void)
     return EXIT_SUCCESS;
 }
 
-/* Because C does not have try-catch, for a safe input system for C, bartu-g made this function. This function
-returns 1 on success and 0 on failure. Also, this function is based on beginners' guide away from scanf(). */
+// Because C does not have try-catch, for a safe input system for C, bartu-g made this function.
+// This function returns 1 on success and 0 on failure.
+// This function is based on beginners' guide away from scanf().
 int get_int(int *num)
 {
     long a;

@@ -27,7 +27,7 @@ public class SortingAlgorithms {
     // The algorithms are listed from the fastest to the slowest according to my tests.
 
     public static void quickSort(int[] numArr, int start, int end) {
-        if (start >= end) {
+        if (end <= start) {
             return;
         }
 
@@ -37,19 +37,37 @@ public class SortingAlgorithms {
     }
 
     static int moveElementsAndReturnPivot(int[] numArr, int start, int end) { // For Quick Sort
-        int i = start - 1;
+        // Note: The initial pivot is the numArr[start] element.
 
-        for (int j = start; j < end; j++) { // Initial pivot is the last element of the array
-            // The program moves the elements that are smaller than the pivot to the left
-            if (numArr[j] < numArr[end]) {
-                i++;
-                swapElements(numArr, i, j);
+        int i = start, j = end + 1;
+        // Initially, i and j are at the points where they shouldn't be. But no problem occurs.
+        // Because, we use prefixes in the while loops.
+
+        // Each iteration, the elements that are smaller than or equal to the pivot are moved to the left...
+        // ...and the elements that are bigger than the pivot are moved to the right.
+        while (true) {
+            while (numArr[++i] <= numArr[start]) { // ++i -> Before this line executes, do i += 1
+                if (i == end) {
+                    break;
+                }
             }
+
+            while (numArr[start] < numArr[--j]) { // --j -> Before this line executes, do j -= 1
+                if (j == start) {
+                    break;
+                }
+            }
+
+            if (j <= i) {
+                break;
+            }
+
+            swapElements(numArr, i, j);
         }
 
-        i++;
-        swapElements(numArr, i, end);
-        return i; // Swapped the initial pivot with the new pivot and returning the new pivot
+        // Swapping the initial pivot with the new pivot and returning the new pivot
+        swapElements(numArr, start, j);
+        return j;
     }
 
     public static void mergeSort(int[] numArr) {
@@ -57,26 +75,23 @@ public class SortingAlgorithms {
         mergeSortRange(numArr, temp, 0, numArr.length - 1);
     }
 
-    static void mergeSortRange(int[] numArr, int[] temp, int low, int high) { // For Merge Sort
-        if (high <= low) {
+    static void mergeSortRange(int[] numArr, int[] temp, int start, int end) { // For Merge Sort
+        if (end <= start) {
             return;
         }
 
-        int mid = low + (high - low) / 2;
-        mergeSortRange(numArr, temp, low, mid);
-        mergeSortRange(numArr, temp, mid + 1, high);
-        merge(numArr, temp, low, mid, high);
+        int mid = start + (end - start) / 2;
+        mergeSortRange(numArr, temp, start, mid);
+        mergeSortRange(numArr, temp, mid + 1, end);
+        merge(numArr, temp, start, mid, end);
     }
 
-    static void merge(int[] numArr, int[] temp, int low, int mid, int high) { // For Merge Sort
+    static void merge(int[] numArr, int[] temp, int start, int mid, int end) { // For Merge Sort
         // Copying some part of the numArr to temp
-        System.arraycopy(numArr, low, temp, low, (high - low + 1));
+        System.arraycopy(numArr, start, temp, start, (end - start + 1));
+        int i = start, j = mid + 1, k = start;
 
-        int i = low;
-        int j = mid + 1;
-        int k = low;
-
-        while (i <= mid && j <= high) {
+        while (i <= mid && j <= end) {
             if (temp[i] <= temp[j]) {
                 numArr[k++] = temp[i++]; // numArr[k] = temp[i]; k += 1; i += 1;
             } else {

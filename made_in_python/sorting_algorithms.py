@@ -13,7 +13,7 @@ def is_sorted(num_list: list[int]) -> bool: # To check if the list is sorted
 # The algorithms are listed from the fastest to the slowest according to my tests.
 
 def quick_sort(num_list: list[int], start: int, end: int) -> None:
-    if start >= end:
+    if end <= start:
         return
 
     pivot: int = move_elements_and_return_pivot(num_list, start, end)
@@ -21,43 +21,62 @@ def quick_sort(num_list: list[int], start: int, end: int) -> None:
     quick_sort(num_list, pivot + 1, end)
 
 def move_elements_and_return_pivot(num_list: list[int], start: int, end: int) -> int: # For Quick Sort
-    i: int = start - 1
+    # Note: The initial pivot is the numArr[start] element.
 
-    for j in range(start, end): # Initial pivot is the last element of the list
-        # The program moves the elements that are smaller than the pivot to the left
-        if num_list[j] < num_list[end]:
-            i += 1
-            num_list[i], num_list[j] = num_list[j], num_list[i] # Swapping elements
+    i: int = start
+    j: int = end + 1
+    # Initially, i and j are at the points where they shouldn't be. But no problem occurs.
+    # Because, we do i += 1 and j -= 1 in the while loops before the if statements execute.
 
-    i += 1
-    num_list[i], num_list[end] = num_list[end], num_list[i] # Swapping elements
-    return i # Swapped the initial pivot with the new pivot and returning the new pivot
+    # Each iteration, the elements that are smaller than or equal to the pivot are moved to the left...
+    # ...and the elements that are bigger than the pivot are moved to the right.
+    while True:
+        while True:
+            i += 1 # I can't do ++i in Python.
+
+            if not (num_list[i] <= num_list[start]) or i == end:
+                break
+
+        while True:
+            j -= 1 # I can't do --j in Python.
+
+            if not (num_list[start] < num_list[j]) or j == start:
+                break
+
+        if j <= i:
+            break
+
+        num_list[i], num_list[j] = num_list[j], num_list[i] # Swapping elements
+
+    # Swapping the initial pivot with the new pivot and returning the new pivot
+    num_list[start], num_list[j] = num_list[j], num_list[start]
+    return j
 
 def merge_sort(num_list: list[int]) -> None:
     temp: list[int] = [0] * len(num_list)
     merge_sort_range(num_list, temp, 0, len(num_list) - 1)
 
-def merge_sort_range(num_list: list[int], temp: list[int], low: int, high: int) -> None: # For Merge Sort
-    if high <= low:
+def merge_sort_range(num_list: list[int], temp: list[int], start: int, end: int) -> None: # For Merge Sort
+    if end <= start:
         return
 
-    mid: int = low + (high - low) // 2
-    merge_sort_range(num_list, temp, low, mid)
-    merge_sort_range(num_list, temp, mid + 1, high)
-    merge(num_list, temp, low, mid, high)
+    mid: int = start + (end - start) // 2
+    merge_sort_range(num_list, temp, start, mid)
+    merge_sort_range(num_list, temp, mid + 1, end)
+    merge(num_list, temp, start, mid, end)
 
-def merge(num_list: list[int], temp: list[int], low: int, mid: int, high: int) -> None: # For Merge Sort
+def merge(num_list: list[int], temp: list[int], start: int, mid: int, end: int) -> None: # For Merge Sort
     i: int
 
     # Copying some part of the num_list to temp
-    for i in range(low, high + 1):
+    for i in range(start, end + 1): # end + 1 to make the end included
         temp[i] = num_list[i]
 
-    i = low
-    k: int = low
+    i = start
+    k: int = start
     j: int = mid + 1
 
-    while i <= mid and j <= high:
+    while i <= mid and j <= end:
         if temp[i] <= temp[j]:
             num_list[k] = temp[i]
             k += 1
