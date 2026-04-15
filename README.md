@@ -16,7 +16,7 @@ The C#, Java and Python parts are implemented by [BilgiPasa](https://github.com/
 
 Speed comparison of the languages (from fastest to slowest**): C (GCC 15), Java (25), C# (.Net 10), Python (3.14).
 
-I (BilgiPasa) wrote the code of the parts that I maintain. **I did not do** "vibe coding". Also, **I don't think that** bartu-g does "vibe coding".
+I (BilgiPasa) wrote the code of the parts that I maintain. **I did not do** "vibe coding".
 
 ---
 
