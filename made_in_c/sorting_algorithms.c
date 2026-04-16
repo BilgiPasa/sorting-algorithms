@@ -58,7 +58,7 @@ int compare(const void *elem1, const void *elem2) // For qsort (C's built-in sor
 // returns 0 if memory allocation for temporary array fails
 int merge_sort(int num_arr[], int length)
 {
-    int *temp = malloc(length * sizeof(int));
+    int *temp = malloc(length * sizeof(int)); // Making a new array because we need to store the elements that we want to sort
 
     if (!temp)
     {
@@ -89,15 +89,18 @@ void merge(int num_arr[], int temp[], int start, int mid, int end) // For Merge 
 
     int i = start, j = mid + 1, k = start;
 
+    // Putting the values in sorted order
     while (i <= mid && j <= end)
     {
         if (temp[i] <= temp[j]) num_arr[k++] = temp[i++]; // num_arr[k] = temp[i]; k += 1; i += 1;
         else                    num_arr[k++] = temp[j++]; // num_arr[k] = temp[j]; k += 1; j += 1;
     }
 
+    // Putting the leftover elements
     while (i <= mid)
         num_arr[k++] = temp[i++]; // num_arr[k] = temp[i]; k += 1; i += 1;
 
+    // Putting the leftover elements
     while (j <= end)
         num_arr[k++] = temp[j++]; // num_arr[k] = temp[j]; k += 1; j += 1;
 }
@@ -111,15 +114,13 @@ void insertion_sort(int num_arr[], int length)
     for (int i = 1; i < length; i++)
     {
         temp = num_arr[i];
-        j = i - 1;
 
-        while (j >= 0 && num_arr[j] > temp)
+        for (j = i; j >= 1 && num_arr[j - 1] > temp; j--)
         {
-            num_arr[j + 1] = num_arr[j];
-            j--;
+            num_arr[j] = num_arr[j - 1];
         }
 
-        num_arr[j + 1] = temp;
+        num_arr[j] = temp;
     }
 }
 
@@ -129,11 +130,12 @@ void selection_sort(int num_arr[], int length)
 
     for (int i = 0; i < length_minus_one; i++)
     {
-        j = index_of_min(num_arr, length, i);
+        j = index_of_min(num_arr, length, i); // Finding the index that has the minimum value
         swap(&num_arr[i], &num_arr[j]);
     }
 }
 
+// Finds the index that has the minimum value in the array.
 int index_of_min(const int num_arr[], int length, int start) // For Selection Sort
 {
     int min = start;
@@ -194,6 +196,7 @@ void bubble_sort(int num_arr[], int length)
 
 void bozo_sort(int num_arr[], int length)
 {
+    // Selects 2 random numbers in the array and swaps them until the array is sorted.
     while (!is_sorted(num_arr, length))
     {
         int i = rand() % length;
@@ -204,6 +207,7 @@ void bozo_sort(int num_arr[], int length)
 
 void bogo_sort(int num_arr[], int length)
 {
+    // Shuffles the whole array until it is sorted.
     while (!is_sorted(num_arr, length))
     {
         fisher_yates_shuffle(num_arr, length);

@@ -50,7 +50,7 @@ int main(void)
     {
         case BUILT_IN:
         case MERGE_SORT:
-            printf("Enter the array size (44444444 is recommended): ");
+            printf("Enter the array size (22222222 is recommended): ");
             break;
 
         case INSERTION_SORT:
