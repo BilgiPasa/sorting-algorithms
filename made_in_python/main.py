@@ -41,16 +41,16 @@ def main() -> None:
 
     match selected_algorithm:
         case AlgorithmTypes.BUILT_IN:
-            print("Enter the list size (12345678 is recommended): ", end="")
+            print("Enter the list size (22222222 is recommended): ", end="")
 
         case AlgorithmTypes.QUICK_SORT | AlgorithmTypes.MERGE_SORT | AlgorithmTypes.SHELL_SORT:
             print("Enter the list size (1234567 is recommended): ", end="")
 
         case AlgorithmTypes.INSERTION_SORT | AlgorithmTypes.SELECTION_SORT | AlgorithmTypes.GNOME_SORT | AlgorithmTypes.COCKTAIL_SHAKER_SORT | AlgorithmTypes.BUBBLE_SORT:
-            print("Enter the list size (12345 is recommended): ", end="")
+            print("Enter the list size (22333 is recommended): ", end="")
 
         case AlgorithmTypes.SOOTAGE_SORT:
-            print("Enter the list size (2222 is recommended): ", end="")
+            print("Enter the list size (1234 is recommended): ", end="")
 
         case AlgorithmTypes.BOZO_SORT | AlgorithmTypes.BOGO_SORT:
             print("Enter the list size (12 is recommended): ", end="")

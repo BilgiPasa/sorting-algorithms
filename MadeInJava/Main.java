@@ -59,9 +59,9 @@ public class Main {
         if (selectedAlgorithm == AlgorithmTypes.BUILT_IN.index || selectedAlgorithm == AlgorithmTypes.QUICK_SORT.index || selectedAlgorithm == AlgorithmTypes.MERGE_SORT.index || selectedAlgorithm == AlgorithmTypes.SHELL_SORT.index) {
             System.out.print("Enter the array size (22222222 is recommended): ");
         } else if (selectedAlgorithm == AlgorithmTypes.INSERTION_SORT.index || selectedAlgorithm == AlgorithmTypes.SELECTION_SORT.index || selectedAlgorithm == AlgorithmTypes.GNOME_SORT.index || selectedAlgorithm == AlgorithmTypes.COCKTAIL_SHAKER_SORT.index || selectedAlgorithm == AlgorithmTypes.BUBBLE_SORT.index) {
-            System.out.print("Enter the array size (123456 is recommended): ");
+            System.out.print("Enter the array size (55555 is recommended): ");
         } else if (selectedAlgorithm == AlgorithmTypes.SOOTAGE_SORT.index) {
-            System.out.print("Enter the array size (4444 is recommended): ");
+            System.out.print("Enter the array size (3223 is recommended): ");
         } else if (selectedAlgorithm == AlgorithmTypes.BOZO_SORT.index || selectedAlgorithm == AlgorithmTypes.BOGO_SORT.index) {
             System.out.print("Enter the array size (maximum 12 is recommended): ");
         } else {

@@ -57,7 +57,7 @@ int main(void)
         case SELECTION_SORT:
         case GNOME_SORT:
         case BUBBLE_SORT:
-            printf("Enter the array size (123456 is recommended): ");
+            printf("Enter the array size (55555 is recommended): ");
             break;
 
         case BOZO_SORT:
