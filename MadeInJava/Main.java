@@ -8,7 +8,7 @@ public class Main {
         QUICK_SORT(1),
         MERGE_SORT(2),
         SHELL_SORT(3),
-        INSERTSION_SORT(4),
+        INSERTION_SORT(4),
         SELECTION_SORT(5),
         GNOME_SORT(6),
         COCKTAIL_SHAKER_SORT(7),
@@ -35,7 +35,7 @@ public class Main {
         System.out.println("1) Quick Sort");
         System.out.println("2) Merge Sort");
         System.out.println("3) Shell Sort");
-        System.out.println("4) Insertsion Sort");
+        System.out.println("4) Insertion Sort");
         System.out.println("5) Selection Sort");
         System.out.println("6) Gnome Sort");
         System.out.println("7) Cocktail Shaker Sort");
@@ -58,7 +58,7 @@ public class Main {
         because of the "case expressions must be constant expressions" warning. */
         if (selectedAlgorithm == AlgorithmTypes.BUILT_IN.index || selectedAlgorithm == AlgorithmTypes.QUICK_SORT.index || selectedAlgorithm == AlgorithmTypes.MERGE_SORT.index || selectedAlgorithm == AlgorithmTypes.SHELL_SORT.index) {
             System.out.print("Enter the array size (22222222 is recommended): ");
-        } else if (selectedAlgorithm == AlgorithmTypes.INSERTSION_SORT.index || selectedAlgorithm == AlgorithmTypes.SELECTION_SORT.index || selectedAlgorithm == AlgorithmTypes.GNOME_SORT.index || selectedAlgorithm == AlgorithmTypes.COCKTAIL_SHAKER_SORT.index || selectedAlgorithm == AlgorithmTypes.BUBBLE_SORT.index) {
+        } else if (selectedAlgorithm == AlgorithmTypes.INSERTION_SORT.index || selectedAlgorithm == AlgorithmTypes.SELECTION_SORT.index || selectedAlgorithm == AlgorithmTypes.GNOME_SORT.index || selectedAlgorithm == AlgorithmTypes.COCKTAIL_SHAKER_SORT.index || selectedAlgorithm == AlgorithmTypes.BUBBLE_SORT.index) {
             System.out.print("Enter the array size (123456 is recommended): ");
         } else if (selectedAlgorithm == AlgorithmTypes.SOOTAGE_SORT.index) {
             System.out.print("Enter the array size (4444 is recommended): ");
@@ -140,10 +140,10 @@ public class Main {
             startTime = System.nanoTime();
             SortingAlgorithms.shellSort(numArr);
             endTime = System.nanoTime();
-        } else if (selectedAlgorithm == AlgorithmTypes.INSERTSION_SORT.index) {
-            usedAlgorithmType = "Insertsion Sort";
+        } else if (selectedAlgorithm == AlgorithmTypes.INSERTION_SORT.index) {
+            usedAlgorithmType = "Insertion Sort";
             startTime = System.nanoTime();
-            SortingAlgorithms.insertsionSort(numArr);
+            SortingAlgorithms.insertionSort(numArr);
             endTime = System.nanoTime();
         } else if (selectedAlgorithm == AlgorithmTypes.SELECTION_SORT.index) {
             usedAlgorithmType = "Selection Sort";

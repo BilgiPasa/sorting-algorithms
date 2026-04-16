@@ -159,7 +159,7 @@ public static class SortingAlgorithms
         }
     }
 
-    public static void InsertsionSort(int[] numArr)
+    public static void InsertionSort(int[] numArr)
     {
         int temp, j;
 

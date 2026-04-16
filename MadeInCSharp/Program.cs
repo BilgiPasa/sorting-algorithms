@@ -10,7 +10,7 @@ class Program
         QuickSort,
         MergeSort,
         ShellSort,
-        InsertsionSort,
+        InsertionSort,
         SelectionSort,
         GnomeSort,
         CocktailShakerSort,
@@ -27,7 +27,7 @@ class Program
         Console.WriteLine("1) Quick Sort");
         Console.WriteLine("2) Merge Sort");
         Console.WriteLine("3) Shell Sort");
-        Console.WriteLine("4) Insertsion Sort");
+        Console.WriteLine("4) Insertion Sort");
         Console.WriteLine("5) Selection Sort");
         Console.WriteLine("6) Gnome Sort");
         Console.WriteLine("7) Cocktail Shaker Sort");
@@ -67,7 +67,7 @@ class Program
                 Console.Write("Enter the array size (22222222 is recommended): ");
                 break;
 
-            case (int)AlgorithmTypes.InsertsionSort:
+            case (int)AlgorithmTypes.InsertionSort:
             case (int)AlgorithmTypes.SelectionSort:
             case (int)AlgorithmTypes.GnomeSort:
             case (int)AlgorithmTypes.CocktailShakerSort:
@@ -188,10 +188,10 @@ class Program
                 s.Stop();
                 break;
 
-            case (int)AlgorithmTypes.InsertsionSort:
-                usedAlgorithmType = "Insertsion Sort";
+            case (int)AlgorithmTypes.InsertionSort:
+                usedAlgorithmType = "Insertion Sort";
                 s.Start();
-                SortingAlgorithms.InsertsionSort(numArr);
+                SortingAlgorithms.InsertionSort(numArr);
                 s.Stop();
                 break;
 

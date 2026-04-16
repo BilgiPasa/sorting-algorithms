@@ -121,7 +121,7 @@ def shell_sort(num_list: list[int]) -> None:
 
         interval //= 3 # Making the interval smaller
 
-def insertsion_sort(num_list: list[int]) -> None:
+def insertion_sort(num_list: list[int]) -> None:
     temp: int
     j: int
 

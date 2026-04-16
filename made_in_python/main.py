@@ -1,6 +1,6 @@
 from enum import IntEnum
 from random import randint
-from sorting_algorithms import is_sorted, quick_sort, merge_sort, shell_sort, insertsion_sort, selection_sort, gnome_sort, cocktail_shaker_sort, bubble_sort, sootage_sort, bozo_sort, bogo_sort
+from sorting_algorithms import is_sorted, quick_sort, merge_sort, shell_sort, insertion_sort, selection_sort, gnome_sort, cocktail_shaker_sort, bubble_sort, sootage_sort, bozo_sort, bogo_sort
 from time import time
 
 class AlgorithmTypes(IntEnum):
@@ -8,7 +8,7 @@ class AlgorithmTypes(IntEnum):
     QUICK_SORT = 1
     MERGE_SORT = 2
     SHELL_SORT = 3
-    INSERTSION_SORT = 4
+    INSERTION_SORT = 4
     SELECTION_SORT = 5
     GNOME_SORT = 6
     COCKTAIL_SHAKER_SORT = 7
@@ -23,7 +23,7 @@ def main() -> None:
     print("1) Quick Sort")
     print("2) Merge Sort")
     print("3) Shell Sort")
-    print("4) Insertsion Sort")
+    print("4) Insertion Sort")
     print("5) Selection Sort")
     print("6) Gnome Sort")
     print("7) Cocktail Shaker Sort")
@@ -46,7 +46,7 @@ def main() -> None:
         case AlgorithmTypes.QUICK_SORT | AlgorithmTypes.MERGE_SORT | AlgorithmTypes.SHELL_SORT:
             print("Enter the list size (1234567 is recommended): ", end="")
 
-        case AlgorithmTypes.INSERTSION_SORT | AlgorithmTypes.SELECTION_SORT | AlgorithmTypes.GNOME_SORT | AlgorithmTypes.COCKTAIL_SHAKER_SORT | AlgorithmTypes.BUBBLE_SORT:
+        case AlgorithmTypes.INSERTION_SORT | AlgorithmTypes.SELECTION_SORT | AlgorithmTypes.GNOME_SORT | AlgorithmTypes.COCKTAIL_SHAKER_SORT | AlgorithmTypes.BUBBLE_SORT:
             print("Enter the list size (12345 is recommended): ", end="")
 
         case AlgorithmTypes.SOOTAGE_SORT:
@@ -130,10 +130,10 @@ def main() -> None:
             shell_sort(num_list)
             end_time = time()
 
-        case AlgorithmTypes.INSERTSION_SORT:
-            used_algorithm_type = "Insertsion Sort"
+        case AlgorithmTypes.INSERTION_SORT:
+            used_algorithm_type = "Insertion Sort"
             start_time = time()
-            insertsion_sort(num_list)
+            insertion_sort(num_list)
             end_time = time()
 
         case AlgorithmTypes.SELECTION_SORT:

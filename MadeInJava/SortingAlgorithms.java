@@ -134,7 +134,7 @@ public class SortingAlgorithms {
         }
     }
 
-    public static void insertsionSort(int[] numArr) {
+    public static void insertionSort(int[] numArr) {
         int temp, j;
 
         for (int i = 1; i < numArr.length; i++) {
