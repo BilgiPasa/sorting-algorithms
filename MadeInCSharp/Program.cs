@@ -64,7 +64,7 @@ class Program
             case (int)AlgorithmTypes.QuickSort:
             case (int)AlgorithmTypes.MergeSort:
             case (int)AlgorithmTypes.ShellSort:
-                Console.Write("Enter the array size (44444444 is recommended): ");
+                Console.Write("Enter the array size (22222222 is recommended): ");
                 break;
 
             case (int)AlgorithmTypes.InsertsionSort:
