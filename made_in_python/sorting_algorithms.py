@@ -21,7 +21,7 @@ def quick_sort(num_list: list[int], start: int, end: int) -> None:
     quick_sort(num_list, pivot + 1, end)
 
 def move_elements_and_return_pivot(num_list: list[int], start: int, end: int) -> int: # For Quick Sort
-    # Note: The initial pivot is the numArr[start] element.
+    # Note: The initial pivot is the num_list[start] element.
 
     i: int = start
     j: int = end + 1
@@ -53,7 +53,7 @@ def move_elements_and_return_pivot(num_list: list[int], start: int, end: int) ->
     return j
 
 def merge_sort(num_list: list[int]) -> None:
-    temp: list[int] = [0] * len(num_list)
+    temp: list[int] = [0] * len(num_list) # Making a new list because we need to store the elements that we want to sort
     merge_sort_range(num_list, temp, 0, len(num_list) - 1)
 
 def merge_sort_range(num_list: list[int], temp: list[int], start: int, end: int) -> None: # For Merge Sort
@@ -76,6 +76,7 @@ def merge(num_list: list[int], temp: list[int], start: int, mid: int, end: int) 
     k: int = start
     j: int = mid + 1
 
+    # Putting the values in sorted order
     while i <= mid and j <= end:
         if temp[i] <= temp[j]:
             num_list[k] = temp[i]
@@ -86,22 +87,28 @@ def merge(num_list: list[int], temp: list[int], start: int, mid: int, end: int) 
             k += 1
             j += 1
 
+    # Putting the leftover elements
     while i <= mid:
         num_list[k] = temp[i]
         k += 1
         i += 1
 
+    # Putting the leftover elements
     while j <= mid:
         num_list[k] = temp[j]
         k += 1
         j += 1
 
 def shell_sort(num_list: list[int]) -> None:
-    interval: int = len(num_list) // 2
+    interval: int = 1
     temp: int
     j: int
 
-    while interval > 0:
+    # Initializing the interval to 3n + 1 where 3n + 1 is smaller than the list length
+    while interval < len(num_list) // 3:
+        interval = (interval * 3) + 1
+
+    while interval >= 1:
         for i in range(interval, len(num_list)):
             temp = num_list[i]
             j = i
@@ -111,7 +118,8 @@ def shell_sort(num_list: list[int]) -> None:
                 j -= interval
 
             num_list[j] = temp
-        interval = interval // 2
+
+        interval //= 3 # Making the interval smaller
 
 def insertsion_sort(num_list: list[int]) -> None:
     temp: int
@@ -119,22 +127,23 @@ def insertsion_sort(num_list: list[int]) -> None:
 
     for i in range(1, len(num_list)):
         temp = num_list[i]
-        j = i - 1
+        j = i
 
-        while j >= 0 and num_list[j] > temp:
-            num_list[j + 1] = num_list[j]
+        while j >= 1 and num_list[j - 1] > temp:
+            num_list[j] = num_list[j - 1]
             j -= 1
 
-        num_list[j + 1] = temp
+        num_list[j] = temp
 
 def selection_sort(num_list: list[int]) -> None:
     length_minus_one: int = len(num_list) - 1
     j: int
 
     for i in range(length_minus_one):
-        j = index_of_min(num_list, len(num_list), i)
+        j = index_of_min(num_list, len(num_list), i) # Finding the index that has the minimum value
         num_list[i], num_list[j] = num_list[j], num_list[i] # Swapping elements
 
+# Finds the index that has the minimum value in the list.
 def index_of_min(num_list: list[int], length: int, start: int) -> int: # For Selection Sort
     min: int = start
 
@@ -207,11 +216,13 @@ def bozo_sort(num_list: list[int]) -> None:
     index1: int
     index2: int
 
+    # Selects 2 random numbers in the list and swaps them until the list is sorted.
     while not is_sorted(num_list):
         index1 = randint(0, length_minus_one)
         index2 = randint(0, length_minus_one)
         num_list[index1], num_list[index2] = num_list[index2], num_list[index1] # Swapping elements
 
 def bogo_sort(num_list: list[int]) -> None:
+    # Shuffles the whole list until it is sorted.
     while not is_sorted(num_list):
         shuffle(num_list)

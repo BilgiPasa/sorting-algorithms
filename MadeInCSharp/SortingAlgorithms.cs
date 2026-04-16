@@ -75,7 +75,7 @@ public static class SortingAlgorithms
 
     public static void MergeSort(int[] numArr)
     {
-        int[] temp = new int[numArr.Length];
+        int[] temp = new int[numArr.Length]; // Making a new array because we need to store the elements that we want to sort
         MergeSortRange(numArr, temp, 0, numArr.Length - 1);
     }
 
@@ -105,6 +105,7 @@ public static class SortingAlgorithms
         i = start;
         int j = mid + 1, k = start;
 
+        // Putting the values in sorted order
         while (i <= mid && j <= end)
         {
             if (temp[i] <= temp[j])
@@ -117,11 +118,13 @@ public static class SortingAlgorithms
             }
         }
 
+        // Putting the leftover elements
         while (i <= mid)
         {
             numArr[k++] = temp[i++]; // numArr[k] = temp[i]; k += 1; i += 1;
         }
 
+        // Putting the leftover elements
         while (j <= mid)
         {
             numArr[k++] = temp[j++]; // numArr[k] = temp[j]; k += 1; j += 1;
@@ -130,9 +133,15 @@ public static class SortingAlgorithms
 
     public static void ShellSort(int[] numArr)
     {
-        int temp, j;
+        int interval = 1, temp, j;
 
-        for (int interval = numArr.Length / 2; interval > 0; interval /= 2)
+        // Initializing the interval to 3n + 1 where 3n + 1 is smaller than the array length
+        while (interval < numArr.Length / 3)
+        {
+            interval = (interval * 3) + 1;
+        }
+
+        while (interval >= 1)
         {
             for (int i = interval; i < numArr.Length; i++)
             {
@@ -145,6 +154,8 @@ public static class SortingAlgorithms
 
                 numArr[j] = temp;
             }
+
+            interval /= 3; // Making the interval smaller
         }
     }
 
@@ -155,15 +166,13 @@ public static class SortingAlgorithms
         for (int i = 1; i < numArr.Length; i++)
         {
             temp = numArr[i];
-            j = i - 1;
 
-            while (j >= 0 && numArr[j] > temp)
+            for (j = i; j >= 1 && numArr[j - 1] > temp; j--)
             {
-                numArr[j + 1] = numArr[j];
-                j--;
+                numArr[j] = numArr[j - 1];
             }
 
-            numArr[j + 1] = temp;
+            numArr[j] = temp;
         }
     }
 
@@ -173,11 +182,12 @@ public static class SortingAlgorithms
 
         for (int i = 0; i < lengthMinusOne; i++)
         {
-            j = IndexOfMin(numArr, numArr.Length, i);
+            j = IndexOfMin(numArr, numArr.Length, i); // Finding the index that has the minimum value
             (numArr[i], numArr[j]) = (numArr[j], numArr[i]); // Swapping elements
         }
     }
 
+    // Finds the index that has the minimum value in the array.
     static int IndexOfMin(int[] numArr, int length, int start) // For Selection Sort
     {
         int min = start;
@@ -287,6 +297,7 @@ public static class SortingAlgorithms
         int index1, index2;
         Random r = new(); // This is the short version of Random r = new Random();
 
+        // Selects 2 random numbers in the array and swaps them until the array is sorted.
         while (!IsSorted(numArr))
         {
             index1 = r.Next(numArr.Length);
@@ -299,6 +310,7 @@ public static class SortingAlgorithms
     {
         Random r = new(); // This is the short version of Random r = new Random();
 
+        // Shuffles the whole array until it is sorted.
         while (!IsSorted(numArr))
         {
             r.Shuffle(numArr);

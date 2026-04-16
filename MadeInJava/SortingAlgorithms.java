@@ -71,7 +71,7 @@ public class SortingAlgorithms {
     }
 
     public static void mergeSort(int[] numArr) {
-        int[] temp = new int[numArr.length];
+        int[] temp = new int[numArr.length]; // Making a new array because we need to store the elements that we want to sort
         mergeSortRange(numArr, temp, 0, numArr.length - 1);
     }
 
@@ -91,6 +91,7 @@ public class SortingAlgorithms {
         System.arraycopy(numArr, start, temp, start, (end - start + 1));
         int i = start, j = mid + 1, k = start;
 
+        // Putting the values in sorted order
         while (i <= mid && j <= end) {
             if (temp[i] <= temp[j]) {
                 numArr[k++] = temp[i++]; // numArr[k] = temp[i]; k += 1; i += 1;
@@ -99,19 +100,26 @@ public class SortingAlgorithms {
             }
         }
 
+        // Putting the leftover elements
         while (i <= mid) {
             numArr[k++] = temp[i++]; // numArr[k] = temp[i]; k += 1; i += 1;
         }
 
+        // Putting the leftover elements
         while (j <= mid) {
             numArr[k++] = temp[j++]; // numArr[k] = temp[j]; k += 1; j += 1;
         }
     }
 
     public static void shellSort(int[] numArr) {
-        int temp, j;
+        int interval = 1, temp, j;
 
-        for (int interval = numArr.length / 2; interval > 0; interval /= 2) {
+        // Initializing the interval to 3n + 1 where 3n + 1 is smaller than the array length
+        while (interval < numArr.length / 3) {
+            interval = (interval * 3) + 1;
+        }
+
+        while (interval >= 1) {
             for (int i = interval; i < numArr.length; i++) {
                 temp = numArr[i];
 
@@ -121,6 +129,8 @@ public class SortingAlgorithms {
 
                 numArr[j] = temp;
             }
+
+            interval /= 3; // Making the interval smaller
         }
     }
 
@@ -129,14 +139,12 @@ public class SortingAlgorithms {
 
         for (int i = 1; i < numArr.length; i++) {
             temp = numArr[i];
-            j = i - 1;
 
-            while (j >= 0 && numArr[j] > temp) {
-                numArr[j + 1] = numArr[j];
-                j--;
+            for (j = i; j >= 1 && numArr[j - 1] > temp; j--) {
+                numArr[j] = numArr[j - 1];
             }
 
-            numArr[j + 1] = temp;
+            numArr[j] = temp;
         }
     }
 
@@ -144,11 +152,12 @@ public class SortingAlgorithms {
         int lengthMinusOne = numArr.length - 1, j;
 
         for (int i = 0; i < lengthMinusOne; i++) {
-            j = indexOfMin(numArr, numArr.length, i);
+            j = indexOfMin(numArr, numArr.length, i); // Finding the index that has the minimum value
             swapElements(numArr, i, j);
         }
     }
 
+    // Finds the index that has the minimum value in the array.
     static int indexOfMin(int[] numArr, int length, int start) { // For Selection Sort
         int min = start;
 
@@ -235,6 +244,7 @@ public class SortingAlgorithms {
         int index1, index2;
         Random r = new Random();
 
+        // Selects 2 random numbers in the array and swaps them until the array is sorted.
         while (!isSorted(numArr)) {
             index1 = r.nextInt(numArr.length);
             index2 = r.nextInt(numArr.length);
@@ -243,6 +253,7 @@ public class SortingAlgorithms {
     }
 
     public static void bogoSort(int[] numArr) {
+        // Shuffles the whole array until it is sorted.
         while (!isSorted(numArr)) {
             fisherYatesShuffle(numArr);
         }
