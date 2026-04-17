@@ -32,6 +32,6 @@ The Python files are in the [made_in_python](https://github.com/BilgiPasa/sortin
 
 ---
 
-*According to BilgiPasa's tests when tested in C# with random input.
+*According to BilgiPasa's tests when tested in C# using randomized arrays.
 
-**According to BilgiPasa's tests when Insertion Sort used with random input.
+**According to BilgiPasa's tests when tested with Insertion Sort using randomized arrays.
