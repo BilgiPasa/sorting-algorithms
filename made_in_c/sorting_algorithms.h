@@ -9,7 +9,7 @@ int merge_sort(int num_arr[], int length);
 void merge_sort_range(int num_arr[], int temp[], int start, int end);
 void merge(int num_arr[], int temp[], int start, int mid, int end);
 void insertion_sort(int num_arr[], int length);
-void selection_sort(int arr[], int length);
+void selection_sort(int num_arr[], int length);
 int index_of_min(const int num_arr[], int length, int start);
 void gnome_sort(int num_arr[], int length);
 void bubble_sort(int num_arr[], int length);
