@@ -152,16 +152,16 @@ public class SortingAlgorithms {
         int lengthMinusOne = numArr.length - 1, j;
 
         for (int i = 0; i < lengthMinusOne; i++) {
-            j = indexOfMin(numArr, numArr.length, i); // Finding the index that has the minimum value
+            j = indexOfMin(numArr, i); // Finding the index that has the minimum value
             swapElements(numArr, i, j);
         }
     }
 
     // Finds the index that has the minimum value in the array.
-    static int indexOfMin(int[] numArr, int length, int start) { // For Selection Sort
+    static int indexOfMin(int[] numArr, int start) { // For Selection Sort
         int min = start;
 
-        for (int i = start; i < length; i++) {
+        for (int i = start; i < numArr.length; i++) {
             if (numArr[min] > numArr[i]) {
                 min = i;
             }

@@ -182,17 +182,17 @@ public static class SortingAlgorithms
 
         for (int i = 0; i < lengthMinusOne; i++)
         {
-            j = IndexOfMin(numArr, numArr.Length, i); // Finding the index that has the minimum value
+            j = IndexOfMin(numArr, i); // Finding the index that has the minimum value
             (numArr[i], numArr[j]) = (numArr[j], numArr[i]); // Swapping elements
         }
     }
 
     // Finds the index that has the minimum value in the array.
-    static int IndexOfMin(int[] numArr, int length, int start) // For Selection Sort
+    static int IndexOfMin(int[] numArr, int start) // For Selection Sort
     {
         int min = start;
 
-        for (int i = start; i < length; i++)
+        for (int i = start; i < numArr.Length; i++)
         {
             if (numArr[min] > numArr[i])
             {

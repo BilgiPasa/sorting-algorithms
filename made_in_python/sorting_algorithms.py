@@ -140,14 +140,14 @@ def selection_sort(num_list: list[int]) -> None:
     j: int
 
     for i in range(length_minus_one):
-        j = index_of_min(num_list, len(num_list), i) # Finding the index that has the minimum value
+        j = index_of_min(num_list, i) # Finding the index that has the minimum value
         num_list[i], num_list[j] = num_list[j], num_list[i] # Swapping elements
 
 # Finds the index that has the minimum value in the list.
-def index_of_min(num_list: list[int], length: int, start: int) -> int: # For Selection Sort
+def index_of_min(num_list: list[int], start: int) -> int: # For Selection Sort
     min: int = start
 
-    for i in range(start, length):
+    for i in range(start, len(num_list)):
         if num_list[min] > num_list[i]:
             min = i
 
