@@ -52,6 +52,7 @@ public class SortingAlgorithms {
                 }
             }
 
+            // To make the algorithm faster, j stops decreasing when the pivot and jth element are the same.
             while (numArr[start] < numArr[--j]) { // --j -> Before this line executes, do j -= 1
                 if (j == start) {
                     break;

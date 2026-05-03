@@ -40,6 +40,7 @@ def move_elements_and_return_pivot(num_list: list[int], start: int, end: int) ->
         while True:
             j -= 1 # I can't do --j in Python.
 
+            # To make the algorithm faster, j stops decreasing when the pivot and jth element are the same.
             if not (num_list[start] < num_list[j]) or j == start:
                 break
 
