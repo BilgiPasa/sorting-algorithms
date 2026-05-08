@@ -1,6 +1,6 @@
 # sorting-algorithms
 
-These are sorting algorithms in different programming languages.
+These are sorting algorithms in multiple programming languages.
 
 This repository is focused on non-negative integer sorting algorithms to keep it simple. (Specifically, signed 32 bit integers but only non-negative integers are used.)
 
