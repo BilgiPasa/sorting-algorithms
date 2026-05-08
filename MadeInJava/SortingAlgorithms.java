@@ -95,20 +95,20 @@ public class SortingAlgorithms {
         // Putting the values in sorted order
         while (i <= mid && j <= end) {
             if (temp[i] <= temp[j]) {
-                numArr[k++] = temp[i++]; // numArr[k] = temp[i]; k += 1; i += 1;
+                numArr[k++] = temp[i++];
             } else {
-                numArr[k++] = temp[j++]; // numArr[k] = temp[j]; k += 1; j += 1;
+                numArr[k++] = temp[j++];
             }
         }
 
         // Putting the leftover elements
         while (i <= mid) {
-            numArr[k++] = temp[i++]; // numArr[k] = temp[i]; k += 1; i += 1;
+            numArr[k++] = temp[i++];
         }
 
         // Putting the leftover elements
         while (j <= mid) {
-            numArr[k++] = temp[j++]; // numArr[k] = temp[j]; k += 1; j += 1;
+            numArr[k++] = temp[j++];
         }
     }
 

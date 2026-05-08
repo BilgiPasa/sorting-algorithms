@@ -92,17 +92,17 @@ void merge(int num_arr[], int temp[], int start, int mid, int end) // For Merge 
     // Putting the values in sorted order
     while (i <= mid && j <= end)
     {
-        if (temp[i] <= temp[j]) num_arr[k++] = temp[i++]; // num_arr[k] = temp[i]; k += 1; i += 1;
-        else                    num_arr[k++] = temp[j++]; // num_arr[k] = temp[j]; k += 1; j += 1;
+        if (temp[i] <= temp[j]) num_arr[k++] = temp[i++];
+        else                    num_arr[k++] = temp[j++];
     }
 
     // Putting the leftover elements
     while (i <= mid)
-        num_arr[k++] = temp[i++]; // num_arr[k] = temp[i]; k += 1; i += 1;
+        num_arr[k++] = temp[i++];
 
     // Putting the leftover elements
     while (j <= end)
-        num_arr[k++] = temp[j++]; // num_arr[k] = temp[j]; k += 1; j += 1;
+        num_arr[k++] = temp[j++];
 }
 
 // TODO: IMPLEMENT SHELL SORT HERE.
