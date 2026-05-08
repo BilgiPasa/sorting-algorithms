@@ -72,7 +72,7 @@ public class SortingAlgorithms {
     }
 
     public static void mergeSort(int[] numArr) {
-        int[] temp = new int[numArr.length]; // Making a new array because we need to store the elements that we want to sort
+        int[] temp = new int[numArr.length]; // Making a new array to store the elements that we want to sort
         mergeSortRange(numArr, temp, 0, numArr.length - 1);
     }
 

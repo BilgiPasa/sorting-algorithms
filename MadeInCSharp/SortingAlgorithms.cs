@@ -76,7 +76,7 @@ public static class SortingAlgorithms
 
     public static void MergeSort(int[] numArr)
     {
-        int[] temp = new int[numArr.Length]; // Making a new array because we need to store the elements that we want to sort
+        int[] temp = new int[numArr.Length]; // Making a new array to store the elements that we want to sort
         MergeSortRange(numArr, temp, 0, numArr.Length - 1);
     }
 

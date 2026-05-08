@@ -54,7 +54,7 @@ def move_elements_and_return_pivot(num_list: list[int], start: int, end: int) ->
     return j
 
 def merge_sort(num_list: list[int]) -> None:
-    temp: list[int] = [0] * len(num_list) # Making a new list because we need to store the elements that we want to sort
+    temp: list[int] = [0] * len(num_list) # Making a new list to store the elements that we want to sort
     merge_sort_range(num_list, temp, 0, len(num_list) - 1)
 
 def merge_sort_range(num_list: list[int], temp: list[int], start: int, end: int) -> None: # For Merge Sort

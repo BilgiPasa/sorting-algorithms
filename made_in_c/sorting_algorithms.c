@@ -58,7 +58,7 @@ int compare(const void *elem1, const void *elem2) // For qsort (C's built-in sor
 // returns 0 if memory allocation for temporary array fails
 int merge_sort(int num_arr[], int length)
 {
-    int *temp = malloc(length * sizeof(int)); // Making a new array because we need to store the elements that we want to sort
+    int *temp = malloc(length * sizeof(int)); // Making a new array to store the elements that we want to sort
 
     if (!temp)
     {
