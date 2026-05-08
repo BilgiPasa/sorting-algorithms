@@ -2,8 +2,6 @@
 
 These are sorting algorithms in multiple programming languages.
 
-This repository is focused on non-negative integer sorting algorithms to keep it simple. (Specifically, signed 32 bit integers but only non-negative integers are used.)
-
 This project is open source and licensed with the [MIT license](https://github.com/BilgiPasa/sorting-algorithms/blob/main/LICENSE.md).
 
 Implemented sorting algorithms (from fastest to slowest*): Quick Sort, Merge Sort, Shell Sort, Insertion Sort, Selection Sort, Gnome Sort, Cocktail Shaker Sort, Bubble Sort, Sootage Sort, Bozo Sort, Bogo Sort.
