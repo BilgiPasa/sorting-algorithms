@@ -6,13 +6,11 @@ This project is open source and licensed with the [MIT license](https://github.c
 
 Implemented sorting algorithms (from fastest to slowest*): Quick Sort, Merge Sort, Shell Sort, Insertion Sort, Selection Sort, Gnome Sort, Cocktail Shaker Sort, Bubble Sort, Sootage Sort, Bozo Sort, Bogo Sort.
 
-Implemented languages: C, C#, Java, Python.
+Implemented languages (from fastest to slowest**): C, Java, C#, Python.
 
 The C part is implemented by [bartu-g](https://github.com/bartu-g). Thank you for contributing.
 
 The C#, Java and Python parts are implemented by [BilgiPasa](https://github.com/BilgiPasa).
-
-Speed comparison of the languages (from fastest to slowest**): C (GCC 15), Java (25), C# (.Net 10), Python (3.14).
 
 I (BilgiPasa) wrote the code of the parts that I implemented. **I did not do** "vibe coding".
 
