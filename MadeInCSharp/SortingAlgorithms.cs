@@ -296,7 +296,7 @@ public static class SortingAlgorithms
     public static void BozoSort(int[] numArr)
     {
         int index1, index2;
-        Random r = new(); // This is the short version of Random r = new Random();
+        Random r = new();
 
         // Selects 2 random numbers in the array and swaps them until the array is sorted.
         while (!IsSorted(numArr))
@@ -309,7 +309,7 @@ public static class SortingAlgorithms
 
     public static void BogoSort(int[] numArr)
     {
-        Random r = new(); // This is the short version of Random r = new Random();
+        Random r = new();
 
         // Shuffles the whole array until it is sorted.
         while (!IsSorted(numArr))
