@@ -121,11 +121,8 @@ public class SortingAlgorithms {
         }
 
         while (end > 0) {
-            // Putting the max element of the max-heap to the "end" index
             swapElements(numArr, 0, end);
-
-            // Shortening and fixing the max-heap
-            sink(numArr, 0, --end);
+            sink(numArr, 0, --end); // Shortening and fixing the max-heap
         }
     }
 

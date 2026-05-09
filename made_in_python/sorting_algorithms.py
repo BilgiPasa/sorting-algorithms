@@ -108,12 +108,9 @@ def heap_sort(num_list: list[int]) -> None:
         sink(num_list, i, end)
 
     while end > 0:
-        # Putting the max element of the max-heap to the "end" index
         num_list[0], num_list[end] = num_list[end], num_list[0] # Swapping elements
-
-        # Shortening and fixing the max-heap
-        end -= 1
-        sink(num_list, 0, end)
+        end -= 1 # Shortening the max-heap
+        sink(num_list, 0, end) # Fixing the max-heap
 
 # Used for making a max-heap
 def sink(num_list: list[int], i: int, end: int) -> None: # For Heap Sort

@@ -144,11 +144,8 @@ public static class SortingAlgorithms
 
         while (end > 0)
         {
-            // Putting the max element of the max-heap to the "end" index
             (numArr[0], numArr[end]) = (numArr[end], numArr[0]); // Swapping elements
-
-            // Shortening and fixing the max-heap
-            Sink(numArr, 0, --end);
+            Sink(numArr, 0, --end); // Shortening and fixing the max-heap
         }
     }
 
