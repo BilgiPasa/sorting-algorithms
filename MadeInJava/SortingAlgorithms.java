@@ -112,29 +112,6 @@ public class SortingAlgorithms {
         }
     }
 
-    public static void shellSort(int[] numArr) {
-        int interval = 1, temp, j;
-
-        // Initializing the interval to 3n + 1 where 3n + 1 is smaller than the array length
-        while (interval < numArr.length / 3) {
-            interval = (interval * 3) + 1;
-        }
-
-        while (interval >= 1) {
-            for (int i = interval; i < numArr.length; i++) {
-                temp = numArr[i];
-
-                for (j = i; j >= interval && numArr[j - interval] > temp; j -= interval) {
-                    numArr[j] = numArr[j - interval];
-                }
-
-                numArr[j] = temp;
-            }
-
-            interval /= 3; // Making the interval smaller
-        }
-    }
-
     public static void heapSort(int[] numArr) {
         int end = numArr.length - 1;
 
@@ -168,6 +145,29 @@ public class SortingAlgorithms {
 
             swapElements(numArr, i, j);
             i = j;
+        }
+    }
+
+    public static void shellSort(int[] numArr) {
+        int interval = 1, temp, j;
+
+        // Initializing the interval to 3n + 1 where 3n + 1 is smaller than the array length
+        while (interval < numArr.length / 3) {
+            interval = (interval * 3) + 1;
+        }
+
+        while (interval >= 1) {
+            for (int i = interval; i < numArr.length; i++) {
+                temp = numArr[i];
+
+                for (j = i; j >= interval && numArr[j - interval] > temp; j -= interval) {
+                    numArr[j] = numArr[j - interval];
+                }
+
+                numArr[j] = temp;
+            }
+
+            interval /= 3; // Making the interval smaller
         }
     }
 

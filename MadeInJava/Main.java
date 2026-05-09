@@ -7,8 +7,8 @@ public class Main {
         BUILT_IN(0),
         QUICK_SORT(1),
         MERGE_SORT(2),
-        SHELL_SORT(3),
-        HEAP_SORT(4),
+        HEAP_SORT(3),
+        SHELL_SORT(4),
         INSERTION_SORT(5),
         SELECTION_SORT(6),
         GNOME_SORT(7),
@@ -35,8 +35,8 @@ public class Main {
         System.out.println("Sorting algorithms (from fastest to slowest)");
         System.out.println("1) Quick Sort");
         System.out.println("2) Merge Sort");
-        System.out.println("3) Shell Sort");
-        System.out.println("4) Heap Sort");
+        System.out.println("3) Heap Sort");
+        System.out.println("4) Shell Sort");
         System.out.println("5) Insertion Sort");
         System.out.println("6) Selection Sort");
         System.out.println("7) Gnome Sort");
@@ -58,7 +58,7 @@ public class Main {
 
         /* I did not use switch-case to compare integers with the enum indexes
         because of the "case expressions must be constant expressions" warning. */
-        if (selectedAlgorithm == AlgorithmTypes.BUILT_IN.index || selectedAlgorithm == AlgorithmTypes.QUICK_SORT.index || selectedAlgorithm == AlgorithmTypes.MERGE_SORT.index || selectedAlgorithm == AlgorithmTypes.SHELL_SORT.index || selectedAlgorithm == AlgorithmTypes.HEAP_SORT.index) {
+        if (selectedAlgorithm == AlgorithmTypes.BUILT_IN.index || selectedAlgorithm == AlgorithmTypes.QUICK_SORT.index || selectedAlgorithm == AlgorithmTypes.MERGE_SORT.index || selectedAlgorithm == AlgorithmTypes.HEAP_SORT.index || selectedAlgorithm == AlgorithmTypes.SHELL_SORT.index) {
             System.out.print("Enter the array size (22222222 is recommended): ");
         } else if (selectedAlgorithm == AlgorithmTypes.INSERTION_SORT.index || selectedAlgorithm == AlgorithmTypes.SELECTION_SORT.index || selectedAlgorithm == AlgorithmTypes.GNOME_SORT.index || selectedAlgorithm == AlgorithmTypes.COCKTAIL_SHAKER_SORT.index || selectedAlgorithm == AlgorithmTypes.BUBBLE_SORT.index) {
             System.out.print("Enter the array size (55555 is recommended): ");
@@ -137,15 +137,15 @@ public class Main {
             startTime = System.nanoTime();
             SortingAlgorithms.mergeSort(numArr);
             endTime = System.nanoTime();
-        } else if (selectedAlgorithm == AlgorithmTypes.SHELL_SORT.index) {
-            usedAlgorithmType = "Shell Sort";
-            startTime = System.nanoTime();
-            SortingAlgorithms.shellSort(numArr);
-            endTime = System.nanoTime();
         } else if (selectedAlgorithm == AlgorithmTypes.HEAP_SORT.index) {
             usedAlgorithmType = "Heap Sort";
             startTime = System.nanoTime();
             SortingAlgorithms.heapSort(numArr);
+            endTime = System.nanoTime();
+        } else if (selectedAlgorithm == AlgorithmTypes.SHELL_SORT.index) {
+            usedAlgorithmType = "Shell Sort";
+            startTime = System.nanoTime();
+            SortingAlgorithms.shellSort(numArr);
             endTime = System.nanoTime();
         } else if (selectedAlgorithm == AlgorithmTypes.INSERTION_SORT.index) {
             usedAlgorithmType = "Insertion Sort";

@@ -132,6 +132,42 @@ public static class SortingAlgorithms
         }
     }
 
+    public static void HeapSort(int[] numArr) {
+        int end = numArr.Length - 1;
+
+        for (int i = end / 2; i >= 0; i--) {
+            Sink(numArr, i, end);
+        }
+
+        while (end > 0) {
+            (numArr[0], numArr[end]) = (numArr[end], numArr[0]); // Swapping elements
+            Sink(numArr, 0, --end);
+        }
+    }
+
+    private static void Sink(int[] numArr, int i, int end) { // For Heap Sort
+        int j;
+
+        while (true) {
+            j = (i * 2) + 1;
+
+            if (j > end) {
+                break;
+            }
+
+            if (j < end && numArr[j] < numArr[j + 1]) {
+                j++;
+            }
+
+            if (numArr[i] > numArr[j]) {
+                break;
+            }
+
+            (numArr[i], numArr[j]) = (numArr[j], numArr[i]); // Swapping elements
+            i = j;
+        }
+    }
+
     public static void ShellSort(int[] numArr)
     {
         int interval = 1, temp, j;

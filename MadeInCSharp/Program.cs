@@ -9,6 +9,7 @@ class Program
         BuiltIn,
         QuickSort,
         MergeSort,
+        HeapSort,
         ShellSort,
         InsertionSort,
         SelectionSort,
@@ -26,15 +27,16 @@ class Program
         Console.WriteLine("Sorting algorithms (from fastest to slowest)");
         Console.WriteLine("1) Quick Sort");
         Console.WriteLine("2) Merge Sort");
-        Console.WriteLine("3) Shell Sort");
-        Console.WriteLine("4) Insertion Sort");
-        Console.WriteLine("5) Selection Sort");
-        Console.WriteLine("6) Gnome Sort");
-        Console.WriteLine("7) Cocktail Shaker Sort");
-        Console.WriteLine("8) Bubble Sort");
-        Console.WriteLine("9) Sootage Sort");
-        Console.WriteLine("10) Bozo Sort");
-        Console.WriteLine("11) Bogo Sort");
+        Console.WriteLine("3) Heap Sort");
+        Console.WriteLine("4) Shell Sort");
+        Console.WriteLine("5) Insertion Sort");
+        Console.WriteLine("6) Selection Sort");
+        Console.WriteLine("7) Gnome Sort");
+        Console.WriteLine("8) Cocktail Shaker Sort");
+        Console.WriteLine("9) Bubble Sort");
+        Console.WriteLine("10) Sootage Sort");
+        Console.WriteLine("11) Bozo Sort");
+        Console.WriteLine("12) Bogo Sort");
         Console.Write("Select an algorithm: ");
         int selectedAlgorithm;
 
@@ -63,6 +65,7 @@ class Program
             case (int)AlgorithmTypes.BuiltIn:
             case (int)AlgorithmTypes.QuickSort:
             case (int)AlgorithmTypes.MergeSort:
+            case (int)AlgorithmTypes.HeapSort:
             case (int)AlgorithmTypes.ShellSort:
                 Console.Write("Enter the array size (22222222 is recommended): ");
                 break;
@@ -178,6 +181,13 @@ class Program
                 usedAlgorithmType = "Merge Sort";
                 s.Start();
                 SortingAlgorithms.MergeSort(numArr);
+                s.Stop();
+                break;
+
+            case (int)AlgorithmTypes.HeapSort:
+                usedAlgorithmType = "Heap Sort";
+                s.Start();
+                SortingAlgorithms.HeapSort(numArr);
                 s.Stop();
                 break;
 
