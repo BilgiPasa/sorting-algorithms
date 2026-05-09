@@ -14,7 +14,7 @@ public class SortingAlgorithms {
         return true;
     }
 
-    static void swapElements(int[] numArr, int a, int b) { // To swap elements using XOR
+    private static void swapElements(int[] numArr, int a, int b) { // To swap elements using XOR
         if (a == b) {
             return;
         }
@@ -36,7 +36,7 @@ public class SortingAlgorithms {
         quickSort(numArr, pivot + 1, end);
     }
 
-    static int moveElementsAndReturnPivot(int[] numArr, int start, int end) { // For Quick Sort
+    private static int moveElementsAndReturnPivot(int[] numArr, int start, int end) { // For Quick Sort
         // Note: The initial pivot is the numArr[start] element.
 
         int i = start, j = end + 1;
@@ -76,7 +76,7 @@ public class SortingAlgorithms {
         mergeSortRange(numArr, temp, 0, numArr.length - 1);
     }
 
-    static void mergeSortRange(int[] numArr, int[] temp, int start, int end) { // For Merge Sort
+    private static void mergeSortRange(int[] numArr, int[] temp, int start, int end) { // For Merge Sort
         if (end <= start) {
             return;
         }
@@ -87,7 +87,7 @@ public class SortingAlgorithms {
         merge(numArr, temp, start, mid, end);
     }
 
-    static void merge(int[] numArr, int[] temp, int start, int mid, int end) { // For Merge Sort
+    private static void merge(int[] numArr, int[] temp, int start, int mid, int end) { // For Merge Sort
         // Copying some part of the numArr to temp
         System.arraycopy(numArr, start, temp, start, (end - start + 1));
         int i = start, j = mid + 1, k = start;
@@ -159,7 +159,7 @@ public class SortingAlgorithms {
     }
 
     // Finds the index that has the minimum value in the array.
-    static int indexOfMin(int[] numArr, int start) { // For Selection Sort
+    private static int indexOfMin(int[] numArr, int start) { // For Selection Sort
         int min = start;
 
         for (int i = start; i < numArr.length; i++) {
@@ -261,7 +261,7 @@ public class SortingAlgorithms {
     }
 
     // Fisher-Yates shuffle algorithm
-    static void fisherYatesShuffle(int[] numArr) { // For Bogo Sort
+    private static void fisherYatesShuffle(int[] numArr) { // For Bogo Sort
         int lengthMinusOne = numArr.length - 1, randomNum;
         Random r = new Random();
 
