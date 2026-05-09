@@ -12,7 +12,7 @@ The C part is implemented by [bartu-g](https://github.com/bartu-g). Thank you fo
 
 The C#, Java and Python parts are implemented by [BilgiPasa](https://github.com/BilgiPasa).
 
-I (BilgiPasa) wrote the code of the parts that I implemented. **I did not do** "vibe coding".
+I (BilgiPasa) **did not do** "vibe coding".
 
 ---
 
