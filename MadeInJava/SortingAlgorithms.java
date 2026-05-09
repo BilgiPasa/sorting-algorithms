@@ -112,6 +112,47 @@ public class SortingAlgorithms {
         }
     }
 
+    public static void heapSort(int[] numArr) {
+        int end = numArr.length - 1;
+
+        // Initializing the max-heap
+        for (int i = end / 2; i >= 0; i--) {
+            sink(numArr, i, end);
+        }
+
+        while (end > 0) {
+            // Putting the max element of the max-heap to the "end" index
+            swapElements(numArr, 0, end);
+
+            // Shortening and fixing the max-heap
+            sink(numArr, 0, --end);
+        }
+    }
+
+    // Used for making a max-heap
+    private static void sink(int[] numArr, int i, int end) { // For Heap Sort
+        int j;
+
+        while (true) {
+            j = (i * 2) + 1; // jth element is the left child of the ith element
+
+            if (j > end) {
+                break;
+            }
+
+            if (j < end && numArr[j] < numArr[j + 1]) {
+                j++;
+            }
+
+            if (numArr[i] > numArr[j]) {
+                break;
+            }
+
+            swapElements(numArr, i, j);
+            i = j;
+        }
+    }
+
     public static void shellSort(int[] numArr) {
         int interval = 1, temp, j;
 

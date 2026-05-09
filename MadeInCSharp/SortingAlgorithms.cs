@@ -132,6 +132,54 @@ public static class SortingAlgorithms
         }
     }
 
+    public static void HeapSort(int[] numArr)
+    {
+        int end = numArr.Length - 1;
+
+        // Initializing the max-heap
+        for (int i = end / 2; i >= 0; i--)
+        {
+            Sink(numArr, i, end);
+        }
+
+        while (end > 0)
+        {
+            // Putting the max element of the max-heap to the "end" index
+            (numArr[0], numArr[end]) = (numArr[end], numArr[0]); // Swapping elements
+
+            // Shortening and fixing the max-heap
+            Sink(numArr, 0, --end);
+        }
+    }
+
+    // Used for making a max-heap
+    static void Sink(int[] numArr, int i, int end) { // For Heap Sort
+        int j;
+
+        while (true)
+        {
+            j = (i * 2) + 1; // jth element is the left child of the ith element
+
+            if (j > end)
+            {
+                break;
+            }
+
+            if (j < end && numArr[j] < numArr[j + 1])
+            {
+                j++;
+            }
+
+            if (numArr[i] > numArr[j])
+            {
+                break;
+            }
+
+            (numArr[i], numArr[j]) = (numArr[j], numArr[i]); // Swapping elements
+            i = j;
+        }
+    }
+
     public static void ShellSort(int[] numArr)
     {
         int interval = 1, temp, j;

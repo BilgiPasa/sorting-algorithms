@@ -1,36 +1,38 @@
 from enum import IntEnum
 from random import randint
-from sorting_algorithms import is_sorted, quick_sort, merge_sort, shell_sort, insertion_sort, selection_sort, gnome_sort, cocktail_shaker_sort, bubble_sort, sootage_sort, bozo_sort, bogo_sort
+from sorting_algorithms import is_sorted, quick_sort, merge_sort, heap_sort, shell_sort, insertion_sort, selection_sort, gnome_sort, cocktail_shaker_sort, bubble_sort, sootage_sort, bozo_sort, bogo_sort
 from time import time
 
 class AlgorithmTypes(IntEnum):
     BUILT_IN = 0
     QUICK_SORT = 1
     MERGE_SORT = 2
-    SHELL_SORT = 3
-    INSERTION_SORT = 4
-    SELECTION_SORT = 5
-    GNOME_SORT = 6
-    COCKTAIL_SHAKER_SORT = 7
-    BUBBLE_SORT = 8
-    SOOTAGE_SORT = 9
-    BOZO_SORT = 10
-    BOGO_SORT = 11
+    HEAP_SORT = 3
+    SHELL_SORT = 4
+    INSERTION_SORT = 5
+    SELECTION_SORT = 6
+    GNOME_SORT = 7
+    COCKTAIL_SHAKER_SORT = 8
+    BUBBLE_SORT = 9
+    SOOTAGE_SORT = 10
+    BOZO_SORT = 11
+    BOGO_SORT = 12
 
 def main() -> None:
     print()
     print("Sorting algorithms (from fastest to slowest)")
     print("1) Quick Sort")
     print("2) Merge Sort")
-    print("3) Shell Sort")
-    print("4) Insertion Sort")
-    print("5) Selection Sort")
-    print("6) Gnome Sort")
-    print("7) Cocktail Shaker Sort")
-    print("8) Bubble Sort")
-    print("9) Sootage Sort")
-    print("10) Bozo Sort")
-    print("11) Bogo Sort")
+    print("3) Heap Sort")
+    print("4) Shell Sort")
+    print("5) Insertion Sort")
+    print("6) Selection Sort")
+    print("7) Gnome Sort")
+    print("8) Cocktail Shaker Sort")
+    print("9) Bubble Sort")
+    print("10) Sootage Sort")
+    print("11) Bozo Sort")
+    print("12) Bogo Sort")
     selected_algorithm: int
 
     try:
@@ -43,7 +45,7 @@ def main() -> None:
         case AlgorithmTypes.BUILT_IN:
             print("Enter the list size (22222222 is recommended): ", end="")
 
-        case AlgorithmTypes.QUICK_SORT | AlgorithmTypes.MERGE_SORT | AlgorithmTypes.SHELL_SORT:
+        case AlgorithmTypes.QUICK_SORT | AlgorithmTypes.MERGE_SORT | AlgorithmTypes.HEAP_SORT | AlgorithmTypes.SHELL_SORT:
             print("Enter the list size (1234567 is recommended): ", end="")
 
         case AlgorithmTypes.INSERTION_SORT | AlgorithmTypes.SELECTION_SORT | AlgorithmTypes.GNOME_SORT | AlgorithmTypes.COCKTAIL_SHAKER_SORT | AlgorithmTypes.BUBBLE_SORT:
@@ -122,6 +124,12 @@ def main() -> None:
             used_algorithm_type = "Merge Sort"
             start_time = time()
             merge_sort(num_list)
+            end_time = time()
+
+        case AlgorithmTypes.HEAP_SORT:
+            used_algorithm_type = "Heap Sort"
+            start_time = time()
+            heap_sort(num_list)
             end_time = time()
 
         case AlgorithmTypes.SHELL_SORT:

@@ -105,6 +105,8 @@ void merge(int num_arr[], int temp[], int start, int mid, int end) // For Merge 
         num_arr[k++] = temp[j++];
 }
 
+// TODO: IMPLEMENT HEAP SORT HERE.
+
 // TODO: IMPLEMENT SHELL SORT HERE.
 
 void insertion_sort(int num_arr[], int length)

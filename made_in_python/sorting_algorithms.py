@@ -100,6 +100,40 @@ def merge(num_list: list[int], temp: list[int], start: int, mid: int, end: int) 
         k += 1
         j += 1
 
+def heap_sort(num_list: list[int]) -> None:
+    end: int = len(num_list) - 1
+
+    # Initializing the max-heap
+    for i in range(end // 2, -1, -1):
+        sink(num_list, i, end)
+
+    while end > 0:
+        # Putting the max element of the max-heap to the "end" index
+        num_list[0], num_list[end] = num_list[end], num_list[0] # Swapping elements
+
+        # Shortening and fixing the max-heap
+        end -= 1
+        sink(num_list, 0, end)
+
+# Used for making a max-heap
+def sink(num_list: list[int], i: int, end: int) -> None: # For Heap Sort
+    j: int
+
+    while True:
+        j = (i * 2) + 1 # jth element is the left child of the ith element
+
+        if j > end:
+            break
+
+        if j < end and num_list[j] < num_list[j + 1]:
+            j += 1
+
+        if num_list[i] > num_list[j]:
+            break
+
+        num_list[i], num_list[j] = num_list[j], num_list[i] # Swapping elements
+        i = j
+
 def shell_sort(num_list: list[int]) -> None:
     interval: int = 1
     temp: int
