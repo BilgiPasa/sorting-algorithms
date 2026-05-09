@@ -135,6 +135,42 @@ public class SortingAlgorithms {
         }
     }
 
+    public static void heapSort(int[] numArr) {
+        int end = numArr.length - 1;
+
+        for (int i = end / 2; i >= 0; i--) {
+            sink(numArr, i, end);
+        }
+
+        while (end > 0) {
+            swapElements(numArr, 0, end);
+            sink(numArr, 0, --end);
+        }
+    }
+
+    private static void sink(int[] numArr, int i, int end) { // For Heap Sort
+        int j;
+
+        while (true) {
+            j = (i * 2) + 1;
+
+            if (j > end) {
+                break;
+            }
+
+            if (j < end && numArr[j] < numArr[j + 1]) {
+                j++;
+            }
+
+            if (numArr[i] > numArr[j]) {
+                break;
+            }
+
+            swapElements(numArr, i, j);
+            i = j;
+        }
+    }
+
     public static void insertionSort(int[] numArr) {
         int temp, j;
 
