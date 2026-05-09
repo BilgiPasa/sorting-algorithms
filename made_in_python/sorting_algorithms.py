@@ -117,7 +117,7 @@ def sink(num_list: list[int], i: int, end: int) -> None: # For Heap Sort
     j: int
 
     while True:
-        j = (i * 2) + 1 # jth element is the left child of the ith element
+        j = (i * 2) + 1 # jth element is the left child of ith element
 
         if j > end:
             break

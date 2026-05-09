@@ -131,7 +131,7 @@ public class SortingAlgorithms {
         int j;
 
         while (true) {
-            j = (i * 2) + 1; // jth element is the left child of the ith element
+            j = (i * 2) + 1; // jth element is the left child of ith element
 
             if (j > end) {
                 break;
