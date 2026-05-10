@@ -2,8 +2,6 @@
 
 These are sorting algorithms in multiple programming languages.
 
-This project is open source and licensed with the [MIT license](https://github.com/BilgiPasa/sorting-algorithms/blob/main/LICENSE.md).
-
 Implemented sorting algorithms (from fastest to slowest*): Quick Sort, Merge Sort, Heap Sort, Shell Sort, Insertion Sort, Selection Sort, Gnome Sort, Cocktail Shaker Sort, Bubble Sort, Sootage Sort, Bozo Sort, Bogo Sort.
 
 Implemented languages (from fastest to slowest**): C, Java, C#, Python.
@@ -11,6 +9,8 @@ Implemented languages (from fastest to slowest**): C, Java, C#, Python.
 The C part is implemented by [bartu-g](https://github.com/bartu-g). Thank you for contributing.
 
 The C#, Java and Python parts are implemented by [BilgiPasa](https://github.com/BilgiPasa).
+
+This project is open source and licensed with the [MIT license](https://github.com/BilgiPasa/sorting-algorithms/blob/main/LICENSE.md).
 
 I (BilgiPasa) **did not do** "vibe coding".
 
