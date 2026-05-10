@@ -258,7 +258,7 @@ public class SortingAlgorithms {
                 }
             }
 
-            length--; // Every time it restarts, the largest elements moves to the end of the array. So, we don't need to check it again.
+            length--; // In each iteration, largest elements move to the end of the array. So, we don't need to check them again.
         } while (swapped);
     }
 

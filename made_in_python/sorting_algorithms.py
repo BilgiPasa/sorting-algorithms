@@ -225,7 +225,7 @@ def bubble_sort(num_list: list[int]) -> None:
                 num_list[i - 1], num_list[i] = num_list[i], num_list[i - 1] # Swapping elements
                 swapped = True
 
-        length -= 1
+        length -= 1 # In each iteration, largest elements move to the end of the list. So, we don't need to check them again.
 
         if not swapped:
             break
