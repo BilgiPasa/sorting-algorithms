@@ -118,11 +118,6 @@ class Program
             Console.WriteLine("Don't make the array size as 0. Aborting.");
             return;
         }
-        else if (length == int.MaxValue)
-        {
-            Console.WriteLine("Don't make the array size as int.MaxValue. Aborting.");
-            return;
-        }
         else if (length < 0)
         {
             Console.WriteLine("Don't try to make the array size as a negative integer. Aborting.");
