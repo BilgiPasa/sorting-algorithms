@@ -12,8 +12,6 @@ Other languages are implemented by me (BilgiPasa).
 
 The project is open source and licensed with the [MIT license](https://github.com/BilgiPasa/sorting-algorithms/blob/main/LICENSE.md).
 
-I (BilgiPasa) **did not do** "vibe coding".
-
 ---
 
 The code files' locations:
