@@ -6,9 +6,9 @@ Implemented sorting algorithms (from fastest to slowest*): Quick Sort, Merge Sor
 
 Implemented languages (from fastest to slowest**): C, Java, C#, Python.
 
-The C part is implemented by [bartu-g](https://github.com/bartu-g). Thank you for your contributions.
+The C language is implemented by [bartu-g](https://github.com/bartu-g). Thank you for your contributions.
 
-The other parts are implemented by me (BilgiPasa).
+The other languages are implemented by me (BilgiPasa).
 
 The project is open source and licensed with the [MIT license](https://github.com/BilgiPasa/sorting-algorithms/blob/main/LICENSE.md).
 
