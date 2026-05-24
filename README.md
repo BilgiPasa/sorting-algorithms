@@ -8,7 +8,7 @@ Implemented languages (from fastest to slowest**): C, Java, C#, Python.
 
 The C language is implemented by [bartu-g](https://github.com/bartu-g). Thank you for your contributions.
 
-The other languages are implemented by me (BilgiPasa).
+Other languages are implemented by me (BilgiPasa).
 
 The project is open source and licensed with the [MIT license](https://github.com/BilgiPasa/sorting-algorithms/blob/main/LICENSE.md).
 
