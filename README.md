@@ -10,7 +10,7 @@ The C language is implemented by [bartu-g](https://github.com/bartu-g). Thank yo
 
 Other languages are implemented by me ([BilgiPasa](https://github.com/BilgiPasa)).
 
-The project is open source and licensed with the [MIT license](https://github.com/BilgiPasa/sorting-algorithms/blob/main/LICENSE.md).
+The project is open source under the [MIT license](https://github.com/BilgiPasa/sorting-algorithms/blob/main/LICENSE.md).
 
 ---
 
