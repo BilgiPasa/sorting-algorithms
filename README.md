@@ -14,15 +14,13 @@ The project is open source under the [MIT license](https://github.com/BilgiPasa/
 
 ---
 
-The code files' locations:
+C files are located at [made_in_c](https://github.com/BilgiPasa/sorting-algorithms/tree/main/made_in_c)
 
-The C files are located at [made_in_c](https://github.com/BilgiPasa/sorting-algorithms/tree/main/made_in_c)
+C# files are located at [MadeInCSharp](https://github.com/BilgiPasa/sorting-algorithms/tree/main/MadeInCSharp)
 
-The C# files are located at [MadeInCSharp](https://github.com/BilgiPasa/sorting-algorithms/tree/main/MadeInCSharp)
+Java files are located at [MadeInJava](https://github.com/BilgiPasa/sorting-algorithms/tree/main/MadeInJava)
 
-The Java files are located at [MadeInJava](https://github.com/BilgiPasa/sorting-algorithms/tree/main/MadeInJava)
-
-The Python files are located at [made_in_python](https://github.com/BilgiPasa/sorting-algorithms/tree/main/made_in_python)
+Python files are located at [made_in_python](https://github.com/BilgiPasa/sorting-algorithms/tree/main/made_in_python)
 
 ---
 
