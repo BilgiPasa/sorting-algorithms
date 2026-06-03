@@ -90,6 +90,7 @@ public class SortingAlgorithms {
     private static void merge(int[] numArr, int[] temp, int start, int mid, int end) { // For Merge Sort
         // Copying some part of the numArr to temp
         System.arraycopy(numArr, start, temp, start, (end - start + 1));
+
         int i = start, j = mid + 1, k = start;
 
         // Putting the values in sorted order
