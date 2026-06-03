@@ -67,10 +67,11 @@ def merge_sort_range(num_list: list[int], temp: list[int], start: int, end: int)
     merge(num_list, temp, start, mid, end)
 
 def merge(num_list: list[int], temp: list[int], start: int, mid: int, end: int) -> None: # For Merge Sort
+    end_plus_one: int = end + 1
     i: int
 
     # Copying some part of the num_list to temp
-    for i in range(start, end + 1): # end + 1 to make the end included
+    for i in range(start, end_plus_one): # end + 1 to make the end included
         temp[i] = num_list[i]
 
     i = start
