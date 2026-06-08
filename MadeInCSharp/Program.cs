@@ -50,7 +50,7 @@ class Program
             }
             else
             {
-                Console.WriteLine("The input should not be null. Aborting.");
+                Console.WriteLine("The input should not be null or empty. Aborting.");
                 return;
             }
         }
@@ -103,7 +103,7 @@ class Program
             }
             else
             {
-                Console.WriteLine("The input should not be null. Aborting.");
+                Console.WriteLine("The input should not be null or empty. Aborting.");
                 return;
             }
         }
