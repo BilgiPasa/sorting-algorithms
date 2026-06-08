@@ -182,7 +182,7 @@ int main(void)
             used_algorithm_type = "Bozo Sort";
 
             // In Linux, RAND_MAX is INT_MAX. In Windows, RAND_MAX is RAND_MAX_GUARANTEED (32767).
-            // Because of that, don't enter a number greater than RAND_MAX_GUARANTEED (which you shouldn't anyways).
+            // Because of that, don't enter a number greater than RAND_MAX_GUARANTEED.
             if (length > RAND_MAX_GUARANTEED)
             {
                 fprintf(stderr, "You should not enter a number greater than %d in %s. Aborting.\n", RAND_MAX_GUARANTEED, used_algorithm_type);
@@ -199,7 +199,7 @@ int main(void)
             used_algorithm_type = "Bogo Sort";
 
             // In Linux, RAND_MAX is INT_MAX. In Windows, RAND_MAX is RAND_MAX_GUARANTEED (32767).
-            // Because of that, don't enter a number greater than RAND_MAX_GUARANTEED (which you shouldn't anyways).
+            // Because of that, don't enter a number greater than RAND_MAX_GUARANTEED.
             if (length > RAND_MAX_GUARANTEED)
             {
                 fprintf(stderr, "You should not enter a number greater than %d in %s. Aborting.\n", RAND_MAX_GUARANTEED, used_algorithm_type);
