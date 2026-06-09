@@ -105,7 +105,38 @@ void merge(int num_arr[], int temp[], int start, int mid, int end) // For Merge 
         num_arr[k++] = temp[j++];
 }
 
-// TODO: IMPLEMENT HEAP SORT HERE.
+
+void heap_sort(int num_arr[], int length)
+{
+    for (int i = (length / 2) - 1; i >= 0; i--)
+        sink(num_arr, i, length);
+
+    while (length > 1)
+    {
+        swap(&num_arr[0], &num_arr[length - 1]);
+        sink(num_arr, 0, --length);
+    }
+}
+
+void sink(int num_arr[], int i, int length)
+{
+    while (1)
+    {
+        int j = (i * 2) + 1;
+
+        if (j >= length)
+            break;
+
+        if (j < length - 1 && num_arr[j] < num_arr[j + 1])
+            j++;
+
+        if (num_arr[i] >= num_arr[j])
+            break;
+
+        swap(&num_arr[i], &num_arr[j]);
+        i = j;
+    }
+}
 
 // TODO: IMPLEMENT SHELL SORT HERE.
 
