@@ -1,13 +1,14 @@
 #pragma once
-#include <stdbool.h>
 
 void print_arr(const int num_arr[], int length);
-bool is_sorted(const int num_arr[], int length);
+int is_sorted(const int num_arr[], int length);
 void swap(int *a, int *b);
 int compare(const void *elem1, const void *elem2);
 int merge_sort(int num_arr[], int length);
 void merge_sort_range(int num_arr[], int temp[], int start, int end);
 void merge(int num_arr[], int temp[], int start, int mid, int end);
+void heap_sort(int num_arr[], int length);
+void sink(int num_arr[], int i, int length);
 void insertion_sort(int num_arr[], int length);
 void selection_sort(int num_arr[], int length);
 int index_of_min(const int num_arr[], int length, int start);

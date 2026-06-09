@@ -18,6 +18,7 @@ int main(void)
     {
         BUILT_IN,
         MERGE_SORT,
+        HEAP_SORT,
         INSERTION_SORT,
         SELECTION_SORT,
         GNOME_SORT,
@@ -30,13 +31,15 @@ int main(void)
     printf("\n");
     printf("Sorting algorithms (from fastest to slowest)\n");
     printf("1) Merge Sort\n");
-    printf("2) Insertion Sort\n");
-    printf("3) Selection Sort\n");
-    printf("4) Gnome Sort\n");
-    printf("5) Bubble Sort\n");
-    printf("6) Bozo Sort\n");
-    printf("7) Bogo Sort\n");
-    printf("Select an algorithm: ");
+    printf("2) Heap Sort\n");
+    printf("3) Insertion Sort\n");
+    printf("4) Selection Sort\n");
+    printf("5) Gnome Sort\n");
+    printf("6) Bubble Sort\n");
+    printf("7) Bozo Sort\n");
+    printf("8) Bogo Sort\n");
+    printf("Select an algorithm: ");,
+
     int selected_algorithm;
     int ok = get_int(&selected_algorithm); // The "ok" acts as a boolean.
 
@@ -50,6 +53,7 @@ int main(void)
     {
         case BUILT_IN:
         case MERGE_SORT:
+        case HEAP_SORT:
             printf("Enter the array size (22222222 is recommended): ");
             break;
 
@@ -146,6 +150,13 @@ int main(void)
                 return EXIT_FAILURE;
             }
 
+            end = clock();
+            break;
+
+        case HEAP_SORT:
+            used_algorithm_type = "Heap Sort";
+            start = clock();
+            heap_sort(num_arr, length);
             end = clock();
             break;
 
