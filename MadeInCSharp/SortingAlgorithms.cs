@@ -167,7 +167,7 @@ public static class SortingAlgorithms
                 j++;
             }
 
-            if (numArr[i] > numArr[j])
+            if (numArr[i] >= numArr[j])
             {
                 break;
             }
