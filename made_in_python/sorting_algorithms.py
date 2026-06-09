@@ -126,7 +126,7 @@ def sink(num_list: list[int], i: int, end: int) -> None: # For Heap Sort
         if j < end and num_list[j] < num_list[j + 1]:
             j += 1
 
-        if num_list[i] > num_list[j]:
+        if num_list[i] >= num_list[j]:
             break
 
         num_list[i], num_list[j] = num_list[j], num_list[i] # Swapping elements
