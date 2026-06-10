@@ -150,7 +150,8 @@ public static class SortingAlgorithms
     }
 
     // Used for making a max-heap
-    static void Sink(int[] numArr, int i, int end) { // For Heap Sort
+    static void Sink(int[] numArr, int i, int end) // For Heap Sort
+    {
         int j;
 
         while (true)
