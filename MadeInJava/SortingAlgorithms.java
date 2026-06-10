@@ -14,7 +14,7 @@ public class SortingAlgorithms {
         return true;
     }
 
-    private static void swapElements(int[] numArr, int a, int b) { // To swap elements using XOR
+    private static void swap(int[] numArr, int a, int b) { // To swap elements using XOR
         if (a == b) {
             return;
         }
@@ -63,11 +63,11 @@ public class SortingAlgorithms {
                 break;
             }
 
-            swapElements(numArr, i, j);
+            swap(numArr, i, j);
         }
 
         // Swapping the initial pivot with the new pivot and returning the new pivot
-        swapElements(numArr, start, j);
+        swap(numArr, start, j);
         return j;
     }
 
@@ -122,7 +122,7 @@ public class SortingAlgorithms {
         }
 
         while (end > 0) {
-            swapElements(numArr, 0, end);
+            swap(numArr, 0, end);
             sink(numArr, 0, --end); // Shortening and fixing the max-heap
         }
     }
@@ -146,7 +146,7 @@ public class SortingAlgorithms {
                 break;
             }
 
-            swapElements(numArr, i, j);
+            swap(numArr, i, j);
             i = j;
         }
     }
@@ -193,7 +193,7 @@ public class SortingAlgorithms {
 
         for (int i = 0; i < lengthMinusOne; i++) {
             j = indexOfMin(numArr, i); // Finding the index that has the minimum value
-            swapElements(numArr, i, j);
+            swap(numArr, i, j);
         }
     }
 
@@ -215,7 +215,7 @@ public class SortingAlgorithms {
 
         while (i < numArr.length) {
             if (i > 0 && numArr[i - 1] > numArr[i]) {
-                swapElements(numArr, i - 1, i);
+                swap(numArr, i - 1, i);
                 i--;
             } else {
                 i++;
@@ -229,7 +229,7 @@ public class SortingAlgorithms {
         while (end - start > 1) {
             for (i = start; i < end; i++) {
                 if (numArr[i] > numArr[i + 1]) {
-                    swapElements(numArr, i, i + 1);
+                    swap(numArr, i, i + 1);
                 }
             }
 
@@ -237,7 +237,7 @@ public class SortingAlgorithms {
 
             for (i = end; i > start; i--) {
                 if (numArr[i - 1] > numArr[i]) {
-                    swapElements(numArr, i - 1, i);
+                    swap(numArr, i - 1, i);
                 }
             }
 
@@ -254,7 +254,7 @@ public class SortingAlgorithms {
 
             for (int i = 1; i < length; i++) {
                 if (numArr[i - 1] > numArr[i]) {
-                    swapElements(numArr, i - 1, i);
+                    swap(numArr, i - 1, i);
                     swapped = true;
                 }
             }
@@ -269,7 +269,7 @@ public class SortingAlgorithms {
         }
 
         if (numArr[start] > numArr[end]) {
-            swapElements(numArr, start, end);
+            swap(numArr, start, end);
         }
 
         if (end - start > 1) { // if (array size > 2)
@@ -288,7 +288,7 @@ public class SortingAlgorithms {
         while (!isSorted(numArr)) {
             index1 = r.nextInt(numArr.length);
             index2 = r.nextInt(numArr.length);
-            swapElements(numArr, index1, index2);
+            swap(numArr, index1, index2);
         }
     }
 
@@ -306,7 +306,7 @@ public class SortingAlgorithms {
 
         for (int i = lengthMinusOne; i > 0; i--) {
             randomNum = r.nextInt(i + 1);
-            swapElements(numArr, i, randomNum);
+            swap(numArr, i, randomNum);
         }
     }
 }
