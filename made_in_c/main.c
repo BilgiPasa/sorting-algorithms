@@ -38,7 +38,7 @@ int main(void)
     printf("6) Bubble Sort\n");
     printf("7) Bozo Sort\n");
     printf("8) Bogo Sort\n");
-    printf("Select an algorithm: ");,
+    printf("Select an algorithm: ");
 
     int selected_algorithm;
     int ok = get_int(&selected_algorithm); // The "ok" acts as a boolean.

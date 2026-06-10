@@ -19,17 +19,17 @@ void print_arr(const int num_arr[], int length) // To print the array
     printf("%d]\n", num_arr[length_minus_one]);
 }
 
-bool is_sorted(const int num_arr[], int length) // To check if the array is sorted
+int is_sorted(const int num_arr[], int length) // To check if the array is sorted
 {
     for (int i = 1; i < length; i++)
     {
         if (num_arr[i - 1] > num_arr[i])
         {
-            return false;
+            return 0;
         }
     }
 
-    return true;
+    return 1;
 }
 
 void swap(int *a, int *b) // To swap elements using XOR
@@ -206,18 +206,18 @@ void gnome_sort(int num_arr[], int length)
 
 void bubble_sort(int num_arr[], int length)
 {
-    bool swapped;
+    int swapped;
 
     do
     {
-        swapped = false;
+        swapped = 0;
 
         for (int i = 1; i < length; i++)
         {
             if (num_arr[i - 1] > num_arr[i])
             {
                 swap(&num_arr[i - 1], &num_arr[i]);
-                swapped = true;
+                swapped = 1;
             }
         }
 
