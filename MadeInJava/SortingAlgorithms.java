@@ -117,7 +117,7 @@ public class SortingAlgorithms {
         int end = numArr.length - 1;
 
         // Initializing the max-heap
-        for (int i = end / 2; i >= 0; i--) {
+        for (int i = (numArr.length / 2) - 1; i >= 0; i--) {
             sink(numArr, i, end);
         }
 

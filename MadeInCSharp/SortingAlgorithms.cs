@@ -137,7 +137,7 @@ public static class SortingAlgorithms
         int end = numArr.Length - 1;
 
         // Initializing the max-heap
-        for (int i = end / 2; i >= 0; i--)
+        for (int i = (numArr.Length / 2) - 1; i >= 0; i--)
         {
             Sink(numArr, i, end);
         }

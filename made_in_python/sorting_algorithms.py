@@ -105,7 +105,7 @@ def heap_sort(num_list: list[int]) -> None:
 	end: int = len(num_list) - 1
 
 	# Initializing the max-heap
-	for i in range(end // 2, -1, -1):
+	for i in range((len(num_list) // 2) - 1, -1, -1):
 		sink(num_list, i, end)
 
 	while end > 0:
