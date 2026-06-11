@@ -107,28 +107,30 @@ void merge(int num_arr[], int temp[], int start, int mid, int end) // For Merge 
 
 void heap_sort(int num_arr[], int length)
 {
+    int end = length - 1;
+
     // Initializing the max-heap
     for (int i = (length / 2) - 1; i >= 0; i--)
-        sink(num_arr, i, length);
+        sink(num_arr, i, end);
 
-    while (length > 1)
+    while (end > 0)
     {
-        swap(&num_arr[0], &num_arr[length - 1]);
-        sink(num_arr, 0, --length); // Shortening and fixing the max-heap
+        swap(&num_arr[0], &num_arr[end]);
+        sink(num_arr, 0, --end); // Shortening and fixing the max-heap
     }
 }
 
 // Used for making a max-heap
-void sink(int num_arr[], int i, int length) // For Heap Sort
+void sink(int num_arr[], int i, int end) // For Heap Sort
 {
     while (1)
     {
         int j = (i * 2) + 1; // jth element is the left child of ith element
 
-        if (j >= length)
+        if (j > end)
             break;
 
-        if (j < length - 1 && num_arr[j] < num_arr[j + 1])
+        if (j < end && num_arr[j] < num_arr[j + 1])
             j++;
 
         if (num_arr[i] >= num_arr[j])
