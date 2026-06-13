@@ -8,3 +8,5 @@ If you are using Windows, use this command in this directory to run the C files 
     ./main.exe
 
 If you are going to compile the C files with the command above, make sure that you have GCC installed.
+
+Note: -O3 flag is used for to make the C code faster.
