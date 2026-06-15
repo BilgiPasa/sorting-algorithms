@@ -77,7 +77,7 @@ int main(void)
     int length;
     ok = get_int(&length);
 
-    if (!ok) // If ok == 0, it gives an error.
+    if (!ok) // If ok == 0, abort.
     {
         fprintf(stderr, "Couldn't understand the input. Aborting.\n");
         return EXIT_FAILURE;
@@ -244,7 +244,7 @@ int main(void)
     return EXIT_SUCCESS;
 }
 
-// Because C does not have try-catch, for a safe input system for C, bartu-g made this function.
+// For a safe input system, bartu-g wrote this function.
 // This function returns 1 on success and 0 on failure.
 // This function is based on beginners' guide away from scanf().
 int get_int(int *num)
