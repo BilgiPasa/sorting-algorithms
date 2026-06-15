@@ -136,8 +136,8 @@ class Program
             return;
         }
 
-        Random r = new(); // This is the short version of Random r = new Random();
-        Stopwatch s = new(); // This is the short version of Stopwatch s = new Stopwatch();
+        Random r = new();
+        Stopwatch s = new();
         Console.WriteLine("Starting to randomize the array.");
 
         for (int i = 0; i < numArr.Length; i++)
