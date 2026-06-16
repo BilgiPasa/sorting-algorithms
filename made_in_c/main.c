@@ -22,6 +22,7 @@ int main(void)
         INSERTION_SORT,
         SELECTION_SORT,
         GNOME_SORT,
+        COCKTAIL_SHAKER_SORT,
         BUBBLE_SORT,
         BOZO_SORT,
         BOGO_SORT,
@@ -35,9 +36,10 @@ int main(void)
     printf("3) Insertion Sort\n");
     printf("4) Selection Sort\n");
     printf("5) Gnome Sort\n");
-    printf("6) Bubble Sort\n");
-    printf("7) Bozo Sort\n");
-    printf("8) Bogo Sort\n");
+    printf("6) Cocktail Shaker Sort\n");
+    printf("7) Bubble Sort\n");
+    printf("8) Bozo Sort\n");
+    printf("9) Bogo Sort\n");
     printf("Select an algorithm: ");
 
     int selected_algorithm;
@@ -60,6 +62,7 @@ int main(void)
         case INSERTION_SORT:
         case SELECTION_SORT:
         case GNOME_SORT:
+        case COCKTAIL_SHAKER_SORT:
         case BUBBLE_SORT:
             printf("Enter the array size (55555 is recommended): ");
             break;
@@ -178,6 +181,13 @@ int main(void)
             used_algorithm_type = "Gnome Sort";
             start = clock();
             gnome_sort(num_arr, length);
+            end = clock();
+            break;
+
+        case COCKTAIL_SHAKER_SORT:
+            used_algorithm_type = "Cocktail Shaker Sort";
+            start = clock();
+            cocktail_shaker_sort(num_arr, length);
             end = clock();
             break;
 

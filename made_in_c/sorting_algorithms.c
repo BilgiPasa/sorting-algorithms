@@ -205,7 +205,42 @@ void gnome_sort(int num_arr[], int length)
     }
 }
 
-// TODO: IMPLEMENT COCKTAIL SHAKER SORT HERE.
+void cocktail_shaker_sort(int num_arr[], int length)
+{
+    int swapped;
+    int start = 1;
+
+    do
+    {
+        swapped = 0;
+        for (int i = start; i < length; i++)
+        {
+            if (num_arr[i - 1] > num_arr[i])
+            {
+                swap(&num_arr[i - 1], &num_arr[i]);
+                swapped = 1;
+            }
+        }
+
+        if (!swapped)
+            break;
+
+        length--;
+
+        swapped = 0;
+        for (int i = length - 1; i >= start; i--)
+        {
+            if (num_arr[i - 1] > num_arr[i])
+            {
+                swap(&num_arr[i - 1], &num_arr[i]);
+                swapped = 1;
+            }
+        }
+
+        start++;
+
+    } while(swapped);
+}
 
 void bubble_sort(int num_arr[], int length)
 {
