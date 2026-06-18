@@ -273,7 +273,23 @@ void bubble_sort(int num_arr[], int length)
     } while (swapped);
 }
 
-// TODO: IMPLEMENT SOOTAGE SORT HERE.
+void stooge_sort(int num_arr[], int start, int end)
+{
+    if (start >= end)
+        return;
+
+    if (num_arr[start] > num_arr[end])
+        swap(&num_arr[start], &num_arr[end]);
+
+    if (end - start > 1) // if (array size > 2)
+    {
+        int one_third = (end - start + 1) / 3;
+
+        stooge_sort(num_arr, start, end - one_third);
+        stooge_sort(num_arr, start + one_third, end);
+        stooge_sort(num_arr, start, end - one_third);
+    }
+}
 
 void bozo_sort(int num_arr[], int length)
 {
