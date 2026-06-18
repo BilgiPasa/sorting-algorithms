@@ -137,7 +137,6 @@ class Program
         }
 
         Random r = new();
-        Stopwatch s = new();
         Console.WriteLine("Starting to randomize the array.");
 
         for (int i = 0; i < numArr.Length; i++)
@@ -153,6 +152,7 @@ class Program
 
         Console.WriteLine("The array has randomized.");
         //Console.WriteLine("[{0}]", string.Join(", ", numArr)); // To see the array before sorting
+        Stopwatch s = new();
         string usedAlgorithmType;
         Console.WriteLine("Starting to sort the array.");
 
