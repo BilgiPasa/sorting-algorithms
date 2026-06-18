@@ -231,8 +231,8 @@ def bubble_sort(num_list: list[int]) -> None:
 		if not swapped:
 			break
 
-def sootage_sort(num_list: list[int], start: int, end: int) -> None:
-	if start == end:
+def stooge_sort(num_list: list[int], start: int, end: int) -> None:
+	if start >= end:
 		return
 
 	if num_list[start] > num_list[end]:
@@ -240,9 +240,9 @@ def sootage_sort(num_list: list[int], start: int, end: int) -> None:
 
 	if end - start > 1: # if list size > 2
 		one_third: int = (end - start + 1) // 3
-		sootage_sort(num_list, start, end - one_third)
-		sootage_sort(num_list, start + one_third, end)
-		sootage_sort(num_list, start, end - one_third)
+		stooge_sort(num_list, start, end - one_third)
+		stooge_sort(num_list, start + one_third, end)
+		stooge_sort(num_list, start, end - one_third)
 
 def bozo_sort(num_list: list[int]) -> None:
 	length_minus_one: int = len(num_list) - 1

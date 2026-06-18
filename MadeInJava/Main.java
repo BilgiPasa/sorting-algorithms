@@ -14,7 +14,7 @@ public class Main {
         GNOME_SORT(7),
         COCKTAIL_SHAKER_SORT(8),
         BUBBLE_SORT(9),
-        SOOTAGE_SORT(10),
+        STOOGE_SORT(10),
         BOZO_SORT(11),
         BOGO_SORT(12);
 
@@ -42,7 +42,7 @@ public class Main {
         System.out.println("7) Gnome Sort");
         System.out.println("8) Cocktail Shaker Sort");
         System.out.println("9) Bubble Sort");
-        System.out.println("10) Sootage Sort");
+        System.out.println("10) Stooge Sort");
         System.out.println("11) Bozo Sort");
         System.out.println("12) Bogo Sort");
         System.out.print("Select an algorithm: ");
@@ -62,7 +62,7 @@ public class Main {
             System.out.print("Enter the array size (22222222 is recommended): ");
         } else if (selectedAlgorithm == AlgorithmTypes.INSERTION_SORT.index || selectedAlgorithm == AlgorithmTypes.SELECTION_SORT.index || selectedAlgorithm == AlgorithmTypes.GNOME_SORT.index || selectedAlgorithm == AlgorithmTypes.COCKTAIL_SHAKER_SORT.index || selectedAlgorithm == AlgorithmTypes.BUBBLE_SORT.index) {
             System.out.print("Enter the array size (55555 is recommended): ");
-        } else if (selectedAlgorithm == AlgorithmTypes.SOOTAGE_SORT.index) {
+        } else if (selectedAlgorithm == AlgorithmTypes.STOOGE_SORT.index) {
             System.out.print("Enter the array size (3223 is recommended): ");
         } else if (selectedAlgorithm == AlgorithmTypes.BOZO_SORT.index || selectedAlgorithm == AlgorithmTypes.BOGO_SORT.index) {
             System.out.print("Enter the array size (maximum 12 is recommended): ");
@@ -169,10 +169,10 @@ public class Main {
             startTime = System.nanoTime();
             SortingAlgorithms.bubbleSort(numArr);
             endTime = System.nanoTime();
-        } else if (selectedAlgorithm == AlgorithmTypes.SOOTAGE_SORT.index) {
-            usedAlgorithmType = "Sootage Sort";
+        } else if (selectedAlgorithm == AlgorithmTypes.STOOGE_SORT.index) {
+            usedAlgorithmType = "Stooge Sort";
             startTime = System.nanoTime();
-            SortingAlgorithms.sootageSort(numArr, 0, numArr.length - 1);
+            SortingAlgorithms.stoogeSort(numArr, 0, numArr.length - 1);
             endTime = System.nanoTime();
         } else if (selectedAlgorithm == AlgorithmTypes.BOZO_SORT.index) {
             usedAlgorithmType = "Bozo Sort";

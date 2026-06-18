@@ -16,7 +16,7 @@ class Program
         GnomeSort,
         CocktailShakerSort,
         BubbleSort,
-        SootageSort,
+        StoogeSort,
         BozoSort,
         BogoSort
     }
@@ -34,7 +34,7 @@ class Program
         Console.WriteLine("7) Gnome Sort");
         Console.WriteLine("8) Cocktail Shaker Sort");
         Console.WriteLine("9) Bubble Sort");
-        Console.WriteLine("10) Sootage Sort");
+        Console.WriteLine("10) Stooge Sort");
         Console.WriteLine("11) Bozo Sort");
         Console.WriteLine("12) Bogo Sort");
         Console.Write("Select an algorithm: ");
@@ -78,7 +78,7 @@ class Program
                 Console.Write("Enter the array size (55555 is recommended): ");
                 break;
 
-            case (int)AlgorithmTypes.SootageSort:
+            case (int)AlgorithmTypes.StoogeSort:
                 Console.Write("Enter the array size (3223 is recommended): ");
                 break;
 
@@ -228,10 +228,10 @@ class Program
                 s.Stop();
                 break;
 
-            case (int)AlgorithmTypes.SootageSort:
-                usedAlgorithmType = "Sootage Sort";
+            case (int)AlgorithmTypes.StoogeSort:
+                usedAlgorithmType = "Stooge Sort";
                 s.Start();
-                SortingAlgorithms.SootageSort(numArr, 0, numArr.Length - 1);
+                SortingAlgorithms.StoogeSort(numArr, 0, numArr.Length - 1);
                 s.Stop();
                 break;
 
