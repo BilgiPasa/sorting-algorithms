@@ -318,9 +318,9 @@ public static class SortingAlgorithms
         } while (swapped);
     }
 
-    public static void SootageSort(int[] numArr, int start, int end)
+    public static void StoogeSort(int[] numArr, int start, int end)
     {
-        if (start == end)
+        if (start >= end)
         {
             return;
         }
@@ -333,9 +333,9 @@ public static class SortingAlgorithms
         if (end - start > 1) // if (array size > 2)
         {
             int oneThird = (end - start + 1) / 3;
-            SootageSort(numArr, start, end - oneThird);
-            SootageSort(numArr, start + oneThird, end);
-            SootageSort(numArr, start, end - oneThird);
+            StoogeSort(numArr, start, end - oneThird);
+            StoogeSort(numArr, start + oneThird, end);
+            StoogeSort(numArr, start, end - oneThird);
         }
     }
 

@@ -2,7 +2,7 @@
 
 These are sorting algorithms in multiple programming languages.
 
-Implemented sorting algorithms (from fastest to slowest*): Quick Sort, Merge Sort, Heap Sort, Shell Sort, Insertion Sort, Selection Sort, Gnome Sort, Cocktail Shaker Sort, Bubble Sort, Sootage Sort, Bozo Sort, Bogo Sort.
+Implemented sorting algorithms (from fastest to slowest*): Quick Sort, Merge Sort, Heap Sort, Shell Sort, Insertion Sort, Selection Sort, Gnome Sort, Cocktail Shaker Sort, Bubble Sort, Stooge Sort, Bozo Sort, Bogo Sort.
 
 Implemented languages: C, C#, Java, Python.
 

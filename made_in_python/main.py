@@ -1,6 +1,6 @@
 from enum import IntEnum
 from random import randint
-from sorting_algorithms import is_sorted, quick_sort, merge_sort, heap_sort, shell_sort, insertion_sort, selection_sort, gnome_sort, cocktail_shaker_sort, bubble_sort, sootage_sort, bozo_sort, bogo_sort
+from sorting_algorithms import is_sorted, quick_sort, merge_sort, heap_sort, shell_sort, insertion_sort, selection_sort, gnome_sort, cocktail_shaker_sort, bubble_sort, stooge_sort, bozo_sort, bogo_sort
 from time import time
 
 class AlgorithmTypes(IntEnum):
@@ -14,7 +14,7 @@ class AlgorithmTypes(IntEnum):
 	GNOME_SORT = 7
 	COCKTAIL_SHAKER_SORT = 8
 	BUBBLE_SORT = 9
-	SOOTAGE_SORT = 10
+	STOOGE_SORT = 10
 	BOZO_SORT = 11
 	BOGO_SORT = 12
 
@@ -30,7 +30,7 @@ def main() -> None:
 	print("7) Gnome Sort")
 	print("8) Cocktail Shaker Sort")
 	print("9) Bubble Sort")
-	print("10) Sootage Sort")
+	print("10) Stooge Sort")
 	print("11) Bozo Sort")
 	print("12) Bogo Sort")
 	selected_algorithm: int
@@ -51,7 +51,7 @@ def main() -> None:
 		case AlgorithmTypes.INSERTION_SORT | AlgorithmTypes.SELECTION_SORT | AlgorithmTypes.GNOME_SORT | AlgorithmTypes.COCKTAIL_SHAKER_SORT | AlgorithmTypes.BUBBLE_SORT:
 			print("Enter the list size (22333 is recommended): ", end="")
 
-		case AlgorithmTypes.SOOTAGE_SORT:
+		case AlgorithmTypes.STOOGE_SORT:
 			print("Enter the list size (1234 is recommended): ", end="")
 
 		case AlgorithmTypes.BOZO_SORT | AlgorithmTypes.BOGO_SORT:
@@ -168,10 +168,10 @@ def main() -> None:
 			bubble_sort(num_list)
 			end_time = time()
 
-		case AlgorithmTypes.SOOTAGE_SORT:
-			used_algorithm_type = "Sootage Sort"
+		case AlgorithmTypes.STOOGE_SORT:
+			used_algorithm_type = "Stooge Sort"
 			start_time = time()
-			sootage_sort(num_list, 0, len(num_list) - 1)
+			stooge_sort(num_list, 0, len(num_list) - 1)
 			end_time = time()
 
 		case AlgorithmTypes.BOZO_SORT:
