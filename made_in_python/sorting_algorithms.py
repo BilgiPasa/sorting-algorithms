@@ -215,8 +215,9 @@ def cocktail_shaker_sort(num_list: list[int]) -> None:
 
 		length -= 1
 		swapped = False
+		start_minus_one: int = start - 1
 
-		for i in range(length - 1, start - 1, -1):
+		for i in range(length - 1, start_minus_one, -1):
 			if num_list[i - 1] > num_list[i]:
 				num_list[i - 1], num_list[i] = num_list[i], num_list[i - 1] # Swapping elements
 				swapped = True
