@@ -22,7 +22,9 @@ int main(void)
         INSERTION_SORT,
         SELECTION_SORT,
         GNOME_SORT,
+        COCKTAIL_SHAKER_SORT,
         BUBBLE_SORT,
+        STOOGE_SORT,
         BOZO_SORT,
         BOGO_SORT,
         SIZE
@@ -35,9 +37,11 @@ int main(void)
     printf("3) Insertion Sort\n");
     printf("4) Selection Sort\n");
     printf("5) Gnome Sort\n");
-    printf("6) Bubble Sort\n");
-    printf("7) Bozo Sort\n");
-    printf("8) Bogo Sort\n");
+    printf("6) Cocktail Shaker Sort\n");
+    printf("7) Bubble Sort\n");
+    printf("8) Stooge Sort\n");
+    printf("9) Bozo Sort\n");
+    printf("10) Bogo Sort\n");
     printf("Select an algorithm: ");
 
     int selected_algorithm;
@@ -60,8 +64,13 @@ int main(void)
         case INSERTION_SORT:
         case SELECTION_SORT:
         case GNOME_SORT:
+        case COCKTAIL_SHAKER_SORT:
         case BUBBLE_SORT:
             printf("Enter the array size (55555 is recommended): ");
+            break;
+
+        case STOOGE_SORT:
+            printf("Enter the array size (3223 is recommended): ");
             break;
 
         case BOZO_SORT:
@@ -181,6 +190,13 @@ int main(void)
             end = clock();
             break;
 
+        case COCKTAIL_SHAKER_SORT:
+            used_algorithm_type = "Cocktail Shaker Sort";
+            start = clock();
+            cocktail_shaker_sort(num_arr, length);
+            end = clock();
+            break;
+
         case BUBBLE_SORT:
             used_algorithm_type = "Bubble Sort";
             start = clock();
@@ -188,6 +204,12 @@ int main(void)
             end = clock();
             break;
 
+        case STOOGE_SORT:
+            used_algorithm_type = "Stooge Sort";
+            start = clock();
+            stooge_sort(num_arr, 0, length - 1);
+            end = clock();
+            break;
 
         case BOZO_SORT:
             used_algorithm_type = "Bozo Sort";
