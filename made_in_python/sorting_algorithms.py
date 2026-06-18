@@ -197,22 +197,34 @@ def gnome_sort(num_list: list[int]) -> None:
 			i += 1
 
 def cocktail_shaker_sort(num_list: list[int]) -> None:
-	start: int = 0
-	end: int = len(num_list) - 1
+	start: int = 1
+	length: int = len(num_list)
 	i: int
+	swapped: bool
 
-	while end - start > 1:
-		for i in range(start, end):
-			if num_list[i] > num_list[i + 1]:
-				num_list[i], num_list[i + 1] = num_list[i + 1], num_list[i] # Swapping elements
+	while True:
+		swapped = False
 
-		end -= 1
-
-		for i in range(end, start, -1):
+		for i in range(start, length):
 			if num_list[i - 1] > num_list[i]:
 				num_list[i - 1], num_list[i] = num_list[i], num_list[i - 1] # Swapping elements
+				swapped = True
+
+		if not swapped:
+			break
+
+		length -= 1
+		swapped = False
+
+		for i in range(length - 1, start - 1, -1):
+			if num_list[i - 1] > num_list[i]:
+				num_list[i - 1], num_list[i] = num_list[i], num_list[i - 1] # Swapping elements
+				swapped = True
 
 		start += 1
+
+		if not swapped:
+			break
 
 def bubble_sort(num_list: list[int]) -> None:
 	length: int = len(num_list)

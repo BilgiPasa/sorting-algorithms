@@ -224,25 +224,35 @@ public class SortingAlgorithms {
     }
 
     public static void cocktailShakerSort(int[] numArr) {
-        int start = 0, end = numArr.length - 1, i;
+        int start = 1, length = numArr.length, i;
+        boolean swapped;
 
-        while (end - start > 1) {
-            for (i = start; i < end; i++) {
-                if (numArr[i] > numArr[i + 1]) {
-                    swap(numArr, i, i + 1);
+        do {
+            swapped = false;
+
+            for (i = start; i < length; i++) {
+                if (numArr[i - 1] > numArr[i]) {
+                    swap(numArr, i - 1, i);
+                    swapped = true;
                 }
             }
 
-            end--;
+            if (!swapped) {
+                break;
+            }
 
-            for (i = end; i > start; i--) {
+            length--;
+            swapped = false;
+
+            for (i = length - 1; i >= start; i--) {
                 if (numArr[i - 1] > numArr[i]) {
                     swap(numArr, i - 1, i);
+                    swapped = true;
                 }
             }
 
             start++;
-        }
+        } while (swapped);
     }
 
     public static void bubbleSort(int[] numArr) {

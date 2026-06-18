@@ -270,30 +270,41 @@ public static class SortingAlgorithms
 
     public static void CocktailShakerSort(int[] numArr)
     {
-        int start = 0, end = numArr.Length - 1, i;
+        int start = 1, length = numArr.Length, i;
+        bool swapped;
 
-        while (end - start > 1)
+        do
         {
-            for (i = start; i < end; i++)
-            {
-                if (numArr[i] > numArr[i + 1])
-                {
-                    (numArr[i], numArr[i + 1]) = (numArr[i + 1], numArr[i]); // Swapping elements
-                }
-            }
+            swapped = false;
 
-            end--;
-
-            for (i = end; i > start; i--)
+            for (i = start; i < length; i++)
             {
                 if (numArr[i - 1] > numArr[i])
                 {
                     (numArr[i - 1], numArr[i]) = (numArr[i], numArr[i - 1]); // Swapping elements
+                    swapped = true;
+                }
+            }
+
+            if (!swapped)
+            {
+                break;
+            }
+
+            length--;
+            swapped = false;
+
+            for (i = length - 1; i >= start; i--)
+            {
+                if (numArr[i - 1] > numArr[i])
+                {
+                    (numArr[i - 1], numArr[i]) = (numArr[i], numArr[i - 1]); // Swapping elements
+                    swapped = true;
                 }
             }
 
             start++;
-        }
+        } while (swapped);
     }
 
     public static void BubbleSort(int[] numArr)
