@@ -223,6 +223,7 @@ void cocktail_shaker_sort(int num_arr[], int length)
     do
     {
         swapped = 0;
+
         for (int i = start; i < length; i++)
         {
             if (num_arr[i - 1] > num_arr[i])
@@ -236,8 +237,8 @@ void cocktail_shaker_sort(int num_arr[], int length)
             break;
 
         length--;
-
         swapped = 0;
+
         for (int i = length - 1; i >= start; i--)
         {
             if (num_arr[i - 1] > num_arr[i])
@@ -248,7 +249,6 @@ void cocktail_shaker_sort(int num_arr[], int length)
         }
 
         start++;
-
     } while(swapped);
 }
 
