@@ -217,14 +217,13 @@ void gnome_sort(int num_arr[], int length)
 
 void cocktail_shaker_sort(int num_arr[], int length)
 {
-    int swapped;
-    int start = 1;
+    int start = 1, end = length - 1, swapped;
 
     do
     {
         swapped = 0;
 
-        for (int i = start; i < length; i++)
+        for (int i = start; i <= end; i++)
         {
             if (num_arr[i - 1] > num_arr[i])
             {
@@ -236,10 +235,10 @@ void cocktail_shaker_sort(int num_arr[], int length)
         if (!swapped)
             break;
 
-        length--;
+        end--;
         swapped = 0;
 
-        for (int i = length - 1; i >= start; i--)
+        for (int i = end; i >= start; i--)
         {
             if (num_arr[i - 1] > num_arr[i])
             {

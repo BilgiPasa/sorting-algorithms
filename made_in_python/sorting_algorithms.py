@@ -198,15 +198,17 @@ def gnome_sort(num_list: list[int]) -> None:
 
 def cocktail_shaker_sort(num_list: list[int]) -> None:
 	start: int = 1
-	length: int = len(num_list)
+	end: int = len(num_list) - 1
 	i: int
 	start_minus_one: int
+	end_plus_one: int
 	swapped: bool
 
 	while True:
 		swapped = False
+		end_plus_one = end + 1
 
-		for i in range(start, length):
+		for i in range(start, end_plus_one):
 			if num_list[i - 1] > num_list[i]:
 				num_list[i - 1], num_list[i] = num_list[i], num_list[i - 1] # Swapping elements
 				swapped = True
@@ -214,11 +216,11 @@ def cocktail_shaker_sort(num_list: list[int]) -> None:
 		if not swapped:
 			break
 
-		length -= 1
+		end -= 1
 		swapped = False
 		start_minus_one = start - 1
 
-		for i in range(length - 1, start_minus_one, -1):
+		for i in range(end, start_minus_one, -1):
 			if num_list[i - 1] > num_list[i]:
 				num_list[i - 1], num_list[i] = num_list[i], num_list[i - 1] # Swapping elements
 				swapped = True

@@ -224,13 +224,13 @@ public class SortingAlgorithms {
     }
 
     public static void cocktailShakerSort(int[] numArr) {
-        int start = 1, length = numArr.length, i;
+        int start = 1, end = numArr.length - 1, i;
         boolean swapped;
 
         do {
             swapped = false;
 
-            for (i = start; i < length; i++) {
+            for (i = start; i <= end; i++) {
                 if (numArr[i - 1] > numArr[i]) {
                     swap(numArr, i - 1, i);
                     swapped = true;
@@ -241,10 +241,10 @@ public class SortingAlgorithms {
                 break;
             }
 
-            length--;
+            end--;
             swapped = false;
 
-            for (i = length - 1; i >= start; i--) {
+            for (i = end; i >= start; i--) {
                 if (numArr[i - 1] > numArr[i]) {
                     swap(numArr, i - 1, i);
                     swapped = true;

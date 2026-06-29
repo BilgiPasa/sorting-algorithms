@@ -270,14 +270,14 @@ public static class SortingAlgorithms
 
     public static void CocktailShakerSort(int[] numArr)
     {
-        int start = 1, length = numArr.Length, i;
+        int start = 1, end = numArr.Length - 1, i;
         bool swapped;
 
         do
         {
             swapped = false;
 
-            for (i = start; i < length; i++)
+            for (i = start; i <= end; i++)
             {
                 if (numArr[i - 1] > numArr[i])
                 {
@@ -291,10 +291,10 @@ public static class SortingAlgorithms
                 break;
             }
 
-            length--;
+            end--;
             swapped = false;
 
-            for (i = length - 1; i >= start; i--)
+            for (i = end; i >= start; i--)
             {
                 if (numArr[i - 1] > numArr[i])
                 {
